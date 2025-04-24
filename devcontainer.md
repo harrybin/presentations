@@ -223,6 +223,24 @@ background: /code-right.png
 <!-- Notes -->
 <!-- Let's dive into the practical benefits of using Dev-Containers in your projects. -->
 ---
+
+# What can you configure in a Dev-Container?
+
+<v-clicks>
+
+- **Environment Variables**: Customize your development environment with specific variables.
+- **Extensions**: Install VS Code extensions that enhance your workflow.
+- **Post-Create Commands**: Run scripts or commands after the container is created to set up your environment.
+- **Volume Mounts**: Persist data by mounting host directories into the container.
+- **Custom Dockerfile**: Use a custom Dockerfile for more control over the container image.
+- **Remote User**: Specify the user that the container should run as.
+- **Settings**: Configure VS Code settings specific to the container environment.
+
+</v-clicks>
+
+# TODO
+
+---
 layout: image-right
 background: /examples.jpeg
 ---
