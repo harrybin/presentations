@@ -17,16 +17,17 @@ overviewSnapshots: false
 glowEnabled: true
 ###### slides start ######
 layout: cover
-title: Revolutionizing Development with Dev-Containers
+background: /devcontainer.jpeg
 description: Explore the benefits, configuration, and impact of Dev-Containers on modern development workflows.
+hideInToc: true
 ---
 
-# TODO
+# Use the full potential of devconatiners
 
 ---
 title: Speaker
 layout: intro
-src: speaker/%SLIDEV_SPEAKER%/speaker.md
+src: special-slides/speaker.md
 ---
 
 ---
@@ -45,38 +46,41 @@ hideInToc: true
 </div>
 
 ---
-
-# Introduction/Goal
-
-- Consistency, isolation, and portability in development
-- Transforming how we write, test, and deploy code
-- Applicable to web development, DevOps, and beyond
-
-
-<!-- Notes -->
-<!-- Welcome to this presentation on Dev-Containers. Today, we will explore how they can revolutionize your development process. -->
-
+layout: two-column
 ---
 
 # Why Dev-Containers?
 
-- Ensure consistent environments across teams
+::left::
+
+<v-clicks>
+
 - Isolate dependencies and avoid conflicts
 - Portability across different systems
+- Transforming how we write, test, and deploy code
+- Applicable to web development, DevOps, and beyond
+- Ensure consistent environments across teams
+- Solve the "it works on my machine" issue
+</v-clicks>
+
+
+::right::
+<v-click>
+
+## Supported IDEs
+
+- **Visual Studio Code**
+- GitHub Codespaces
+- JetBrains IDEs (via plugins)
+- Eclipse Theia
+- IntelliJ IDEA (with Docker support)
+</v-click>
 
 <!-- Notes -->
-<!-- Dev-Containers solve common issues like "it works on my machine" by providing consistent and isolated environments. -->
-
----
-
-# Beyond Web Development
-
-- DevOps workflows
-- Data science and machine learning
-- Embedded systems development
-
-<!-- Notes -->
-<!-- While Dev-Containers are popular in web development, their benefits extend to various other domains. -->
+<!-- 
+- use/install mutible versions the same runtimes frameworks (e.g. nodejs, python, ruby, etc.)
+- These IDEs provide built-in or plugin-based support for Dev-Containers, making it easier to integrate them into your workflow. 
+-->
 
 ---
 layout: two-column
@@ -90,10 +94,14 @@ layout: two-column
 - Faster setup times
 <v-clicks>
 
-- Optimized resource usage
-- Improved developer productivity
+- Optimized resource usage compared to full Dev-VMs
 - Faster context switching
+- Improved developer productivity
 - Isolation of environments
+
+- Simplified onboarding for new team members
+- Easier collaboration across distributed teams
+- Enhanced security through isolation
 </v-clicks>
 
 ::right::
@@ -116,26 +124,100 @@ layout: two-column
 <!-- Using Dev-Containers can even lead to performance improvements, making your workflows more efficient. -->
 
 ---
+layout: image-right
+background: /devcontainer2.jpeg
+---
 
-# Practical Benefits
+# Prerequisites for Dev-Containers
 
-- Simplified onboarding for new team members
-- Easier collaboration across distributed teams
-- Enhanced security through isolation
+
+<v-clicks>
+
+- **Docker**: Docker is installed and running on your system
+  - **Windows**: Docker Desktop 2.0+ on Windows 10 Pro/Enterprise. Windows 10 Home (2004+) requires Docker Desktop 2.3+ and the WSL 2 back-end. 
+  _(Docker Toolbox is not supported. Windows container images are not supported.)_
+  - **macOS**: Docker Desktop 2.0+.
+  - **Linux**: Docker CE/EE 18.06+ and Docker Compose 1.21+. (The Ubuntu snap package is not supported.
+- **Visual Studio Code**: Install VS Code as the primary IDE
+- **Dev Containers Extension**: Add the "Dev Containers" extension in VS Code
+- **Git**: Have Git installed for version control
+- **Access to Container Images**: Ensure access to required container registries (e.g., Docker Hub)
+
+</v-clicks>
+
+
+<!-- Notes -->
+<!-- 
+Docker Toolbox: is a legacy toolset provided by Docker for running Docker containers on older systems 
+## Optional Tools / VS-Code Extensions
+- **GitHub Codespaces**: For cloud-based development
+- **Docker Compose**: For multi-container setups
+- **Custom Scripts**: Automate environment setup
+-->
+
+---
+layout: image-right
+background: /devcontainer_move.jpeg
+---
+
+# Configuring Dev-Containers in VS Code
+
+<br/>
+<v-click>
+
+  - Create a `.devcontainer` folder in your project
+  - Add a `devcontainer.json` file with configuration details
+  - Use predefined templates or customize as needed
+</v-click>
+<br/>
+<v-click> 
+
+- Open the project in the containerized environment
+</v-click>
+
+<!-- Notes -->
+
+---
+layout: image-left
+background: /devcontainer_move.jpeg
+---
+
+# VSCode assisted Devcontainer creation
+
+
+
+## VS-Code assisted
+<v-clicks>
+
+- Use the Command Palette <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>  
+  - Select "Dev Containers: Add Development Container Configuration Files"
+- Choose a template or customize your own configuration etc. 
+  - ...
+</v-clicks>
+<br/>
+<v-click>
+
+- VS Code will generate the necessary files for you
+</v-click>
+<br/>
+<v-click> 
+
+- Open the project in the containerized environment
+  - Use the Command Palette again and select "Dev Containers: Reopen in Container"
+</v-click>
+
+<!-- Notes -->
+
+---
+layout: chapter	
+---
+# VSCode assisted Devcontainer creation
+
+
 
 <!-- Notes -->
 <!-- Let's dive into the practical benefits of using Dev-Containers in your projects. -->
 
----
-
-# Configuring Dev-Containers
-
-- Define environments using `devcontainer.json`
-- Integrate with popular tools like Docker and VS Code
-- Customize for specific project needs
-
-<!-- Notes -->
-<!-- Configuration is straightforward and allows for a high degree of customization to suit your project requirements. -->
 
 ---
 
