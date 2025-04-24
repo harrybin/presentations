@@ -1,0 +1,28 @@
+{
+  "name": "presentations",
+  "version": "1.0.0",
+  "description": "public presentations",
+  "keywords": [
+    "devcontainer"
+  ],
+  "homepage": "https://github.com/harrybin/presentations#readme",
+  "bugs": {
+    "url": "https://github.com/harrybin/presentations/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrybin/presentations.git"
+  },
+  "license": "MIT",
+  "author": "harrybin",
+  "devDependencies": {
+    "seedrandom": "^3.0.5"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.6.0",
+    "@slidev/client": "^51.6.0",
+    "@xebia/slidev-addon-components-common": "^0.2.1",
+    "@xebia/slidev-theme-xebia": "^1.5.0",
+    "slidev-component-progress": "^1.1.0"
+  }
+}

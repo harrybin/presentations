@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "antfu.slidev",
+    "esbenp.prettier-vscode",
+    "antfu.unocss",
+    "vue.volar",
+    "actboy168.tasks"
+  ]
+}
