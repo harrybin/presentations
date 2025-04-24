@@ -209,37 +209,90 @@ background: /devcontainer_move.jpeg
 <!-- Notes -->
 
 ---
-layout: chapter	
+layout: image-right-dark
+background: /code-right.png
 ---
-# VSCode assisted Devcontainer creation
+# Demo
+
+<BlobText width="450" height="300">
+<h1> Create a new Dev-Container </h1>
+</BlobText>
 
 
 
 <!-- Notes -->
 <!-- Let's dive into the practical benefits of using Dev-Containers in your projects. -->
+---
+layout: image-right
+background: /examples.jpeg
+---
 
+# Examples for Dev-Containers
+
+<v-clicks>
+
+- **Web Development**: Use Node.js, React, or Angular in isolated environments
+- **Data Science**: Run Jupyter Notebooks with Python and R dependencies pre-installed
+- **Embedded Systems**: Develop and test firmware in a containerized environment
+- **Legacy Applications**: Maintain older software versions without affecting the host system
+
+</v-clicks>
+
+<!-- Notes -->
+<!-- Dev-Containers are versatile and can be used across various domains, from web development to embedded systems. -->
 
 ---
 
-# Revolutionizing Development
 
-- Streamlined workflows
-- Reduced errors and inconsistencies
-- A more enjoyable development experience
+# Typical Usage: Web Development
+
+- Use a pre-configured Node.js container for consistent development
+- Install project dependencies in the container
+- Run and debug applications directly in the containerized environment
+- Share the container configuration with the team for consistency
+
+```json {*}{maxHeight:'250px'}
+// filepath: .devcontainer/devcontainer.json
+{
+  "name": "Node.js Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "remoteUser": "node"
+}
+```
 
 <!-- Notes -->
-<!-- By adopting Dev-Containers, you can transform your development process into something more efficient, secure, and enjoyable. -->
+<!-- Web developers can benefit from Dev-Containers by ensuring consistent environments and avoiding dependency conflicts. -->
+
+
 
 ---
 
 # Conclusion
 
+- Streamlined workflows
+- Reduced errors and inconsistencies because of isolated environments
 - Embrace Dev-Containers for modern development
-- Unlock consistency, isolation, and portability
-- Revolutionize your workflows today
+- Unlock consistency and portability
 
 <!-- Notes -->
-<!-- Thank you for joining this session. I hope you are inspired to explore Dev-Containers further. -->
+<!-- 
+By adopting Dev-Containers, you can transform your development process into something more efficient, secure, and enjoyable.
+-->
 
 ---
 src: /special-slides/questions.md
