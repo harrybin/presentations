@@ -15,6 +15,13 @@
   },
   "license": "MIT",
   "author": "harrybin",
+  "scripts": {
+    "start": "npx slidev slides.md",
+    "build": "slidev build",
+    "format": "slidev format",
+    "export": "slidev export",
+    "screenshot": "slidev export --format png"
+  },
   "devDependencies": {
     "prettier": "^3.5.3",
     "prettier-plugin-slidev": "^1.0.5",

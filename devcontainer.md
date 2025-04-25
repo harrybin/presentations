@@ -224,7 +224,7 @@ background: /code-right.png
 <!-- Let's dive into the practical benefits of using Dev-Containers in your projects. -->
 ---
 
-# What can you configure in a Dev-Container?
+# Configuration Options?
 
 <v-clicks>
 
