@@ -24,4 +24,4 @@ routeAlias: webappLocalization
 ---
 
 # It's all greek to me! 
-## Localising Web-Apps elegant and easy
+## Localizing Web-Apps elegant and easy
