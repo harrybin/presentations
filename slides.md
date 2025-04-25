@@ -2,8 +2,8 @@
 theme: "@xebia/slidev-theme-xebia"
 transition: "fade"
 addons:
-  - slidev-component-progress
-  - "@xebia/slidev-addon-components-common"
+    - slidev-component-progress
+    - "@xebia/slidev-addon-components-common"
 # disabled pdf downloading in SPA build, can also be a custom url
 download: false
 browserExporter: true
@@ -17,3 +17,4 @@ overviewSnapshots: false
 glowEnabled: true
 ###### ALL slides start ######
 src: devcontainer.md
+---
