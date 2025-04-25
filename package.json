@@ -30,6 +30,7 @@
   "dependencies": {
     "@slidev/cli": "^51.6.0",
     "@slidev/client": "^51.6.0",
+    "@slidev/theme-default": "^0.25.0",
     "@xebia/slidev-addon-components-common": "^0.2.1",
     "@xebia/slidev-theme-xebia": "^1.5.0",
     "slidev-component-progress": "^1.1.0"
