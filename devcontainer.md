@@ -251,6 +251,7 @@ background: /examples.jpeg
 <v-clicks>
 
 - **Web Development**: Use Node.js, React, or Angular in isolated environments
+- **Full-Stack**: development environments with frontend and backend services
 - **Data Science**: Run Jupyter Notebooks with Python and R dependencies pre-installed
 - **Embedded Systems**: Develop and test firmware in a containerized environment
 - **Legacy Applications**: Maintain older software versions without affecting the host system
@@ -297,7 +298,107 @@ background: /examples.jpeg
 <!-- Notes -->
 <!-- Web developers can benefit from Dev-Containers by ensuring consistent environments and avoiding dependency conflicts. -->
 
+---
 
+# Example: Full-Stack Dev-Container
+
+```json {*}{maxHeight:'250px'}
+// filepath: .devcontainer/devcontainer.json
+{
+  "name": "Full-Stack Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:7.0",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+    "ghcr.io/devcontainers/features/postgres:1": {
+      "version": "15",
+      "database": "mydb",
+      "user": "admin",
+      "password": "password"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "postCreateCommand": "dotnet restore && npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-azuretools.vscode-azurefunctions",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "settings": {
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4"
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "remoteUser": "vscode"
+}
+```
+
+<v-clicks>
+
+- **Web Frontend**: Node.js and npm for frontend development
+- **C# Backend**: .NET 7.0 environment for backend services
+- **PostgreSQL Database**: Pre-configured PostgreSQL database
+- **Azure Functions**: Ready-to-use Azure Functions support
+- **Extensions**: Includes necessary VS Code extensions for full-stack development
+
+</v-clicks>
+
+<!-- Notes -->
+<!-- This example demonstrates how to set up a Dev-Container for a full-stack project, including a web frontend, C# backend, PostgreSQL database, and Azure Functions. -->
+
+---
+
+# Example: Data Science Dev-Container
+
+```json {*}{maxHeight:'250px'}
+// filepath: .devcontainer/devcontainer.json
+{
+  "name": "Data Science Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
+  
+    "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers"
+      ]
+    }
+  },
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python"
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "remoteUser": "python"
+}
+```
+
+<v-clicks>
+
+- **Python**: Pre-installed Python 3.9 environment
+- **Jupyter Notebooks**: Ready-to-use Jupyter Notebook support
+- **Dependencies**: Install additional Python libraries via `requirements.txt`
+- **Extensions**: Includes Python and Jupyter extensions for VS Code
+
+</v-clicks>
+
+<!-- Notes -->
+<!-- This example demonstrates how to set up a Dev-Container for data science projects, including Python, Jupyter, and other dependencies. -->
 
 ---
 
