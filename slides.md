@@ -16,5 +16,19 @@ overviewSnapshots: false
 # background glow animation
 glowEnabled: true
 ###### ALL slides start ######
+layout: image-right
+background: /logo.svg
+backgroundSize: 90%
+---
+
+# Presentation Overview
+ <Link to="2" title="Devcontainers"/> - Magdeburger Developer Days (Mai 2025)
+
+ <br/>
+ <br/>
+
+ <Link to="30" title="Localization of Web-Apps"/> - DWX (Juli 2025)
+
+---
 src: devcontainer.md
 ---
