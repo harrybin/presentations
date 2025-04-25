@@ -327,7 +327,7 @@ level: 2
 hideInToc: true
 ---
 
-![](/MD-conf.svg)  12. - 15. Mai 2025
+![](/MD-conf.svg)  Mai 2025
 
 <br/>
 
