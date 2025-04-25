@@ -29,6 +29,20 @@
         "isDefault": true
       },
     },
+    {
+      "label": "🚀webappLocalization",
+      "options": {
+        "statusbar": {
+          "color": "#00ff2a"
+        }
+      },
+      "type": "shell",
+      "command": "npx slidev webappLocalization.md",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
   ],
   "inputs": [
     {
