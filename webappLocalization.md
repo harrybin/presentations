@@ -25,3 +25,23 @@ routeAlias: webappLocalization
 
 # It's all greek to me! 
 ## Localizing Web-Apps elegant and easy
+
+---
+src: /special-slides/questions.md
+---
+
+---
+src: /special-slides/thank-you.md
+---
+
+---
+layout: end
+level: 2
+hideInToc: true
+---
+
+![](/dwx_2025.png)  Juli 2025
+
+<br/>
+
+# End of presentation
