@@ -2,6 +2,20 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "🚀 ALL",
+      "options": {
+        "statusbar": {
+          "color": "#d400ff"
+        }
+      },
+      "type": "shell",
+      "command": "npx slidev slides.md",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
       "label": "🚀devcontainer",
       "options": {
         "statusbar": {

@@ -22,13 +22,17 @@ backgroundSize: 90%
 ---
 
 # Presentation Overview
- <Link to="2" title="Devcontainers"/> - Magdeburger Developer Days (Mai 2025)
+ <Link to="devcontainer" title="Devcontainers"/> - Magdeburger Developer Days (Mai 2025)
 
  <br/>
  <br/>
 
- <Link to="30" title="Localization of Web-Apps"/> - DWX (Juli 2025)
+ <Link to="webappLocalization" title="WebApp-Localization"/> - DWX (Juli 2025)
 
 ---
 src: devcontainer.md
+---
+
+---
+src: webappLocalization.md
 ---
