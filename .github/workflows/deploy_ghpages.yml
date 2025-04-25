@@ -33,7 +33,7 @@ jobs:
           cache: "npm"
 
       - name: Authenticate with GitHub Package Registry
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.xebia_npm_repo_pat }}" > ~/.npmrc
 
       - name: Install dependencies using package-lock.json
         run: npm ci --legacy-peer-deps
