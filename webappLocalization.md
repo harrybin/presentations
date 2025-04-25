@@ -27,6 +27,20 @@ routeAlias: webappLocalization
 ## Localizing Web-Apps elegant and easy
 
 ---
+title: Speaker
+layout: intro
+src: special-slides/speaker.md
+---
+
+<!-- speaker -->
+---
+
+# TODO
+# TODO
+# TODO
+# TODO
+
+---
 src: /special-slides/questions.md
 ---
 
