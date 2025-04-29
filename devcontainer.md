@@ -299,47 +299,8 @@ background: /examples.jpeg
 <!-- Web developers can benefit from Dev-Containers by ensuring consistent environments and avoiding dependency conflicts. -->
 
 ---
-
-# Example: Full-Stack Dev-Container
-
-```json {*}{maxHeight:'250px'}
-// filepath: .devcontainer/devcontainer.json
-{
-  "name": "Full-Stack Dev Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:7.0",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:1": {},
-    "ghcr.io/devcontainers/features/postgres:1": {
-      "version": "15",
-      "database": "mydb",
-      "user": "admin",
-      "password": "password"
-    },
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "22"
-    }
-  },
-  "postCreateCommand": "dotnet restore && npm install",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-dotnettools.csharp",
-        "ms-azuretools.vscode-azurefunctions",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-      ]
-    }
-  },
-  "settings": {
-    "azureFunctions.projectLanguage": "C#",
-    "azureFunctions.projectRuntime": "~4"
-  },
-  "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-  ],
-  "remoteUser": "vscode"
-}
-```
+src: special-slides/full-stack-devcontainer.md
+---
 
 <v-clicks>
 

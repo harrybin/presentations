@@ -1,0 +1,253 @@
+---
+title: "Example: Full-Stack Dev-Container"
+---
+
+<h1 class="h-auto!" > Example: Full-Stack Dev-Container	</h1>
+
+````md magic-move
+```json
+// filepath: .devcontainer/devcontainer.json
+{
+  "name": "Full-Stack Dev Container",
+  "image": 
+}
+```
+<!-- dotnet image -->
+```json {4-5}
+// filepath: .devcontainer/devcontainer.json
+{
+  "name": "Full-Stack Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0", 
+  "postCreateCommand": "dotnet restore",
+}
+```
+<!-- vscode and settings -->
+```json {6-11|12}
+// filepath: .devcontainer/devcontainer.json
+{ 
+  "name": "Full-Stack Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0", 
+  "postCreateCommand": "dotnet restore",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "dbaeumer.vscode-eslint",
+      ],
+      "settings": {},
+    }
+  }, 
+}
+```
+<!-- node -->
+```json {5-9}
+// filepath: .devcontainer/devcontainer.json
+{
+  "name": "Full-Stack Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
+  "features": {    
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "postCreateCommand": "dotnet restore",
+  "customizations": { ... },
+}
+```
+<!-- node npm install -->
+```json {10}
+// filepath: .devcontainer/devcontainer.json
+{
+  "name": "Full-Stack Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
+  "features": {    
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "postCreateCommand": "dotnet restore && npm install",
+  "customizations": { ... },
+}
+```
+<!-- port forwards -->
+```json {13}
+// filepath: .devcontainer/devcontainer.json
+{ ...
+  "features": {    
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+  }},  
+  "postCreateCommand": "dotnet restore && npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+  }},}
+```
+<!-- node extensions -->
+```json {9}
+// filepath: .devcontainer/devcontainer.json
+{ ...
+  "features": {    
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+  }},  
+  "postCreateCommand": "dotnet restore && npm install",
+  "customizations": { ... },
+  "forwardPorts": [3000,4321],		
+}
+```
+<!-- mounts and remote user -->
+```json {10-14}
+// filepath: .devcontainer/devcontainer.json
+{ ...
+   "features": {    
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+  }},
+  "postCreateCommand": "dotnet restore && npm install",
+  "customizations": { ... },
+  "forwardPorts": [3000,4321],
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/host-home-folder,type=bind",
+    "source=${localWorkspaceFolder}/app-data,target=/data,type=bind,consistency=cached"
+  ],
+  "remoteUser": "vscode"
+}
+```
+<!-- postgres -->
+```json {4-9}
+// filepath: .devcontainer/devcontainer.json
+{ ...
+  "features": {
+    "ghcr.io/devcontainers/features/postgres:1": {
+      "version": "15",
+      "database": "mydb",
+      "user": "admin",
+      "password": "password"
+    },
+    "ghcr.io/devcontainers/features/node:1": { ... }
+  },
+  "postCreateCommand": "dotnet restore",
+  "customizations": { ... },
+  "forwardPorts": [3000,4321],
+  "mounts": [ ... ],
+  "remoteUser": "vscode"
+}
+```
+<!-- azureFunctions -->
+```json {11-14}
+// filepath: .devcontainer/devcontainer.json
+{ ...
+  "features": {
+    "ghcr.io/devcontainers/features/postgres:1": { ...},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "postCreateCommand": "dotnet restore",
+  "customizations": { ... },
+  "settings": {
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4"
+  },
+  "forwardPorts": [3000,4321],
+  "mounts": [ ... ],
+  "remoteUser": "vscode",  
+}
+```
+````
+
+<!-- Notes -->
+<!--
+lets' create a devcontainer for a full-stack project
+
+[click] start with BE, so use a .NET image
+
+[click] add proper VSCode extensions for C# 
+
+[click] add VSCode settings if your like
+
+[click] now we add node
+
+[click] add auto install npm packages
+
+[click] add web-dev VSCode extensions
+
+[click] add forward ports for web-dev, and maybe for the BE
+
+[click] add need mounts and remote user
+
+[click] add postgres feature
+
+[click] add azure functions support
+
+- **Web Frontend**: Node.js and npm for frontend development
+- **C# Backend**: .NET 7.0 environment for backend services
+- **PostgreSQL Database**: Pre-configured PostgreSQL database
+- **Azure Functions**: Ready-to-use Azure Functions support
+- **Extensions**: Includes necessary VS Code extensions for full-stack development
+
+
+ This example demonstrates how to set up a Dev-Container for a full-stack project, including a web frontend, C# backend, PostgreSQL database, and Azure Functions. 
+ -->
+---
+title: "Full Example: Full-Stack Dev-Container"
+---
+
+<h1 class="h-auto!" > Full Example: Full-Stack Dev-Container </h1>
+
+```json {*}{maxHeight:'400px'}
+// filepath: .devcontainer/devcontainer.json
+{
+  "name": "Full-Stack Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
+  "features": {
+    "ghcr.io/devcontainers/features/postgres:1": {
+      "version": "15",
+      "database": "mydb",
+      "user": "admin",
+      "password": "password"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "postCreateCommand": "dotnet restore && npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-azuretools.vscode-azurefunctions",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "settings": {
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4"
+  },
+  "forwardPorts": [3000,4321],
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/host-home-folder,type=bind",
+    "source=${localWorkspaceFolder}/app-data,target=/data,type=bind,consistency=cached"
+  ],
+  "remoteUser": "vscode"
+}
+```
+
+<!-- Notes -->
+<!--
+- **Web Frontend**: Node.js and npm for frontend development
+- **C# Backend**: .NET 7.0 environment for backend services
+- **PostgreSQL Database**: Pre-configured PostgreSQL database
+- **Azure Functions**: Ready-to-use Azure Functions support
+- **Extensions**: Includes necessary VS Code extensions for full-stack development
+
+
+ This example demonstrates how to set up a Dev-Container for a full-stack project, including a web frontend, C# backend, PostgreSQL database, and Azure Functions. 
+ -->
