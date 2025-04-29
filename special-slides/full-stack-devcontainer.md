@@ -69,7 +69,7 @@ title: "Example: Full-Stack Dev-Container"
   "customizations": { ... },
 }
 ```
-<!-- port forwards -->
+<!-- node extensions -->
 ```json {13}
 // filepath: .devcontainer/devcontainer.json
 { ...
@@ -78,39 +78,26 @@ title: "Example: Full-Stack Dev-Container"
       "version": "22"
   }},  
   "postCreateCommand": "dotnet restore && npm install",
-  "customizations": {
+   "customizations": {
     "vscode": {
       "extensions": [
         "ms-dotnettools.csharp",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode"
       ]
-  }},}
-```
-<!-- node extensions -->
-```json {9}
-// filepath: .devcontainer/devcontainer.json
-{ ...
-  "features": {    
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "22"
-  }},  
-  "postCreateCommand": "dotnet restore && npm install",
-  "customizations": { ... },
-  "forwardPorts": [3000,4321],		
+  }},
 }
 ```
-<!-- mounts and remote user -->
-```json {10-14}
+<!-- mounts -->
+```json {9-13}
 // filepath: .devcontainer/devcontainer.json
 { ...
    "features": {    
     "ghcr.io/devcontainers/features/node:1": {
       "version": "22"
   }},
-  "postCreateCommand": "dotnet restore && npm install",
+  "postCreateCommand": "dotnet restore",
   "customizations": { ... },
-  "forwardPorts": [3000,4321],
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/host-home-folder,type=bind",
     "source=${localWorkspaceFolder}/app-data,target=/data,type=bind,consistency=cached"
@@ -133,7 +120,6 @@ title: "Example: Full-Stack Dev-Container"
   },
   "postCreateCommand": "dotnet restore",
   "customizations": { ... },
-  "forwardPorts": [3000,4321],
   "mounts": [ ... ],
   "remoteUser": "vscode"
 }
@@ -154,7 +140,6 @@ title: "Example: Full-Stack Dev-Container"
     "azureFunctions.projectLanguage": "C#",
     "azureFunctions.projectRuntime": "~4"
   },
-  "forwardPorts": [3000,4321],
   "mounts": [ ... ],
   "remoteUser": "vscode",  
 }
@@ -169,17 +154,13 @@ lets' create a devcontainer for a full-stack project
 
 [click] add proper VSCode extensions for C# 
 
-[click] add VSCode settings if your like
-
 [click] now we add node
 
 [click] add auto install npm packages
 
 [click] add web-dev VSCode extensions
 
-[click] add forward ports for web-dev, and maybe for the BE
-
-[click] add need mounts and remote user
+[click] add need mounts
 
 [click] add postgres feature
 
@@ -231,7 +212,6 @@ title: "Full Example: Full-Stack Dev-Container"
     "azureFunctions.projectLanguage": "C#",
     "azureFunctions.projectRuntime": "~4"
   },
-  "forwardPorts": [3000,4321],
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/host-home-folder,type=bind",
     "source=${localWorkspaceFolder}/app-data,target=/data,type=bind,consistency=cached"
