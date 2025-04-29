@@ -1,5 +1,6 @@
 ---
 title: "Example: Full-Stack Dev-Container"
+hideInToc: true
 ---
 
 <h1 class="h-auto!" > Example: Full-Stack Dev-Container	</h1>
@@ -157,11 +158,12 @@ lets' create a devcontainer for a full-stack project
  -->
 ---
 title: "Full Example: Full-Stack Dev-Container"
+hideInToc: true
 ---
 
 <h1 class="h-auto!" > Full Example: Full-Stack Dev-Container </h1>
 
-```json {*}{maxHeight:'400px'}
+```json {*}{lines:true,maxHeight:'400px'}
 // filepath: .devcontainer/devcontainer.json
 {
   "name": "Full-Stack Dev Container",

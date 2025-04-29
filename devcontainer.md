@@ -34,11 +34,11 @@ src: special-slides/speaker.md
 ---
 layout: image-right
 background: /compass-right.png
-title: Agenda / Expectations
+title: Agenda
 hideInToc: true
 ---
 
-# Agenda / Expectations
+<h1 class="h-auto!"> Agenda </h1>
 
 <div class="ml-16">
 
@@ -72,9 +72,10 @@ layout: two-column
 
 - **Visual Studio Code**
 - GitHub Codespaces
-- JetBrains IDEs (via plugins)
-- Eclipse Theia
-- IntelliJ IDEA (with Docker support)
+- Visual Studio (2022+)
+- JetBrains IDEs (IntelliJ IDEA)
+- CodeSandbox
+- [more...](https://containers.dev/supporting)
 </v-click>
 
 <!-- Notes -->
@@ -86,7 +87,7 @@ layout: two-column
 ---
 layout: two-column
 ---
-# Performance Considerations
+# Development Performance Considerations
 
 ::left::
 
@@ -139,9 +140,8 @@ background: /devcontainer2.jpeg
   _(Docker Toolbox is not supported. Windows container images are not supported.)_
   - **macOS**: Docker Desktop 2.0+.
   - **Linux**: Docker CE/EE 18.06+ and Docker Compose 1.21+. (The Ubuntu snap package is not supported.
-- **Visual Studio Code**: Install VS-Code as the primary IDE
-- **Dev Containers Extension**: Add the "Dev Containers" extension in VS-Code
-- **Git**: Have Git installed for version control
+- **Visual Studio Code**: Install VS-Code or any other supporting IDE
+  - **Dev Containers Extension**: Add the "Dev Containers" extension in VS-Code
 - **Access to Container Images**: Ensure access to required container registries (e.g., Docker Hub)
 
 </v-clicks>
@@ -212,6 +212,7 @@ background: /devcontainer_move.jpeg
 ---
 layout: image-right-dark
 background: /code-right.png
+hideInToc: true
 ---
 # Demo
 
@@ -242,7 +243,7 @@ background: /code-right.png
 
 ---
 layout: image-right
-background: /examples.jpeg
+background: /bulb.jpeg
 ---
 
 # Examples for Dev-Containers
@@ -261,7 +262,8 @@ background: /examples.jpeg
 <!-- Dev-Containers are versatile and can be used across various domains, from web development to embedded systems. -->
 
 ---
-
+hideInToc: true
+---
 
 # Typical Usage: Web Development
 
@@ -275,9 +277,6 @@ background: /examples.jpeg
 {
   "name": "Node.js Dev Container",
   "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
-  },
   "postCreateCommand": "npm install",
   "customizations": {
     "vscode": {
@@ -287,9 +286,6 @@ background: /examples.jpeg
       ]
     }
   },
-  "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-  ],
   "remoteUser": "node"
 }
 ```
@@ -301,43 +297,24 @@ background: /examples.jpeg
 src: special-slides/full-stack-devcontainer.md
 ---
 
-<v-clicks>
-
-- **Web Frontend**: Node.js and npm for frontend development
-- **C# Backend**: .NET 7.0 environment for backend services
-- **PostgreSQL Database**: Pre-configured PostgreSQL database
-- **Azure Functions**: Ready-to-use Azure Functions support
-- **Extensions**: Includes necessary VS-Code extensions for full-stack development
-
-</v-clicks>
-
-<!-- Notes -->
-<!-- This example demonstrates how to set up a Dev-Container for a full-stack project, including a web frontend, C# backend, PostgreSQL database, and Azure Functions. -->
+<!-- full-stack-devcontainer-md -->
 
 ---
+title: "Example: Data Science Dev-Container"
+hideInToc: true
+---
 
-# Example: Data Science Dev-Container
+<h1 class="h-auto!"> Example: Data Science Dev-Container </h1>
 
-```json {*}{maxHeight:'250px'}
+```json {*|13}{maxHeight:'250px'}
 // filepath: .devcontainer/devcontainer.json
 {
   "name": "Data Science Dev Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
-  
-    "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",  
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "postCreateCommand": "pip install -r requirements.txt",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-toolsai.jupyter",
-        "ms-toolsai.jupyter-keymap",
-        "ms-toolsai.jupyter-renderers"
-      ]
-    }
-  },
   "settings": {
     "python.pythonPath": "/usr/local/bin/python"
   },
@@ -353,13 +330,193 @@ src: special-slides/full-stack-devcontainer.md
 - **Python**: Pre-installed Python 3.9 environment
 - **Jupyter Notebooks**: Ready-to-use Jupyter Notebook support
 - **Dependencies**: Install additional Python libraries via `requirements.txt`
-- **Extensions**: Includes Python and Jupyter extensions for VS-Code
+- **Docker-in-Docker**: Run Docker commands within the container
+- **Mounts**: Bind mount the Docker socket for Docker-in-Docker support
 
 </v-clicks>
 
 <!-- Notes -->
 <!-- This example demonstrates how to set up a Dev-Container for data science projects, including Python, Jupyter, and other dependencies. -->
 
+---
+
+# Available Dev-Container Features
+
+<v-clicks>
+
+- [Azure CLI	Dev Container](https://github.com/devcontainers/features/tree/main/src/azure-cli) ➡️	`ghcr.io/devcontainers/features/azure-cli:1`
+- [Common Utilities](https://github.com/devcontainers/features/tree/main/src/common-utils) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ➡️ `ghcr.io/devcontainers/features/common-utils:2` 
+- [Docker (Docker-in-Docker)](https://github.com/devcontainers/features/tree/main/src/docker-in-docker) ➡️ `ghcr.io/devcontainers/features/docker-in-docker:2`
+- [PowerShell](https://github.com/devcontainers/features/tree/main/src/powershell) ➡️ `ghcr.io/devcontainers/features/powershell:1`
+- [k6](https://github.com/dhoeric/features/tree/main/src/k6) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ➡️ `ghcr.io/dhoeric/features/k6:1`
+- [Postman](https://github.com/frntn/devcontainers-features) ➡️ `ghcr.io/frntn/devcontainers-features/postman:1`
+
+<br/>
+
+- [more ... https://containers.dev/features](https://containers.dev/features)
+
+</v-clicks>
+
+<v-click>
+
+```json
+{
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+}
+```
+
+</v-click>
+
+<!-- Notes -->
+<!-- 
+small selection of https://containers.dev/features
+-->
+
+---
+
+# Environment variables
+
+**containerEnv**: apply to the entire containe
+
+```json
+"containerEnv": {
+    "MY_CONTAINER_VAR": "some-value-here",
+    "MY_CONTAINER_VAR2": "${localEnv:SOME_LOCAL_VAR}"
+}
+```
+
+<br/>
+<v-click>
+
+**remoteEnv**: variables for VS Code and related sub-processes (terminals, tasks, debugging, etc.)
+
+```json
+"remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/some/other/path",
+    "MY_REMOTE_VARIABLE": "some-other-value-here",
+    "MY_REMOTE_VARIABLE2": "${localEnv:SOME_LOCAL_VAR}"
+}
+```
+</v-click>
+
+<!-- Notes -->
+<!-- 
+root level setting
+-->
+
+---
+layout: image-left
+background: /wsl_pinguin.jpeg
+---
+
+# A Special Dev-Container
+
+## WSL (Windows Subsystem for Linux)
+
+<v-click>
+
+- Windows 10 2004 and up (WSL 2)
+- Docker Desktop 2.3+ includes WSL 2 Engine
+- WSL 2 = full Linux kernel
+  
+</v-click>
+
+<br/>
+
+<v-click>
+
+## Benefits
+- better **performance**
+- system integration 
+    - Explorer
+    - VS-Code (remote Explorer)
+    - Windows Terminal
+    - WSL commands
+    - UI apps from Linux (e.g. Firefox, Chrome, etc.)
+
+</v-click>
+
+<!-- Notes -->
+<!-- 
+-->
+
+---
+title: Performance Tweeks
+---
+
+<h1 class="h-auto!"> Performance Tweeks </h1>
+
+- Use WSL
+- Clone Repository in Container Volume
+- Use a targeted named volume
+  - folders like `node_modules`, data folders, or output folder  
+  ```json
+  "remoteUser": "node",
+  "mounts": [
+      "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+  "postCreateCommand": "sudo chown node node_modules"
+  ```
+- Use a named volume for your entire source tree
+  ```json
+  "workspaceMount": "source=your-volume-name-here,target=/workspace,type=volume"
+  "workspaceFolder": "/workspace",
+  ```
+
+---
+title: Docker
+---
+
+<h1 class="h-auto!"> Docker </h1>
+
+## Dockerfile based
+
+```json
+{
+  "build": {
+    "context": ".",
+    "dockerfile": "Dockerfile",
+    "args": {
+      "NODE_VERSION": "18",
+      "PYTHON_VERSION": "3.9"
+    },
+    "target": "development",
+    "cacheFrom": [
+      "type=registry,ref=myregistry.com/myimage:cache"
+    ]
+  },
+}
+```
+
+---
+title: Docker Compose
+---
+
+<h1 class="h-auto!">  Docker Compose</h1>
+
+```json
+{
+  "name": "Full-Stack Dev Container",
+  "dockerComposeFile": [
+    "docker-compose.yml",
+    "docker-compose.override.yml"
+  ],
+  "service": "app",
+  "runServices": [
+    "app",
+    "db"
+  ],
+  "workspaceFolder": "/workspace",
+}
+```
+
+ The `image` and `dockerfile properties` are not needed since Docker Compose supports them natively
+
+
+---
+hideInToc: true
 ---
 
 # Conclusion
