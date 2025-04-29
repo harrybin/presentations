@@ -4,6 +4,12 @@
 	"name": "Node.js & TypeScript",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"runArgs": [
+		"--name",
+		"harrybin-presentations",
+		"--sysctl", // disable IPv6 as vite server does not support it: workaround for issue with vite in devcontainers: https://github.com/vitejs/vite/issues/16522
+		"net.ipv6.conf.all.disable_ipv6=1"
+	],
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -11,11 +17,19 @@
 		3030,
 		3031,
 		3032
-	]
+	],
+	"remoteUser": "node",
+	"mounts": [
+		"source=${localEnv:HOME}/.npmrc,target=/home/node/.npmrc,type=bind", // Mount .npmrc from local machine
+		"source=${localEnv:USERPROFILE}\\.npmrc,target=/home/node/.npmrc,type=bind", // For Windows compatibility
+		// Mount docker volumnes for node_modules and dist folders to speed up compared with local folder sync
+		"source=${localWorkspaceFolderBasename}-dist,target=${containerWorkspaceFolder}/dist,type=volume",
+		"source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+	],
 	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "sudo chown node dist && sudo chown node node_modules && npm install"
 	// "postCreateCommand": "yarn install",
 	// Configure tool-specific properties.
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }

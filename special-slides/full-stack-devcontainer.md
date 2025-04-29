@@ -21,7 +21,7 @@ title: "Example: Full-Stack Dev-Container"
   "postCreateCommand": "dotnet restore",
 }
 ```
-<!-- vscode and settings -->
+<!-- VS-Code and settings -->
 ```json {6-11|12}
 // filepath: .devcontainer/devcontainer.json
 { 
@@ -124,26 +124,6 @@ title: "Example: Full-Stack Dev-Container"
   "remoteUser": "vscode"
 }
 ```
-<!-- azureFunctions -->
-```json {11-14}
-// filepath: .devcontainer/devcontainer.json
-{ ...
-  "features": {
-    "ghcr.io/devcontainers/features/postgres:1": { ...},
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "22"
-    }
-  },
-  "postCreateCommand": "dotnet restore",
-  "customizations": { ... },
-  "settings": {
-    "azureFunctions.projectLanguage": "C#",
-    "azureFunctions.projectRuntime": "~4"
-  },
-  "mounts": [ ... ],
-  "remoteUser": "vscode",  
-}
-```
 ````
 
 <!-- Notes -->
@@ -152,13 +132,13 @@ lets' create a devcontainer for a full-stack project
 
 [click] start with BE, so use a .NET image
 
-[click] add proper VSCode extensions for C# 
+[click] add proper VS-Code extensions for C# 
 
 [click] now we add node
 
 [click] add auto install npm packages
 
-[click] add web-dev VSCode extensions
+[click] add web-dev VS-Code extensions
 
 [click] add need mounts
 
@@ -170,7 +150,7 @@ lets' create a devcontainer for a full-stack project
 - **C# Backend**: .NET 7.0 environment for backend services
 - **PostgreSQL Database**: Pre-configured PostgreSQL database
 - **Azure Functions**: Ready-to-use Azure Functions support
-- **Extensions**: Includes necessary VS Code extensions for full-stack development
+- **Extensions**: Includes necessary VS-Code extensions for full-stack development
 
 
  This example demonstrates how to set up a Dev-Container for a full-stack project, including a web frontend, C# backend, PostgreSQL database, and Azure Functions. 
@@ -202,15 +182,10 @@ title: "Full Example: Full-Stack Dev-Container"
     "vscode": {
       "extensions": [
         "ms-dotnettools.csharp",
-        "ms-azuretools.vscode-azurefunctions",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode"
       ]
     }
-  },
-  "settings": {
-    "azureFunctions.projectLanguage": "C#",
-    "azureFunctions.projectRuntime": "~4"
   },
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/host-home-folder,type=bind",
@@ -225,9 +200,8 @@ title: "Full Example: Full-Stack Dev-Container"
 - **Web Frontend**: Node.js and npm for frontend development
 - **C# Backend**: .NET 7.0 environment for backend services
 - **PostgreSQL Database**: Pre-configured PostgreSQL database
-- **Azure Functions**: Ready-to-use Azure Functions support
-- **Extensions**: Includes necessary VS Code extensions for full-stack development
+- **Extensions**: Includes necessary VS-Code extensions for full-stack development
 
 
- This example demonstrates how to set up a Dev-Container for a full-stack project, including a web frontend, C# backend, PostgreSQL database, and Azure Functions. 
+ This example demonstrates how to set up a Dev-Container for a full-stack project, including a web frontend, C# backend, and a PostgreSQL database. 
  -->

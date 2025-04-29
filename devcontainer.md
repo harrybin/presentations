@@ -134,13 +134,13 @@ background: /devcontainer2.jpeg
 
 <v-clicks>
 
-- **Docker**: Docker is installed and running on your system
+- **Docker**: Docker is installed and **_running_** on your system
   - **Windows**: Docker Desktop 2.0+ on Windows 10 Pro/Enterprise. Windows 10 Home (2004+) requires Docker Desktop 2.3+ and the WSL 2 back-end. 
   _(Docker Toolbox is not supported. Windows container images are not supported.)_
   - **macOS**: Docker Desktop 2.0+.
   - **Linux**: Docker CE/EE 18.06+ and Docker Compose 1.21+. (The Ubuntu snap package is not supported.
-- **Visual Studio Code**: Install VS Code as the primary IDE
-- **Dev Containers Extension**: Add the "Dev Containers" extension in VS Code
+- **Visual Studio Code**: Install VS-Code as the primary IDE
+- **Dev Containers Extension**: Add the "Dev Containers" extension in VS-Code
 - **Git**: Have Git installed for version control
 - **Access to Container Images**: Ensure access to required container registries (e.g., Docker Hub)
 
@@ -161,7 +161,7 @@ layout: image-right
 background: /devcontainer_move.jpeg
 ---
 
-# Configuring Dev-Containers in VS Code
+# Configuring Dev-Containers in VS-Code
 
 <br/>
 <v-click>
@@ -183,7 +183,7 @@ layout: image-left
 background: /devcontainer_move.jpeg
 ---
 
-# VSCode assisted Devcontainer creation
+# VS-Code assisted Devcontainer creation
 
 
 
@@ -198,7 +198,7 @@ background: /devcontainer_move.jpeg
 <br/>
 <v-click>
 
-- VS Code will generate the necessary files for you
+- VS-Code will generate the necessary files for you
 </v-click>
 <br/>
 <v-click> 
@@ -225,21 +225,20 @@ background: /code-right.png
 <!-- Let's dive into the practical benefits of using Dev-Containers in your projects. -->
 ---
 
-# Configuration Options?
+# Configuration Options
 
 <v-clicks>
 
+- **VS-Code Extensions**: Install VS-Code extensions that enhance your workflow.
+- **VS-Code Settings**: Configure settings specific to the container environment.
 - **Environment Variables**: Customize your development environment with specific variables.
-- **Extensions**: Install VS Code extensions that enhance your workflow.
 - **Post-Create Commands**: Run scripts or commands after the container is created to set up your environment.
 - **Volume Mounts**: Persist data by mounting host directories into the container.
 - **Custom Dockerfile**: Use a custom Dockerfile for more control over the container image.
 - **Remote User**: Specify the user that the container should run as.
-- **Settings**: Configure VS Code settings specific to the container environment.
 
 </v-clicks>
 
-# TODO
 
 ---
 layout: image-right
@@ -308,7 +307,7 @@ src: special-slides/full-stack-devcontainer.md
 - **C# Backend**: .NET 7.0 environment for backend services
 - **PostgreSQL Database**: Pre-configured PostgreSQL database
 - **Azure Functions**: Ready-to-use Azure Functions support
-- **Extensions**: Includes necessary VS Code extensions for full-stack development
+- **Extensions**: Includes necessary VS-Code extensions for full-stack development
 
 </v-clicks>
 
@@ -354,7 +353,7 @@ src: special-slides/full-stack-devcontainer.md
 - **Python**: Pre-installed Python 3.9 environment
 - **Jupyter Notebooks**: Ready-to-use Jupyter Notebook support
 - **Dependencies**: Install additional Python libraries via `requirements.txt`
-- **Extensions**: Includes Python and Jupyter extensions for VS Code
+- **Extensions**: Includes Python and Jupyter extensions for VS-Code
 
 </v-clicks>
 
