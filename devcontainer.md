@@ -131,7 +131,7 @@ background: /devcontainer2.jpeg
 hideInToc: true
 ---
 
-# Prerequisites for Dev-Containers
+# Prerequisites
 
 
 <v-clicks>
@@ -162,7 +162,7 @@ layout: image-right
 background: /devcontainer_move.jpeg
 ---
 
-# Configuring Dev-Containers in VS-Code
+# Configuring
 
 <br/>
 <v-click>
@@ -247,7 +247,7 @@ layout: image-right
 background: /bulb.jpeg
 ---
 
-# Examples for Dev-Containers
+# Examples
 
 <v-clicks>
 
@@ -341,7 +341,7 @@ hideInToc: true
 
 ---
 
-# Available Dev-Container Features
+# Available Features
 
 <v-clicks>
 

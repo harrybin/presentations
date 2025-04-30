@@ -207,3 +207,19 @@ hideInToc: true
 
  This example demonstrates how to set up a Dev-Container for a full-stack project, including a web frontend, C# backend, and a PostgreSQL database. 
  -->
+
+---
+layout: image-right-dark
+background: /code-right.png
+hideInToc: true
+---
+# Demo - Container-Ship
+
+<BlobText width="450" height="300">
+<h1> Full-Stack Dev-Container </h1>
+</BlobText>
+
+
+
+<!-- Notes -->
+<!-- Let's dive into the practical benefits of using Dev-Containers in your projects. -->
