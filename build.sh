@@ -1,7 +1,10 @@
 #!/bin/bash
 
+sudo mkdir -p /dist
+sudo chmod -R 777 /dist
+
 #build the main overview/index slide
-slidev build slides.md
+npx slidev build slides.md
 
 # Function to build slides for each markdown file in the root folder, excluding README.md and slides.md
 build_slides() {
