@@ -8,7 +8,7 @@ build_slides() {
   for file in *.md; do
     if [[ "$file" != "README.md" && "$file" != "slides.md" ]]; then
       local output_dir="${file%.md}"
-      slidev build --out "/dist/$output_dir" --base "/$output_dir" "$file"
+      npx slidev build --out "/dist/$output_dir" --base "/$output_dir" "$file"
     fi
   done
 }
