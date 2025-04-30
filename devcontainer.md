@@ -128,6 +128,7 @@ layout: two-column
 ---
 layout: image-right
 background: /devcontainer2.jpeg
+hideInToc: true
 ---
 
 # Prerequisites for Dev-Containers
