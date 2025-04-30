@@ -7,7 +7,16 @@ hideInToc: true
 ---
 
 <!-- issue in theme. See: https://github.com/xebia/presentation-templates/issues/12 -->
-<h1 class="h-auto!">Thank you</h1>
+<h1 class="h-auto! mt--170px"> Thank you</h1>
+
+<br/>
+
+<QRCode class="ml-40px"
+  value="https://presentations.harrybin.de/"
+  :width="250"
+  :height="250"
+  image="logo.svg"
+/>
 
 <!-- 
 Thank you for joining this session. 

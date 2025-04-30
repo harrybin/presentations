@@ -28,6 +28,7 @@
     "seedrandom": "^3.0.5"
   },
   "dependencies": {
+    "@katzumi/slidev-addon-qrcode": "^0.0.17",
     "@slidev/cli": "^51.6.0",
     "@slidev/client": "^51.6.0",
     "@slidev/theme-default": "^0.25.0",
