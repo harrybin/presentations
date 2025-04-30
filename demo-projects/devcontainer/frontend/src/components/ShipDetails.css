@@ -1,0 +1,145 @@
+.ship-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.back-button {
+  background-color: #e5e7eb;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-button:hover {
+  background-color: #d1d5db;
+}
+
+.ship-details-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+}
+
+.ship-details-card h2 {
+  color: #1e3a8a;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.detail-item .label {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-bottom: 5px;
+}
+
+.detail-item .value {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.calculate-section {
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.calculate-section h3 {
+  color: #1e3a8a;
+  margin-top: 0;
+}
+
+.calculate-button {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calculate-button:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.calculate-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.volume-result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #dbeafe;
+  border-radius: 4px;
+}
+
+.volume-result h4 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+.volume-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.containers-section h3 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.containers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.containers-table th,
+.containers-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.containers-table th {
+  background-color: #f9fafb;
+  font-weight: 500;
+}
+
+.containers-table tr:hover {
+  background-color: #f9fafb;
+}
+
+.error-container {
+  text-align: center;
+  padding: 20px;
+}

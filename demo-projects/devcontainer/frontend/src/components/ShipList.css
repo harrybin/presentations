@@ -1,0 +1,62 @@
+.ship-list {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ship-list h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.ship-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.ship-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.ship-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ship-card h3 {
+  color: #1e3a8a;
+  margin-top: 0;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.ship-details {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.ship-details p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.view-details-btn {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.view-details-btn:hover {
+  background-color: #2563eb;
+}

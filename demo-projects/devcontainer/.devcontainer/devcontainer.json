@@ -1,0 +1,30 @@
+{
+    "name": "Full-Stack Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22"
+        }
+    },
+    "forwardPorts": [
+        3000,
+        5139
+    ],
+    "postCreateCommand": "cd backend && dotnet restore && cd .. && cd frontend && sudo chown vscode node_modules && npm install",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.csdevkit",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.npmrc,target=/home/node/.npmrc,type=bind", // Mount .npmrc from local machine
+        "source=${localEnv:USERPROFILE}\\.npmrc,target=/home/node/.npmrc,type=bind", // For Windows compatibility
+        "source=frontend-node_modules,target=/workspaces/presentations/demo-projects/devcontainer/frontend/node_modules,type=volume" // Mount node_modules for performance
+    ],
+    "remoteUser": "vscode"
+}

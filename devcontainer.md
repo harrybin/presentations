@@ -294,7 +294,7 @@ hideInToc: true
 <!-- Web developers can benefit from Dev-Containers by ensuring consistent environments and avoiding dependency conflicts. -->
 
 ---
-src: special-slides/full-stack-devcontainer.md
+src: special-slides/devcontainer/full-stack-devcontainer.md
 ---
 
 <!-- full-stack-devcontainer-md -->

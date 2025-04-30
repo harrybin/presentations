@@ -111,7 +111,7 @@ hideInToc: true
 // filepath: .devcontainer/devcontainer.json
 { ...
   "features": {
-    "ghcr.io/devcontainers/features/postgres:1": {
+    "ghcr.io/itsmechlark/features/postgresql:1": {
       "version": "15",
       "database": "mydb",
       "user": "admin",
@@ -169,7 +169,7 @@ hideInToc: true
   "name": "Full-Stack Dev Container",
   "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
   "features": {
-    "ghcr.io/devcontainers/features/postgres:1": {
+    "ghcr.io/itsmechlark/features/postgresql:1": {
       "version": "15",
       "database": "mydb",
       "user": "admin",

@@ -1,0 +1,62 @@
+# Node.js / React
+node_modules/
+frontend/*/node_modules/
+frontend/*/build/
+frontend/*/.env
+frontend/*/.env.*
+frontend/*/npm-debug.log*
+frontend/*/yarn-debug.log*
+frontend/*/yarn-error.log*
+frontend/*/.pnpm-debug.log*
+frontend/*/.DS_Store
+frontend/*/coverage
+frontend/*/.idea/
+
+# .NET Core / C#
+bin/
+obj/
+**/*.swp
+**/*.user
+**/*.userosscache
+**/*.sln.docstates
+**/[Bb]in/
+**/[Oo]bj/
+.vs/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+**/*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+**/.sass-cache/
+**/BenchmarkDotNet.Artifacts/
+**/*.Server.GeneratedMSBuildEditorConfig.editorconfig
+**/*.Server.AssemblyAttributes.cs
+StyleCop.Cache
+**/Properties/PublishProfiles/
+**/Properties/ServiceDependencies/
+
+# SQLite
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
+
+# Development
+app-data/
+
+# Logs
+logs
+*.log
+
+# OS specific
+.DS_Store
+Thumbs.db
