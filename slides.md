@@ -20,6 +20,7 @@ glowEnabled: true
 layout: image-right
 background: /logo.svg
 backgroundSize: 90%
+hideInToc: true
 ---
 
 # Presentation Overview

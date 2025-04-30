@@ -35,6 +35,8 @@ src: special-slides/speaker.md
 
 <!-- speaker -->
 ---
+hideInToc: true
+---
 
 # TODO
 # TODO

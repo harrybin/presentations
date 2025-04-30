@@ -43,7 +43,7 @@ hideInToc: true
 
 <div class="ml-16">
 
-<Toc minDepth="1" maxDepth="1" />
+<Toc minDepth="1" maxDepth="1"/>
 
 </div>
 
