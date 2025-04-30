@@ -23,7 +23,7 @@ backgroundSize: 90%
 ---
 
 # Presentation Overview
- <Link to="webappLocalization" title="WebApp-Localization"/> - DWX (Juli 2025)
+ <!-- <Link to="webappLocalization" title="WebApp-Localization"/> - DWX (Juli 2025) -->
 
  <br/>
  <br/>
