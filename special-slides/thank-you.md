@@ -11,10 +11,8 @@ hideInToc: true
 
 <br/>
 
-<!-- Route: {{$slidev.configs.routeAlias}} -->
-
 <QRCode class="ml-40px"
-  value="https://presentations.harrybin.de/"
+  :value="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}`"
   :width="250"
   :height="250"
   image="logo.svg"
