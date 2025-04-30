@@ -21,20 +21,13 @@ layout: image-right
 background: /logo.svg
 backgroundSize: 90%
 hideInToc: true
+routeAlias: index
 ---
 
 # Presentation Overview
- <!-- <Link to="webappLocalization" title="WebApp-Localization"/> - DWX (Juli 2025) -->
+ <!-- [WebApp-Localization - DWX (Juli 2025)](./webappLocalization) -->
 
  <br/>
  <br/>
 
  [Devcontainer - Magdeburger Developer Days (Mai 2025)](./devcontainer)
-
----
-src: webappLocalization.md
----
-
----
-src: devcontainer.md
----

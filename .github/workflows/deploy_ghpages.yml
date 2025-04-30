@@ -41,6 +41,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: remove REAMDE folder
+        run: rm .rfd ./dist/README
+
       - name: move (wrapper) slide to root
         run: mv ./dist/slides/* ./dist/
 
