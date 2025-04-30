@@ -1,7 +1,9 @@
 #!/bin/bash
 
-sudo mkdir -p /dist
-sudo chmod -R 777 /dist
+sudo rm -rf ./dist
+
+sudo mkdir -p ./dist
+sudo chmod -R 777 ./dist
 
 #build the main overview/index slide
 npx slidev build slides.md
@@ -11,7 +13,7 @@ build_slides() {
   for file in *.md; do
     if [[ "$file" != "README.md" && "$file" != "slides.md" ]]; then
       local output_dir="${file%.md}"
-      npx slidev build --out "/dist/$output_dir" --base "/$output_dir" "$file"
+      npx slidev build --out "./dist/$output_dir" --base "/$output_dir" "$file"
     fi
   done
 }
