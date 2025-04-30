@@ -25,9 +25,9 @@ routeAlias: index
 ---
 
 # Presentation Overview
- <!-- [WebApp-Localization - DWX (Juli 2025)](./webappLocalization) -->
+ <!-- [WebApp-Localization - DWX (Juli 2025)](./webappLocalization/) -->
 
  <br/>
  <br/>
 
- [Devcontainer - Magdeburger Developer Days (Mai 2025)](./devcontainer)
+ [Devcontainer - Magdeburger Developer Days (Mai 2025)](./devcontainer/)
