@@ -39,7 +39,7 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Build project
-        run: npm run build
+        run: chmod +x ./build.sh && ./build.sh
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
