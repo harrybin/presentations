@@ -42,7 +42,10 @@
             "type": "shell",
             "command": "dotnet run --urls=http://localhost:5139/",
             "options": {
-                "cwd": "${workspaceFolder}/backend"
+                "cwd": "${workspaceFolder}/backend",
+                "statusbar": {
+                    "color": "#00ff2a"
+                }
             },
             "group": "build",
             "problemMatcher": []
@@ -52,7 +55,10 @@
             "type": "shell",
             "command": "npm start",
             "options": {
-                "cwd": "${workspaceFolder}/frontend/container-ships-ui"
+                "cwd": "${workspaceFolder}/frontend/container-ships-ui",
+                "statusbar": {
+                    "color": "#00ff2a"
+                }
             },
             "group": "build",
             "problemMatcher": []
