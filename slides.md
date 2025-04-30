@@ -29,7 +29,7 @@ hideInToc: true
  <br/>
  <br/>
 
- <Link to="devcontainer" title="Devcontainers"/> - Magdeburger Developer Days (Mai 2025)
+ [Devcontainer - Magdeburger Developer Days (Mai 2025)](./devcontainer)
 
 ---
 src: webappLocalization.md
