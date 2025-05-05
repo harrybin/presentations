@@ -28,12 +28,12 @@
     "seedrandom": "^3.0.5"
   },
   "dependencies": {
-    "@katzumi/slidev-addon-qrcode": "^0.0.17",
     "@slidev/cli": "^51.6.0",
     "@slidev/client": "^51.6.0",
     "@slidev/theme-default": "^0.25.0",
     "@xebia/slidev-addon-components-common": "^0.2.1",
     "@xebia/slidev-theme-xebia": "^1.5.0",
+    "slidev-addon-qrcode": "^1.0.2",
     "slidev-component-progress": "^1.1.0"
   }
 }

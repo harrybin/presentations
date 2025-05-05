@@ -16,6 +16,8 @@ hideInToc: true
 Fullstack | DevOps
 
 Consultant & Trainer
+
+[Xebia](https://xebia.com/)
 </div>
 
 <div class="grid grid-cols-2 gap-8">
@@ -28,6 +30,8 @@ Consultant & Trainer
 
  [![LinkedIn](/LinkedIn_icon.svg)](https://www.linkedin.com/in/harald-binkle)
 </div>
+
+[**Blog:** https://harrybin.de/](https://harrybin.de/)
 </div>
 
 </div>

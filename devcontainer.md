@@ -4,9 +4,9 @@ transition: "fade"
 addons:
   - slidev-component-progress
   - "@xebia/slidev-addon-components-common"
-  - "@katzumi/slidev-addon-qrcode"
+  - slidev-addon-qrcode
 # disabled pdf downloading in SPA build, can also be a custom url
-download: false
+download: true
 browserExporter: true
 # disable slide recording, can be boolean, 'dev' or 'build'
 record: false
