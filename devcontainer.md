@@ -57,12 +57,12 @@ layout: two-column
 
 <v-clicks>
 
-- Isolate dependencies and avoid conflicts
-- Portability across different systems
-- Transforming how we write, test, and deploy code
-- Applicable to web development, DevOps, and beyond
-- Ensure consistent environments across teams
-- Solve the "it works on my machine" issue
+- **Isolate dependencies** and avoid conflicts
+- **Portability** across different systems
+- Transforming how we write, **test**, and deploy code
+- Applicable to web development, DevOps, and beyond (full-stack))
+- Ensure **consistent** environments across teams
+- Solve the **"it works on my machine"** issue
 </v-clicks>
 
 
@@ -97,14 +97,14 @@ layout: two-column
 - Faster setup times
 <v-clicks>
 
-- Optimized resource usage compared to full Dev-VMs
-- Faster context switching
-- Improved developer productivity
-- Isolation of environments
+- Optimized **resource** usage compared to full Dev-VMs
+- Faster **context** switching
+- Improved developer **productivity**
+- **Isolation** of environments
 
-- Simplified onboarding for new team members
-- Easier collaboration across distributed teams
-- Enhanced security through isolation
+- Simplified **onboarding** for new team members
+- Easier **collaboration** across distributed teams
+- Enhanced **security** through isolation
 </v-clicks>
 
 ::right::
@@ -117,9 +117,9 @@ layout: two-column
 </v-click>
 <v-clicks>
 
-- Container images can be large and consume disk space
-- Isolation can lead to access issues (network, debugging)
-- Learning curve for new tools and technologies
+- Container images can be large and consume **disk space**
+- Isolation can lead to **access issues** (network, debugging)
+- **Learning** curve for new tools and technologies
 
 </v-clicks>
 
@@ -299,7 +299,10 @@ hideInToc: true
 src: special-slides/devcontainer/full-stack-devcontainer.md
 ---
 
-<!-- full-stack-devcontainer-md -->
+<!-- 
+full-stack-devcontainer-md 
+including a DEMO
+-->
 
 ---
 title: "Example: Data Science Dev-Container"
