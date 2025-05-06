@@ -226,6 +226,85 @@ hideInToc: true
 
 <!-- Notes -->
 <!-- Let's dive into the practical benefits of using Dev-Containers in your projects. -->
+
+---
+title: What Happens?
+---
+
+<h1 class="h-auto!"> What Happens?</h1>
+
+```mermaid
+flowchart LR
+    %% Define styles to match colors
+    classDef vsCodeBox fill:#4B83CD,color:white,stroke:#333,font-size:26px
+    classDef serverBox fill:#4B83CD,color:white,stroke:#333,font-size:26px
+    classDef uiExtensionBox fill:#EB7533,color:white,stroke:#333
+    classDef workExtBox fill:#EB7533,color:white,stroke:#333
+    classDef resourceBox fill:#6CB33F,color:white,stroke:#333
+    classDef sourceBox fill:#6CB33F,color:white,stroke:#333
+    classDef containerBox fill:white,stroke:#333,color:#4B83CD,font-weight:bold,font-size:26px
+    classDef localBox fill:white,stroke:#333,color:#4B83CD,font-weight:bold,font-size:26px
+    classDef hide stroke-opacity:0
+    
+    subgraph LocalOS["Local OS"]
+        subgraph VSCodeSG["VS Code"]
+          direction TB
+
+          ThemeExt1["Theme/UI Extension"]:::uiExtensionBox
+          ThemeExt2["Theme/UI Extension"]:::uiExtensionBox
+          ThemeExt1 --- ThemeExt2
+          %% hide the link
+          linkStyle 0 display:none
+        end
+        LocalSource[("Source Code")]:::sourceBox
+    end
+    
+    subgraph Container["Container"]
+        subgraph VSServerSG["VS Code Server"]
+          WorkExt1["Workspace Extension"]:::workExtBox
+          WorkExt2["Workspace Extension"]:::workExtBox
+          WorkExt1 --- WorkExt2
+          %% hide the link
+          linkStyle 1 display:none
+        end
+        ContSource[("Source Code")]:::sourceBox
+        FileSystem[("File System")]:::resourceBox
+        Terminal["Terminal Processes"]:::resourceBox
+        RunApp["Running Application"]:::resourceBox
+        Debugger["Debugger"]:::resourceBox
+
+        VSServerSG --> FileSystem
+        VSServerSG --> Terminal
+        VSServerSG --> RunApp
+        VSServerSG --> Debugger
+        VSServerSG --> ContSource
+    end
+    
+    %% Connections between the two environments
+    ExpPort["Exposed Port"]
+    VolMount["Volume Mount"]
+    
+    LocalSource L_local_mount@--- VolMount L_cont_mount@--> ContSource
+    VSCodeSG L_code_port@--- ExpPort L_server_port@--> VSServerSG
+    
+    %% Apply styles to containers
+    class LocalOS localBox
+    class Container containerBox
+    class VSCodeSG vsCodeBox
+    class VSServerSG serverBox
+
+    L_local_mount@{animation: slow}
+    L_cont_mount@{animation: slow}
+    L_code_port@{animation: slow}
+    L_server_port@{animation: slow}
+```
+
+
+
+
+
+
+
 ---
 
 # Configuration Options
