@@ -634,18 +634,22 @@ https://github.com/harrybin/presentations/tree/main
 -->
 
 ---
+layout: image-left
+background: /devcontainer2.jpeg
 hideInToc: true
 ---
 
 # Conclusion
 
+<v-clicks>
+
 - **IaC**: Define environments with `devcontainer.json` for consistency and version control.
-- **Vs. Dockerfiles/Compose**: Simplifies setup (e.g. include mountpoint definitions), and includes predefined features.
-- **Remoting**: Supports remote development with VS Code, no need to run Docker locally.
-- **GitHub Codespaces**: Enables cloud-based, consistent environments directly from repositories.
-- **Collaboration**: Simplifies onboarding and ensures consistent setups across teams.
 - **Security**: Isolated environments reduce dependency conflicts and vulnerabilities.
-- **Efficiency**: Lightweight, faster setup, and optimized resource usage compared to full VMs.
+- **Vs. Dockerfiles/Compose**: Simplified setup (e.g. include mountpoint definitions), and includes predefined features.
+- **Remote Development**: Supports remote development with VS Code, no need to run Docker locally.
+- **GitHub Codespaces**: Enables cloud-based, consistent environments directly from repositories.
+
+</v-clicks>
 
 <!-- Notes -->
 <!-- 
