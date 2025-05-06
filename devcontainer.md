@@ -6,7 +6,7 @@ addons:
   - "@xebia/slidev-addon-components-common"
   - slidev-addon-qrcode
 # disabled pdf downloading in SPA build, can also be a custom url
-download: true
+download: false
 browserExporter: true
 # disable slide recording, can be boolean, 'dev' or 'build'
 record: false
