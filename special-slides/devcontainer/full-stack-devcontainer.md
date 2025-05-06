@@ -222,4 +222,13 @@ hideInToc: true
 
 
 <!-- Notes -->
-<!-- Let's dive into the practical benefits of using Dev-Containers in your projects. -->
+<!-- 
+There are 2 ways to define and open a devcontainer in a monorepo:
+1. Defining a devcontainer in each individual project folder.
+  - open a VSCode instance in the project folder and it will automatically pick up the devcontainer.json file in that folder.
+  - disadvantage: this is not supported by other tools including GitHub Codespaces.
+2. Using a `.devcontainer` folder in the root of the repository.
+  - this is supported by GitHub Codespaces
+  - redirecting the worspacemounts and workspaceFolder to the project folder [may cause issues see](https://github.com/orgs/community/discussions/15506)
+  
+-->

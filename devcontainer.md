@@ -604,12 +604,13 @@ title: Docker Compose
  
 
 ---
+title: GitHub Codespaces
 layout: image-right
 background: /GitHub-Codespaces.svg
 backgroundSize: 80%
 ---
 
-# GitHub Codespaces
+<h1 class="h-auto!"> GitHub Codespaces </h1>
 
 
 ```json{2-5}
@@ -619,18 +620,28 @@ backgroundSize: 80%
         "memory": "8gb",
         "storage": "32gb"
     },
-    "image": "mcr.microsoft.com/vscode/...
-}
+    "image": "mcr.microsoft.com/vscode/...}
 ```
 <br/>
 
+<v-clicks>
+
+- create a Codespace based on your `.devcontainer` definitions:
+  - select: `Code` ➡️ `Codespaces` ➡️ `...` ➡️ `New with options` 
 - VS Code can **attach to** a running [Codespace](https://github.com/harrybin/presentations/tree/main)
 - VS Code can **controll** the Codespace environment (e.g. rebuild, restart, etc.)
+
+</v-clicks>
 
 <!-- Notes -->
 <!--
 Additional configuration options for GitHub Codespaces
-https://github.com/harrybin/presentations/tree/main
+
+DEMO:
+
+- open: https://github.com/harrybin/presentations/tree/main
+- select: `Code` ➡️ `Codespaces` ➡️ `...` ➡️ `New with options`
+ 
 -->
 
 ---
