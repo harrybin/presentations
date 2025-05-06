@@ -1,11 +1,5 @@
 {
-    "name": "Full-Stack Dev Container for Codespaces",
-    // configure the codespaces environment
-    "hostRequirements": {
-        "cpus": 8,
-        "memory": "8gb",
-        "storage": "32gb"
-    },
+    "name": "Full-Stack Dev Container",
     "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
     "features": {
         "ghcr.io/devcontainers/features/node:1": {
