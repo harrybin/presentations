@@ -580,7 +580,7 @@ title: Docker Compose
 
 <h1 class="h-auto!">  Docker Compose</h1>
 
-```json
+```json{3-6|7|8|*}
 {
   "name": "Full-Stack Dev Container",
   "dockerComposeFile": [
@@ -588,15 +588,20 @@ title: Docker Compose
     "docker-compose.override.yml"
   ],
   "service": "app",
-  "runServices": [
-    "app",
-    "db"
-  ],
+  "runServices": [ "app", "be-service", "db" ],
   "workspaceFolder": "/workspace",
 }
 ```
 
- The `image` and `dockerfile properties` are not needed since Docker Compose supports them natively
+<v-clicks at="1">
+
+- `service` Specifies the main service to use as the development container
+- `runServices` Lists the services that should be started when the container is launched
+</v-clicks>
+<br/>
+
+ The `image` and `dockerfile properties` are not needed since Docker Compose supports them natively.
+ 
 
 
 ---
