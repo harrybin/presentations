@@ -603,6 +603,35 @@ title: Docker Compose
  The `image` and `dockerfile properties` are not needed since Docker Compose supports them natively.
  
 
+---
+layout: image-right
+background: /GitHub-Codespaces.svg
+backgroundSize: 80%
+---
+
+# GitHub Codespaces
+
+
+```json{2-5}
+{   "name": "Container for Codespaces",    
+    "hostRequirements": { // codespaces env
+        "cpus": 8,
+        "memory": "8gb",
+        "storage": "32gb"
+    },
+    "image": "mcr.microsoft.com/vscode/...
+}
+```
+<br/>
+
+- VS Code can **attach to** a running [Codespace](https://github.com/harrybin/presentations/tree/main)
+- VS Code can **controll** the Codespace environment (e.g. rebuild, restart, etc.)
+
+<!-- Notes -->
+<!--
+Additional configuration options for GitHub Codespaces
+https://github.com/harrybin/presentations/tree/main
+-->
 
 ---
 hideInToc: true
@@ -610,10 +639,13 @@ hideInToc: true
 
 # Conclusion
 
-- Streamlined workflows
-- Reduced errors and inconsistencies because of isolated environments
-- Embrace Dev-Containers for modern development
-- Unlock consistency and portability
+- **IaC**: Define environments with `devcontainer.json` for consistency and version control.
+- **Vs. Dockerfiles/Compose**: Simplifies setup (e.g. include mountpoint definitions), and includes predefined features.
+- **Remoting**: Supports remote development with VS Code, no need to run Docker locally.
+- **GitHub Codespaces**: Enables cloud-based, consistent environments directly from repositories.
+- **Collaboration**: Simplifies onboarding and ensures consistent setups across teams.
+- **Security**: Isolated environments reduce dependency conflicts and vulnerabilities.
+- **Efficiency**: Lightweight, faster setup, and optimized resource usage compared to full VMs.
 
 <!-- Notes -->
 <!-- 
