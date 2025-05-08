@@ -401,10 +401,7 @@ hideInToc: true
   "postCreateCommand": "pip install -r requirements.txt",
   "settings": {
     "python.pythonPath": "/usr/local/bin/python"
-  },
-  "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-  ],
+  },  
   "remoteUser": "python"
 }
 ```
@@ -415,12 +412,13 @@ hideInToc: true
 - **Jupyter Notebooks**: Ready-to-use Jupyter Notebook support
 - **Dependencies**: Install additional Python libraries via `requirements.txt`
 - **Docker-in-Docker**: Run Docker commands within the container
-- **Mounts**: Bind mount the Docker socket for Docker-in-Docker support
 
 </v-clicks>
 
 <!-- Notes -->
-<!-- This example demonstrates how to set up a Dev-Container for data science projects, including Python, Jupyter, and other dependencies. -->
+<!-- 
+This example demonstrates how to set up a Dev-Container for data science projects, including Python, Jupyter, and other dependencies. 
+-->
 
 ---
 
