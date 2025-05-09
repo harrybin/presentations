@@ -11,7 +11,7 @@ Create a init script pushing that data into the database. (postgress database)
 ## API (backend)
 The api should provide the folloing endpoints:
 - query a list of all ships
-- query data datails for one ship
+- query data details for one ship
 - calculate the volume sum of all container loaded by a ship
 
 ## Frontend (react 19 project)
@@ -21,7 +21,9 @@ in the data details display there should be a button for calculating the volume 
 
 Finally make sure both projects (backend and frontend) compile.
 
-
+---
+---
+---
 
 # Copilot output
 
