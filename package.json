@@ -28,8 +28,8 @@
     "seedrandom": "^3.0.5"
   },
   "dependencies": {
-    "@slidev/cli": "^51.6.0",
-    "@slidev/client": "^51.6.0",
+    "@slidev/cli": "^51.8.1",
+    "@slidev/client": "^51.8.1",
     "@slidev/theme-default": "^0.25.0",
     "@xebia/slidev-addon-components-common": "^0.2.1",
     "@xebia/slidev-theme-xebia": "^1.5.0",

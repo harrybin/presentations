@@ -14,3 +14,10 @@ Custom components can be defined and used in the markdown files to enhance the p
 These components are defined in the `components` directory using Vue.js.
 
 Notes for the presentation are written in markdown as comments. But only the last comment in a slide is taken as note.
+
+So when you ask to add content and no format is stated, use markdown syntax.
+The content is written in markdown and the presentation is generated from it.
+Keep the content brief and to the point, as it is meant for a presentation.
+Prefer bullet points and short sentences over long paragraphs.
+If using bullet points surround them with the slidev tag `v-clicks` to enable click-based navigation through the points.
+The code snippets are written in markdown and the presentation is generated from it.
