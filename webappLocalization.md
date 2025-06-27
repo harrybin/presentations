@@ -109,6 +109,7 @@ function Home() {
 title: Magic Strings
 layout: image-right
 background: /magic-strings.png
+hideInToc: true
 ---
 
 <h1 class="h-auto!"> Magic Strings </h1>
@@ -139,6 +140,7 @@ background: /magic-strings.png
 title: Disadvantages of Simple JSON Key-Value Translations
 layout: image-right
 background: /json-translations.png
+hideInToc: true
 ---
 
 # Disadvantages of Simple JSON Translations 
@@ -167,6 +169,7 @@ background: /json-translations.png
 title: Disadvantages Summary
 layout: image-right
 background: /error-failed.png
+hideInToc: true
 ---
 
 # Disadvantages Summary
@@ -193,6 +196,7 @@ background: /error-failed.png
 title: Solution
 layout: image-right
 background: /idea-new.png
+hideInToc: true
 ---
 
 <h1 class="h-auto!"> Solution </h1>
@@ -220,10 +224,8 @@ background: /idea-new.png
 </v-clicks>
 
 ---
-title: How to do all that? Start
----
 
-# How to do all that?
+# How to do it better...
 
 <v-clicks>
 
@@ -266,6 +268,7 @@ Here the interface I18nTexts is the key to the translations.
 
 ---
 title: How to do all that? Interfaces
+hideInToc: true
 ---
 
 <h1 class="h-auto!"> Interfaces for Translations </h1>
@@ -314,6 +317,7 @@ export default interface I18nTexts {
 title: How to do all that? WebExtensionMessage
 layout: image-right
 background: /webextension-message.png
+hideInToc: true
 ---
 
 # WebExtensionMessage
@@ -333,10 +337,8 @@ export interface WebExtensionMessage {
 In my case simplyfied, I omitted the `placeholders` part, which is not needed because that is supported by react-intl.
  
 ---
-title: How to do all that? JSON Files
----
 
-# JSON Files
+# Better JSON Files
 
 ```json {all|4|11|14|21}{maxHeight:'350px', maxWith:'100%'}
 {
@@ -383,8 +385,48 @@ title: How to do all that? JSON Files
 }
 ```
 
+<!--
+That's how it looks like in the JSON file
+-->
 
+---
+layout: image-right
+background: /i18nAlly.png
+backgroundSize: 60%
+---
 
+# Tooling 
+
+## VSCode extension: [i18n Ally](https://marketplace.visualstudio.com/items?itemName=antfu.i18n-ally) ![](/i18nAlly-logo.png)
+
+<br/>
+
+<v-clicks>
+
+- **Real-time translation key detection** in your code
+- **Supports many frameworks** (Vue, React, Angular, Svelte, etc.)
+- **Inline editing** of translation values directly in your editor
+- **Missing & unused key detection** for better translation coverage
+- **Quick navigation** to translation files and keys
+- **Auto-completion** and suggestions for translation keys
+- **Visualization** of translation status across languages
+- **Supports multiple file formats** (JSON, YAML, etc.)
+- **Integrated with VSCode** for a seamless workflow
+
+</v-clicks>
+
+---
+layout: image-right
+background: /code-right.png
+hideInToc: true
+---
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+# Demo time!
 
 ---
 src: /special-slides/questions.md
