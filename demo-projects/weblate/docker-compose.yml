@@ -1,0 +1,44 @@
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: weblate
+      POSTGRES_USER: weblate
+      POSTGRES_PASSWORD: weblatepassword
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  cache:
+    image: redis:7-alpine
+    restart: always
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+  weblate:
+    build:
+      context: .
+      dockerfile: weblate.dockerfile
+    depends_on:
+      - db
+      - cache
+    environment:
+      WEBLATE_SITE_DOMAIN: localhost:8080
+      POSTGRES_DB: weblate
+      POSTGRES_USER: weblate
+      POSTGRES_PASSWORD: weblatepassword
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      REDIS_HOST: cache
+    ports:
+      - "8080:8080"
+    volumes:
+      - weblate_data:/app/data
+
+volumes:
+  db_data:
+  redis_data:
+  weblate_data:

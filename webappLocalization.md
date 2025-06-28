@@ -585,6 +585,8 @@ backgroundSize: 95%
 
 </v-clicks>
 
+
+
 ---
 layout: image-right
 background: /weblate-logo.png
@@ -609,6 +611,45 @@ level: 2
 
 </v-clicks>
 
+
+---
+title: Weblate Docker Architecture
+layout: image-right
+background: /weblate-logo.png
+backgroundSize: 95%
+level: 2
+---
+
+<h1 class="h-auto!"> Weblate Docker Architecture </h1>
+
+<v-clicks>
+
+- **PostgreSQL Database (port 5432)**
+  - Stores translations, projects, users
+  - Persistent data in `db_data` volume
+
+- **Redis Cache (port 6379)**
+  - Required for task queue & caching
+  - Data in `redis_data` volume
+
+- **Weblate Application (port 8080)**
+  - Web interface & API
+  - Data in `weblate_data` & `weblate_cache` volumes
+
+</v-clicks>
+
+## Important Environment Variables
+
+<v-clicks>
+
+- `WEBLATE_SITE_DOMAIN`: localhost:8080
+- `WEBLATE_ADMIN_EMAIL`: admin@example.com
+- `WEBLATE_ADMIN_PASSWORD`: adminpassword
+- `POSTGRES_*` & `REDIS_*`: Database connections
+
+</v-clicks>
+
+
 ---
 title: Demo Weblate!
 layout: image-right
@@ -621,8 +662,19 @@ level: 2
 ![](/weblate-logo.png)
 
 <!--
+
 Show:
-- 
+- the [weblate docker file](/demo-projects/weblate/weblate.dockerfile) and how to run it: within `demo-projects\weblate` run  `docker compose up -d`
+- add a new project, the react project
+  - choose the `weblate-demo` branch
+  - let the git repo sync
+  - ignore hook config
+- show the langueages
+- show the missing translation
+- mention the ability to add AI translations via plugins
+- change a translation in the repo
+- update the weblate repo manually [within the project: 'Manage' -> 'Repositoy maintenance' -> 'Update']
+
 -->
 
 
