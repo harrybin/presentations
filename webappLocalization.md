@@ -201,27 +201,31 @@ level: 2
 
 <h1 class="h-auto!"> Solution </h1>
 
-<v-clicks>
+<v-click>
 
 - _Avoid **magic strings**_ 
   - use **Typescript**
   - use **Interfaces**
 
+</v-click>
 <br/>
+<v-click>
 
 - _**Structure** the JSON file and add metadata for the keys_
   - **split** the JSON file into multiple files
   - use a **naming convention** for the keys
   - extend **value** not to be a simple string, but an **object with metadata**
-  
+
+</v-click>  
 <br/>
+<v-click>
 
 - _use **tooling** to support your localization process_
   - see **mising** translations
   - support **creating** new translations
   - support **editing** translations
 
-</v-clicks>
+</v-click>
 
 ---
 
