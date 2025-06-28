@@ -391,6 +391,7 @@ That's how it looks like in the JSON file
 
 ---
 title: Mapping `WebExtensionMessage` to i18n key-value pairs
+level: 2
 ---
 
 <h1 class="h-auto!"> Mapping `WebExtensionMessage` to i18n key-value pairs </h1>
@@ -477,11 +478,12 @@ Show:
 -->
 
 ---
+title: Translation Management System (TMS)
 layout: image-right
 background: /developer-language.png
 ---
 
-# How manny languages are to be supported?
+# How many languages are to be supported?
 
 <br/>
 
@@ -510,6 +512,7 @@ When there are more then **2 languages** to be supported...
 title: Why use a TMS?
 layout: image-right
 background: /weblate-questionmark.png
+level: 2
 ---
 
 <h1 class="h-auto!"> Why use a TMS? </h1>
@@ -533,6 +536,7 @@ background: /weblate-questionmark.png
 ---
 layout: image-right
 background: /weblate-questionmark.png
+level: 2
 ---
 
 # Popular Translation Management Systems (TMS)
@@ -578,6 +582,30 @@ backgroundSize: 95%
 - **Self-hosted**: Run Weblate on your own server (Linux, Docker, cloud VM etc.)
 - **Docker support**: Official Docker images for easy deployment
 - **Managed hosting**: Use [Weblate's cloud service](https://hosted.weblate.org/) for hassle-free setup
+
+</v-clicks>
+
+---
+layout: image-right
+background: /weblate-logo.png
+backgroundSize: 95%
+level: 2
+---
+
+# How to work with Weblate
+
+<v-clicks>
+
+- Create a **new project** and add your source language files
+- Connect your **Git repository** for automatic translation sync
+- Add and manage **target languages** for your project
+- Use the web-based translation **editor** for easy translation
+- Leverage **translation memory with suggestions** for consistency
+- Manage **glossary** and terminology for quality and consistency
+- Run **automated** quality **checks** and validations
+- Assign **roles** and collaborate with team members (review, comment, approve)
+- **Import/export** translation files in various formats
+- Track **translation progress** and statistics
 
 </v-clicks>
 

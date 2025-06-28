@@ -679,6 +679,18 @@ level: 2
 hideInToc: true
 ---
 
+![](/dwx_2025.png)  Juli 2025
+
+<br/>
+
+# End of presentation
+
+---
+layout: end
+level: 2
+hideInToc: true
+---
+
 ![](/MD-conf.svg)  Mai 2025
 
 <br/>
