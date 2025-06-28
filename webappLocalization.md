@@ -109,7 +109,7 @@ function Home() {
 title: Magic Strings
 layout: image-right
 background: /magic-strings.png
-hideInToc: true
+level: 2
 ---
 
 <h1 class="h-auto!"> Magic Strings </h1>
@@ -140,7 +140,7 @@ hideInToc: true
 title: Disadvantages of Simple JSON Key-Value Translations
 layout: image-right
 background: /json-translations.png
-hideInToc: true
+level: 2
 ---
 
 # Disadvantages of Simple JSON Translations 
@@ -169,7 +169,7 @@ hideInToc: true
 title: Disadvantages Summary
 layout: image-right
 background: /error-failed.png
-hideInToc: true
+level: 2
 ---
 
 # Disadvantages Summary
@@ -196,7 +196,7 @@ hideInToc: true
 title: Solution
 layout: image-right
 background: /idea-new.png
-hideInToc: true
+level: 2
 ---
 
 <h1 class="h-auto!"> Solution </h1>
@@ -268,7 +268,7 @@ Here the interface I18nTexts is the key to the translations.
 
 ---
 title: How to do all that? Interfaces
-hideInToc: true
+level: 2
 ---
 
 <h1 class="h-auto!"> Interfaces for Translations </h1>
@@ -317,7 +317,7 @@ export default interface I18nTexts {
 title: How to do all that? WebExtensionMessage
 layout: image-right
 background: /webextension-message.png
-hideInToc: true
+level: 2
 ---
 
 # WebExtensionMessage
@@ -390,6 +390,44 @@ That's how it looks like in the JSON file
 -->
 
 ---
+title: Mapping `WebExtensionMessage` to i18n key-value pairs
+---
+
+<h1 class="h-auto!"> Mapping `WebExtensionMessage` to i18n key-value pairs </h1>
+
+<v-clicks>
+
+- usual **i18n libraries expect a simple key-value pairs** ➡️ map the `WebExtensionMessage` to a simple string.
+- this is also the right place to **add additional logic** ➡️ returning the key itself if no translation is found and **logging** a warning in development mode.
+- 💡 you may also return the key itself when in **testing environment** ➡️ In this case your test need not bo aware of the translations.
+
+</v-clicks>
+
+<v-after>
+
+```jsx {all|7|10-11}{maxHeight:'250px'}
+export default function translateText(
+    intl: IntlShape,
+    textKey: keyof I18nTexts,
+    paramsObj?: Record<string, PrimitiveType>
+) {
+    try {
+        return intl.formatMessage({ id: textKey }, paramsObj);
+    } catch (error) {
+        // Do not log in test or production
+        if (process.env.NODE_ENV === 'development') {
+            console.warn(`Translation text key ${textKey} not found.`);
+        }
+        return textKey;
+    }
+}
+```
+
+</v-after>
+
+
+
+---
 layout: image-right
 background: /i18nAlly.png
 backgroundSize: 60%
@@ -405,28 +443,160 @@ backgroundSize: 60%
 
 - **Real-time translation key detection** in your code
 - **Supports many frameworks** (Vue, React, Angular, Svelte, etc.)
-- **Inline editing** of translation values directly in your editor
-- **Missing & unused key detection** for better translation coverage
-- **Quick navigation** to translation files and keys
 - **Auto-completion** and suggestions for translation keys
+- **Overlay for translation keys** to see a translations instead of the key
+- **Inline editing** of translation values directly in your editor
+- **Quick navigation** to translation files and keys
+- **Missing & unused key detection** for better translation coverage
 - **Visualization** of translation status across languages
-- **Supports multiple file formats** (JSON, YAML, etc.)
 - **Integrated with VSCode** for a seamless workflow
+
+</v-clicks>
+
+
+---
+title: Demo Tanslation!
+layout: image-right
+background: /code-right.png
+level: 2
+---
+
+## Demo Tanslation!
+
+![](/webextension-message-mapping.png)
+
+<!--
+Show:
+- i18nAlly in the react demo app https://github.com/harrybin/react/tree/main
+  - the features of i18nAlly (list of the slide bfedore this demo)
+- the new translation method
+- the new interfaces I18nTexts, composed from smaller interfaces
+- the WebExtensionMessage interface
+- the new JSON file
+- `translateText` mapping the `WebExtensionMessage` to i18n key-value pairs
+-->
+
+---
+layout: image-right
+background: /developer-language.png
+---
+
+# How manny languages are to be supported?
+
+<br/>
+
+When there are more then **2 languages** to be supported...
+
+<br/>
+<v-clicks>
+
+- a **developer** usually supports his **native language** and the development langauge, **english**
+- developers don't like to **"waste time"** on translations
+- ➡️ the translations should be done by **translators**
+
+</v-clicks>
+
+<br/>
+
+<v-click>
+
+💡 it is a good idea to use a **translation management system** (TMS).
+
+</v-click>
+
+
+
+---
+title: Why use a TMS?
+layout: image-right
+background: /weblate-questionmark.png
+---
+
+<h1 class="h-auto!"> Why use a TMS? </h1>
+
+<v-clicks>
+
+- **Centralized translation management** for all languages and projects
+- **Translation memory**: reuse existing translations
+- **Collaboration** between developers, translators and reviewers
+- **Glossary and consistency**: maintain consistent terminology
+- **Quality assurance**: built-in checks for missing or inconsistent translations
+- **Integration** with development tools and CI/CD pipelines
+- **Support for context, plurals, and metadata**
+- **Easy import/export** of translation files in various formats
+- **Progress tracking** and reporting for translation status
+- **Scalability**: handle large projects with many languages and keys
+- **Git integration**: version control for translation files
 
 </v-clicks>
 
 ---
 layout: image-right
-background: /code-right.png
-hideInToc: true
+background: /weblate-questionmark.png
 ---
 
-<br/>
-<br/>
-<br/>
-<br/>
+# Popular Translation Management Systems (TMS)
 
-# Demo time!
+<v-clicks>
+
+- 📌 **Weblate**
+- 💡 **Phrase**
+- **Crowdin**
+- **Lokalise**
+- **POEditor**
+- **Transifex**
+- **Smartling**
+- **Zanata**
+- **Memsource**
+- **SDL Trados**
+
+</v-clicks>
+
+---
+title: Weblate
+layout: image-right
+background: /weblate-logo.png
+backgroundSize: 95%
+---
+
+<h1 class="h-auto!"> Weblate</h1>
+
+<v-clicks>
+
+- **Open Source**: No vendor lock-in, self-hosting possible
+- **Tight Git integration**: Syncs translations with your repos
+- **Real-time collaboration**: Multiple contributors
+- **Translation memory** and suggestions for consistency
+- **Quality checks**: Automated validation for translations
+- **Supports many formats**: JSON, PO, XLIFF, YAML etc.
+- **Custom workflows**: Adapt to your team's process
+- **Extensible**: Integrate with CI/CD and automation tools
+- **Active community** and regular updates
+
+## Hosting Options
+
+- **Self-hosted**: Run Weblate on your own server (Linux, Docker, cloud VM etc.)
+- **Docker support**: Official Docker images for easy deployment
+- **Managed hosting**: Use [Weblate's cloud service](https://hosted.weblate.org/) for hassle-free setup
+
+</v-clicks>
+
+---
+title: Demo Weblate!
+layout: image-right
+background: /code-right.png
+level: 2
+---
+
+## Demo Weblate!
+
+![](/weblate-logo.png)
+
+<!--
+Show:
+- 
+-->
+
 
 ---
 src: /special-slides/questions.md
