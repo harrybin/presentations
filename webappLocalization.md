@@ -207,27 +207,27 @@ level: 2
 
 <v-click>
 
-- _Avoid **magic strings**_ 
-  - use **Typescript**
-  - use **Interfaces**
+- _Use your programming language's **features** (avoid **magic strings**)_ 
+  - Use **Typescript**
+  - Use **Interfaces**
 
 </v-click>
 <br/>
 <v-click>
 
 - _**Structure** the JSON file and add metadata for the keys_
-  - **split** the JSON file into multiple files
-  - use a **naming convention** for the keys
-  - extend **value** not to be a simple string, but an **object with metadata**
+  - **Split** the JSON file into multiple files
+  - Use a **naming convention** for the keys, maybe some kind of **nesting**
+  - Extend **value** not to be a simple string, but an **object with metadata**
 
 </v-click>  
 <br/>
 <v-click>
 
-- _use **tooling** to support your localization process_
-  - see **mising** translations
-  - support **creating** new translations
-  - support **editing** translations
+- _Use **tooling** to support your localization process_
+  - See **missing** translations
+  - Support **creating** new translations
+  - Support **editing** translations
 
 </v-click>
 
@@ -342,7 +342,7 @@ export interface WebExtensionMessage {
 }
 ```
 
-In my case simplyfied, I omitted the `placeholders` part, which is not needed because that is supported by react-intl.
+In my case simplified, I omitted the `placeholders` part, which is not needed because that is supported by react-intl.
  
 ---
 
@@ -394,7 +394,10 @@ In my case simplyfied, I omitted the `placeholders` part, which is not needed be
 ```
 
 <!--
-That's how it looks like in the JSON file
+That's how it looks like in the JSON file.
+
+Audience: find the error:
+The description is optional, but can be used to give hints to the translator or other developers. - It does not have to be translated.
 -->
 
 ---
@@ -408,7 +411,7 @@ level: 2
 
 - usual **i18n libraries expect a simple key-value pairs** ➡️ map the `WebExtensionMessage` to a simple string.
 - this is also the right place to **add additional logic** ➡️ returning the key itself if no translation is found and **logging** a warning in development mode.
-- 💡 you may also return the key itself when in **testing environment** ➡️ In this case your test need not bo aware of the translations.
+- 💡 you may also return the key itself when running in a **testing environment** ➡️ in this case your test need not to be aware of the translations.
 
 </v-clicks>
 
@@ -500,7 +503,7 @@ When there are more then **2 languages** to be supported...
 <br/>
 <v-clicks>
 
-- a **developer** usually supports his **native language** and the development langauge, **english**
+- a **developer** usually supports his **native language** and the development language, **english**
 - developers don't like to **"waste time"** on translations
 - ➡️ the translations should be done by **translators**
 
@@ -561,6 +564,7 @@ level: 2
 - **Zanata**
 - **Memsource**
 - **SDL Trados**
+- **Pontoon (Mozilla)**
 
 </v-clicks>
 
