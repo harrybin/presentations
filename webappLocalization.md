@@ -66,6 +66,7 @@ title: Usual Localization Process
 
 </v-clicks>
 
+<v-after>
 
 ````md magic-move
 ```jsx
@@ -104,6 +105,9 @@ function Home() {
 }
 ```
 ````
+
+</v-after>
+
 
 --- 
 title: Magic Strings
