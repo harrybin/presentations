@@ -87,6 +87,7 @@ layout: two-column
 
 ---
 layout: two-column
+hideInToc: true 
 ---
 # Development Performance Considerations
 
@@ -161,6 +162,7 @@ Docker Toolbox: is a legacy toolset provided by Docker for running Docker contai
 ---
 layout: image-right
 background: /devcontainer_move.jpeg
+hideInToc: true
 ---
 
 # Configuring
@@ -325,6 +327,7 @@ flowchart LR
 ---
 layout: image-right
 background: /bulb.jpeg
+hideInToc: true
 ---
 
 # Examples
@@ -421,7 +424,8 @@ This example demonstrates how to set up a Dev-Container for data science project
 -->
 
 ---
-
+hideInToc: true
+---
 # Available Features
 
 <v-clicks>
@@ -457,6 +461,8 @@ small selection of https://containers.dev/features
 -->
 
 ---
+hideInToc: true
+---
 
 # Environment variables
 
@@ -487,65 +493,6 @@ small selection of https://containers.dev/features
 <!-- 
 root level setting
 -->
-
----
-layout: image-left
-background: /wsl_pinguin.jpeg
----
-
-# A Special Dev-Container
-
-## WSL (Windows Subsystem for Linux)
-
-<v-click>
-
-- Windows 10 2004 and up (WSL 2)
-- Docker Desktop 2.3+ includes WSL 2 Engine
-- WSL 2 = full Linux kernel
-  
-</v-click>
-
-<br/>
-
-<v-click>
-
-## Benefits
-- better **performance**
-- system integration 
-    - Explorer
-    - VS-Code (remote Explorer)
-    - Windows Terminal
-    - WSL commands
-    - UI apps from Linux (e.g. Firefox, Chrome, etc.)
-
-</v-click>
-
-<!-- Notes -->
-<!-- 
--->
-
----
-title: Performance Tweeks
----
-
-<h1 class="h-auto!"> Performance Tweeks </h1>
-
-- Use WSL
-- Clone Repository in Container Volume
-- Use a targeted named volume
-  - folders like `node_modules`, data folders, or output folder  
-  ```json
-  "remoteUser": "node",
-  "mounts": [
-      "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
-  ],
-  "postCreateCommand": "sudo chown node node_modules"
-  ```
-- Use a named volume for your entire source tree
-  ```json
-  "workspaceMount": "source=your-volume-name-here,target=/workspace,type=volume"
-  "workspaceFolder": "/workspace",
-  ```
 
 ---
 title: Docker
@@ -641,6 +588,113 @@ DEMO:
 - select: `Code` ➡️ `Codespaces` ➡️ `...` ➡️ `New with options`
  
 -->
+
+---
+title: Performance Tweeks
+---
+
+<h1 class="h-auto!"> Performance Tweeks </h1>
+
+<v-clicks>
+
+- Clone Repository in Container Volume
+- Use a targeted named volume
+  - folders like `node_modules`, data folders, or output folder  
+  ```json
+  "remoteUser": "node",
+  "mounts": [
+      "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+  "postCreateCommand": "sudo chown node node_modules"
+  ```
+- Use a named volume for your entire source tree
+  ```json
+  "workspaceMount": "source=your-volume-name-here,target=/workspace,type=volume"
+  "workspaceFolder": "/workspace",
+  ```
+
+- Use WSL
+
+</v-clicks>
+
+
+---
+layout: image-left
+background: /wsl_pinguin.jpeg
+---
+
+# A Special Dev-Container
+
+## WSL (Windows Subsystem for Linux)
+
+<v-click>
+
+- Windows 10 2004 and up (WSL 2)
+- Docker Desktop 2.3+ includes WSL 2 Engine
+- WSL 2 = full Linux kernel
+  
+</v-click>
+
+<br/>
+
+<v-click>
+
+## Benefits
+- better **performance**
+- system integration 
+    - Explorer
+    - VS-Code (remote Explorer)
+    - Windows Terminal
+    - WSL commands
+    - UI apps from Linux (e.g. Firefox, Chrome, etc.)
+
+</v-click>
+
+<!-- Notes -->
+
+---
+title: Windows Dev Drive
+layout: image-right
+background: /dev-drive.png
+backgroundSize: 80%
+hideInToc: true
+---
+
+<h1 class="h-auto!"> Windows Dev Drive </h1>
+
+<v-clicks>
+
+- Available in **Windows 11 22H2+** and Windows Server 2022+
+  - create as a new **volume** or convert an existing NTFS volume
+  - create as VHDX or **VHD** file
+- **ReFS-based volume** optimized for developer workloads
+- Uses **performance mode** by default:
+  - Reduced security scanning by **Microsoft Defender**
+  - **Optimized** file system oper**ations with ReFS
+  - **Bypassed** file system **filters** that slow I/O
+  - **Enhanced caching** for developer files
+  - **Priority I/O** scheduling for file operations
+- Designed for **source code, packages, and build outputs**
+
+</v-clicks>
+
+
+
+<!-- Notes -->
+<!-- 
+Dev Drive is Microsoft's answer to performance issues in Windows development environments. It provides native Windows performance improvements without needing WSL virtualization.
+
+## Benefits vs WSL
+
+- **30-50% faster** file I/O operations
+- **Native Windows** performance without virtualization overhead
+- **Better integration** with Windows tools and antivirus exclusions
+- **Automatic trust** for developer tools and processes
+- **Simplified setup** - no Linux subsystem required
+
+[https://learn.microsoft.com/en-us/windows/dev-drive/](https://learn.microsoft.com/en-us/windows/dev-drive/)
+-->
+
 
 ---
 layout: image-left
