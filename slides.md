@@ -29,4 +29,6 @@ routeAlias: index
 <br/>
 <br/>
 
-<a href="/devcontainer/" target="_blank">Devcontainer - Magdeburger Developer Days (Mai 2025)</a>
+<a href="/devcontainer/" target="_blank">Devcontainer - [DWX Juli 25; MD DevDays Mai 25]</a>
+
+<a href="/webappLocalization/" target="_blank">WebApp-Localization - [DWX Juli 25]</a>
