@@ -712,7 +712,7 @@ level: 2
 - Connect your **Git repository** for automatic translation sync
 - Add and manage **target languages** for your project
 - Use the web-based translation **editor** for easy translation
-- Add adintional information like **screenshots**
+- Add additional information like **screenshots**
 - Leverage **translation memory with suggestions** for consistency
 - Manage **glossary** and terminology for quality and consistency
 - Run **automated** quality **checks** and validations
