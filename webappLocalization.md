@@ -717,6 +717,7 @@ level: 2
 - Manage **glossary** and terminology for quality and consistency
 - Run **automated** quality **checks** and validations
 - Assign **roles** and collaborate with team members (review, comment, approve)
+- use different **workflows** including **reviewing** and **gateways**
 - **Import/export** translation files in various formats
 - Track **translation progress** and statistics
 
