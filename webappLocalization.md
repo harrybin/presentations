@@ -28,6 +28,19 @@ background: /developer-in-words.png
 # It's all greek to me! 
 ## Localizing Web-Apps elegant and easy
 
+<!-- 
+ask the audience:
+- Who has **ever localized** a web app?
+- how **many strings** did you have to translate?
+- how **many languages** did you have to support?
+- how often/how many of the translations did you have to **change** after some time?
+- do you **like** that part of your job?
+- what helper/**tooling** did you use?
+
+-> let's see if I can show you a **better way** to do it!
+
+-->
+
 ---
 title: Speaker
 layout: intro
@@ -128,9 +141,10 @@ level: 2
 
 <br/>
 
-## Why Avoid Magic Strings?
 
 <v-clicks>
+
+## Why Avoid Magic Strings?
 
 - **No compile time checks:** Typos in strings are not caught until runtime.
 - **Error-prone:** Typos within the magic string are hard to catch and can break functionality.
@@ -153,7 +167,6 @@ level: 2
 
 - **No structure:** Flat key-value pairs become hard to manage in large projects.
 - **Context issues:** Same key may have different meanings in different places.
-- **No support for plurals or gender:** Difficult to handle language-specific rules.
 - **No metadata:** Can't add comments or notes for translators.
 - **Hard to organize:** Grouping related translations is not straightforward.
 - **No validation:** Typos or missing keys are only found at runtime.
@@ -162,11 +175,7 @@ level: 2
 </v-clicks>
 
 <!--
-**No support for plurals or gender:**
-- Many languages use different words for singular and plural (e.g., "1 apple" vs. "2 apples").
-- Some languages change words based on gender (e.g., "he is ready" vs. "she is ready").
-- Simple key-value pairs do not provide a way to define these variations.
-- Handling these cases requires more advanced structures or libraries that support pluralization and gender rules.
+
 -->
 
 --- 
@@ -464,6 +473,82 @@ backgroundSize: 60%
 - **Integrated with VSCode** for a seamless workflow
 
 </v-clicks>
+
+---
+title: i18n Ally Configuration
+background: /i18nAlly-config.png
+level: 2
+---
+
+<h1 class="h-auto!"> i18n Ally Configuration </h1>
+
+Support the **WebExtensionMessage format** with our custom `translate()` function:
+
+<v-click>
+
+````md magic-move
+```yaml
+# .vscode/i18n-ally-custom-framework.yml
+```
+
+```yaml
+# .vscode/i18n-ally-custom-framework.yml
+languageIds:
+  - javascript
+  - typescript
+  - javascriptreact
+  - typescriptreact
+```
+
+```yaml {all,8}
+# .vscode/i18n-ally-custom-framework.yml
+languageIds:
+[...]
+  - typescriptreact
+
+# Detect translate() and t() function calls
+usageMatchRegex:
+  - "translate\\(['\"`](.*?)['\"`]"
+  - "[\\W]t\\(['\"`](.*?)['\"`]"
+  - "nameof<I18nConsts>\\(['\"`](.*?)['\"`]"
+```
+
+```yaml {all,12-16}
+# .vscode/i18n-ally-custom-framework.yml
+languageIds:
+[...]
+  - typescriptreact
+# Detect translate() and t() function calls
+usageMatchRegex:
+  - "translate\\(['\"`](.*?)['\"`]"
+  - "[\\W]t\\(['\"`](.*?)['\"`]"
+  - "nameof<I18nConsts>\\(['\"`](.*?)['\"`]"
+
+# Templates for refactoring
+refactorTemplates:
+  - translate("$1")
+  - t("$1")
+
+monopoly: false
+```
+````
+
+</v-click>
+
+<!--
+[click] Create `.vscode/i18n-ally-custom-framework.yml` in your project root
+
+[click] Define supported **language IDs** for file detection
+
+[click] Add **regex patterns** to detect custom translation function calls
+
+[click] Configure **refactor templates** for code generation: When you extract text or create new translations, i18n Ally uses these templates
+$1 placeholder: Gets replaced with the actual translation key
+
+[click] Set **monopoly** to false to work with built-in frameworks: monopoly: true: Disables all built-in frameworks, only uses your custom configuration
+monopoly: false: Allows your custom framework to work alongside built-in frameworks
+
+-->
 
 
 ---

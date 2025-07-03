@@ -4,6 +4,7 @@ speakerImage: /hbinkle.jpg
 hideInToc: true
 ---
 
+
 # Your Trainer
 
 ::speaker::
