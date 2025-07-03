@@ -303,6 +303,7 @@ export default interface I18nTexts extends I18nTextsCommon, I18nTextsModule {}
 ```
 
 <v-click>
+
 ```jsx {all|5}{maxHeight:'230px'}
 /**
  * A single interface containing keys for all translatable texts in the application.
@@ -321,6 +322,7 @@ export default interface I18nTexts {
     route_not_found: WebExtensionMessage;
 }
 ```
+
 </v-click>
 
 <!--
