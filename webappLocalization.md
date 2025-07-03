@@ -644,6 +644,11 @@ level: 2
 
 - 📌 **Weblate**
 - 💡 **Phrase**
+
+</v-clicks>
+
+<v-click>
+
 - **Crowdin**
 - **Lokalise**
 - **POEditor**
@@ -652,9 +657,14 @@ level: 2
 - **Zanata**
 - **Memsource**
 - **SDL Trados**
+
+</v-click>
+
+<v-click>
+
 - **Pontoon (Mozilla)**
 
-</v-clicks>
+</v-click>
 
 ---
 title: Weblate
@@ -702,6 +712,7 @@ level: 2
 - Connect your **Git repository** for automatic translation sync
 - Add and manage **target languages** for your project
 - Use the web-based translation **editor** for easy translation
+- add adintional information like **screenshots**
 - Leverage **translation memory with suggestions** for consistency
 - Manage **glossary** and terminology for quality and consistency
 - Run **automated** quality **checks** and validations
@@ -710,6 +721,16 @@ level: 2
 - Track **translation progress** and statistics
 
 </v-clicks>
+
+<!--
+There are a lot of **Add-ons** to extend Weblate's functionality, like:
+- **AI translation** plugins for automatic suggestions
+- **Webhooks** for notifications and automation
+- **Custom scripts** for advanced workflows
+- **API access** for integration with other tools
+
+-->
+
 
 
 ---
@@ -738,10 +759,10 @@ level: 2
 
 </v-clicks>
 
-## Important Environment Variables
 
 <v-clicks>
 
+## Important Environment Variables
 - `WEBLATE_SITE_DOMAIN`: localhost:8080
 - `WEBLATE_ADMIN_EMAIL`: admin@example.com
 - `WEBLATE_ADMIN_PASSWORD`: adminpassword
