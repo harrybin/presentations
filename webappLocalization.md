@@ -73,7 +73,7 @@ title: Usual Localization Process
 <v-clicks>
 
 - Extract user-facing text from source code
-- Replace text with translation keys or components
+- Replace text with translation keys
 - Store translations in separate files (e.g., JSON)
 - Use a localization library (e.g., react-intl)
 
@@ -249,11 +249,12 @@ level: 2
 - Use **Typescript** to avoid magic strings  ➡️  easy
 - Use **Interfaces** to define the structure of your translations
   - introduce a new translation method/hook
+  
 </v-clicks>
 
-<v-after>
+<v-click>
 
-```jsx {all|7}{maxHeight:'250px'}
+```jsx {all|7|16}{maxHeight:'250px'}
 /**
 * Hook to return a function, which translates the given text identified by its key
 * or returns the key itself, when no text is found.
@@ -274,7 +275,7 @@ export type Translate =
 
 ```
 
-</v-after>
+</v-click>
 
 <!--
 PrimitiveType will be shown in the demo if of interest, but it's only `export type PrimitiveType = string | number | boolean | null | undefined | Date;`
