@@ -1,6 +1,7 @@
 ---
 title: "Example: Full-Stack Dev-Container"
 hideInToc: true
+hide: true
 ---
 
 <h1 class="h-auto!" > Example: Full-Stack Dev-Container	</h1>

@@ -389,6 +389,7 @@ including a DEMO
 ---
 title: "Example: Data Science Dev-Container"
 hideInToc: true
+hide: true
 ---
 
 <h1 class="h-auto!"> Example: Data Science Dev-Container </h1>
