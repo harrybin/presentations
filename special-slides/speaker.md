@@ -14,7 +14,7 @@ hideInToc: true
 
 ## Harald Binkle
 
-Fullstack | DevOps | MVP
+Fullstack | DevOps
 
 Consultant & Trainer
 
