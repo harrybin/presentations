@@ -32,7 +32,10 @@ Consultant & Trainer
  [![LinkedIn](/LinkedIn_icon.svg)](https://www.linkedin.com/in/harald-binkle)
 </div>
 
-[**Blog:** https://harrybin.de/](https://harrybin.de/)
+<img src="/MVP_Badge.png" alt="MVP" style="width:50%; margin-left: 5px; height: auto; display:inline-block;vertical-align:middle;" />
+
+[**Blog:** https://harrybin.de/](https://harrybin.de/) 
 </div>
+
 
 </div>
