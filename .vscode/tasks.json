@@ -30,6 +30,20 @@
       },
     },
     {
+      "label": "🚀devcontainer 20m",
+      "options": {
+        "statusbar": {
+          "color": "#00ff2a"
+        }
+      },
+      "type": "shell",
+      "command": "npx slidev devcontainer_20m.md",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
       "label": "🚀webappLocalization",
       "options": {
         "statusbar": {

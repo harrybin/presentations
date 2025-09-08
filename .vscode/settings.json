@@ -2,6 +2,7 @@
     "slidev.include": [
         "**/slides.md",
         "devcontainer.md",
-        "webappLocalization.md"
+        "webappLocalization.md",
+        "devcontainer_20m.md"
     ]
 }
