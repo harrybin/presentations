@@ -30,14 +30,14 @@
       },
     },
     {
-      "label": "🚀devcontainer 20m",
+      "label": "🚀githubCopilotDelphi",
       "options": {
         "statusbar": {
           "color": "#00ff2a"
         }
       },
       "type": "shell",
-      "command": "npx slidev devcontainer_20m.md",
+      "command": "npx slidev githubCopilotDelphi.md",
       "group": {
         "kind": "build",
         "isDefault": true
