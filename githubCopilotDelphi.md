@@ -25,6 +25,8 @@ hideInToc: true
 routeAlias: githubCopilotDelphi
 ---
 
+<img src="/ekon29.png" width="40%" class="mt--20 mb-20" />
+
 # GitHub Copilot especially for Delphi Developers
 
 ---
