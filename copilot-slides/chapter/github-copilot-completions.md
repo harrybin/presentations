@@ -206,20 +206,4 @@ level: 2
 Default model for Copilot Completions is **GPT-4o**. Nevertheless the model can be changed.
 -->
 
----
-layout: image-left
-background: /pilot-1-left.png
-level: 2
----
 
-# Benefits Of GitHub Copilot
-
-<v-clicks>
-
-- Takes care of **mundane tasks**, leaves developers **more focused** on **business value**
-- Developers stay **in the flow** thanks to accurate **code suggestions**
-- Developers are **happier** because they can create more **"real" value**
-- Direct access to the **knowledge of a million developers** thanks to the trained **LLMs**
-- **Integrated** in the IDE
-
-</v-clicks>

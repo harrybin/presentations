@@ -94,11 +94,9 @@ layout: two-cols
 level: 2
 ---
 
-# Step 1: Generate LSP Config
+<h1 class="h-auto! mt-5">Generate LSP Config</h1>
 
 ## Within RAD Studio
-
-<v-clicks>
 
 Navigate in RAD Studio:
 
@@ -113,7 +111,19 @@ Editor > Language > Code Insight
 
 This generates `.delphilsp.json` files for each project
 
-</v-clicks>
+
+<br/>
+
+<v-click>
+
+## In VSCode
+
+- **Select it** (once --> workspace settings)
+   - Command Palette: `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
+   - Type: `DelphiLSP: Select project settings`
+   - Set the project context
+
+</v-click>
 
 ::right::
 
@@ -139,54 +149,24 @@ This generates `.delphilsp.json` files for each project
 
 <!--
 The .delphilsp.json file is crucial - it tells the language server how to understand your project structure, dependencies, and compiler settings. Without this file, the language server won't work properly.
--->
 
----
-layout: default
-title: Open Project in VSCode
-level: 2
----
-
-# Step 2: Open in VSCode
-
-<v-clicks>
-
-## Opening Your Delphi Project
-
-
-- **Open the project folder** in VSCode
-   - Use `File > Open Folder`
-   - Navigate to your Delphi project directory (containing `.delphilsp.json`)
-
-- **Select Project** (if multiple exist)
-   - VSCode will prompt if multiple `.delphilsp.json` files are found
-   - Choose the project you want to work with
-   - The language server will start automatically
-
-- **Manual Selection** (if needed)
-   - If you close the dialog by mistake
-   - Command Palette: `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
-   - Type: `DelphiLSP: Select project settings`
-   - Set the project context
-
-</v-clicks>
-
-<!--
 Opening the folder that contains your Delphi project with .delphilsp.json files is key. The extension will automatically detect and configure the language server.
 -->
 
+
 ---
-title: Start Coding with Full Support
+layout: image-right
+background: /delphi-code.png
 level: 2
 ---
 
-# Step 3: Start Coding
-
-<v-click>
+# Start Coding
 
 ## Full Language Server Support
 
 You can now work with your Delphi code in VS Code with:
+
+<v-clicks>
 
 - **IntelliSense**: Smart code completion
 - **Syntax Checking**: Real-time errors
@@ -195,7 +175,7 @@ You can now work with your Delphi code in VS Code with:
 - **Hover Information**: Quick docs
 - **Signature Help**: Parameter hints
 
-</v-click>
+</v-clicks>
 
 
 <!--
