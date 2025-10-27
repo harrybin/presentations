@@ -12,48 +12,6 @@ background: /world-left.jpg
 level: 2
 ---
 
-# Dos And Don'ts
-
-<v-click>
-
-## Do
-
-* Set clear goals
-* Provide detailed instructions
-* Refine through feedback
-* Use for creativity and exploration
-* Make **flight hours** by using Copilot
-
-</v-click>
-
-<br />
-
-<v-click>
-
-## Don't
-
-* Rely blindly, always verify
-* Disregard privacy
-* Expect instant perfection
-* Engage in unethical use
-
-</v-click>
-
-<!--
-[click]
-Do
-
-[click]
-Don't
--->
-
-
----
-layout: image-left
-background: /world-left.jpg
-level: 2
----
-
 # Quality Assurance
 
 <v-click>

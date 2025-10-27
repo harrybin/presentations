@@ -43,10 +43,6 @@ level: 2
 
 ## Enable in `settings.json`
 
-- `chat.agent.enabled`
-
-  Enable or disable agent mode (default: `false`, requires **VS Code 1.99** or later)
-
 - `chat.agent.maxRequests`
 
   Maximum number of requests that Copilot Edits can make in agent mode (default: 5 for Copilot Free users, 15 for other users)
@@ -55,13 +51,6 @@ level: 2
 
   A delay after which the suggested edits are automatically accepted
 
-- `github.copilot.chat.agent.runTasks`
-
-  Run workspace tasks when using agent mode in Copilot Edits (default: `true`)
-
-- `chat.mcp.discovery.enabled`
-
-  Discovery of MCP servers configured in other tools (default: `true`)
 
 ---
 layout: image-right
@@ -81,22 +70,33 @@ level: 2
 </v-click>
 
 <!--
-For the **Agent mode** demo we will use the **Chain-of-Thought Prompting** example.
 
-- ⚠️ Revert all changes made by the previous demo
-- Change the Chat mode to **Agent**
+**Explain the project**  
+_@workspace /explain what the project is about_
 
-[click]
-ℹ️ Explain to audience:
+**How to start the project?**  
+_@terminal how can i start the WrightBrothersApi project_
 
-- As we have seen in the **Edit mode** demo, context is crucial for Copilot to generate files
-- Close all files
-- ℹ️ We add some context information in the prompt as we want automate things with the **Agent mode**
-- Adjust the prompt at the beginning:  
-  _The project source is the WrightBrothersApi/WrightBrothersApi folder._  
-  _Parse an aerobatic sequence signature into a C# model._  
-  _Add the logic to a new class in the Models folder._  
-  _Add new enpoint for calculating the aerobatic sequence to the FlightsController._
+- Hover over the output
+- Explain buttons
+- Click the **Insert into Terminal** button
+
+**Show `/fix`**
+
+**Show `/tests`**
+
+**Add missing endpoints**  
+_add missing endpoints_
+
+**Adding missing log statements**  
+_add missing logger calls_  
+_add missing logger calls only one at the top of a method like in the Post method_
+
+**Refactor by extracting logic**  
+_extract the switch statement in the UpdateFlightStatus method into a new method_
+
+**Fix method names**  
+_fix method names to match the style of other methods_
 
 💡 Show how the **Agent mode** automaticaly finds the correct _folders/files_ based on the prompts context
 -->

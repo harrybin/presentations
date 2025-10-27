@@ -38,16 +38,15 @@ level: 2
 
 </v-click>
 
-<!--
-[click]
-An open protocol developed by Antrophic
+---
+layout: image-right
+background: /satelite-large.jpg
+backgroundPosition: right
+level: 2
+---
 
-[click:2]
-💡 Paste links in chat:
+<div class="flex flex-col h-full text-center justify-center">
+  <h1>MCP marketplace demo</h1>
+</div>
 
-- [Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol)
-- [Model Context Protocol (GitHub)](https://github.com/modelcontextprotocol)
-
-If you want create your own MCP server there is already a bunch of SDKs.
--->
 

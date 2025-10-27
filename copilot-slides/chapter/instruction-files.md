@@ -215,39 +215,6 @@ You can also reference where specific code is implemented
 Define which libraries you prefer to use
 -->
 
----
-level: 2
----
-
-# Example Of `copilot-instructions.md` #2
-
-```md {1-6|7-10|all}
-Use the following naming conventions:
-- Classes: PascalCase
-- Methods: PascalCase
-- Variables: camelCase
-- Constants: UPPER_SNAKE_CASE
-
-Use the following coding standards:
-- Use 4 spaces for indentation.
-- Use spaces around operators and after commas.
-- Limit lines to 120 characters.
-```
-
-<!--
-Naming conventions and coding standard are also very helpful for code generation.
-
-They are **no replacement** for tools like Linters, but help reduce time to adjust the generated code to your standards.
-
-💡 Paste links in chat:
-
-- [Writing effective repository custom instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot#writing-effective-repository-custom-instructions)
-
-⚠️ This is Cursor related but may be usefull aswell:
-
-- [Cursor Instruction Directory](https://cursor.directory)
-- [.cursorrules](https://dotcursorrules.com)
--->
 
 ---
 level: 2

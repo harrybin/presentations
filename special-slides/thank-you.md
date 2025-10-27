@@ -9,7 +9,6 @@ hideInToc: true
 <!-- issue in theme. See: https://github.com/xebia/presentation-templates/issues/12 -->
 <h1 class="h-auto! mt--170px"> Thank you!</h1>
 
-<br/>
 
 <QRCode class="ml-40px"
   type="svg"
@@ -19,6 +18,9 @@ hideInToc: true
   :height="250"
   image="logo.svg"
 />
+
+<a :href="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`" 
+   :text="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"></a>
 
 <!-- 
 Thank you for joining this session. 
