@@ -51,7 +51,5 @@ level: 2
     - Edit
     - Agent
 
----
-src: /copilot-slides/chapter/includes/ide-features.md
----
+
 

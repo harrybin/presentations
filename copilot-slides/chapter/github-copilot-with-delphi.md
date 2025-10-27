@@ -261,52 +261,8 @@ level: 2
 
 </v-click>
 
----
-
-### 💡 Pro Tip
-
-Keep both IDEs open and switch based on the task at hand!
 
 <!--
 You don't have to choose one or the other. Use each tool for what it does best to maximize productivity.
--->
-
----
-layout: default
-title: Example Delphi Project with GitHub
-level: 2
----
-
-# Example: Building Delphi with GitHub Actions
-
-<v-clicks>
-
-## delphi-demo Repository
-
-Demonstrates modern Delphi development practices:
-
-- ✅ **GitHub Actions**: Automated builds with self-hosted runner
-- ✅ **VSCode Ready**: Debugging & build configurations
-- ✅ **Copilot Enabled**: AI assistance for Delphi code
-- ✅ **GitHub Coding Agent**: AI-powered development
-- ✅ **Lazarus Support**: Cross-platform Pascal compiler
-
-## Key Features
-
-- **Launch Configurations**: Pre-configured for Win64 builds
-- **GDB Debugging**: Full debugging support in VSCode
-- **Pre-launch Tasks**: Automated build pipeline
-- **Self-hosted Runner**: Uses Windows machine with Lazarus
-
-</v-clicks>
-
-```yaml
-# Example GitHub Actions workflow
-- name: Build Delphi Project
-  run: lazbuild.exe MyDelphiProject.lpr
-```
-
-<!--
-The delphi-demo repository shows a complete modern Delphi setup with CI/CD, VSCode integration, and GitHub Copilot support.
 -->
 

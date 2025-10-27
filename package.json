@@ -23,15 +23,15 @@
     "screenshot": "slidev export --format png"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "prettier-plugin-slidev": "^1.0.5",
     "seedrandom": "^3.0.5"
   },
   "dependencies": {
-    "@slidev/cli": "^51.8.1",
-    "@slidev/client": "^51.8.1",
+    "@slidev/cli": "^52.5.0",
+    "@slidev/client": "^52.5.0",
     "@slidev/theme-default": "^0.25.0",
-    "@xebia/slidev-addon-components-common": "^0.2.1",
+    "@xebia/slidev-addon-components-common": "^0.2.2",
     "@xebia/slidev-theme-xebia": "^1.5.0",
     "slidev-addon-qrcode": "^1.0.2",
     "slidev-component-progress": "^1.1.0"

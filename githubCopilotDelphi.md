@@ -30,16 +30,16 @@ routeAlias: githubCopilotDelphi
 ---
 title: Speaker
 layout: intro
-src: special-slides/speaker2.md
+src: special-slides/speaker.md
 ---
 
 ---
 title: Is Delphi ready for AI-assisted Development?
 ---
 
-# Is Delphi ready for AI-assisted Development?
+<h1 class="h-auto">Is Delphi ready for AI-assisted Development?</h1>
 
-
+<img src="/apple-2e.jpg" class="h-full object-contain mx-auto mb-10" />
 
 
 ---
@@ -76,6 +76,14 @@ src: /copilot-slides/chapter/mcp-server.md
 
 ---
 src: /copilot-slides/chapter/wrap-up.md
+---
+
+---
+src: /special-slides/questions.md
+---
+
+---
+src: /special-slides/thank-you.md
 ---
 
 

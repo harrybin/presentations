@@ -55,11 +55,11 @@ level: 2
   <thead>
     <tr>
       <th>Copilot Feature</th>
-      <th>VS Code<br/><img src="/public/logo-vsc.png" style="height:2em" alt="VS Code"/></th>
-      <th>Visual Studio<br/><img src="/public/logo-vs.png" style="height:2em" alt="Visual Studio"/></th>
-      <th>JetBrains<br/><img src="/public/logo-jb.png" style="height:2em" alt="JetBrains"/></th>
-      <th>Eclipse<br/><img src="/public/logo-eclipse.png" style="height:2em" alt="Eclipse"/></th>
-      <th>Xcode<br/><img src="/public/logo-xcode.png" style="height:2em" alt="Xcode"/></th>
+      <th>VS Code<br/><img src="/logo-vsc.png" style="height:2em" alt="VS Code"/></th>
+      <th>Visual Studio<br/><img src="/logo-vs.png" style="height:2em" alt="Visual Studio"/></th>
+      <th>JetBrains<br/><img src="/logo-jb.png" style="height:2em" alt="JetBrains"/></th>
+      <th>Eclipse<br/><img src="/logo-eclipse.png" style="height:2em" alt="Eclipse"/></th>
+      <th>Xcode<br/><img src="/logo-xcode.png" style="height:2em" alt="Xcode"/></th>
     </tr>
   </thead>
   <tbody>
@@ -178,11 +178,11 @@ level: 2
   <thead>
     <tr>
       <th>Copilot Feature</th>
-      <th>VS Code<br/><img src="/public/logo-vsc.png" style="height:2em" alt="VS Code"/></th>
-      <th>Visual Studio<br/><img src="/public/logo-vs.png" style="height:2em" alt="Visual Studio"/></th>
-      <th>JetBrains<br/><img src="/public/logo-jb.png" style="height:2em" alt="JetBrains"/></th>
-      <th>Eclipse<br/><img src="/public/logo-eclipse.png" style="height:2em" alt="Eclipse"/></th>
-      <th>Xcode<br/><img src="/public/logo-xcode.png" style="height:2em" alt="Xcode"/></th>
+      <th>VS Code<br/><img src="/logo-vsc.png" style="height:2em" alt="VS Code"/></th>
+      <th>Visual Studio<br/><img src="/logo-vs.png" style="height:2em" alt="Visual Studio"/></th>
+      <th>JetBrains<br/><img src="/logo-jb.png" style="height:2em" alt="JetBrains"/></th>
+      <th>Eclipse<br/><img src="/logo-eclipse.png" style="height:2em" alt="Eclipse"/></th>
+      <th>Xcode<br/><img src="/logo-xcode.png" style="height:2em" alt="Xcode"/></th>
     </tr>
   </thead>
   <tbody>   
@@ -292,11 +292,11 @@ level: 2
   <thead>
     <tr>
       <th>Copilot Feature</th>
-      <th>VS Code<br/><img src="/public/logo-vsc.png" style="height:2em" alt="VS Code"/></th>
-      <th>Visual Studio<br/><img src="/public/logo-vs.png" style="height:2em" alt="Visual Studio"/></th>
-      <th>JetBrains<br/><img src="/public/logo-jb.png" style="height:2em" alt="JetBrains"/></th>
-      <th>Eclipse<br/><img src="/public/logo-eclipse.png" style="height:2em" alt="Eclipse"/></th>
-      <th>Xcode<br/><img src="/public/logo-xcode.png" style="height:2em" alt="Xcode"/></th>
+      <th>VS Code<br/><img src="/logo-vsc.png" style="height:2em" alt="VS Code"/></th>
+      <th>Visual Studio<br/><img src="/logo-vs.png" style="height:2em" alt="Visual Studio"/></th>
+      <th>JetBrains<br/><img src="/logo-jb.png" style="height:2em" alt="JetBrains"/></th>
+      <th>Eclipse<br/><img src="/logo-eclipse.png" style="height:2em" alt="Eclipse"/></th>
+      <th>Xcode<br/><img src="/logo-xcode.png" style="height:2em" alt="Xcode"/></th>
     </tr>
   </thead>
   <tbody>       
