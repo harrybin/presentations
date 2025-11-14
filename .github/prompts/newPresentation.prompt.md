@@ -21,11 +21,28 @@ Create a new slidev presentation regarding the topic information followed after 
   - thank you slide (`/special-slides/thank-you.md`)
   - end with a slide containing references of the conferences where the presentation was held
 - Structure the content slides into logical sections or chapters, each introduced by a chapter slide if necessary
-- add slide for demos where appropriate to illustrate key points
+- add slides for **demos** where appropriate to illustrate key points or visualize concepts or tools
   - add instructions for the demo in the speaker notes
+  - have at least 3 demo slides in the presentation
 - Ensure each slide has a concise title that reflects its content.
 - Use bullet points, images, and diagrams where appropriate to enhance understanding.
-- Include speaker notes for each slide to guide the presentation delivery.
+- use differnt layout for the slides
+  - preferably use the same layouts as in the other slide decks in the repository
+  - vary the slide layouts
+  - preferably use image-heavy layouts for slides
+- create mermaid diagrams where appropriate to illustrate complex concepts, workflows, data, relationships, processes or timelines etc.
+- Include **speaker notes** for each slide to guide the presentation delivery.
   - add a prompt to the speaker notes for creating an AI-generated image relevant to the slide content (generated images should be in the same stayle like e.g. `/public/devcontainer_move.jpeg` or `/public/devcontainer.jpeg`)
-- The presentation should be engaging and visually appealing, using a consistent theme and color scheme.
 - Create slides to fill a 60 minutes talk with demos. (thats around 30-40 slides)
+- the agenda / toc should only contain slides starting new topics
+  - hide slides by settings their level > 1 or setting `hideInToc: true` in the frontmatter
+  - do not have more than 10 main topics in the agenda / toc
+- if two subsequent slides have very little content, merge them into one slide
+- if you don't have enough content to create that many slides, do deep research on the topic to find more content
+  - if you then still don't have enough content, ask the user for more specific subtopics to cover
+- finally after creating the presentation:
+  - validate the presentation for correct slidev syntax
+  - ensure all referenced assets (images, diagrams) are available in the `public/` directory and referenced as from "root" folder
+  - create a vscode task configuration to preview the presentation locally with slidev analog to the existing tasks in the repository
+    - run that task configuration to verify it works correctly
+    - it there are any issues fix them
