@@ -39,5 +39,9 @@ The goal is to generate an image for the slide in the context.
   - go to the website: https://gemini.google.com/app?hl=de
   - wait for the user to login if needed
   - input the generated prompt into the image generation tool
+  - wait for the image to be generated
+  - if there is text on the image make sure it is readable and correct
+    - if not regenerate the image with an updated prompt
+    - if still not correct try regenerating with adjusted prompt not to use text on the image
   - download the generated image
   - Save the image in the `public/` directory of the repository with a filename that reflects the slide title (e.g., slide-title.jpg).

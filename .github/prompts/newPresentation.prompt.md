@@ -34,7 +34,7 @@ Create a new slidev presentation regarding the topic information followed after 
   - preferably use image-heavy layouts for slides
   - at least 50% of the slides should use image-heavy layouts
   - no image layout on slides with tables, code snippets or mermaid diagrams
-- create mermaid diagrams where appropriate to illustrate complex concepts, workflows, data, relationships, or processes etc.
+- create mermaid diagrams where appropriate to illustrate complex concepts, workflows,structures, data, relationships, or processes etc.
 - for timelines use vue-timeline component from `@xebia/slidev-addon-components-common`
 - Include **speaker notes** for each slide to guide the presentation delivery.
   - add a prompt to the speaker notes for creating an AI-generated image relevant to the slide content (generated images should be in the same stayle like e.g. `/public/devcontainer_move.jpeg` or `/public/devcontainer.jpeg`)

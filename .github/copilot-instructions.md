@@ -35,5 +35,6 @@
 ## References
 
 - Slidev syntax & frontmatter: https://sli.dev/guide/syntax and https://sli.dev/custom/#frontmatter (type definitions live in `packages/types/src/config.ts` upstream).
-- Supported layouts list: https://sli.dev/builtin/layouts.
+- Supported layouts list for the xebia theme: https://github.com/xebia/presentation-templates/tree/main/slidev-theme-xebia/layouts
+  - hoe touse these layouts: https://github.com/xebia/presentation-templates/blob/main/slidev-theme-xebia/example.md
 - Use `/public` for imagery, `/special-slides` & `/copilot-slides` for shared markdown, and `components/` for Vue enhancements.
