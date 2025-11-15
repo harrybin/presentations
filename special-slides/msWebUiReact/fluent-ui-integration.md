@@ -48,12 +48,15 @@ const ShipCard = ({ ship }) => {
 </v-click>
 
 <!-- 
-Demo Instructions:
+Demo 
+[https://github.com/harrybin/react](https://github.com/harrybin/react)
+
+
+Instructions:
 1. Show Fluent UI component library (Storybook)
 2. Demonstrate component usage without CSS
 3. Compare to XAML controls
 4. Show theming capabilities
 5. Explore Fluent UI documentation
 
-AI Image Prompt: Fluent UI component library showcase with various buttons, cards, and controls in Microsoft's design language. Style: clean, modern, Windows 11 aesthetic.
 -->

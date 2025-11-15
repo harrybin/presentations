@@ -56,12 +56,14 @@ const ShipCounter = () => {
 </v-click>
 
 <!-- 
-Demo Instructions:
+Demo 
+[https://github.com/harrybin/react](https://github.com/harrybin/react)
+
+Instructions:
 1. Show useState hook in action
 2. Compare to WPF INotifyPropertyChanged
 3. Demonstrate component re-rendering
 4. Show React DevTools
 5. Explain one-way data flow vs two-way binding
 
-AI Image Prompt: Split screen showing React useState code on left and WPF XAML/C# code on right with arrows showing data flow. Style: educational, technical diagram.
 -->

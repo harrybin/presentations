@@ -576,7 +576,10 @@ background: /react-steps.png
 
 # From Windows Desktop to React
 
-
+<!--
+So if you like to react, what does i mean?
+- some basics and key differences will follow
+-->
 
 ---
 title: React Component Basics
