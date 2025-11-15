@@ -62,8 +62,8 @@ Demo
 Instructions:
 1. Show useState hook in action
 2. Compare to WPF INotifyPropertyChanged
-3. Demonstrate component re-rendering
-4. Show React DevTools
+3. **Demonstrate/explain component re-rendering**
+4. Show [React] DevTools
 5. Explain one-way data flow vs two-way binding
 
 -->

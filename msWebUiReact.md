@@ -795,21 +795,27 @@ hideInToc: true
 ::left::
 
 ## Fluent UI (Microsoft)
-<v-clicks>
+<v-click>
 
 - Microsoft's design language
 - Office 365 look & feel
+- Enterprise-ready
+
+</v-click>
+<br>
+<v-click>
+
+## Both
+
 - React, Web Components
 - TypeScript-first
 - Active development
-- Enterprise-ready
-
-</v-clicks>
+</v-click>
 
 ::right::
 
 ## Material-UI (MUI)
-<v-clicks>
+<v-click>
 
 - Google's Material Design
 - Larger community
@@ -817,8 +823,9 @@ hideInToc: true
 - Extensive docs
 - Free + Pro versions
 - Industry standard
+- **Layout Components**
 
-</v-clicks>
+</v-click>
 
 <!-- 
 Both libraries eliminate most CSS work. Fluent UI aligns with Microsoft products, while Material-UI offers broader community and components.
