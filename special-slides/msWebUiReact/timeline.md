@@ -1,5 +1,6 @@
 ---
 layout: default
+hideInToc: true
 ---
 
 # Microsofts UI Technologies

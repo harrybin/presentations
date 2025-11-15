@@ -12,14 +12,13 @@ editor: true
 overviewSnapshots: false
 glowEnabled: true
 layout: cover
-background: /msWebUiReact-cover.jpg
+background: /msWebUiReact-cover.png
 description: Exploring Microsoft's web UI technology choices and why React is the strategic choice for Windows developers modernizing applications
 hideInToc: true
 routeAlias: msWebUiReact
 ---
 
 # Microsoft's Web UI Technology
-## Is It React?
 
 
 <!-- 
@@ -45,8 +44,9 @@ src: /special-slides/msWebUiReact/timeline.md
 ---
 
 ---
-layout: default
+layout: image-right
 title: Agenda
+background: /public/spaceships-right.jpg
 hideInToc: true
 ---
 
@@ -60,6 +60,58 @@ hideInToc: true
 
 <!-- 
 Standard agenda slide showing the main chapter-darks of the presentation
+-->
+
+---
+layout: chapter-dark
+background: /react-steps.png
+---
+
+# Really? React?
+
+<!--
+How to start local Outlook with developer tools open showing React components (commandline parameter):
+  - `olk.exe --devtools`
+  
+```
+THIRD-PARTY SOFTWARE NOTICES
+react v18.3.1 - MIT license (https://github.com/facebook/react.git)
+react-dom v18.3.1 - MIT license (https://github.com/facebook/react.git)
+scheduler v0.23.2 - MIT license (https://github.com/facebook/react.git)
+raf v3.4.1 - Chris Dickinson <chris@neversaw.us> - MIT license (git://github.com/chrisdickinson/raf.git)
+mobx v6.13.7 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx.git)
+reflect-metadata v0.1.13 - Ron Buckton - Apache-2.0 license (https://github.com/rbuckton/reflect-metadata.git)
+@ctrl/tinycolor v3.6.1 - Scott Cooper <scttcper@gmail.com> - MIT license
+@floating-ui/devtools v0.2.3 - MIT license (https://github.com/floating-ui/floating-ui.git)
+@floating-ui/dom v1.6.13 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+use-sync-external-store v1.5.0 - MIT license (https://github.com/facebook/react.git)
+ts-md5 v1.2.0 - MIT license (git+https://github.com/cotag/ts-md5.git)
+@nevware21/ts-utils v0.12.3 - Nevware21 Solutions LLC - MIT license (https://github.com/nevware21/ts-utils.git)
+rtl-css-js v1.16.1 - Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/) - MIT license (https://github.com/kentcdodds/rtl-css-js.git)
+@floating-ui/utils v0.2.9 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+@emotion/hash v0.9.1 - MIT license
+react-transition-group v4.4.5 - BSD-3-Clause license (https://github.com/reactjs/react-transition-group.git)
+@floating-ui/core v1.6.9 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+@nevware21/ts-async v0.5.4 - NevWare21 Solutions LLC - MIT license (https://github.com/nevware21/ts-async.git)
+stylis v4.3.6 - Sultan Tarimo <sultantarimo@me.com> - MIT license
+mobx-react v9.2.0 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx.git)
+embla-carousel-autoplay v8.5.1 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+embla-carousel v8.6.0 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+embla-carousel-fade v8.5.1 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+@babel/runtime v7.27.1 - The Babel Team (https://babel.dev/team) - MIT license (https://github.com/babel/babel.git)
+dom-helpers v5.2.1 - Jason Quense - MIT license (git+https://github.com/react-bootstrap/dom-helpers.git)
+prop-types v15.8.1 - MIT license
+react-is v18.3.1 - MIT license (https://github.com/facebook/react.git)
+mobx-react-lite v4.1.0 - Daniel K. - MIT license (https://github.com/mobxjs/mobx.git)
+mobx-utils v6.0.5 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx-utils.git)
+url v0.10.3 - MIT license (https://github.com/defunctzombie/node-url.git)
+hash.js v1.1.7 - Fedor Indutny <fedor@indutny.com> - MIT license (git@github.com:indutny/hash.js)
+punycode v2.3.1 - Mathias Bynens - MIT license (https://github.com/mathiasbynens/punycode.js.git)
+querystring v0.2.0 - Irakli Gozalishvili <rfobic@gmail.com> - MIT license (git://github.com/Gozala/querystring.git)
+minimalistic-assert v1.0.1 - ISC license (https://github.com/calvinmetcalf/minimalistic-assert.git)
+inherits v2.0.4 - ISC license
+css-loader v6.8.1 - Tobias Koppers @sokra - MIT license
+```
 -->
 
 ---
@@ -81,6 +133,8 @@ hideInToc: true
 
 </v-clicks>
 
+<br>
+
 <v-click>
 
 ## The Question
@@ -97,47 +151,11 @@ This slide introduces the central paradox: Microsoft, known for its own framewor
 AI Image Prompt: A crossroads with multiple technology paths converging into one modern web path, featuring subtle React and Microsoft logos. Style: clean, professional, blue/purple gradient, similar to pilot-large.jpg
 -->
 
----
-layout: image-right
-background: /msWebUiReact-timeline.jpg
-backgroundSize: contain
----
-
-# The Evolution Timeline
-
-## Desktop Era (1990s-2000s)
-<v-clicks>
-
-- **1992**: MFC (C++ wrapper)
-- **1993**: Win32 API
-- **2002**: Windows Forms
-- **2006**: WPF (XAML revolution)
-- **2007**: Silverlight (web dreams)
-
-</v-clicks>
-
-## Modern Era (2010s-2020s)
-<v-clicks>
-
-- **2014**: Xamarin.Forms
-- **2015**: UWP (Universal Windows)
-- **2018**: WinUI 2, Blazor
-- **2021**: WinUI 3
-- **2022**: .NET MAUI
-
-</v-clicks>
-
-<!-- 
-This timeline shows Microsoft's 30+ year journey in UI technologies, from desktop-first to modern cross-platform approaches. Notice the acceleration of new frameworks in recent years.
-
-AI Image Prompt: A timeline visualization showing evolution from desktop windows to web browsers and mobile devices, with technology icons along a flowing path. Style: infographic, professional, blue gradient.
--->
 
 ---
 layout: image-right
 background: /msWebUiReact-desktop-kings.jpg
 backgroundSize: contain
-hideInToc: true
 ---
 
 # The Desktop Kings
@@ -153,8 +171,10 @@ hideInToc: true
 
 </v-clicks>
 
-## WPF (2006)
+<br>
+
 <v-clicks>
+## WPF (2006)
 
 - **XAML**-based UI
 - Data binding magic
@@ -174,7 +194,6 @@ AI Image Prompt: Split image showing classic Windows desktop applications on lef
 ---
 layout: image-right
 background: /msWebUiReact-mobile-push.jpg
-hideInToc: true
 ---
 
 # The Web Attempts
@@ -208,7 +227,6 @@ Microsoft's early web attempts tried to bring desktop paradigms to the web. Both
 ---
 layout: image-right
 background: /msWebUiReact-mobile-push.jpg
-hideInToc: true
 ---
 
 # The Mobile Push
@@ -245,6 +263,7 @@ AI Image Prompt: Devices (desktop, tablet, phone, Xbox) connected in a network s
 layout: image-right
 background: /msWebUiReact-winui3.jpg
 backgroundSize: contain
+hideInToc: true
 ---
 
 # WinUI 3: Windows Native
@@ -525,6 +544,7 @@ AI Image Prompt: Microsoft product logos (SharePoint, Teams, Outlook, Power Plat
 title: React Component Basics
 layout: image-right
 background: /msWebUiReact-demo1.jpg
+hideInToc: true
 ---
 
 <h1 class="h-auto!"> React Component Basics </h1>
@@ -693,6 +713,7 @@ AI Image Prompt: Split screen showing React useState code on left and WPF XAML/C
 ---
 layout: image-right
 background: /msWebUiReact-transfers.jpg
+hideInToc: true
 ---
 
 # What Transfers Directly
@@ -768,6 +789,7 @@ The biggest mental shift is from imperative, stateful UI to declarative, functio
 ---
 layout: default
 title: Concept Mapping XAML → React
+hideInToc: true
 ---
 
 <h1 class="h-auto!"> Concept Mapping: XAML → React </h1>
@@ -802,6 +824,7 @@ Visual mapping of familiar XAML concepts to their React equivalents. This helps 
 ---
 layout: image-right
 background: /msWebUiReact-css-challenge.jpg
+hideInToc: true
 ---
 
 # The CSS Challenge
@@ -837,6 +860,7 @@ AI Image Prompt: Tangled CSS code on left transforming into clean component libr
 
 ---
 layout: two-column
+hideInToc: true
 ---
 
 # Component Libraries Comparison
@@ -873,44 +897,6 @@ layout: two-column
 Both libraries eliminate most CSS work. Fluent UI aligns with Microsoft products, while Material-UI offers broader community and components.
 -->
 
-
----
-layout: image-right
-background: /msWebUiReact-tooling.jpg
-backgroundSize: contain
----
-
-# Tooling & Ecosystem
-
-## Development Tools
-<v-clicks>
-
-- **VS Code** (not Visual Studio!)
-- React DevTools
-- npm/yarn package managers
-- Vite/Create React App
-- ESLint/Prettier
-- Git workflows
-
-</v-clicks>
-
-## Key Libraries
-<v-clicks>
-
-- **React Router** (navigation)
-- Axios/Fetch (HTTP)
-- React Query (data fetching)
-- Formik/React Hook Form
-- Jest/React Testing Library
-- Storybook (component dev)
-
-</v-clicks>
-
-<!-- 
-The JavaScript ecosystem is vast. Start with the essentials: VS Code, React DevTools, and a few key libraries. Add others as needed.
-
-AI Image Prompt: Toolbox with modern developer tools icons (VS Code, React, npm, Git) arranged professionally. Style: flat design, colorful but professional.
--->
 
 ---
 layout: two-column
@@ -951,6 +937,44 @@ hideInToc: true
 
 <!-- 
 Project structure is similar conceptually: separate UI from logic, organize by feature or type. React projects are typically flatter and less ceremony.
+-->
+
+---
+layout: image-right
+background: /msWebUiReact-tooling.jpg
+backgroundSize: contain
+---
+
+# Tooling & Ecosystem
+
+## Development Tools
+<v-clicks>
+
+- **VS Code** (not Visual Studio!)
+- React DevTools
+- npm/yarn package managers
+- Vite/Create React App
+- ESLint/Prettier
+
+</v-clicks>
+
+## Key Libraries
+<v-clicks>
+
+- **React Router** (navigation)
+- NextJS (SSR/SSG)
+- Fetch (HTTP)
+- React Query (data fetching)
+- Formik/React Hook Form
+- Jest/React Testing Library
+- Storybook (component dev)
+
+</v-clicks>
+
+<!-- 
+The JavaScript ecosystem is vast. Start with the essentials: VS Code, React DevTools, and a few key libraries. Add others as needed.
+
+AI Image Prompt: Toolbox with modern developer tools icons (VS Code, React, npm, Git) arranged professionally. Style: flat design, colorful but professional.
 -->
 
 ---
@@ -1006,6 +1030,7 @@ chapter-dark divider covering the transition from Windows development to React a
 
 ---
 layout: default
+hideInToc: true
 ---
 
 # Migration Strategies
@@ -1077,6 +1102,7 @@ Hybrid approaches allow gradual transition. WebView2 lets you embed React in exi
 layout: image-right
 background: /msWebUiReact-decision-tree.jpg
 backgroundSize: contain
+hideInToc: true
 ---
 
 # Technology Selection Decision Tree
@@ -1129,6 +1155,7 @@ AI Image Prompt: Decision tree diagram with technology choices branching based o
 
 ---
 layout: two-column
+hideInToc: true
 ---
 
 # Success Metrics
@@ -1165,22 +1192,13 @@ layout: two-column
 Track both technical and business metrics. React's ecosystem advantages often show up in hiring speed and developer velocity.
 -->
 
----
-layout: chapter-dark
----
-
-# Summary & Takeaways
-
-<!-- 
-chapter-dark divider for summary and key takeaways from the presentation
--->
 
 ---
 layout: image-right
 background: /msWebUiReact-summary.jpg
 ---
 
-# Key Takeaways
+# Takeaways
 
 ## Microsoft's Journey
 <v-clicks>
@@ -1251,19 +1269,6 @@ The title question answered: Microsoft uses React for web, and you probably shou
 AI Image Prompt: Large stylized question mark transforming into checkmark, with React logo integrated. Style: bold, professional, gradient blue/purple.
 -->
 
----
-layout: quote
----
-
-# "The best UI framework is the one that helps you ship products users love."
-
-<div class="text-right mt-8">
-  <em>— But React makes that easier</em>
-</div>
-
-<!-- 
-Pragmatic conclusion: While all frameworks can build good products, React's ecosystem advantages make success more likely.
--->
 
 ---
 src: /special-slides/questions.md
