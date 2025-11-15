@@ -63,96 +63,6 @@ Standard agenda slide showing the main chapter-darks of the presentation
 -->
 
 ---
-layout: chapter-dark
-background: /react-steps.png
----
-
-# Really? React?
-
-<!--
-How to start local Outlook with developer tools open showing React components (commandline parameter):
-  - `olk.exe --devtools`
-  
-```
-THIRD-PARTY SOFTWARE NOTICES
-react v18.3.1 - MIT license (https://github.com/facebook/react.git)
-react-dom v18.3.1 - MIT license (https://github.com/facebook/react.git)
-scheduler v0.23.2 - MIT license (https://github.com/facebook/react.git)
-raf v3.4.1 - Chris Dickinson <chris@neversaw.us> - MIT license (git://github.com/chrisdickinson/raf.git)
-mobx v6.13.7 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx.git)
-reflect-metadata v0.1.13 - Ron Buckton - Apache-2.0 license (https://github.com/rbuckton/reflect-metadata.git)
-@ctrl/tinycolor v3.6.1 - Scott Cooper <scttcper@gmail.com> - MIT license
-@floating-ui/devtools v0.2.3 - MIT license (https://github.com/floating-ui/floating-ui.git)
-@floating-ui/dom v1.6.13 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
-use-sync-external-store v1.5.0 - MIT license (https://github.com/facebook/react.git)
-ts-md5 v1.2.0 - MIT license (git+https://github.com/cotag/ts-md5.git)
-@nevware21/ts-utils v0.12.3 - Nevware21 Solutions LLC - MIT license (https://github.com/nevware21/ts-utils.git)
-rtl-css-js v1.16.1 - Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/) - MIT license (https://github.com/kentcdodds/rtl-css-js.git)
-@floating-ui/utils v0.2.9 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
-@emotion/hash v0.9.1 - MIT license
-react-transition-group v4.4.5 - BSD-3-Clause license (https://github.com/reactjs/react-transition-group.git)
-@floating-ui/core v1.6.9 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
-@nevware21/ts-async v0.5.4 - NevWare21 Solutions LLC - MIT license (https://github.com/nevware21/ts-async.git)
-stylis v4.3.6 - Sultan Tarimo <sultantarimo@me.com> - MIT license
-mobx-react v9.2.0 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx.git)
-embla-carousel-autoplay v8.5.1 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
-embla-carousel v8.6.0 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
-embla-carousel-fade v8.5.1 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
-@babel/runtime v7.27.1 - The Babel Team (https://babel.dev/team) - MIT license (https://github.com/babel/babel.git)
-dom-helpers v5.2.1 - Jason Quense - MIT license (git+https://github.com/react-bootstrap/dom-helpers.git)
-prop-types v15.8.1 - MIT license
-react-is v18.3.1 - MIT license (https://github.com/facebook/react.git)
-mobx-react-lite v4.1.0 - Daniel K. - MIT license (https://github.com/mobxjs/mobx.git)
-mobx-utils v6.0.5 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx-utils.git)
-url v0.10.3 - MIT license (https://github.com/defunctzombie/node-url.git)
-hash.js v1.1.7 - Fedor Indutny <fedor@indutny.com> - MIT license (git@github.com:indutny/hash.js)
-punycode v2.3.1 - Mathias Bynens - MIT license (https://github.com/mathiasbynens/punycode.js.git)
-querystring v0.2.0 - Irakli Gozalishvili <rfobic@gmail.com> - MIT license (git://github.com/Gozala/querystring.git)
-minimalistic-assert v1.0.1 - ISC license (https://github.com/calvinmetcalf/minimalistic-assert.git)
-inherits v2.0.4 - ISC license
-css-loader v6.8.1 - Tobias Koppers @sokra - MIT license
-```
--->
-
----
-layout: image-right
-background: /msWebUiReact-crossroads.jpg
-backgroundSize: contain
-hideInToc: true
----
-
-# The Crossroads
-
-<v-clicks>
-
-- SharePoint → **React**
-- Power Platform → **React**  
-- Teams → **React**
-- Outlook (new) → **React**
-- Office Add-ins → **React**
-
-</v-clicks>
-
-<br>
-
-<v-click>
-
-## The Question
-
-If Microsoft bets on React...
-
-**Should you?**
-
-</v-click>
-
-<!-- 
-This slide introduces the central paradox: Microsoft, known for its own frameworks, has standardized on React for its modern web applications. This sets up the core question of the presentation.
-
-AI Image Prompt: A crossroads with multiple technology paths converging into one modern web path, featuring subtle React and Microsoft logos. Style: clean, professional, blue/purple gradient, similar to pilot-large.jpg
--->
-
-
----
 layout: image-right
 background: /msWebUiReact-desktop-kings.jpg
 backgroundSize: contain
@@ -208,9 +118,10 @@ background: /msWebUiReact-mobile-push.jpg
 - HTML5 won
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## ASP.NET Web Forms
-<v-clicks>
 
 - Desktop-like web dev
 - ViewState complexity
@@ -241,9 +152,10 @@ background: /msWebUiReact-mobile-push.jpg
 - Transitioning to WinUI 3
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## Xamarin.Forms (2014-2024)
-<v-clicks>
 
 - True cross-platform mobile
 - iOS, Android, Windows
@@ -303,7 +215,7 @@ backgroundSize: contain
 hideInToc: true
 ---
 
-# WinUI 3: Developer Perspective
+# WinUI 3: Developer View
 
 ## Strengths
 <v-clicks>
@@ -348,7 +260,7 @@ backgroundSize: contain
 - **One codebase**: 90%+ sharing
 
 </v-clicks>
-
+<br>
 <v-clicks>
 
 ## Use Cases
@@ -373,7 +285,7 @@ backgroundSize: contain
 hideInToc: true
 ---
 
-# .NET MAUI: Developer Perspective
+# .NET MAUI: Developer View
 
 ## Strengths
 <v-clicks>
@@ -385,9 +297,10 @@ hideInToc: true
 - Single project structure
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## Challenges
-<v-clicks>
 
 - Mobile paradigms required
 - Need macOS for iOS builds
@@ -403,11 +316,12 @@ MAUI solves cross-platform desktop and mobile, but doesn't address web deploymen
 
 ---
 layout: image-right
+title: Blazor - C# for the Web
 background: /msWebUiReact-blazor.jpg
 backgroundSize: contain
 ---
 
-# Blazor: C# for the Web
+<h1 class="h-auto!"> Blazor - C# for the Web </h1>
 
 <v-clicks>
 
@@ -418,6 +332,8 @@ backgroundSize: contain
 - **Paradigm**: Component-based
 
 </v-clicks>
+
+<br>
 
 <v-clicks>
 
@@ -438,12 +354,13 @@ AI Image Prompt: Browser window showing modern web application with C# code tran
 
 ---
 layout: image-right
+title: Blazor - Developer View
 background: /msWebUiReact-blazor.jpg
 backgroundSize: contain
 hideInToc: true
 ---
 
-# Blazor: Developer Perspective
+<h1 class="h-auto!"> Blazor - Developer View</h1>
 
 ## Strengths
 <v-clicks>
@@ -456,9 +373,10 @@ hideInToc: true
 - Multiple hosting models
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## Challenges
-<v-clicks>
 
 - Larger initial payload (WASM)
 - Web concepts still needed
@@ -474,13 +392,104 @@ Blazor lets Windows developers use C#, but it still requires understanding web p
 
 ---
 layout: chapter-dark
+background: /msWebUiReact-cover.png
 ---
 
-# Modern Microsoft UI & React
-## Strategic Technologies Comparison
+# Modern Microsoft UI
 
 <!-- 
 chapter-dark divider covering Microsoft's current UI frameworks (WinUI 3, .NET MAUI, Blazor) and the strategic comparison with React
+-->
+
+---
+layout: image-right
+background: /msWebUiReact-crossroads.jpg
+backgroundSize: contain
+hideInToc: true
+---
+
+# The Crossroads
+
+<v-clicks>
+
+- SharePoint → **React**
+- Power Platform → **React**  
+- Teams → **React**
+- Outlook (new) → **React**
+- Office Add-ins → **React**
+
+</v-clicks>
+
+<br>
+
+<v-click>
+
+## The Question
+
+If Microsoft bets on React...
+
+**Should you?**
+
+</v-click>
+
+<!-- 
+This slide introduces the central paradox: Microsoft, known for its own frameworks, has standardized on React for its modern web applications. This sets up the core question of the presentation.
+
+AI Image Prompt: A crossroads with multiple technology paths converging into one modern web path, featuring subtle React and Microsoft logos. Style: clean, professional, blue/purple gradient, similar to pilot-large.jpg
+-->
+
+
+---
+layout: chapter-dark
+background: /react-steps.png
+---
+
+# Really? React?
+DEMO
+
+<!--
+How to start local Outlook with developer tools open showing React components (commandline parameter):
+  - `olk.exe --devtools`
+  
+```
+THIRD-PARTY SOFTWARE NOTICES
+react v18.3.1 - MIT license (https://github.com/facebook/react.git)
+react-dom v18.3.1 - MIT license (https://github.com/facebook/react.git)
+scheduler v0.23.2 - MIT license (https://github.com/facebook/react.git)
+raf v3.4.1 - Chris Dickinson <chris@neversaw.us> - MIT license (git://github.com/chrisdickinson/raf.git)
+mobx v6.13.7 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx.git)
+reflect-metadata v0.1.13 - Ron Buckton - Apache-2.0 license (https://github.com/rbuckton/reflect-metadata.git)
+@ctrl/tinycolor v3.6.1 - Scott Cooper <scttcper@gmail.com> - MIT license
+@floating-ui/devtools v0.2.3 - MIT license (https://github.com/floating-ui/floating-ui.git)
+@floating-ui/dom v1.6.13 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+use-sync-external-store v1.5.0 - MIT license (https://github.com/facebook/react.git)
+ts-md5 v1.2.0 - MIT license (git+https://github.com/cotag/ts-md5.git)
+@nevware21/ts-utils v0.12.3 - Nevware21 Solutions LLC - MIT license (https://github.com/nevware21/ts-utils.git)
+rtl-css-js v1.16.1 - Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/) - MIT license (https://github.com/kentcdodds/rtl-css-js.git)
+@floating-ui/utils v0.2.9 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+@emotion/hash v0.9.1 - MIT license
+react-transition-group v4.4.5 - BSD-3-Clause license (https://github.com/reactjs/react-transition-group.git)
+@floating-ui/core v1.6.9 - atomiks - MIT license (https://github.com/floating-ui/floating-ui.git)
+@nevware21/ts-async v0.5.4 - NevWare21 Solutions LLC - MIT license (https://github.com/nevware21/ts-async.git)
+stylis v4.3.6 - Sultan Tarimo <sultantarimo@me.com> - MIT license
+mobx-react v9.2.0 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx.git)
+embla-carousel-autoplay v8.5.1 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+embla-carousel v8.6.0 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+embla-carousel-fade v8.5.1 - David Jerleke - MIT license (git+https://github.com/davidjerleke/embla-carousel)
+@babel/runtime v7.27.1 - The Babel Team (https://babel.dev/team) - MIT license (https://github.com/babel/babel.git)
+dom-helpers v5.2.1 - Jason Quense - MIT license (git+https://github.com/react-bootstrap/dom-helpers.git)
+prop-types v15.8.1 - MIT license
+react-is v18.3.1 - MIT license (https://github.com/facebook/react.git)
+mobx-react-lite v4.1.0 - Daniel K. - MIT license (https://github.com/mobxjs/mobx.git)
+mobx-utils v6.0.5 - Michel Weststrate - MIT license (https://github.com/mobxjs/mobx-utils.git)
+url v0.10.3 - MIT license (https://github.com/defunctzombie/node-url.git)
+hash.js v1.1.7 - Fedor Indutny <fedor@indutny.com> - MIT license (git@github.com:indutny/hash.js)
+punycode v2.3.1 - Mathias Bynens - MIT license (https://github.com/mathiasbynens/punycode.js.git)
+querystring v0.2.0 - Irakli Gozalishvili <rfobic@gmail.com> - MIT license (git://github.com/Gozala/querystring.git)
+minimalistic-assert v1.0.1 - ISC license (https://github.com/calvinmetcalf/minimalistic-assert.git)
+inherits v2.0.4 - ISC license
+css-loader v6.8.1 - Tobias Koppers @sokra - MIT license
+```
 -->
 
 ---
@@ -506,10 +515,11 @@ This comparison shows the strategic advantages of React: massive community, abun
 
 ---
 layout: image-right
+title: Why Microsoft Uses React
 background: /msWebUiReact-microsoft-react.jpg
 ---
 
-# Why Microsoft Uses React
+<h1 class="h-auto!"> Microsoft Uses React! </h1>
 
 ## The Evidence
 <v-clicks>
@@ -522,8 +532,11 @@ background: /msWebUiReact-microsoft-react.jpg
 
 </v-clicks>
 
-## The Reasons
+<br>
+
 <v-clicks>
+
+## The Reasons?
 
 - **Ecosystem size**
 - Developer availability
@@ -595,8 +608,6 @@ hideInToc: true
 
 <h1 class="h-auto!"> Fluent UI Integration </h1>
 
-<v-click>
-
 ````md magic-move
 ```tsx
 import { Button, Card } from '@fluentui/react-components';
@@ -626,8 +637,6 @@ const ShipCard = ({ ship }) => {
 };
 ```
 ```` 
-
-</v-click>
 
 <v-click>
 
@@ -712,11 +721,12 @@ AI Image Prompt: Split screen showing React useState code on left and WPF XAML/C
 
 ---
 layout: image-right
+title: What Transfers Directly
 background: /msWebUiReact-transfers.jpg
 hideInToc: true
 ---
 
-# What Transfers Directly
+<h1 class="h-auto!"> What Transfers Directly </h1>
 
 ## Programming Concepts
 <v-clicks>
@@ -729,9 +739,10 @@ hideInToc: true
 - Testing practices
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## With TypeScript
-<v-clicks>
 
 - **Strong typing**
 - Interfaces
@@ -823,11 +834,13 @@ Visual mapping of familiar XAML concepts to their React equivalents. This helps 
 
 ---
 layout: image-right
-background: /msWebUiReact-css-challenge.jpg
+title: The CSS Challenge
+background: /msWebUiReact-css-challenge.png
+backgroundSize: 120%
 hideInToc: true
 ---
 
-# The CSS Challenge
+<h1 class="h-auto!"> The CSS Challenge </h1>
 
 ## The Problem
 <v-clicks>
@@ -839,9 +852,10 @@ hideInToc: true
 - Specificity rules
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## The Solutions
-<v-clicks>
 
 - **Fluent UI** components
 - **Material-UI** (MUI)
@@ -941,11 +955,12 @@ Project structure is similar conceptually: separate UI from logic, organize by f
 
 ---
 layout: image-right
+title: Tooling & Ecosystem
 background: /msWebUiReact-tooling.jpg
 backgroundSize: contain
 ---
 
-# Tooling & Ecosystem
+<h1 class="h-auto!"> Tooling & Ecosystem </h1>
 
 ## Development Tools
 <v-clicks>
@@ -957,9 +972,10 @@ backgroundSize: contain
 - ESLint/Prettier
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## Key Libraries
-<v-clicks>
 
 - **React Router** (navigation)
 - NextJS (SSR/SSG)
@@ -1019,6 +1035,7 @@ Avoid trying to recreate XAML patterns in React. Embrace React's functional, dec
 
 ---
 layout: chapter-dark
+background: /bulb.jpeg
 ---
 
 # Practical Guidance & Modernization
@@ -1029,14 +1046,16 @@ chapter-dark divider covering the transition from Windows development to React a
 -->
 
 ---
-layout: default
+layout: two-column
 hideInToc: true
 ---
 
 # Migration Strategies
 
+::left::
+
 ## Big Bang Rewrite
-<v-clicks>
+<v-click>
 
 - ❌ High risk
 - ❌ Long timeline
@@ -1044,10 +1063,13 @@ hideInToc: true
 - ✅ Clean architecture
 - **Rarely recommended**
 
-</v-clicks>
+</v-click>
+
+::right::
+
+<v-click>
 
 ## Incremental Approach
-<v-clicks>
 
 - ✅ Lower risk
 - ✅ Continuous delivery
@@ -1055,7 +1077,7 @@ hideInToc: true
 - ✅ Parallel systems
 - **Recommended path**
 
-</v-clicks>
+</v-click>
 
 <!-- 
 Avoid big-bang rewrites. Incremental migration allows learning, reduces risk, and delivers value continuously.
@@ -1063,28 +1085,31 @@ Avoid big-bang rewrites. Incremental migration allows learning, reduces risk, an
 
 
 ---
-layout: two-column
+layout: image-right
+title: Hybrid Approaches
+background: /msWebUiReact-cover.png
 hideInToc: true
 ---
 
-# Hybrid Approaches
+<h1 class="h-auto!"> Hybrid Approaches </h1>
 
-::left::
+
 
 ## WebView in Desktop
-<v-clicks>
+<v-click>
 
 - Embed React in WPF/WinForms
 - WebView2 control
 - Gradual transition
 - Share authentication
 - **Good for prototyping**
-</v-clicks>
+</v-click>
 
-::right::
+<br>
+
+<v-click>
 
 ## Blazor Hybrid
-<v-clicks>
 
 - Keep C# skills
 - Gradual web learning
@@ -1092,20 +1117,20 @@ hideInToc: true
 - Desktop + Web
 - **Bridge solution**
 
-</v-clicks>
+</v-click>
 
 <!-- 
 Hybrid approaches allow gradual transition. WebView2 lets you embed React in existing apps. Blazor Hybrid keeps C# while learning web concepts.
 -->
 
 ---
-layout: image-right
-background: /msWebUiReact-decision-tree.jpg
-backgroundSize: contain
+layout: two-column
 hideInToc: true
 ---
 
-# Technology Selection Decision Tree
+::left::
+
+# Technology Selection
 
 ## Choose WinUI 3 if:
 <v-clicks>
@@ -1116,9 +1141,10 @@ hideInToc: true
 - Existing WPF investment
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## Choose .NET MAUI if:
-<v-clicks>
 
 - Need mobile + desktop
 - Prefer C#/XAML
@@ -1126,6 +1152,8 @@ hideInToc: true
 - Can avoid web browsers
 
 </v-clicks>
+
+::right::
 
 ## Choose Blazor if:
 <v-clicks>
@@ -1136,9 +1164,10 @@ hideInToc: true
 - Accept smaller ecosystem
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## Choose React if:
-<v-clicks>
 
 - **Web-first application**
 - **Need largest ecosystem**
@@ -1176,8 +1205,9 @@ hideInToc: true
 
 ::right::
 
-## Business Metrics
 <v-clicks>
+
+## Business Metrics
 
 - Time to market
 - Hiring success
@@ -1210,14 +1240,15 @@ background: /msWebUiReact-summary.jpg
 - Ecosystem matters
 
 </v-clicks>
+<br>
+<v-clicks>
 
 ## For Windows Developers
-<v-clicks>
 
 - Many skills transfer
 - TypeScript feels like C#
 - Component libraries save you
-- CSS avoidable with Fluent/MUI
+- CSS avoidable with FluentUI / MUI
 - **React is strategic choice**
 
 </v-clicks>
@@ -1231,15 +1262,16 @@ AI Image Prompt: Summary visualization with key points radiating from center, pr
 
 ---
 layout: image-right
+title: The Strategic Answer
 background: /msWebUiReact-strategic-answer.jpg
 hideInToc: true
 ---
 
-# The Strategic Answer
+<h1 class="h-auto!"> The Strategic Answer </h1>
 
 ## "Is It React?"
 
-<v-clicks>
+<v-click>
 
 ### For Microsoft: **Yes**
 - SharePoint
@@ -1248,11 +1280,12 @@ hideInToc: true
 - Power Platform
 - Office 365
 
-</v-clicks>
+</v-click>
+<br>
+<v-click>
 
 ## For You?
 
-<v-clicks>
 
 ### **Probably Yes**
 - If building for web
@@ -1261,7 +1294,7 @@ hideInToc: true
 - If ecosystem matters
 - **If following best practices**
 
-</v-clicks>
+</v-click>
 
 <!-- 
 The title question answered: Microsoft uses React for web, and you probably should too. The evidence, ecosystem, and strategic advantages are compelling.
