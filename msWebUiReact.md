@@ -111,7 +111,6 @@ hideInToc: true
 Abscract: 
 Windows Forms and WPF dominated desktop development for nearly two decades. WPF introduced concepts (XAML, data binding, MVVM) that influenced all subsequent Microsoft UI frameworks.
 
-AI Image Prompt: Split image showing classic Windows desktop applications on left transitioning to modern UI on right. Style: professional, clean, corporate blue tones.
 -->
 
 ---
@@ -183,7 +182,6 @@ hideInToc: true
 <!-- 
 UWP aimed for Windows ecosystem universality, while Xamarin.Forms tackled true cross-platform mobile. Both laid groundwork for modern solutions but had limitations.
 
-AI Image Prompt: Devices (desktop, tablet, phone, Xbox) connected in a network showing unified application. Style: modern, tech, blue/purple gradient.
 -->
 
 ---
@@ -220,7 +218,6 @@ hideInToc: true
 <!-- 
 WinUI 3 is Microsoft's recommended framework for modern Windows desktop applications. It's the evolution of UWP with better flexibility and performance.
 
-AI Image Prompt: Modern Windows 11 application window with Fluent Design elements, translucent effects, and smooth animations. Style: clean, professional, Windows 11 aesthetic.
 -->
 
 ---
@@ -290,7 +287,6 @@ backgroundSize: contain
 <!-- 
 .NET MAUI is the evolution of Xamarin.Forms, offering true write-once, run-anywhere capability across desktop and mobile platforms.
 
-AI Image Prompt: Single codebase branching to multiple devices (Windows laptop, Mac, iPhone, Android phone) with connecting lines. Style: modern, technical diagram, blue/purple gradient.
 -->
 
 ---
@@ -364,7 +360,6 @@ backgroundSize: contain
 <!-- 
 Blazor is Microsoft's answer to React/Angular/Vue, allowing C# developers to build web applications without JavaScript.
 
-AI Image Prompt: Browser window showing modern web application with C# code transforming into web UI. Style: modern, tech-focused, blue/purple gradient with code snippets.
 -->
 
 ---
@@ -456,7 +451,6 @@ If Microsoft bets on React...
 <!-- 
 This slide introduces the central paradox: Microsoft, known for its own frameworks, has standardized on React for its modern web applications. This sets up the core question of the presentation.
 
-AI Image Prompt: A crossroads with multiple technology paths converging into one modern web path, featuring subtle React and Microsoft logos. Style: clean, professional, blue/purple gradient, similar to pilot-large.jpg
 -->
 
 
@@ -552,7 +546,6 @@ hideInToc: true
 <!-- 
 Microsoft's own products prove React's superiority for web applications. When even Microsoft chooses React over its own frameworks, that's a powerful signal.
 
-AI Image Prompt: Microsoft product logos (SharePoint, Teams, Outlook, Power Platform) connected to React logo in center. Style: professional, corporate, blue theme with connecting lines.
 -->
 
 ---
@@ -628,7 +621,6 @@ Demo Instructions:
 4. Highlight similarities: typed props, composition
 5. Show in browser DevTools
 
-AI Image Prompt: Code editor showing React component with browser preview side by side. Style: modern, clean, developer-focused with code syntax highlighting.
 -->
 
 ---
@@ -676,7 +668,6 @@ hideInToc: true
 <!-- 
 Windows developers have many transferable skills. TypeScript especially makes React feel familiar to C# developers.
 
-AI Image Prompt: Bridge connecting desktop window to web browser with labeled concepts crossing over. Style: infographic, professional, blue/purple gradient.
 -->
 
 ---
@@ -789,7 +780,6 @@ hideInToc: true
 <!-- 
 CSS is often cited as the biggest hurdle for Windows developers. Component libraries like Fluent UI and Material-UI solve this by providing pre-styled, accessible components.
 
-AI Image Prompt: Tangled CSS code on left transforming into clean component library UI on right. Style: before/after, humorous but professional.
 -->
 
 ---
@@ -910,7 +900,6 @@ backgroundSize: contain
 <!-- 
 The JavaScript ecosystem is vast. Start with the essentials: VS Code, React DevTools, and a few key libraries. Add others as needed.
 
-AI Image Prompt: Toolbox with modern developer tools icons (VS Code, React, npm, Git) arranged professionally. Style: flat design, colorful but professional.
 -->
 
 ---
@@ -1099,7 +1088,6 @@ hideInToc: true
 <!-- 
 Decision framework: For web applications, React is the strategic choice. For desktop-only or mobile, Microsoft frameworks may fit. For most modernization scenarios, React wins.
 
-AI Image Prompt: Decision tree diagram with technology choices branching based on requirements. Style: clean flowchart, professional, blue/purple theme.
 -->
 
 ---
@@ -1176,7 +1164,6 @@ background: /msWebUiReact-summary.jpg
 <!-- 
 The evidence is clear: Microsoft's own products prove React's superiority for web applications. Windows developers can successfully transition with the right approach.
 
-AI Image Prompt: Summary visualization with key points radiating from center, professional infographic style. Include React, Microsoft, and developer icons. Style: clean, professional, blue/purple gradient.
 -->
 
 
@@ -1219,7 +1206,6 @@ hideInToc: true
 <!-- 
 The title question answered: Microsoft uses React for web, and you probably should too. The evidence, ecosystem, and strategic advantages are compelling.
 
-AI Image Prompt: Large stylized question mark transforming into checkmark, with React logo integrated. Style: bold, professional, gradient blue/purple.
 -->
 
 
