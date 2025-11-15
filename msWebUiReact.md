@@ -690,6 +690,8 @@ layout: two-column
 - Control templates
 - Design-time tools
 - Click-drag designers
+- Stateful components
+- Object oriented programming
 
 </v-clicks>
 
@@ -704,6 +706,8 @@ layout: two-column
 - Composition > inheritance
 - Code-first design
 - Props down, events up
+- Stateless components
+- Functional programming with components
 
 </v-clicks>
 
@@ -754,7 +758,7 @@ backgroundSize: 120%
 hideInToc: true
 ---
 
-<h1 class="h-auto!"> The CSS Challenge </h1>
+<h1 class="h-auto! mt--5"> The CSS Challenge </h1>
 
 ## The Problem
 <v-clicks>
@@ -764,6 +768,7 @@ hideInToc: true
 - Layout complexity
 - Responsive design
 - Specificity rules
+- hundreds of ways to style 
 
 </v-clicks>
 <br>
