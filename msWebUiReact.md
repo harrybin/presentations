@@ -516,7 +516,7 @@ This comparison shows the strategic advantages of React: massive community, abun
 ---
 layout: image-right
 title: Microsoft Uses React!
-background: /msWebUiReact-microsoft-react.jpg
+background: /msWebUiReact-microsoft-react.png
 ---
 
 <h1 class="h-auto!"> Microsoft Uses React! </h1>
