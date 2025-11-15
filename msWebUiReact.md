@@ -515,7 +515,7 @@ This comparison shows the strategic advantages of React: massive community, abun
 
 ---
 layout: image-right
-title: Why Microsoft Uses React
+title: Microsoft Uses React!
 background: /msWebUiReact-microsoft-react.jpg
 ---
 
@@ -560,7 +560,7 @@ background: /msWebUiReact-demo1.jpg
 hideInToc: true
 ---
 
-<h1 class="h-auto!"> React Component Basics </h1>
+<h1 class="h-auto! mt--5"> React Component Basics </h1>
 
 
 ```tsx
