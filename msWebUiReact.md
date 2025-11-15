@@ -46,7 +46,7 @@ src: /special-slides/msWebUiReact/timeline.md
 ---
 layout: image-right
 title: Agenda
-background: /public/spaceships-right.jpg
+background: /spaceships-right.jpg
 hideInToc: true
 ---
 
@@ -63,15 +63,27 @@ Standard agenda slide showing the main chapter-darks of the presentation
 -->
 
 ---
+layout: chapter-dark
+background: /satelite-large.jpg
+---
+
+# Closer look at Microsoft UI History
+
+<!--
+Let's see what advantages and disadvantages the various Microsoft UI frameworks had and how they influenced the current state.
+-->
+
+---
 layout: image-right
 background: /msWebUiReact-desktop-kings.jpg
 backgroundSize: contain
+hideInToc: true
 ---
 
 # The Desktop Kings
 
 ## Windows Forms (2002)
-<v-clicks>
+<v-click>
 
 - Drag & drop designer
 - Event-driven model
@@ -79,11 +91,12 @@ backgroundSize: contain
 - Legacy but still used
 - .NET Framework/Core
 
-</v-clicks>
+</v-click>
 
 <br>
 
-<v-clicks>
+<v-click>
+
 ## WPF (2006)
 
 - **XAML**-based UI
@@ -92,7 +105,7 @@ backgroundSize: contain
 - DirectX acceleration
 - Still actively maintained
 
-</v-clicks>
+</v-click>
 
 <!--
 Abscract: 
@@ -104,6 +117,7 @@ AI Image Prompt: Split image showing classic Windows desktop applications on lef
 ---
 layout: image-right
 background: /msWebUiReact-mobile-push.jpg
+hideInToc: true
 ---
 
 # The Web Attempts
@@ -138,6 +152,7 @@ Microsoft's early web attempts tried to bring desktop paradigms to the web. Both
 ---
 layout: image-right
 background: /msWebUiReact-mobile-push.jpg
+hideInToc: true
 ---
 
 # The Mobile Push
@@ -397,6 +412,8 @@ background: /msWebUiReact-cover.png
 
 # Modern Microsoft UI
 
+Where are we and where to go from here?
+
 <!-- 
 chapter-dark divider covering Microsoft's current UI frameworks (WinUI 3, .NET MAUI, Blazor) and the strategic comparison with React
 -->
@@ -410,13 +427,17 @@ hideInToc: true
 
 # The Crossroads
 
+I tell you...
+
+<br>
+
 <v-clicks>
 
-- SharePoint → **React**
-- Power Platform → **React**  
-- Teams → **React**
-- Outlook (new) → **React**
-- Office Add-ins → **React**
+- SharePoint → is **React**
+- Power Platform → is **React**  
+- Teams → is **React**
+- Outlook (new) → is **React**
+- Office Add-ins → is **React**
 
 </v-clicks>
 
@@ -442,6 +463,7 @@ AI Image Prompt: A crossroads with multiple technology paths converging into one
 ---
 layout: chapter-dark
 background: /react-steps.png
+hideInToc: true
 ---
 
 # Really? React?
@@ -493,30 +515,10 @@ css-loader v6.8.1 - Tobias Koppers @sokra - MIT license
 -->
 
 ---
-layout: default
-title: Technology Comparison Matrix
----
-
-<h1 class="h-auto!"> Technology Comparison Matrix </h1>
-
-| Aspect | WinUI 3 | .NET MAUI | Blazor | React |
-|--------|---------|-----------|--------|-------|
-| **Platform** | Windows only | Desktop + Mobile | Web + Hybrid | Web (+ Native) |
-| **Language** | C#/XAML | C#/XAML | C#/Razor | JavaScript/TypeScript |
-| **Paradigm** | MVVM | MVVM | Component | Component |
-| **Community** | Small | Growing | Growing | **Massive** |
-| **Jobs** | Limited | Limited | Growing | **Abundant** |
-| **Libraries** | Moderate | Moderate | Limited | **Vast** |
-| **Browser Support** | ❌ | ❌ | ✅ | ✅ |
-
-<!-- 
-This comparison shows the strategic advantages of React: massive community, abundant jobs, vast ecosystem, and universal browser support.
--->
-
----
 layout: image-right
 title: Microsoft Uses React!
 background: /msWebUiReact-microsoft-react.png
+hideInToc: true
 ---
 
 <h1 class="h-auto!"> Microsoft Uses React! </h1>
@@ -525,7 +527,7 @@ background: /msWebUiReact-microsoft-react.png
 <v-clicks>
 
 - **SharePoint Framework**: React + TypeScript
-- **Teams**: React frontend
+- **Teams**: React rewrite
 - **Outlook**: React rewrite
 - **Power Platform**: React controls
 - **Fluent UI**: React components
@@ -552,6 +554,36 @@ Microsoft's own products prove React's superiority for web applications. When ev
 
 AI Image Prompt: Microsoft product logos (SharePoint, Teams, Outlook, Power Platform) connected to React logo in center. Style: professional, corporate, blue theme with connecting lines.
 -->
+
+---
+layout: default
+title: Technology Comparison Matrix
+---
+
+<h1 class="h-auto!"> Technology Comparison Matrix </h1>
+
+| Aspect | WinUI 3 | .NET MAUI | Blazor | React |
+|--------|---------|-----------|--------|-------|
+| **Platform** | Windows only | Desktop + Mobile | Web + Hybrid | Web (+ Native) |
+| **Language** | C#/XAML | C#/XAML | C#/Razor | JavaScript/TypeScript |
+| **Paradigm** | MVVM | MVVM | Component | Component |
+| **Community** | Small | Growing | Growing | **Massive** |
+| **Jobs** | Limited | Limited | Growing | **Abundant** |
+| **Libraries** | Moderate | Moderate | Limited | **Vast** |
+| **Browser Support** | ❌ | ❌ | ✅ | ✅ |
+
+<!-- 
+This comparison shows the strategic advantages of React: massive community, abundant jobs, vast ecosystem, and universal browser support.
+-->
+
+---
+layout: chapter-dark
+background: /react-steps.png
+---
+
+# From Windows Desktop to React
+
+
 
 ---
 title: React Component Basics
