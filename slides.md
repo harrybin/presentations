@@ -35,4 +35,4 @@ routeAlias: index
 
 <a href="/githubCopilotDelphi/" target="_blank">GitHub Copilot with Delphi - [EKON Oct 25]</a>
 
-<!-- <a href="/msWebUiReact/" target="_blank">Microsoft's Web UI Technology: Is It React? [DDC Nov 25]</a> -->
+<a href="/msWebUiReact/" target="_blank">Microsoft's Web UI Technology: Is It React? [DDC Nov 25]</a>
