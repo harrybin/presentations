@@ -33,6 +33,7 @@
     "@slidev/theme-default": "^0.25.0",
     "@xebia/slidev-addon-components-common": "^0.2.2",
     "@xebia/slidev-theme-xebia": "^1.5.0",
+    "@xebia/slidev-theme-xebia-2026": "^0.2.3",
     "slidev-addon-qrcode": "^1.0.2",
     "slidev-component-progress": "^1.1.0"
   }
