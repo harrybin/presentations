@@ -6,5 +6,8 @@
         "devcontainer_20m.md",
         "githubCopilotDelphi.md",
         "msWebUiReact.md"
-    ]
+    ],
+    "chat.tools.terminal.autoApprove": {
+        "Add-Type": true
+    }
 }

@@ -71,6 +71,20 @@
         "isDefault": true
       },
     },
+    {
+      "label": "🚀aiops-Mainteance-mit-KI",
+      "options": {
+        "statusbar": {
+          "color": "#00ff2a"
+        }
+      },
+      "type": "shell",
+      "command": "npx slidev aiops-Mainteance-mit-KI.md",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
   ],
   "inputs": [
     {
