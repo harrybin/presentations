@@ -7,6 +7,7 @@ Create a new slidev presentation regarding the topic information followed after 
 ## Instructions:
 
 - **Create a todo list as markdown checklist file for the main steps you take and for each main section of the presentation and process that one and update the todo list until done. This will make the contents you need to deal with smaller and easier to handle.**
+- for new slide decks use the theme `@xebia/slidev-theme-xebia-2026`
 - The presentation should be structured similer to the slide decks (`*.md`) already present in the root of this repository excluding the `slides.md`.
 - analog to those slide decks use slidev markdown syntax.
   - use the same theme, transitions and addons as well asthe other fromtmatter options
