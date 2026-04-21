@@ -132,7 +132,7 @@ Die Botschaft: KI löst das Technical-Debt-Problem nicht automatisch. Aber mit d
 
 ---
 layout: cover
-background: /technical-debt-large.png
+coverImage: /technical-debt-large.png
 hideInToc: true
 ---
 

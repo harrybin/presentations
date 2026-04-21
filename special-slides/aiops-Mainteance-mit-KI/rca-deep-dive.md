@@ -122,7 +122,7 @@ Von "wir vermuten es liegt an der DB" zu "es ist Library v2.1, Zeile 847, Connec
 
 ---
 layout: cover
-background: /rca-diagnostics-large.png
+coverImage: /rca-diagnostics-large.png
 hideInToc: true
 ---
 

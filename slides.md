@@ -36,3 +36,5 @@ routeAlias: index
 <a href="/githubCopilotDelphi/" target="_blank">GitHub Copilot with Delphi - [EKON Oct 25]</a>
 
 <a href="/msWebUiReact/" target="_blank">Microsoft's Web UI Technology: Is It React? [DDC Nov 25]</a>
+
+<a href="/aiops-Mainteance-mit-KI/" target="_blank">AIOps: Maintenance von Softwaresystemen durch KI [INFINITE AI CONF Jul 26]</a>

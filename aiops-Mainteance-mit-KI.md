@@ -13,7 +13,7 @@ overviewSnapshots: false
 glowEnabled: true
 ###### slides start ######
 layout: cover
-background: /aiops-cover-bg.png
+coverImage: /aiops-cover-bg.png
 description: "AIOps: Wie KI die Maintenance von Softwaresystemen revolutioniert — Root Cause Analysis, Technical Debt, Legacy-Modernisierung und Auto-Dokumentation"
 hideInToc: true
 routeAlias: aiops-Mainteance-mit-KI
@@ -36,7 +36,7 @@ src: special-slides/speaker.md
 
 ---
 layout: cover
-background: /server-outage-large.png
+coverImage: /server-outage-large.png
 hideInToc: true
 ---
 
@@ -60,11 +60,18 @@ Das ist kein Sci-Fi — das ist der Alltag von AIOps. In den nächsten 60 Minute
 -->
 
 ---
-layout: toc
+layout: image-right
+background: /compass-right.png
 hideInToc: true
 ---
 
-# Agenda
+<h1 class="h-auto!"> Agenda </h1>
+
+<div class="ml-16">
+
+<Toc minDepth="1" maxDepth="1"/>
+
+</div>
 
 <!--
 Überblick über die Themen. Wir starten mit einer Einführung in AIOps, gehen dann tief in Root Cause Analysis, Technical Debt, Legacy-Modernisierung, Auto-Dokumentation und Governance.
@@ -100,7 +107,7 @@ src: /special-slides/aiops-Mainteance-mit-KI/summary.md
 
 ---
 layout: cover
-background: /finger-large.jpg
+coverImage: /finger-large.jpg
 title: Questions?
 hideInToc: true
 ---
