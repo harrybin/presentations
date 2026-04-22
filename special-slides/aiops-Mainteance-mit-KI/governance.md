@@ -97,7 +97,7 @@ hideInToc: true
 
 # DORA: KI-Adoption richtig machen
 
-::left::
+::one::
 
 ## Klare Policy 📜
 
@@ -110,7 +110,7 @@ hideInToc: true
 
 </v-clicks>
 
-::middle::
+::two::
 
 ## Transparenz 💬
 
@@ -123,7 +123,7 @@ hideInToc: true
 
 </v-clicks>
 
-::right::
+::three::
 
 ## Lernzeit 📚
 

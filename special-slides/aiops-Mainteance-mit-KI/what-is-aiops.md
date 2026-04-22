@@ -51,24 +51,24 @@ hideInToc: true
 
 # AIOps-Pipeline
 
-```mermaid {scale: 0.65}
+```mermaid {scale: 0.55}
 graph LR
-    A1[📋 Logs] --> A[🔄 Aggregation]
-    A2[📊 Metriken] --> A
-    A3[🔗 Traces] --> A
-    A4[🔔 Events] --> A
+    A1[Logs] --> A[Aggregation]
+    A2[Metriken] --> A
+    A3[Traces] --> A
+    A4[Events] --> A
 
-    A --> C[🧠 ML-Analyse]
+    A --> C[ML-Analyse]
 
     C --> C1[Anomalie-<br/>Erkennung]
     C --> C2[Pattern<br/>Matching]
     C --> C3[Event-<br/>Korrelation]
 
-    C1 --> D[🎯 Root Cause<br/>Identifikation]
+    C1 --> D[Root Cause]
     C2 --> D
     C3 --> D
 
-    D --> F[⚡ Automation]
+    D --> F[Automation]
 
     F --> F1[Auto-<br/>Remediation]
     F --> F2[Ticket-<br/>Erstellung]
