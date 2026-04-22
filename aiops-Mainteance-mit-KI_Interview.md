@@ -240,6 +240,21 @@ Dieser manuelle Pfad ist **komplementär** zum automatisierten Flow — der Mens
 
 **Zum politischen Punkt:** Die [Daten zeigen](https://github.blog/news-insights/research/survey-ai-wave-grows/), dass Entwickler nach **Code-Quantität** gemessen werden (33%), aber glauben, sie sollten nach **Code-Qualität und Collaboration** gemessen werden. KI kann hier ein Hebel sein: Wenn du dem Management zeigst, dass Copilot Code Review automatisch Qualitätsprobleme flaggt, verschiebst du die Diskussion von "geht doch schneller" zu "geht schneller UND sauberer" — aber nur, wenn du die Guardrails (automatisierte Tests, kleine Batches, SCA/SBOM) mitlieferst. **KI löst das politische Problem nicht — aber sie gibt dir bessere Argumente.**
 
+### Konkret: Wo hilft KI bei Technical-Debt-Beseitigung — und wie automatisiert?
+
+| Einsatzstelle | Tool | Konkretes Beispiel | Grad |
+|---|---|---|---|
+| **Security Vulnerabilities fixen** | [Copilot Autofix](https://github.blog/news-insights/product-news/found-means-fixed-introducing-code-scanning-autofix-powered-by-github-copilot-and-codeql/) (CodeQL) | SQL Injection → Parameterized Query, automatisch über mehrere Dateien. **2/3 aller Findings auto-gefixt**, 90%+ Alert-Typen, **7x schnellere** Remediation | 🟢 Voll |
+| **Dependency-/Framework-Upgrades** | [Agent Mode](https://github.blog/ai-and-ml/github-copilot/a-step-by-step-guide-to-modernizing-java-projects-with-github-copilot-agent-mode/) + OpenRewrite | Java 17→21: `new Locale("EN")` → `Locale.of("EN")` projektübergreifend. **1.177 Tests grün** nach Auto-Upgrade, inkl. CVE-Scan | 🟢 Voll |
+| **Deprecated APIs ersetzen** | Agent Mode + Test-Loop | `DateTime.Now` → `DateTimeOffset.UtcNow`, sync → `async/await`, `HttpWebRequest` → `HttpClient`. Agent iteriert bis alle Tests grün | 🟢 Voll |
+| **Neuen Debt verhindern (pro PR)** | [Copilot Code Review](https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/) | Fängt fehlende React-Hook-Dependencies, Endlosschleifen, unvalidierten Input. **60M+ Reviews**, 71% actionable, WEX: **~30% mehr Code shipped** | 🟡 Semi |
+| **Tech-Debt-Issues abarbeiten** | [Coding Agent](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/) | Issue *"Migrate 47 Endpoints XML→JSON"* → Copilot zuweisen → VM → Draft-PR mit Tests. Carvana: *"specifications to production code in minutes"* | 🟡 Semi |
+| **Legacy-Code verstehen** | `@workspace` Chat | *"Welche Klassen haben >500 Zeilen?"*, *"Finde alle TODO/FIXME/HACK"*. **60-71%** der Devs: KI macht Codebase-Verständnis "einfach" | 🔴 Manuell |
+
+> 🟢 = KI arbeitet autonom, Mensch merged nur. 🟡 = KI wird getriggert, Mensch entscheidet pro Vorschlag. 🔴 = Mensch promptet, KI beschleunigt Analyse.
+
+**Zentrale Erkenntnis:** Je **regelbasierter** die Debt-Art (Security-Fix, API-Replacement, Dependency-Upgrade), desto höher der Automatisierungsgrad. Je **architektureller** (God-Classes aufbrechen, Microservice-Schnitt), desto mehr bleibt beim Menschen. Was vor 2 Jahren "rein manuell" war (Dependency-Upgrades mit 1.000+ Dateien), ist heute vollautomatisiert mit Test-Validierung.
+
 ---
 
 ## 3. Altsysteme dokumentieren „im Vorbeigehen" ... hold my beer. Wie realistisch ist das?
