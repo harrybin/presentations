@@ -8,6 +8,202 @@ Der eigentliche Gamechanger ist **[Application Insights Transaction Diagnostics]
 
 Also: "Netter Assistent" = Copilot schlägt dir in der IDE `async/await` statt Callbacks vor. **Was wir meinen** = Du hast einen Latenz-Spike in der Checkout-API, und die KI korreliert in Sekunden, dass das Problem eine veraltete Library ist, die bei 500 gleichzeitigen Requests eine Connection-Pool-Exhaustion verursacht — und zeigt dir die exakte Codezeile im Distributed Trace. **Von "ich vermute" zu "ich sehe".**
 
+### End-to-End-Ablauf: Von Smart Detection bis zum automatisch bearbeiteten GitHub Issue
+
+Der folgende Ablauf beschreibt, wie ein Performance-Problem **vollautomatisch** von der Erkennung in Azure über die Analyse bis hin zur Code-Bearbeitung durch den GitHub Copilot Coding Agent fließen kann — **ohne Azure DevOps**, rein über Azure Cloud + GitHub.
+
+#### Ablauf in 6 Schritten
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│ 1. SMART DETECTION erkennt Performance-Anomalie                        │
+│    (Application Insights, ML-basiert, automatisch)                     │
+│                           │                                            │
+│                           ▼                                            │
+│ 2. ALERT RULE feuert (migrierte Smart Detection → Azure Monitor Alert) │
+│                           │                                            │
+│                           ▼                                            │
+│ 3. ACTION GROUP triggert Logic App                                     │
+│                           │                                            │
+│                           ▼                                            │
+│ 4. LOGIC APP erstellt GitHub Issue via GitHub-Connector                │
+│    (inkl. Diagnose-Daten, betroffene Resource, Severity, Zeitstempel)  │
+│                           │                                            │
+│                           ▼                                            │
+│ 5. LOGIC APP weist das Issue an "Copilot" zu (assignee: copilot-swe-agent)│
+│                           │                                            │
+│                           ▼                                            │
+│ 6. COPILOT CODING AGENT startet VM, analysiert Code, erstellt Draft-PR │
+│    (Mensch reviewed und approved)                                      │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Schritt 1: Smart Detection erkennt das Problem
+
+[Smart Detection](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/proactive-diagnostics) in Application Insights läuft **vollständig automatisch** — keine manuelle Konfiguration nötig. Es analysiert die Telemetrie deiner App und erkennt per Machine Learning:
+
+- **[Failure Anomalies](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/proactive-failure-diagnostics)**: Ungewöhnlicher Anstieg der Fehlerrate außerhalb des erwarteten Korridors
+- **[Performance Anomalies](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/smart-detection-performance)**: Response-Time-Degradation, Dependency-Latenz-Verschlechterung im Vergleich zur historischen Baseline
+- **[Memory Leaks](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/proactive-potential-memory-leak)**, **[Trace-Severity-Degradation](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/proactive-trace-severity)**, **[Exception-Volume-Anomalien](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/proactive-exception-volume)**
+
+**Beispiel-Szenario:** Smart Detection erkennt, dass die Checkout-API plötzlich 3x langsamer antwortet als ihre 7-Tage-Baseline — eine "Response Latency Degradation".
+
+#### Schritt 2: Smart Detection als Azure Monitor Alert Rule
+
+Seit der [Migration von Smart Detection zu Alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-smart-detections-migration) werden Smart-Detection-Erkennungen als vollwertige **Azure Monitor Alert Rules** behandelt. Für jede Detection-Art wird eine eigene Alert Rule erstellt:
+
+| Smart Detection | Alert Rule Name |
+|---|---|
+| Degradation in Server Response Time | `Response Latency Degradation - <resource>` |
+| Degradation in Dependency Duration | `Dependency Latency Degradation - <resource>` |
+| Trace Severity Degradation | `Trace Severity Degradation - <resource>` |
+| Abnormal Exception Volume | `Exception Anomalies - <resource>` |
+| Memory Leak | `Potential Memory Leak - <resource>` |
+
+> **Hinweis:** Die **Failure Anomalies**-Regel existiert bereits als Alert Rule und erfordert keine Migration.
+
+Der Vorteil: Diese Alert Rules können mit **[Action Groups](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups)** verknüpft werden — und genau das ist der Schlüssel zur Automatisierung.
+
+#### Schritt 3: Action Group triggert eine Logic App
+
+Eine **Action Group** ist die Brücke zwischen dem Alert und der Automatisierung. Sie definiert, was passiert, wenn ein Alert feuert — E-Mail, SMS, Webhook, oder eben: **Logic App**.
+
+Die Action Group wird so konfiguriert:
+- **Action Type**: `Logic App`
+- **Common Alert Schema**: `Yes` (damit hat die Logic App ein einheitliches JSON-Format mit `alertRule`, `severity`, `firedDateTime`, `alertTargetIDs`, `description` etc.)
+
+#### Schritt 4 + 5: Logic App erstellt GitHub Issue und weist es Copilot zu
+
+Die [Logic App](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-logic-apps) empfängt den Alert über einen **HTTP-Trigger** und nutzt den [GitHub-Connector](https://learn.microsoft.com/en-us/connectors/github/) (nativ in Logic Apps verfügbar), um:
+
+**a) Ein GitHub Issue zu erstellen** (Action: `CreateIssue`):
+- **Title**: z.B. `🔴 Performance Alert: Response Latency Degradation - checkout-api` (zusammengesetzt aus `alertRule` + `severity`)
+- **Body**: Strukturierte Informationen aus dem Common Alert Schema:
+  ```markdown
+  ## Performance Alert
+  **Severity:** Sev2
+  **Alert Rule:** Response Latency Degradation - checkout-api
+  **Fired:** 2026-04-22T14:32:00Z
+  **Affected Resource:** /subscriptions/.../providers/microsoft.insights/components/checkout-api
+  **Description:** Response time degradation detected. P95 latency increased from 120ms to 380ms.
+
+  ### Nächste Schritte
+  - Analysiere die Transaction Diagnostics im Azure Portal
+  - Prüfe die Dependencies auf Latenz-Änderungen
+  - Portal-Link: https://portal.azure.com/#@.../resource/.../diagnostics
+  ```
+- **Labels**: `performance`, `automated`, `aiops`
+
+**b) Das Issue an Copilot zuweisen** (Action: `UpdateIssue` mit `assignees: ["copilot-swe-agent"]`):
+
+Der Logic-App-Flow sieht so aus:
+1. **Trigger**: "When a HTTP request is received" (Common Alert Schema)
+2. **Action**: "Create an issue" (GitHub-Connector) → gibt `issueNumber` zurück
+3. **Action**: "Update an Issue" (GitHub-Connector) → setzt `assignees` auf `copilot-swe-agent` und optional Labels
+
+> **Alternativ ohne Logic App**: Die Action Group kann auch direkt einen **Webhook** an die [GitHub REST API](https://docs.github.com/en/rest/issues/issues#create-an-issue) senden (via Azure Function als Middleware, die das Alert-JSON in die GitHub-API-Struktur transformiert). Die Logic-App-Variante ist aber No-Code und in Minuten aufgesetzt.
+
+#### Schritt 6: GitHub Copilot Coding Agent übernimmt
+
+Sobald das Issue [Copilot zugewiesen](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/) wird, passiert folgendes automatisch:
+
+1. Der Agent reagiert mit einem 👀 Emoji auf das Issue
+2. Er startet eine **sichere VM via GitHub Actions**, klont das Repo
+3. Er analysiert die Codebase mittels **RAG (Retrieval Augmented Generation)** über GitHub Code Search
+4. Er nutzt die Issue-Beschreibung (inkl. der Alert-Daten aus Azure), um den Kontext zu verstehen
+5. Er erstellt einen **Draft-PR** mit Commits, Session-Logs und Reasoning-Steps
+6. Er taggt den Entwickler zur **menschlichen Review**
+
+**Sicherheits-Garantien:**
+- Agent kann nur auf Branches pushen, die er selbst erstellt hat
+- Der PR-Ersteller kann nicht selbst approven
+- GitHub Actions laufen erst nach menschlicher Freigabe
+
+### Was in Azure konfiguriert werden muss (Schritt-für-Schritt)
+
+#### Voraussetzung: Application Insights aktiv
+
+Die Web-App muss mit [Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) instrumentiert sein (SDK oder Auto-Instrumentation). Smart Detection ist per Default aktiv, sobald genug Telemetrie fließt.
+
+#### A. Smart Detection zu Alerts migrieren
+
+1. **Azure Portal** → Application Insights Resource → **Investigate** → **Smart Detection**
+2. Banner "Migrate smart detection to alerts (Preview)" anklicken
+3. Optional: "Migrate all Application Insights resources in this subscription" aktivieren
+4. Action Group auswählen oder Default nutzen → **Migrate**
+
+> **CLI-Alternative:**
+> ```bash
+> az rest --method POST \
+>   --uri /subscriptions/{subId}/providers/Microsoft.AlertsManagement/migrateFromSmartDetection?api-version=2021-01-01-preview \
+>   --body '{"scope":["/subscriptions/{subId}/resourceGroups/{rg}/providers/microsoft.insights/components/{appInsights}"],"actionGroupCreationPolicy":"Auto"}'
+> ```
+
+#### B. Logic App erstellen
+
+1. **Azure Portal** → Logic Apps → **Create** → Consumption (Multi-tenant)
+2. **Trigger**: "When a HTTP request is received"
+   - Request Body JSON Schema: [Common Alert Schema](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema) einfügen (enthält `schemaId`, `data.essentials.alertRule`, `severity`, `firedDateTime`, `alertTargetIDs`, `description`)
+3. **Action 1**: GitHub → "Create an issue"
+   - `repositoryOwner`: dein GitHub-Org/User
+   - `repositoryName`: dein Repo
+   - `title`: Dynamischer Inhalt aus `alertRule` + `severity`
+   - `body`: Dynamischer Inhalt aus `description`, `firedDateTime`, `alertTargetIDs`
+4. **Action 2**: GitHub → "Update an Issue"
+   - `issueNumber`: Output von Action 1
+   - `assignees`: `["copilot-swe-agent"]`
+   - `labels`: `["performance", "automated", "aiops"]`
+
+> **Wichtig:** Beim ersten Mal wirst du aufgefordert, dich bei GitHub zu authentifizieren. Die Logic App benötigt **write**-Berechtigungen auf das Ziel-Repository.
+
+#### C. Action Group erstellen und mit Alert Rule verknüpfen
+
+1. **Azure Portal** → Monitor → **Alerts** → **Action groups** → **Create**
+2. **Actions Tab**:
+   - Action Type: **Logic App**
+   - Logic App: die eben erstellte auswählen
+   - Common Alert Schema: **Yes**
+3. **Save**
+4. Zurück zu **Alert Rules** → die migrierten Smart Detection Rules öffnen → die neue Action Group zuweisen
+
+#### D. GitHub-Repo vorbereiten
+
+1. **Copilot Coding Agent aktivieren**: Repository Settings → Features → Copilot → "Copilot coding agent" aktivieren (erfordert Copilot Enterprise oder Pro+)
+2. **`.github/copilot-instructions.md`** anlegen mit Kontext für den Agent:
+   ```markdown
+   # Copilot Instructions
+   - Performance-Issues von Azure Smart Detection enthalten Alert-Daten im Issue-Body
+   - Prüfe zuerst die in der Alert-Description genannten Endpoints und Dependencies
+   - Erstelle einen Fix mit zugehörigem Unit Test
+   - Füge eine PR-Summary hinzu, die den Alert-Kontext referenziert
+   ```
+3. Optional: **MCP-Server** konfigurieren (z.B. GitHub MCP Server), damit der Agent auf erweiterten Kontext zugreifen kann
+
+### Azure Copilot als manueller Analyse-Schritt (Parallel-Pfad)
+
+Zusätzlich zum automatisierten Flow kann ein Ops-Engineer den Alert auch **interaktiv mit Azure Copilot** analysieren:
+
+1. **Azure Portal** → Die betroffene App Service Resource öffnen
+2. **Azure Copilot** (Chat-Icon oben rechts) → Prompt: *"Why is my web app slow?"*
+3. Azure Copilot wählt automatisch das richtige Diagnose-Tool (z.B. "Web App Slow" Detector) und führt Checks durch
+4. Ergebnis: Potenzielle Ursachen + Lösungsvorschläge + Link zu den [Transaction Diagnostics](https://learn.microsoft.com/en-us/azure/azure-monitor/app/transaction-search-and-diagnostics)
+5. Follow-up: *"Give me a summary of these diagnostics"* → Copilot fasst die Insights zusammen
+
+Dieser manuelle Pfad ist **komplementär** zum automatisierten Flow — der Mensch bekommt die tiefe Diagnostik, während der Coding Agent parallel bereits am Fix arbeitet.
+
+### Zusammenfassung: Was wo konfiguriert wird
+
+| Komponente | Wo | Was |
+|---|---|---|
+| **Application Insights** | Azure Portal → App Insights | Telemetrie-Sammlung + Smart Detection (auto-aktiv) |
+| **Smart Detection Migration** | App Insights → Smart Detection → Migrate | Smart Detection → Alert Rules konvertieren |
+| **Logic App** | Azure Portal → Logic Apps | HTTP-Trigger → GitHub Issue erstellen → Copilot zuweisen |
+| **Action Group** | Azure Monitor → Alerts → Action Groups | Verknüpft Alert Rule mit Logic App |
+| **Alert Rules** | Azure Monitor → Alerts → Alert Rules | Smart Detection Rules + Action Group zuweisen |
+| **GitHub Repo** | github.com → Settings | Copilot Coding Agent aktivieren + Instructions pflegen |
+
+> **Kein Azure DevOps involviert.** Die gesamte Kette läuft über Azure Monitor → Logic Apps → GitHub REST API → GitHub Copilot Coding Agent. Der einzige "Mensch im Loop" ist das finale PR-Review.
+
 ---
 
 ## 2. Technical Debt ist oft politisch induziert: seid schneller, billiger. Hilft KI wirklich dagegen?
