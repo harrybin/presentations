@@ -14,29 +14,48 @@ Der folgende Ablauf beschreibt, wie ein Performance-Problem **vollautomatisch** 
 
 #### Ablauf in 6 Schritten
 
+```mermaid
+flowchart TD
+    A["🔍 <b>1. Smart Detection</b><br/>Application Insights erkennt<br/>Performance-Anomalie (ML-basiert)"] -->|Anomalie erkannt| B
+    B["🚨 <b>2. Alert Rule feuert</b><br/>Migrierte Smart Detection<br/>→ Azure Monitor Alert"] -->|Alert fired| C
+    C["⚡ <b>3. Action Group</b><br/>Triggert Logic App + Benachrichtigung"] -->|HTTP POST| D
+    C -->|E-Mail / Notification| H
+
+    subgraph azure ["☁️ Azure Cloud (automatisiert)"]
+        A
+        B
+        C
+    end
+
+    D["🔗 <b>4. Logic App</b><br/>Erstellt GitHub Issue<br/>via GitHub-Connector<br/>(Diagnose-Daten, Severity, Resource)"] -->|Issue erstellt| E
+    E["🤖 <b>5. Issue → Copilot</b><br/>Logic App weist Issue zu<br/>(assignee: copilot-swe-agent)"] -->|Assignment| F
+
+    subgraph github ["🐙 GitHub (automatisiert)"]
+        F["🛠️ <b>6. Copilot Coding Agent</b><br/>Startet VM, analysiert Code,<br/>erstellt Draft-PR"]
+    end
+
+    subgraph manual ["👤 Mensch im Loop (parallel)"]
+        H["🧠 <b>Azure Copilot</b><br/>Ops-Engineer öffnet Portal<br/>→ 'Why is my web app slow?'<br/>→ Automatische Diagnostik<br/>→ Transaction Diagnostics<br/>→ Lösungsvorschläge"]
+    end
+
+    F -->|PR ready| G
+    H -->|Tiefe Analyse fließt in| G
+    G["✅ <b>Mensch reviewed & approved</b><br/>Kontext aus Azure Copilot +<br/>Draft-PR vom Coding Agent"]
+
+    style A fill:#0078D4,color:#fff,stroke:#005A9E
+    style B fill:#0078D4,color:#fff,stroke:#005A9E
+    style C fill:#0078D4,color:#fff,stroke:#005A9E
+    style D fill:#5C2D91,color:#fff,stroke:#3B1F5E
+    style E fill:#24292F,color:#fff,stroke:#1B1F23
+    style F fill:#24292F,color:#fff,stroke:#1B1F23
+    style G fill:#28A745,color:#fff,stroke:#1E7E34
+    style H fill:#FF8C00,color:#fff,stroke:#CC7000
+    style azure fill:#E6F2FF,stroke:#0078D4,stroke-width:2px
+    style github fill:#F0F0F0,stroke:#24292F,stroke-width:2px
+    style manual fill:#FFF3E0,stroke:#FF8C00,stroke-width:2px
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│ 1. SMART DETECTION erkennt Performance-Anomalie                        │
-│    (Application Insights, ML-basiert, automatisch)                     │
-│                           │                                            │
-│                           ▼                                            │
-│ 2. ALERT RULE feuert (migrierte Smart Detection → Azure Monitor Alert) │
-│                           │                                            │
-│                           ▼                                            │
-│ 3. ACTION GROUP triggert Logic App                                     │
-│                           │                                            │
-│                           ▼                                            │
-│ 4. LOGIC APP erstellt GitHub Issue via GitHub-Connector                │
-│    (inkl. Diagnose-Daten, betroffene Resource, Severity, Zeitstempel)  │
-│                           │                                            │
-│                           ▼                                            │
-│ 5. LOGIC APP weist das Issue an "Copilot" zu (assignee: copilot-swe-agent)│
-│                           │                                            │
-│                           ▼                                            │
-│ 6. COPILOT CODING AGENT startet VM, analysiert Code, erstellt Draft-PR │
-│    (Mensch reviewed und approved)                                      │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+
+> **Warum ist Azure Copilot nicht im automatisierten Pfad?** Azure Copilot im Azure Portal ist ein **rein interaktives Tool** — es gibt keine API, um es programmatisch zu triggern. Es kann daher kein automatisierter Schritt sein. Stattdessen ist es der **parallele menschliche Analyse-Kanal**: Der Ops-Engineer erhält über die Action Group eine Benachrichtigung (E-Mail/SMS), öffnet das Portal und nutzt Azure Copilot, um die Ursache tiefgehend zu verstehen. Diese Erkenntnisse fließen dann in die **PR-Review** ein, wo der Mensch den automatisch generierten Fix des Coding Agent mit dem Diagnosewissen aus Azure Copilot bewertet.
 
 #### Schritt 1: Smart Detection erkennt das Problem
 
