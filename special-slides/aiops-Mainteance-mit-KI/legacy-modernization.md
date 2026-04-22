@@ -155,7 +155,7 @@ Quelle: https://github.blog/news-insights/product-news/github-copilot-meet-the-n
 
 ---
 layout: cover
-coverImage: /evolution-left.jpg
+background: /evolution-left.jpg
 hideInToc: true
 ---
 
