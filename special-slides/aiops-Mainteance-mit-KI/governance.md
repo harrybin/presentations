@@ -129,7 +129,7 @@ hideInToc: true
 
 <v-clicks>
 
-- Dedizierte Lernzeit während der Arbeit
+- Dedizierte Lernzeit **während der Arbeit**
 - **131%** mehr Adoption
 - Nicht auf Freizeit erwarten
 - Experimentieren ermöglichen

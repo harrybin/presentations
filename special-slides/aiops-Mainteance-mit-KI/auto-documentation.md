@@ -126,11 +126,7 @@ Aber: "Im Vorbeigehen" heißt NICHT "einmal drüber fliegen". Es heißt: Jeder P
 
 ---
 layout: cover
-<<<<<<< HEAD
-coverImage: /bulb.jpeg
-=======
 background: /bulb.jpeg
->>>>>>> 8359e3f3e210763b57c97be08b75561469833efc
 hideInToc: true
 ---
 

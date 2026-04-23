@@ -131,6 +131,38 @@ Die Botschaft: KI löst das Technical-Debt-Problem nicht automatisch. Aber mit d
 -->
 
 ---
+hideInToc: true
+---
+
+# KI-Automatisierung bezüglich Technical Debt
+
+| Einsatzstelle | Tool | Beispiel | Grad |
+|---|---|---|---|
+| **Security Vulns fixen** | Copilot Autofix (CodeQL) | SQL Injection → Parameterized Query, **2/3 auto-gefixt**, **7x schneller** | 🟢 |
+| **Dependency-Upgrades** | Agent Mode + OpenRewrite | Java 17→21, **1.177 Tests grün** nach Auto-Upgrade | 🟢 |
+| **Deprecated APIs** | Agent Mode + Test-Loop | `DateTime.Now` → `DateTimeOffset.UtcNow`, iteriert bis Tests grün | 🟢 |
+| **Neuen Debt verhindern** | Copilot Code Review | Fehlende Hook-Deps, Endlosschleifen, **60M+ Reviews** | 🟡 |
+| **Tech-Debt-Issues** | Coding Agent | Issue zuweisen → VM → Draft-PR mit Tests | 🟡 |
+| **Legacy-Code verstehen** | `@workspace` Chat | _"Welche Klassen haben >500 Zeilen?"_ | 🔴 |
+
+<v-click>
+
+> 🟢 KI arbeitet autonom, Mensch merged. 🟡 KI getriggert, Mensch entscheidet. 🔴 Mensch promptet, KI beschleunigt.
+
+</v-click>
+
+<!--
+Die zentrale Erkenntnis: Je regelbasierter die Debt-Art (Security-Fix, API-Replacement, Dependency-Upgrade), desto höher der Automatisierungsgrad. Je architektureller (God-Classes aufbrechen, Microservice-Schnitt), desto mehr bleibt beim Menschen.
+
+Was vor 2 Jahren rein manuell war (Dependency-Upgrades mit 1.000+ Dateien), ist heute vollautomatisiert mit Test-Validierung.
+
+Quellen:
+- https://github.blog/news-insights/product-news/found-means-fixed-introducing-code-scanning-autofix-powered-by-github-copilot-and-codeql/
+- https://github.blog/ai-and-ml/github-copilot/a-step-by-step-guide-to-modernizing-java-projects-with-github-copilot-agent-mode/
+- https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/
+-->
+
+---
 layout: cover
 coverImage: /technical-debt-large.png
 hideInToc: true

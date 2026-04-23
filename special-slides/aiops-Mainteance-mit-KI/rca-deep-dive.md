@@ -121,6 +121,99 @@ Von "wir vermuten es liegt an der DB" zu "es ist Library v2.1, Zeile 847, Connec
 -->
 
 ---
+hideInToc: true
+---
+
+# End-to-End: Vom Alert zum automatischen Fix
+
+```mermaid {scale: 0.45}
+flowchart TD
+    A["🔍 1. Smart Detection<br/>App Insights erkennt<br/>Performance-Anomalie (ML)"] -->|Anomalie| B
+    B["🚨 2. Alert Rule feuert<br/>Azure Monitor Alert"] -->|Alert fired| C
+    C["⚡ 3. Action Group<br/>Triggert Logic App"] -->|HTTP POST| D
+    C -->|Notification| H
+
+    subgraph azure ["☁️ Azure Cloud (automatisiert)"]
+        A
+        B
+        C
+    end
+
+    D["🔗 4. Logic App<br/>GitHub Issue erstellen<br/>via GitHub-Connector"] -->|Issue erstellt| E
+    E["🤖 5. Issue → Copilot<br/>assignee: copilot-swe-agent"] -->|Assignment| F
+
+    subgraph github ["🐙 GitHub (automatisiert)"]
+        F["🛠️ 6. Copilot Coding Agent<br/>VM → Code-Analyse → Draft-PR"]
+    end
+
+    subgraph manual ["👤 Mensch im Loop (parallel)"]
+        H["🧠 Azure Copilot<br/>'Why is my web app slow?'<br/>→ Automatische Diagnostik"]
+    end
+
+    F -->|PR ready| G
+    H -->|Analyse fließt in| G
+    G["✅ Mensch reviewed & merged"]
+
+    style azure fill:#E6F2FF,stroke:#0078D4,stroke-width:2px
+    style github fill:#F0F0F0,stroke:#24292F,stroke-width:2px
+    style manual fill:#FFF3E0,stroke:#FF8C00,stroke-width:2px
+```
+
+<!--
+Der vollautomatisierte End-to-End-Flow von der Erkennung bis zum Fix:
+
+1. Smart Detection in App Insights erkennt eine Performance-Anomalie (ML-basiert, keine Konfiguration nötig)
+2. Die migrierte Alert Rule feuert als Azure Monitor Alert
+3. Eine Action Group triggert eine Logic App UND benachrichtigt das Team
+4. Die Logic App erstellt ein GitHub Issue mit Diagnose-Daten (Severity, Resource, Description)
+5. Die Logic App weist das Issue an copilot-swe-agent zu
+6. Der Copilot Coding Agent startet eine VM, analysiert den Code und erstellt einen Draft-PR
+
+Parallel: Der Ops-Engineer nutzt Azure Copilot im Portal für die tiefe Diagnostik — dieses Wissen fließt in die PR-Review ein.
+
+Kein Azure DevOps nötig. Der einzige "Mensch im Loop" ist das finale PR-Review.
+-->
+
+---
+hideInToc: true
+---
+
+# Der automatisierte Pfad im Detail
+
+<v-clicks>
+
+- **Smart Detection → Alert**: ML erkennt Failure Anomalies, Performance Degradation, Memory Leaks — **automatisch**
+- **Action Group → Logic App**: Common Alert Schema → GitHub-Connector (No-Code, in Minuten aufgesetzt)
+- **Logic App → GitHub Issue**: Titel, Severity, Resource, Diagnose-Link — alles strukturiert
+- **Issue → Copilot Coding Agent**: Agent reagiert mit 👀, klont Repo, analysiert per RAG, erstellt Draft-PR
+- **Azure Copilot (parallel)**: Ops-Engineer fragt _"Why is my web app slow?"_ → automatische Diagnostik + Transaction Diagnostics
+
+</v-clicks>
+
+<v-click>
+
+> **Security**: Agent kann nur auf eigene Branches pushen. PR-Ersteller kann nicht self-approven. Actions erst nach menschlicher Freigabe.
+
+</v-click>
+
+<!--
+Die Details des automatisierten Flows:
+
+Smart Detection ist per Default aktiv und erkennt: Failure Anomalies, Performance Degradation, Memory Leaks, Trace Severity Degradation, Exception Volume Anomalien.
+
+Seit der Migration von Smart Detection zu Alerts werden diese als vollwertige Azure Monitor Alert Rules behandelt und können mit Action Groups verknüpft werden.
+
+Die Logic App empfängt den Alert über einen HTTP-Trigger und nutzt den nativen GitHub-Connector, um ein Issue zu erstellen und an copilot-swe-agent zuzuweisen.
+
+Azure Copilot im Portal ist rein interaktiv — keine API zum programmatischen Triggern. Deswegen läuft er als paralleler manueller Analyse-Kanal.
+
+Quellen:
+- https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-smart-detections-migration
+- https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-logic-apps
+- https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/
+-->
+
+---
 layout: cover
 coverImage: /rca-diagnostics-large.png
 hideInToc: true

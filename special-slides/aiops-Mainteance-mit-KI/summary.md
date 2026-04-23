@@ -168,6 +168,59 @@ Die wichtigsten Zahlen zum Mitnehmen — perfekt für die Diskussion mit dem Man
 - 7x schnellere Security-Vulnerability-Remediation mit Code Scanning Autofix
 - 96% Merge Rate bei Peli's autonomen Dokumentations-Agenten
 
+Zusätzliche DORA-Zahlen:
+- 125% mehr Team-Adoption durch transparenten Umgang mit Job-Displacement-Ängsten
+- 131% mehr Adoption durch dedizierte Lernzeit während der Arbeit
+
+Quellen: GitHub Blog, DORA, Sonatype, Accenture
+
+🎨 Image prompt: Not needed — this slide uses styled HTML cards with statistics.
+-->
+
+---
+hideInToc: true
+---
+
+# Bonus: Weitere DORA-Zahlen
+
+<div class="grid grid-cols-2 gap-8 mt-12">
+
+<v-click>
+<div class="text-center p-6 bg-teal-900/30 rounded-lg">
+  <div class="text-5xl font-bold text-teal-400">125%</div>
+  <div class="mt-2">mehr Team-Adoption durch <strong>transparenten Umgang</strong> mit Job-Displacement-Ängsten</div>
+</div>
+</v-click>
+
+<v-click>
+<div class="text-center p-6 bg-indigo-900/30 rounded-lg">
+  <div class="text-5xl font-bold text-indigo-400">131%</div>
+  <div class="mt-2">mehr Adoption durch <strong>dedizierte Lernzeit</strong> während der Arbeit</div>
+</div>
+</v-click>
+
+</div>
+
+<v-click>
+
+<div class="mt-12 text-center text-lg">
+
+> _"AI-driven velocity will overwhelm any governance model built on 'we'll review it later.'"_ — **Brian Fox**, CTO Sonatype
+
+</div>
+
+</v-click>
+
+<!--
+Die wichtigsten Zahlen zum Mitnehmen — perfekt für die Diskussion mit dem Management oder dem Team:
+
+- 97% der Entwickler nutzen bereits KI-Tools (GitHub Survey)
+- 60M+ Copilot Code Reviews (März 2026)
+- 451% mehr KI-Adoption mit einer klaren Acceptable-Use-Policy (DORA)
+- 84% mehr erfolgreiche Builds bei Accenture mit Copilot
+- 7x schnellere Security-Vulnerability-Remediation mit Code Scanning Autofix
+- 96% Merge Rate bei Peli's autonomen Dokumentations-Agenten
+
 Quellen: GitHub Blog, DORA, Sonatype, Accenture
 
 🎨 Image prompt: Not needed — this slide uses styled HTML cards with statistics.
