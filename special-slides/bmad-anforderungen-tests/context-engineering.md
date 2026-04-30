@@ -56,13 +56,14 @@ BMad löst dieses Problem durch strukturierte Dokumente, die von Phase zu Phase 
 
 ---
 hideInToc: true
+layout: image-right
 background: /bmad-context-hierarchy.png
 showCopyright: false
 ---
 
 ## Context-Hierarchie in BMad
 
-```mermaid {scale: 0.6}
+```mermaid {scale: 0.5}
 graph TD
     BRIEF["📄 Product Brief / PRFAQ\n'Was ist die Vision?'"]
     PRD["📋 PRD.md\n'Was soll gebaut werden?'"]
@@ -141,13 +142,17 @@ Jeder Agent, der Code schreibt, hält sich automatisch an diese Regeln.
 -->
 
 ---
-layout: cover-dark
+layout: image-right
 background: /bmad-security-shields.png
 hideInToc: true
 showCopyright: false
+isDark: true
 ---
 
 # 🎬 Demo 2: Context Engineering in der Praxis
+
+<br/>
+<br/>
 
 <v-click>
 

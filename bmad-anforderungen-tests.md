@@ -143,16 +143,50 @@ Mögliche Fragen vorbereiten:
 -->
 
 ---
+title: Feedback
 layout: two-column
-title: Danke&Feedback
 hideInToc: true
-isDark: true
 showCopyright: false
 ---
 
 ::left::
 
-🙏 Danke!
+# 💬 **Feedback:**
+
+
+<QRCode
+  type="svg"
+  data="https://forms.office.com/e/EhPvVpppjK"
+ :dotsOptions="{ color: 'black', type: 'extra-rounded', roundSize: false}"
+  :width="250"
+  :height="250"
+  image="logo.svg"
+/>
+
+
+<a :href="`https://forms.office.com/e/EhPvVpppjK`"
+   :text="`Feedback zum Vortrag, ADC`"></a>
+
+
+::right::
+
+<br/>
+<br/>
+<img src="https://adc.ms/26/assets/img/ADC22-website.png" alt="ADC Logo" class="w-280px h-auto rounded-lg shadow-lg"/>
+
+---
+layout: image-right
+background: /thank_you.jpeg
+title: Danke
+hideInToc: true
+isDark: true
+showCopyright: false
+---
+
+
+# 🙏 Danke!
+
+<br/>
 
 <QRCode class="ml-40px"
   type="svg"
@@ -163,88 +197,21 @@ showCopyright: false
   image="logo.svg"
 />
 
+<br/>
+
 <a :href="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"
    :text="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"></a>
 
-::right::
 
-💬 **Feedback:**
-
-<QRCode
-  type="svg"
-  data="https://forms.office.com/e/EhPvVpppjK"
- :dotsOptions="{ color: 'white', type: 'extra-rounded', roundSize: false}"
-  :width="250"
-  :height="250"
-  image="logo.svg"
-/>
-
-<a :href="`https://forms.office.com/e/EhPvVpppjK`"
-   :text="`Feedback zum Vortrag, ADC`"></a>
-
-
-<!--
-Danke für eure Aufmerksamkeit!
-QR-Code führt zur Online-Version der Slides.
-
-Weitere Ressourcen:
-- docs.bmad-method.org
-- github.com/bmad-code-org/BMAD-METHOD
-- discord.gg/gk8jAdXWmj
--->
-
----
-layout: image-right
-background: /bmad-dev-ideas-to-tests.png
-level: 2
-hideInToc: true
----
-
-# Konferenz-Referenzen
-
-<br/>
-
-## ADC 2026 — Age of AI-tron
-
-- 📅 5. Mai 2026, 17:30–18:30 Uhr
-- 📍 Jahnstadion Regensburg · Raum 1 (AI & ML)
-- 🔗 [adc.ms/26](https://adc.ms/26)
-
-<br/>
-
-**Speaker:** Harald Binkle — Xebia, Microsoft MVP
-
-<br/>
-
-💬 **Feedback:**
-
-<QRCode
-  type="svg"
-  data="https://forms.office.com/e/EhPvVpppjK"
-  :dotsOptions="{ type: 'extra-rounded', roundSize: false }"
-  :width="160"
-  :height="160"
-  image="logo.svg"
-/>
-
-<a href="https://forms.office.com/e/EhPvVpppjK">forms.office.com/e/EhPvVpppjK</a>
-
-<!--
-ADC 2026 — Advanced Developer Conference, Regensburg.
-Motto: "Developers - Age of AI-tron"
-4.–6. Mai 2026, Jahnstadion Regensburg.
-Unser Talk: 5. Mai, 17:30–18:30, Raum 1 / Businessclub I Süd (AI & ML).
-Feedback-Link: https://forms.office.com/e/EhPvVpppjK
--->
 
 ---
 level: 2
 hideInToc: true
+showCopyright: false
 ---
 
 # Ressourcen & Links
 
-<br/>
 
 | Ressource | Link |
 |-----------|------|
@@ -252,8 +219,6 @@ hideInToc: true
 | 📦 NPM Package | [npmjs.com/package/bmad-method](https://www.npmjs.com/package/bmad-method) |
 | 💻 GitHub Repository | [github.com/bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) |
 | 🧪 TEA Dokumentation | [bmad-code-org.github.io/bmad-method-test-architecture-enterprise](https://bmad-code-org.github.io/bmad-method-test-architecture-enterprise/) |
-| 💬 Discord Community | [discord.gg/gk8jAdXWmj](https://discord.gg/gk8jAdXWmj) |
-| 🎥 YouTube Tutorials | [youtube.com/@BMadCode](https://youtube.com/@BMadCode) |
 | 📝 Speaker Blog | [harrybin.de](https://harrybin.de) |
 
 <!--

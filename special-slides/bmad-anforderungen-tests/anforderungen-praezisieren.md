@@ -174,13 +174,17 @@ Wichtig: Der Agent prüft auch Konsistenz und Vollständigkeit.
 -->
 
 ---
-layout: cover-dark
+layout: image-right
 background: /bmad-secret-agent-analysis.png
 hideInToc: true
 showCopyright: false
+isDark: true
 ---
 
 # 🎬 Demo 1: PRD-Erstellung mit BMad PM Agent
+
+<br/>
+<br/>
 
 <v-click>
 
@@ -219,13 +223,15 @@ Backup: Screenshot/Recording falls Live-Demo Probleme macht.
 -->
 
 ---
+layout: image-right
+background: /bmad-governance-control-center.png
 hideInToc: true
 showCopyright: false
 ---
 
 ## Vom PRD zur Architektur: Phase 3
 
-```mermaid {scale: 0.6}
+```mermaid {scale: 0.5}
 flowchart TD
     PRD["📄 PRD.md\n(FR + NFR + User Stories)"]
     

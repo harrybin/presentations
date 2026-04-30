@@ -232,11 +232,13 @@ Backup: Vorbereitete Test-Files als Fallback.
 -->
 
 ---
+layout: two-column
 hideInToc: true
 showCopyright: false
 ---
 
-# Requirements Tracing: Lückenlos
+
+::left::
 
 ```mermaid {scale: 0.45}
 graph LR
@@ -261,6 +263,10 @@ graph LR
     style NFR1 fill:#f59e0b,color:#fff
     style NFR2 fill:#f59e0b,color:#fff
 ```
+
+::right::
+
+## Requirements Tracing: Lückenlos
 
 <v-click>
 

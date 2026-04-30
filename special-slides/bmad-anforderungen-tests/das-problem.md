@@ -51,13 +51,17 @@ Derselbe Bug in der Design-Phase: 5x. Produktion: 100x.
 -->
 
 ---
+layout: two-column
 hideInToc: true
 showCopyright: false
 ---
 
-# Kosten von Anforderungsfehlern
+::left::
 
-```mermaid {scale: 0.65}
+## Kosten von Anforderungsfehlern
+
+```mermaid {scale: 0.45}
+%%{init: {'theme': 'base', 'themeVariables': {'xyChart': {'backgroundColor': '#ffffff', 'plotColorPalette': '#0066cc'}}}}%%
 xychart-beta
     title "Relative Kosten der Fehlerbehebung nach Phase"
     x-axis ["Requirements", "Design", "Code", "Test", "Produktion"]
@@ -70,6 +74,12 @@ xychart-beta
 > 💡 **IBM-Studie**: Ein in der Anforderungsphase entdeckter Fehler kostet **100× weniger** als einer in Produktion.
 
 </v-click>
+
+::right::
+
+<br/>
+
+  <img src="/bmad-kosten-anforderungsfehler.png" alt="Kosten von Anforderungsfehlern" style="width:100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">  
 
 <!--
 Dieses Diagramm aus der IBM-Studie "Minimizing Code Defects to Improve Software Quality and Lower Development Costs" (2008) zeigt den exponentiellen Anstieg der Fehlerkosten je später sie entdeckt werden.

@@ -54,7 +54,9 @@ showCopyright: false
 
 # BMad: 4 Phasen, 1 Framework
 
-```mermaid {scale: 0.55}
+<br/>
+
+```mermaid {scale: 0.7}
 flowchart LR
     P1["🔍 Phase 1\nAnalyse\n(Optional)"] --> P2["📋 Phase 2\nPlanung\n(Required)"]
     P2 --> P3["🏗️ Phase 3\nSolutioning"]
