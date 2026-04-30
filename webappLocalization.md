@@ -23,6 +23,7 @@ layout: cover
 hideInToc: true
 routeAlias: webappLocalization
 background: /developer-in-words.png
+showCopyright: false
 ---
 
 # It's all greek to me! 

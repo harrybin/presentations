@@ -5,7 +5,8 @@
         "webappLocalization.md",
         "devcontainer_20m.md",
         "githubCopilotDelphi.md",
-        "msWebUiReact.md"
+        "msWebUiReact.md",
+        "bmad-anforderungen-tests.md"
     ],
     "chat.tools.terminal.autoApprove": {
         "Add-Type": true

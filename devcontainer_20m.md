@@ -22,6 +22,7 @@ background: /devcontainer.jpeg
 description: Explore the benefits, configuration, and impact of Dev-Containers on modern development workflows.
 hideInToc: true
 routeAlias: devcontainer_20m
+showCopyright: false
 ---
 
 # Use the full potential of devcontainers

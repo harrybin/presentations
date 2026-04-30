@@ -21,6 +21,7 @@ background: /logo.svg
 backgroundSize: 90%
 hideInToc: true
 routeAlias: index
+showCopyright: false
 ---
 
 # Presentation Overview

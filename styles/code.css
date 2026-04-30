@@ -1,0 +1,6 @@
+:root {
+  @import "node_modules/@xebia/slidev-theme-xebia-2026/styles/variables.css";
+  --slidev-theme-primary: var(--primary-color) !important;
+  --slidev-theme-primary-accent: var(--primary-accent-color) !important;
+  --slidev-theme-secondary: var(--secondary-color) !important;
+}

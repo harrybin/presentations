@@ -2,6 +2,7 @@
 layout: intro
 speakerImage: /hbinkle.jpg
 hideInToc: true
+showCopyright: false
 ---
 
 

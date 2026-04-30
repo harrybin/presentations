@@ -16,6 +16,7 @@ background: /msWebUiReact-cover.png
 description: Exploring Microsoft's web UI technology choices and why React is the strategic choice for Windows developers modernizing applications
 hideInToc: true
 routeAlias: msWebUiReact
+showCopyright: false
 ---
 
 # Microsoft's Web UI Technology

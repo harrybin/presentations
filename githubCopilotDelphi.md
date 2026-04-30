@@ -23,6 +23,7 @@ background: /pilot-large.jpg
 description: "GitHub Copilot especially for Delphi Developers"
 hideInToc: true
 routeAlias: githubCopilotDelphi
+showCopyright: false
 ---
 
 <img src="/ekon29.png" width="40%" class="mt--20 mb-20" />
