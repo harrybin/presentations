@@ -143,7 +143,7 @@ hideInToc: true
 showCopyright: false
 ---
 
-# PRD-Workflow: Von der Idee zum Dokument
+## PRD-Workflow: Von der Idee zum Dokument
 
 ```mermaid {scale: 0.55}
 sequenceDiagram

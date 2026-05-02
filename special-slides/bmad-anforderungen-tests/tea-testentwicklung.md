@@ -204,7 +204,7 @@ test-design
 bmad-atdd
 
 # Requirements Tracing: Abdeckung prüfen
-bmad-trace
+bmad-testarch-trace
 ```
 
 </v-click>
@@ -311,7 +311,7 @@ showCopyright: false
 
 ```bash
 # NFR Assessment starten:
-bmad-nfr-assess
+bmad-testarch-nfr
 ```
 
 </v-click>
