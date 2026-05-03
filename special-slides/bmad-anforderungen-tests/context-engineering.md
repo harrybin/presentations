@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 4
 background: /bmad-context-satellite.png
 showCopyright: false
 isDark: true

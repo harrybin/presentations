@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 1
 background: /bmad-project-failure-aircraft.png
 showCopyright: false
 isDark: true

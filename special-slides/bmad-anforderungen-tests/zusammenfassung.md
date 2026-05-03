@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 6
 background: /bmad-collaboration-requirements.png
 showCopyright: false
 isDark: true

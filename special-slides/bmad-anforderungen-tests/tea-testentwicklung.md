@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 5
 background: /bmad-tea-diagnostics.png
 showCopyright: false
 isDark: true

@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 2
 background: /bmad-agent-fleet.png
 showCopyright: false
 isDark: true
