@@ -52,7 +52,7 @@ hideInToc: true
 showCopyright: false
 ---
 
-# BMad: 4 Phasen, 1 Framework
+## BMad: 4 Phasen, 1 Framework
 
 <br/>
 
@@ -67,10 +67,14 @@ flowchart LR
     P3 -.- A3["Architecture.md\nEpics & Stories"]
     P4 -.- A4["Code + Tests\nCode Review\nRetrospective"]
 
-    style P1 fill:#6366f1,color:#fff
-    style P2 fill:#f59e0b,color:#fff
-    style P3 fill:#10b981,color:#fff
-    style P4 fill:#3b82f6,color:#fff
+    style P1 fill:#831b84,stroke:#4f1250,color:#ffffff
+    style P2 fill:#9b2d9b,stroke:#631a63,color:#ffffff
+    style P3 fill:#b24cb2,stroke:#7b2f7b,color:#ffffff
+    style P4 fill:#6f1a70,stroke:#3d0f3d,color:#ffffff
+    style A1 fill:#f2e6f7,stroke:#9a5ca8,color:#1d0a2d
+    style A2 fill:#f2e6f7,stroke:#9a5ca8,color:#1d0a2d
+    style A3 fill:#f2e6f7,stroke:#9a5ca8,color:#1d0a2d
+    style A4 fill:#5a145b,stroke:#2e082f,color:#ffffff
 ```
 
 <!--
@@ -86,7 +90,7 @@ Für kleine Projekte gibt es den "Quick Flow" der die Phasen 1-3 überspringt.
 
 ---
 layout: image-right
-background: /bmad-agent-fleet.png
+background: /bmad-agents-specialized-experts.png
 hideInToc: true
 showCopyright: false
 ---

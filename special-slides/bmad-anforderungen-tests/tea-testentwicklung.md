@@ -83,12 +83,12 @@ flowchart LR
 
     TR --> GATE["🚦 Release Gate\nGo / No-Go"]
 
-    style TD fill:#6366f1,color:#fff
-    style AT fill:#f59e0b,color:#fff
-    style TA fill:#10b981,color:#fff
-    style RV fill:#3b82f6,color:#fff
-    style TR fill:#8b5cf6,color:#fff
-    style GATE fill:#ef4444,color:#fff
+    style TD fill:#8a268c,stroke:#5f1f62,color:#ffffff
+    style AT fill:#a13ea2,stroke:#6f2b70,color:#ffffff
+    style TA fill:#6f1a70,stroke:#3d0f3d,color:#ffffff
+    style RV fill:#9b2d9b,stroke:#631a63,color:#ffffff
+    style TR fill:#5a145b,stroke:#2e082f,color:#ffffff
+    style GATE fill:#4a0d4b,stroke:#2e082f,color:#ffffff
 ```
 
 <!--
@@ -182,7 +182,7 @@ Die Tests sind die lebende Spezifikation — immer aktuell, immer ausführbar.
 -->
 
 ---
-layout: cover-dark
+layout: image-right
 background: /bmad-human-ai-copilot.png
 hideInToc: true
 showCopyright: false
@@ -257,11 +257,11 @@ graph LR
         NFR2["NFR-002\nGDPR"] --> TC8["TC-008\nData Deletion\n🔴 P0 MISSING"]
     end
 
-    style TC8 fill:#ef4444,color:#fff
-    style FR1 fill:#6366f1,color:#fff
-    style FR2 fill:#6366f1,color:#fff
-    style NFR1 fill:#f59e0b,color:#fff
-    style NFR2 fill:#f59e0b,color:#fff
+    style TC8 fill:#4a0d4b,stroke:#2e082f,color:#ffffff
+    style FR1 fill:#8a268c,stroke:#5f1f62,color:#ffffff
+    style FR2 fill:#8a268c,stroke:#5f1f62,color:#ffffff
+    style NFR1 fill:#a13ea2,stroke:#6f2b70,color:#ffffff
+    style NFR2 fill:#a13ea2,stroke:#6f2b70,color:#ffffff
 ```
 
 ::right::

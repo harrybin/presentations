@@ -233,7 +233,7 @@ showCopyright: false
 
 ```mermaid {scale: 0.5}
 flowchart TD
-    PRD["📄 PRD.md\n(FR + NFR + User Stories)"]
+    PRD["📄 PRD.md\n(FR+NFR+User Stories)"]
     
     PRD --> ARCH["🏛️ Architect Agent\nbmad-create-architecture"]
     ARCH --> ADR["Architecture Decision Records\n(ADRs)"]
@@ -243,11 +243,11 @@ flowchart TD
     CHECK --> PASS["✅ PASS\n→ Epics & Stories"]
     CHECK --> FAIL["❌ CONCERNS\n→ Überarbeitung"]
     
-    style PRD fill:#f59e0b,color:#fff
-    style ARCH fill:#6366f1,color:#fff
-    style CHECK fill:#10b981,color:#fff
-    style PASS fill:#10b981,color:#fff
-    style FAIL fill:#ef4444,color:#fff
+    style PRD fill:#f2e6f7,stroke:#9a5ca8,color:#1d0a2d
+    style ARCH fill:#9b2d9b,stroke:#631a63,color:#ffffff
+    style CHECK fill:#7e2a80,stroke:#4f1250,color:#ffffff
+    style PASS fill:#8f3a90,stroke:#5f1f62,color:#ffffff
+    style FAIL fill:#4a0d4b,stroke:#2e082f,color:#ffffff
 ```
 
 <!--

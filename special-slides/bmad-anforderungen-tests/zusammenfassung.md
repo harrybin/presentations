@@ -27,17 +27,17 @@ showCopyright: false
 
 ## Der komplette BMad-Workflow
 
-```mermaid {scale: 0.5}
+```mermaid {scale: 0.45}
 flowchart TD
     subgraph CONTEXT["Vor Test Design"]
     direction LR
     IDEA["💡 Idee / Problem"] --> BRIEF["📄 Product Brief\nbmad-product-brief"]
     BRIEF --> PRD["📋 PRD.md\nbmad-create-prd\n(PM Agent)"]
-    PRD --> ARCH["🏗️ Architecture.md\nbmad-create-architecture\n(Architect Agent)"]
+    PRD --> ARCH["🏗️ Architecture.md\nbmad-create-architecture (Architect Agent)"]
     ARCH --> CTX["⚙️ project-context.md\nbmad-generate-project-context"]
     end
 
-    TD["🎯 Test<br/>Design<br/>bmad-tea → test-design<br/>(TEA Agent)"]
+    TD["🎯 Test Design <br/> bmad-tea → test-design (TEA Agent)"]
 
     subgraph EXECUTION["Nach Test Design"]
     direction LR
@@ -57,10 +57,10 @@ flowchart TD
     CONTEXT --> TD
     TD --> EXECUTION
 
-    style IDEA fill:#8b5cf6,color:#fff
-    style PRD fill:#f59e0b,color:#fff
-    style TD fill:#6366f1,color:#fff
-    style GATE fill:#10b981,color:#fff
+    style IDEA fill:#9b2d9b,stroke:#631a63,color:#ffffff
+    style PRD fill:#f2e6f7,stroke:#9a5ca8,color:#1d0a2d
+    style TD fill:#7e2a80,stroke:#4f1250,color:#ffffff
+    style GATE fill:#4a0d4b,stroke:#2e082f,color:#ffffff
 ```
 
 <!--

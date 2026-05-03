@@ -79,11 +79,11 @@ graph TD
     PRD -.->|"informiert"| CTX
     ARCH -.->|"informiert"| STORY
 
-    style BRIEF fill:#6366f1,color:#fff
-    style PRD fill:#f59e0b,color:#fff
-    style ARCH fill:#10b981,color:#fff
-    style CTX fill:#3b82f6,color:#fff
-    style STORY fill:#8b5cf6,color:#fff
+    style BRIEF fill:#6f1a70,stroke:#3d0f3d,color:#ffffff
+    style PRD fill:#8a268c,stroke:#5f1f62,color:#ffffff
+    style ARCH fill:#9b2d9b,stroke:#631a63,color:#ffffff
+    style CTX fill:#a13ea2,stroke:#6f2b70,color:#ffffff
+    style STORY fill:#5a145b,stroke:#2e082f,color:#ffffff
 ```
 
 <!--

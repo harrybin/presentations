@@ -11,6 +11,145 @@ record: false
 editor: true
 overviewSnapshots: false
 glowEnabled: true
+mermaid:
+  theme: base
+  themeVariables:
+    darkMode: false
+    fontFamily: Inter, "Segoe UI", sans-serif
+    fontSize: 18px
+    lineColor: "#2b3d52"
+    textColor: "#0f172a"
+    primaryColor: "#e8f1fa"
+    primaryBorderColor: "#2f6ea3"
+    primaryTextColor: "#0f172a"
+    secondaryColor: "#eef7f2"
+    secondaryBorderColor: "#2d7a5f"
+    secondaryTextColor: "#0f172a"
+    tertiaryColor: "#f4f8fc"
+    tertiaryBorderColor: "#5b7a99"
+    noteBkgColor: "#fff8d6"
+    noteBorderColor: "#b08900"
+    noteTextColor: "#3b2f00"
+    clusterBkg: "#f5f9fd"
+    clusterBorder: "#b7cadf"
+    mainBkg: "#e8f1fa"
+    nodeBorder: "#2f6ea3"
+    edgeLabelBackground: "#ffffff"
+    nodeTextColor: "#0f172a"
+  themeCSS: |
+    svg {
+      overflow: visible;
+    }
+
+    /* Rounded corners + subtle depth effect on entities. */
+    .node rect,
+    .node polygon,
+    .node path,
+    .node circle {
+      rx: 10px;
+      ry: 10px;
+      stroke-width: 1.8px;
+      filter: drop-shadow(0 3px 5px rgba(15, 23, 42, 0.16));
+      transition: transform 260ms ease, filter 260ms ease, stroke-width 260ms ease;
+    }
+
+    .node:hover rect,
+    .node:hover polygon,
+    .node:hover path,
+    .node:hover circle {
+      transform: translateY(-1px);
+      filter: drop-shadow(0 6px 10px rgba(15, 23, 42, 0.24));
+      stroke-width: 2.2px;
+    }
+
+    /* Slight tonal differences inspired by Slidev theme colors. */
+    .node.default rect,
+    .node.default polygon,
+    .node.default path {
+      fill: color-mix(in srgb, var(--slidev-theme-primary) 16%, white);
+      stroke: color-mix(in srgb, var(--slidev-theme-primary) 72%, #0f172a);
+    }
+
+    .node[class*="secondary"] rect,
+    .node[class*="secondary"] polygon,
+    .node[class*="secondary"] path {
+      fill: color-mix(in srgb, var(--slidev-theme-secondary) 20%, white);
+      stroke: color-mix(in srgb, var(--slidev-theme-secondary) 72%, #0f172a);
+    }
+
+    /* Animated arrows for more dynamic flow perception. */
+    .edgePath .path,
+    .flowchart-link,
+    .edge-thickness-normal,
+    .edge-thickness-thick {
+      stroke-dasharray: 8 7;
+      animation: mermaid-edge-flow 1.7s linear infinite;
+      stroke-width: 2px;
+    }
+
+    .arrowheadPath,
+    marker path {
+      animation: mermaid-arrow-pulse 1.7s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .edgeLabel {
+      animation: mermaid-soft-fade 2.2s ease-in-out infinite alternate;
+    }
+
+    .node {
+      animation: mermaid-node-breathe 3.6s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes mermaid-edge-flow {
+      to {
+        stroke-dashoffset: -30;
+      }
+    }
+
+    @keyframes mermaid-arrow-pulse {
+      0%,
+      100% {
+        opacity: 0.86;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes mermaid-node-breathe {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-0.8px);
+      }
+    }
+
+    @keyframes mermaid-soft-fade {
+      from {
+        opacity: 0.92;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .edgePath .path,
+      .flowchart-link,
+      .edge-thickness-normal,
+      .edge-thickness-thick,
+      .arrowheadPath,
+      marker path,
+      .edgeLabel,
+      .node {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
 aspectRatio: 18/9
 ###### slides start ######
 layout: cover
