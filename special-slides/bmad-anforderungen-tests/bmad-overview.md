@@ -13,7 +13,8 @@ isDark: true
 KI-gesteuertes agiles Entwickeln vom ersten Gedanken bis zum Deployment
 
 <!--
-Einführung in BMad. Frage ans Publikum: "Wer kennt BMad bereits?"
+- Intro: BMad kurz einordnen
+- Publikumsfrage: Wer kennt BMad bereits?
 
 -->
 
@@ -38,11 +39,11 @@ showCopyright: false
 </v-clicks>
 
 <!--
-BMad ist kein einzelnes Tool — es ist ein Framework, das KI-Agenten strukturiert einsetzt.
-Wichtig: BMad ersetzt keine agilen Methoden, sondern setzt sie mit KI-Unterstützung um.
-
-Website: https://docs.bmad-method.org
-GitHub: https://github.com/bmad-code-org/BMAD-METHOD
+- Kein Einzeltool, sondern Framework
+- Strukturierter Einsatz spezialisierter KI-Agenten
+- Ergänzung agiler Methoden, kein Ersatz
+- Website: https://docs.bmad-method.org
+- GitHub: https://github.com/bmad-code-org/BMAD-METHOD
 
 -->
 
@@ -77,11 +78,10 @@ showCopyright: false
 </v-click>
 
 <!--
-Call-to-Action: Was können die Zuhörer heute noch tun?
-
-BMad ist komplett kostenlos und Open Source.
-Die Community ist aktiv und hilfreich.
-Der Start mit npx bmad-method install dauert 5 Minuten.
+- Call-to-Action: Start noch heute
+- Kostenlos, Open Source
+- Aktive Community
+- Einstieg in ca. 5 Minuten: npx bmad-method install
 
 -->
 
@@ -118,12 +118,11 @@ flowchart LR
 ```
 
 <!--
-Das zentrale Framework: 4 Phasen, die aufeinander aufbauen.
-Jede Phase produziert Dokumente, die der nächsten Phase als Kontext dienen.
-Dies ist der Kern des Context Engineerings in BMad.
-
-Phase 1 ist optional, Phase 2 ist obligatorisch.
-Für kleine Projekte gibt es den "Quick Flow" der die Phasen 1-3 überspringt.
+- Kernmodell: 4 aufbauende Phasen
+- Output je Phase als Input für nächste Phase
+- Context Engineering als roter Faden
+- Phase 1 optional, Phase 2 verpflichtend
+- Quick Flow für kleine Vorhaben (Phase 1-3 überspringen)
 
 -->
 
@@ -154,10 +153,10 @@ showCopyright: false
 </v-clicks>
 
 <!--
-BMad kommt mit über 12 spezialisierten Agenten. Jeder Agent hat sein eigenes Expertenwissen.
-Das Besondere: Die Agenten kommunizieren über strukturierte Dokumente miteinander.
-
-Party Mode: Mehrere Agenten können zusammen in einer Session arbeiten und diskutieren.
+- Über 12 spezialisierte Agenten
+- Klar abgegrenzte Rollen und Expertise
+- Zusammenarbeit über strukturierte Dokumente
+- Party Mode: mehrere Agenten in einer Session
 
 -->
 
@@ -179,9 +178,9 @@ showCopyright: false
 | **Skalierung** | kleines Scope | enterprise-fähig |
 
 <!--
-Der entscheidende Unterschied: BMad schafft persistenten, strukturierten Kontext.
-KI direkt fragen ist wie mit einem goldfish mit Gedächtnis zu arbeiten — jede Session startet von Null.
-BMad baut Kontext auf, der von Agent zu Agent weitergegeben wird.
+- Hauptunterschied: persistenter, strukturierter Kontext
+- Direkte KI-Nutzung: Session-gebunden, Kontextverlust
+- BMad: Kontextübergabe von Agent zu Agent
 
 -->
 
@@ -207,9 +206,9 @@ showCopyright: false
 </v-clicks>
 
 <!--
-BMad ist modular aufgebaut. Man installiert nur was man braucht.
-Für uns heute besonders relevant: TEA — der Test Architect.
-
-Installation: npx bmad-method install → Modul auswählen
+- Modulares Ökosystem
+- Nur benötigte Module installieren
+- Heutiger Fokus: TEA (Test Architect)
+- Installation: npx bmad-method install -> Modul wählen
 
 -->

@@ -16,8 +16,8 @@ isDark: true
 Warum scheitern Softwareprojekte – und was kostet uns das wirklich?
 
 <!--
-Einstieg in den ersten Hauptteil. Starte mit einer provokanten Frage ans Publikum:
-"Wie viele von euch haben schon ein Projekt erlebt, das wegen unklarer Anforderungen in Schieflage geraten ist?"
+- Einstieg in Hauptteil 1
+- Publikumsfrage: Projekt-Schieflage durch unklare Anforderungen?
 
 -->
 
@@ -41,11 +41,9 @@ showCopyright: false
 </v-clicks>
 
 <!--
-Das Chaos Model von Standish Group: Nur 35% der Softwareprojekte werden erfolgreich abgeschlossen.
-Hauptgrund Nummer 1: unklare Anforderungen.
-
-IBM-Studie: Ein Bug, der in der Requirements-Phase entdeckt wird, kostet 1x.
-Derselbe Bug in der Design-Phase: 5x. Produktion: 100x.
+- Standish Chaos: nur 35% erfolgreich
+- Hauptursache: unklare Anforderungen
+- IBM-Kostenkurve: Requirements 1x, Design 5x, Produktion 100x
 
 -->
 
@@ -81,9 +79,9 @@ xychart-beta
   <img src="/bmad-kosten-anforderungsfehler.png" alt="Kosten von Anforderungsfehlern" style="width:100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">  
 
 <!--
-Dieses Diagramm aus der IBM-Studie "Minimizing Code Defects to Improve Software Quality and Lower Development Costs" (2008) zeigt den exponentiellen Anstieg der Fehlerkosten je später sie entdeckt werden.
-
-Punkt: Wir müssen Fehler früher finden — idealerweise bevor eine einzige Zeile Code geschrieben wird.
+- Diagrammquelle: IBM-Studie 2008
+- Kernaussage: exponentieller Kostenanstieg bei später Fehlerfindung
+- Takeaway: Fehler vor dem Coding finden
 
 -->
 
@@ -113,10 +111,9 @@ showCopyright: false
 </v-clicks>
 
 <!--
-Ein klassisches Beispiel für die Lücke zwischen Business-Intention und technischer Implementierung.
-Das Problem: Jede Ebene interpretiert die Anforderung nach eigenem Verständnis.
-
-Die Lösung: Strukturierte Anforderungsanalyse, die alle Stakeholder einbezieht und Edge Cases explizit macht.
+- Klassische Business-zu-Implementierung-Lücke
+- Problem: unterschiedliche Interpretation je Rolle
+- Lösung: strukturierte Analyse, Stakeholder einbeziehen, Edge Cases explizit
 
 -->
 
@@ -161,7 +158,7 @@ showCopyright: false
 </v-clicks>
 
 <!--
-Die Brücke zum Hauptthema: BMad bietet einen strukturierten Rahmen, um KI methodisch einzusetzen.
-Nicht KI als Zauberstab, sondern KI als methodischer Kollaborateur.
+- Brücke zum Hauptthema: methodischer KI-Einsatz mit BMad
+- Positionierung: kein Zauberstab, sondern Kollaborateur
 
 -->

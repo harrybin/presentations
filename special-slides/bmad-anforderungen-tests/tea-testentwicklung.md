@@ -16,8 +16,8 @@ isDark: true
 Vom PRD zur validierten Test-Suite — risikobasiert, automatisiert, auditierbar
 
 <!--
-Kapitel 5: Das Herzstück des Talks — der Test Architect (TEA).
-"Was wäre, wenn eure Test-Suite direkt aus den Spezifikationen entstehen würde?"
+- Kapitel 5: Herzstück des Talks (TEA)
+- Leitfrage: Test-Suite direkt aus Spezifikationen?
 
 -->
 
@@ -44,10 +44,10 @@ showCopyright: false
 </v-clicks>
 
 <!--
-TEA ist ein eigenständiges BMad-Modul, das auf dem Core-Framework aufbaut.
-Es nutzt den Context aus PRD und Architecture, um Tests abzuleiten.
-
-Installation: npx bmad-method install → "Test Architect (TEA)" auswählen
+- TEA als eigenständiges BMad-Modul
+- Basis: Core-Framework + Kontext aus PRD/Architecture
+- Zweck: Testableitungen aus Spezifikation
+- Installation: npx bmad-method install -> Test Architect (TEA)
 
 -->
 
@@ -91,11 +91,11 @@ flowchart LR
 ```
 
 <!--
-Der TEA-Workflow: Vom PRD über Test Design, ATDD und Automation bis zum Release Gate.
-Jeder Schritt produziert auditierbare Artefakte.
-
-Besonders wichtig: Requirements Tracing — jeder Test zeigt, welche Anforderung er abdeckt.
-Das Release Gate ist evidenzbasiert: "Sind alle P0-Tests grün? Ist Coverage-Ziel erreicht?"
+- TEA-Flow: PRD -> Test Design -> ATDD -> Automation -> Gate
+- Jeder Schritt mit auditierbaren Artefakten
+- Requirements Tracing: Test zu Anforderung zuordenbar
+- Release Gate: evidenzbasiert
+- Gate-Fragen: P0 grün? Coverage-Ziel erreicht?
 
 -->
 
@@ -125,12 +125,12 @@ showCopyright: false
 </v-click>
 
 <!--
-Risk-based Testing ist keine neue Idee — aber TEA macht sie systematisch und KI-gestützt.
-Der TEA-Agent analysiert PRD und Architecture und weist automatisch Risikoprioritäten zu.
-
-P0-Tests müssen immer 100% grün sein — das ist das Release Gate.
-P1-Tests haben 95%+ Abdeckung als Ziel.
-P2-P3 nach verfügbaren Ressourcen.
+- Risk-based Testing: bekanntes Prinzip, systematisch mit TEA
+- Analysebasis: PRD + Architecture
+- Automatische Priorisierung durch TEA-Agent
+- Gate-Regel: P0 immer 100% grün
+- Zielwerte: P1 >= 95% Abdeckung
+- P2/P3 abhängig von Ressourcen
 
 -->
 
@@ -169,11 +169,11 @@ Feature: User Authentication
 </v-click>
 
 <!--
-ATDD ist der Schlüssel zur Anforderungs-Test-Brücke.
-TEA generiert Gherkin-Szenarien direkt aus den Akzeptanzkriterien im PRD.
-
-Der Entwickler implementiert Code, bis diese Tests grün sind.
-Die Tests sind die lebende Spezifikation — immer aktuell, immer ausführbar.
+- ATDD als Brücke zwischen Anforderung und Test
+- Gherkin-Szenarien aus PRD-Akzeptanzkriterien
+- Umsetzung bis Tests grün
+- Tests als lebende Spezifikation
+- Immer aktuell, immer ausführbar
 
 -->
 
@@ -209,23 +209,18 @@ bmad-testarch-trace
 </v-click>
 
 <!--
-DEMO 3: TEA in Aktion zeigen.
-
-Schritte:
-1. Das PRD aus Demo 1 (Auth-System) als Basis nehmen
-2. "bmad-tea" eingeben um den TEA Agent zu aktivieren
-3. "test-design" starten — zeigen wie TEA die Anforderungen analysiert
-4. Risk Matrix wird generiert: P0 = Auth-Flow, P1 = SSO, P2 = Audit Logs
-5. "bmad-atdd" starten — failing Acceptance Tests werden generiert
-6. Gherkin-Szenarien zeigen und erklären
-7. "bmad-trace" für Requirements Tracing
-
-Highlight: 
-- Zeige wie jeder Test auf eine FR/NFR-Anforderung verweist
-- Zeige die Coverage-Map: Welche Anforderungen sind noch nicht getestet?
-- Zeige das Release Gate: "P0 nicht abgedeckt → kein Release"
-
-Backup: Vorbereitete Test-Files als Fallback.
+- Demo 3: TEA in Aktion
+- Basis: PRD aus Demo 1 (Auth-System)
+- Aktivierung: bmad-tea
+- Schritt 1: test-design (Anforderungsanalyse)
+- Schritt 2: Risk Matrix erzeugen (P0/P1/P2)
+- Schritt 3: bmad-atdd (failing Acceptance Tests)
+- Schritt 4: Gherkin-Szenarien zeigen
+- Schritt 5: bmad-trace für Tracing
+- Highlight: Test -> FR/NFR-Verknüpfung
+- Highlight: Coverage-Map mit Lücken
+- Highlight: Release Gate bei fehlender P0-Abdeckung
+- Fallback: vorbereitete Test-Files
 
 -->
 
@@ -273,11 +268,11 @@ graph LR
 </v-click>
 
 <!--
-Dieses Diagramm zeigt Requirements Tracing in Aktion.
-Jede Anforderung ist mit ihren Tests verknüpft.
-Fehlende Tests sind sofort sichtbar — kein "wir haben schon genug Tests" ohne Evidenz.
-
-Das Release Gate ist transparent: Alle P0-Tests müssen grün sein UND vollständig abgedeckt.
+- Requirements Tracing in Aktion
+- Jede Anforderung mit Tests verknüpft
+- Lücken sofort sichtbar
+- Keine "genug Tests"-Diskussion ohne Evidenz
+- Transparentes Gate: P0 grün und vollständig abgedeckt
 
 -->
 
@@ -314,12 +309,11 @@ bmad-testarch-nfr
 </v-click>
 
 <!--
-NFRs werden oft vergessen oder zu spät getestet.
-TEA integriert NFR-Tests von Anfang an in die Test-Strategie.
-
-Für das Auth-System aus unserem Beispiel:
-- Performance: Login unter 500ms bei 10.000 gleichzeitigen Usern
-- Security: SQL Injection, XSS, CSRF automatisch geprüft
+- NFRs häufig unterpriorisiert
+- TEA integriert NFR-Tests von Beginn an
+- Beispiel Auth-System:
+- Performance: Login < 500ms bei 10.000 gleichzeitigen Usern
+- Security: SQLi, XSS, CSRF automatisch prüfen
 - GDPR: Datenlöschung vollständig verifiziert
 
 -->

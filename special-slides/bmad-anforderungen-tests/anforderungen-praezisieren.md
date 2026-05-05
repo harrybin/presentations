@@ -16,7 +16,8 @@ isDark: true
 Von der vagen Idee zum strukturierten PRD — mit KI-Agenten als Sparring-Partner
 
 <!--
-Kapitel 3: Der Kern des Vortrags. Wie hilft BMad dabei, Anforderungen zu präzisieren?
+- Kapitel 3: Kernteil des Vortrags
+- Leitfrage: Wie präzisiert BMad Anforderungen?
 
 -->
 
@@ -48,12 +49,11 @@ showCopyright: false
 </v-click>
 
 <!--
-Phase 1 ist optional aber wertvoll. Besonders PRFAQ ist sehr kraftvoll:
-"Schreib die Pressemitteilung für dein fertiges Produkt — bevor du eine Zeile Code schreibst."
-Wenn man das nicht überzeugend machen kann, ist die Idee noch nicht reif.
-
-Brainstorming: KI stellt Fragen, zieht Ideen heraus — generiert sie NICHT selbst.
-Das ist der Unterschied zu "einfach ChatGPT fragen".
+- Phase 1: optional, hoher Nutzen
+- PRFAQ-Check: Pressemitteilung vor erster Codezeile
+- Reifegrad-Indikator: unklare PMF -> Idee noch unreif
+- Brainstorming: KI fragt nach, extrahiert Wissen
+- Abgrenzung: nicht "einfach ChatGPT fragen"
 
 -->
 
@@ -83,11 +83,10 @@ showCopyright: false
 </v-clicks>
 
 <!--
-Das PRD ist der Dreh- und Angelpunkt im BMad-Workflow.
-Es ist nicht ein starres Dokument, sondern lebt mit dem Projekt.
-
-Der PM Agent stellt gezielte Fragen: "Wer sind die Nutzer?" "Was sind die Qualitätsziele?"
-Die Antworten werden strukturiert im PRD.md dokumentiert.
+- PRD: Dreh- und Angelpunkt im Workflow
+- Living Document statt statischer Spezifikation
+- PM Agent: gezielte Nutzer- und Qualitätsfragen
+- Ergebnis: strukturierte Dokumentation in PRD.md
 
 -->
 
@@ -117,11 +116,10 @@ sequenceDiagram
 ```
 
 <!--
-Der PM-Agent führt ein strukturiertes Interview durch.
-Keine offenen Fragen ins Blaue — gezielte Fragen basierend auf Best Practices.
-
-Wichtig: Der Agent prüft auch Konsistenz und Vollständigkeit.
-"Sie haben SSO erwähnt — haben Sie auch Anforderungen für Single Sign-Out?"
+- PM Agent: strukturiertes Interview
+- Fragen auf Basis von Best Practices
+- Konsistenz- und Vollständigkeitscheck
+- Beispiel-Rückfrage: SSO auch mit Single Sign-Out?
 
 -->
 
@@ -154,22 +152,17 @@ bmad-create-prd
 </v-click>
 
 <!--
-DEMO 1: PRD-Erstellung live demonstrieren.
-
-Schritte:
-1. Claude Code öffnen (oder Cursor/VS Code mit Copilot)
-2. "bmad-agent-pm" eingeben um den PM Agent zu aktivieren
-3. "bmad-create-prd" starten
-4. Beispiel-Anforderung eingeben: "Ich will ein Authentifizierungssystem für Enterprise-Kunden"
-5. Agent stellt gezielte Fragen — live beantworten
-6. PRD.md wird generiert — zeigen wie strukturiert und vollständig es ist
-
-Zeige besonders:
-- Wie der Agent Logikfehler aufdeckt ("Sie wollen SSO aber erwähnen keinen IdP-Provider?")
-- Wie NFRs automatisch angereichert werden
-- Wie das PRD.md die Basis für alle weiteren Schritte wird
-
-Backup: Screenshot/Recording falls Live-Demo Probleme macht.
+- Demo 1: PRD-Erstellung live
+- Setup: Claude/Cursor/VS Code + Copilot
+- Aktivierung: bmad-agent-pm
+- Workflowstart: bmad-create-prd
+- Beispiel: Auth-System für Enterprise-Kunden
+- Live-Teil: gezielte Fragen beantworten
+- Output zeigen: PRD.md strukturiert und vollständig
+- Highlight: Logiklücken erkennen (z. B. SSO ohne IdP)
+- Highlight: NFR-Anreicherung automatisch
+- Highlight: PRD als Basis für Folgeschritte
+- Fallback: Screenshot/Recording
 
 -->
 
@@ -202,10 +195,10 @@ flowchart TD
 ```
 
 <!--
-Das PRD wird zur Eingabe für den Architect Agent.
-Der Architect macht technische Entscheidungen explizit in Architecture Decision Records.
-
-Implementation Readiness Check: Gate-Kontrolle bevor Code geschrieben wird.
-Ergebnis: PASS, CONCERNS oder FAIL — mit konkreten Verbesserungsvorschlägen.
+- PRD als Input für Architect Agent
+- Technische Entscheidungen via ADRs explizit
+- Readiness Check als Gate vor Coding
+- Ergebnisarten: PASS, CONCERNS, FAIL
+- Immer mit konkreten Verbesserungsvorschlägen
 
 -->

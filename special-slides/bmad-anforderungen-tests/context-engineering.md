@@ -13,8 +13,8 @@ isDark: true
 Wie die effiziente Organisation von Projektwissen KI-Ergebnisse dramatisch verbessert
 
 <!--
-Context Engineering ist eines der wichtigsten Konzepte in der modernen KI-gestützten Entwicklung.
-"Garbage in, garbage out" — aber für KI: "Context in, quality out".
+- Context Engineering als Schlüsselkonzept
+- Leitgedanke: Context in, quality out
 
 -->
 
@@ -47,10 +47,9 @@ showCopyright: false
 </v-click>
 
 <!--
-Früher: Prompt Engineering — wie stelle ich die Frage damit die KI antwortet?
-Heute: Context Engineering — welches Wissen hat die KI zur Verfügung?
-
-BMad löst dieses Problem durch strukturierte Dokumente, die von Phase zu Phase weitergegeben werden.
+- Früher: Prompt-Formulierung im Fokus
+- Heute: Wissensbasis im Fokus
+- BMad-Lösung: strukturierte Dokumente über Phasen hinweg
 
 -->
 
@@ -87,13 +86,12 @@ graph TD
 ```
 
 <!--
-Die Context-Hierarchie: Jedes Dokument baut auf dem vorherigen auf.
-Ein Dev-Agent, der eine Story implementiert, hat Zugriff auf:
-- Die technischen Regeln aus project-context.md
-- Die Architektur-Entscheidungen aus architecture.md
-- Die Business-Anforderungen aus dem PRD (via Story-File)
-
-Das verhindert inkonsistente Entscheidungen zwischen verschiedenen Agenten/Sessions.
+- Context-Hierarchie: Dokumente bauen aufeinander auf
+- Dev-Agent-Kontext:
+- Technische Regeln aus project-context.md
+- Architekturentscheidungen aus architecture.md
+- Business-Anforderungen aus PRD via Story-File
+- Effekt: konsistente Entscheidungen über Agenten/Sessions
 
 -->
 
@@ -129,13 +127,11 @@ bmad-generate-project-context
 </v-click>
 
 <!--
-project-context.md ist optional, aber sehr wertvoll.
-Es kann manuell erstellt oder automatisch aus der Codebase generiert werden.
-
-Typischer Inhalt: "Wir verwenden TypeScript strict mode, keine any-Types, 
-Jest für Tests mit mindestens 80% Coverage, React Query für API-Calls."
-
-Jeder Agent, der Code schreibt, hält sich automatisch an diese Regeln.
+- project-context.md: optional, hoher Hebel
+- Erstellung: manuell oder automatisch aus Codebase
+- Typische Inhalte: Stack, Regeln, Teststandards
+- Beispiel: TS strict, keine any-Types, Jest >= 80%, React Query
+- Effekt: einheitliche Regelbefolgung durch alle Agenten
 
 -->
 
@@ -168,21 +164,15 @@ bmad-generate-project-context
 </v-click>
 
 <!--
-DEMO 2: Context Engineering live zeigen.
-
-Schritte:
-1. Existierendes Projekt öffnen (z.B. das Auth-System aus Demo 1)
-2. "bmad-generate-project-context" ausführen
-3. Die generierte project-context.md zeigen und erklären
-4. Eine zweite Agent-Session öffnen — zeigen dass der Kontext übertragen wird
-5. Der neue Agent "kennt" die Regeln aus project-context.md automatisch
-
-Zeige besonders:
-- Wie Regeln automatisch aus bestehendem Code extrahiert werden
-- Wie das PRD + Architecture in den Kontext einfließt
-- Wie dadurch konsistente Code-Generierung möglich wird
-
-Backup: Vorbereitetes project-context.md-Beispiel zeigen.
+- Demo 2: Context Engineering live
+- Projektbasis: bestehendes Auth-System
+- Befehl: bmad-generate-project-context
+- Output: project-context.md zeigen und einordnen
+- Zweite Agent-Session: Kontextübernahme demonstrieren
+- Highlight: Regel-Extraktion aus bestehendem Code
+- Highlight: PRD + Architecture fließen in Kontext
+- Highlight: konsistente Code-Generierung
+- Fallback: vorbereitetes project-context.md
 
 -->
 
@@ -218,9 +208,10 @@ bmad-create-story               # Epic → konkretes Story-File
 </v-click>
 
 <!--
-Der Vorteil von Story-Files: Jede Story enthält genug Kontext für einen Dev-Agenten.
-Keine langen Gespräche um den Kontext zu etablieren — alles ist bereits dokumentiert.
-
-Stories entstehen aus PRD + Architecture — also mit vollständigem Business- und Tech-Kontext.
+- Story-Files: genug Kontext pro Arbeitspaket
+- Weniger Abstimmungsaufwand vor Implementierung
+- Kontext bereits dokumentiert
+- Herkunft: PRD + Architecture
+- Ergebnis: vollständiger Business- und Tech-Kontext
 
 -->

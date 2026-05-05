@@ -16,7 +16,7 @@ isDark: true
 BMad als Brücke zwischen Anforderung, Architektur und qualitätsgesichertem Code
 
 <!--
-Das Abschlusskapitel: Wie alle Teile zusammenpassen.
+- Abschlusskapitel: Zusammenspiel aller Bausteine
 
 -->
 
@@ -64,10 +64,9 @@ flowchart TD
 ```
 
 <!--
-Der vollständige Flow: Von der Idee zum Release Gate.
-Jeder Schritt ist nachvollziehbar, jedes Artefakt ist auditierbar.
-
-Dieser Flow funktioniert für Teams aller Größen — von Einzelentwicklern bis Enterprise-Teams.
+- Gesamtflow: Idee bis Release Gate
+- Nachvollziehbare Schritte, auditierbare Artefakte
+- Geeignet für Solo bis Enterprise
 
 -->
 
@@ -99,11 +98,10 @@ showCopyright: false
 </v-click>
 
 <!--
-Zusammenfassung der Qualitätsgewinne durch BMad.
-
-Real-world Zahlen (aus BMad-Community):
-- 60-70% weniger nachträgliche Requirement-Änderungen
-- 50% schnellere PRD-Erstellung durch strukturierten PM-Agent-Workflow
+- Qualitätsgewinne kompakt
+- Community-Werte:
+- 60-70% weniger spätere Requirement-Änderungen
+- 50% schnellere PRD-Erstellung
 - Nahezu 100% Requirement-zu-Test-Traceability
 
 -->
@@ -148,11 +146,11 @@ showCopyright: false
 </v-clicks>
 
 <!--
-Ehrliche Einschätzung: BMad ist kein Silver Bullet.
-Für kleine, kurzlebige Projekte ist der Overhead zu groß.
-Für alles was in Produktion geht und gewartet wird: absolut empfehlenswert.
-
-Einstieg: Beginne mit "Quick Flow" für kleine Features, skaliere dann zu BMad Method.
+- Ehrliche Einordnung: kein Silver Bullet
+- Für kleine, kurzlebige Projekte oft zu viel Overhead
+- Für produktive, wartbare Systeme klarer Mehrwert
+- Einstieg: Quick Flow
+- Skalierung: schrittweise zur vollen BMad Method
 
 -->
 
@@ -184,10 +182,8 @@ showCopyright: false
 </v-click>
 
 <!--
-Abschluss-Zusammenfassung. Alle Kernpunkte in einem Slide.
-
-Zitat aufgreifen: Ein Twist auf das bekannte "Der beste Zeitpunkt um einen Baum zu pflanzen war vor 20 Jahren."
-
-Noch einmal die Einladung: Heute noch bmad-method installieren und ausprobieren!
+- Abschluss: alle Kernpunkte auf einem Slide
+- Zitat als Merkanker (Baum-Pflanzen-Twist)
+- Letzter Call-to-Action: bmad-method heute testen
 
 -->

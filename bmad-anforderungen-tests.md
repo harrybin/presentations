@@ -28,11 +28,9 @@ isDark: true
 ## Von der vagen Idee zur validierten Testsuite mit BMad
 
 <!--
-Willkommen! Dieser Talk zeigt wie die BMad-Methode (Build More Architect Dreams) den Weg von vagen Anforderungen zu einer validierten Testsuite revolutioniert.
-
-Dauer: 60 Minuten inkl. 3 Live-Demos und Q&A.
-
-Audience-Hook: "Wer hat schon mal ein Projekt erlebt, das wegen unklarer Anforderungen in Schieflage geraten ist?" — Fast alle Hände sollten sich heben.
+- Einstieg: BMad als Weg von Idee zu validierter Testsuite
+- Dauer: 60 Minuten, 3 Live-Demos, Q&A
+- Audience Hook: Wer kennt Projekt-Schieflage durch unklare Anforderungen?
 -->
 
 ---
@@ -60,12 +58,11 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Teaser-Slide: Emotionaler Einstieg mit einer provokanten Statistik.
-Pause nach jeder Aussage. Die letzte Zeile leise und mit Überzeugung sagen.
-
-Quelle: Standish Group CHAOS Report.
-
-BMad = Build More Architect Dreams — gleich mehr dazu.
+- Teaser: provokante Statistik, emotionaler Einstieg
+- Sprechtempo: Pausen nach jeder Aussage
+- Letzte Zeile: leise, überzeugt
+- Quelle: Standish Group CHAOS Report
+- BMad-Name auflösen: Build More Architect Dreams
 -->
 
 ---
@@ -85,9 +82,9 @@ showCopyright: false
 </div>
 
 <!--
-Überblick über den Talk. Kurz durch die Punkte gehen.
-Wir starten mit dem Problem, dann BMad-Intro, dann die drei Kernthemen:
-Anforderungspräzisierung, Context Engineering und TEA.
+- Agenda-Überblick, kurz und klar
+- Reihenfolge: Problem -> BMad-Intro -> Kernthemen
+- Kernthemen: Anforderungspräzisierung, Context Engineering, TEA
 -->
 
 ---
@@ -126,14 +123,13 @@ isDark: true
 <h1 class="h-auto!">Fragen?</h1>
 
 <!--
-Q&A Session — ca. 10 Minuten.
-
-Mögliche Fragen vorbereiten:
-- "Funktioniert BMad mit GitHub Copilot?" → Ja, vollständig unterstützt
-- "Was kostet BMad?" → 100% kostenlos, Open Source (MIT)
-- "Ist BMad für Solo-Entwickler geeignet?" → Ja! Quick Flow ist der Einstieg
-- "Wie lange dauert die Einarbeitung?" → TEA Lite in 30 Min, Full BMad in 1-2 Wochen mit Academy
-- "Kann ich eigene Agenten bauen?" → Ja, mit BMad Builder
+- Q&A-Block: ca. 10 Minuten
+- Vorbereitung: typische Publikumsfragen
+- Copilot-Support: vollständig
+- Kosten: kostenlos, Open Source (MIT)
+- Solo-Use-Case: geeignet, Einstieg via Quick Flow
+- Lernkurve: TEA Lite 30 Min, Full BMad 1-2 Wochen
+- Eigene Agenten: möglich via BMad Builder
 -->
 
 ---
@@ -216,6 +212,6 @@ showCopyright: false
 | 📝 Speaker Blog | [harrybin.de](https://harrybin.de) |
 
 <!--
-Alle Ressourcen für die Zuhörer zum Nachschlagen.
-QR-Code auf den Slides verlinkt auf die Online-Version dieser Präsentation.
+- Ressourcen zum Nachschlagen
+- QR-Code: direkte Online-Version der Präsentation
 -->
