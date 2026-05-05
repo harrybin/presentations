@@ -18,7 +18,6 @@ Von der vagen Idee zum strukturierten PRD — mit KI-Agenten als Sparring-Partne
 <!--
 Kapitel 3: Der Kern des Vortrags. Wie hilft BMad dabei, Anforderungen zu präzisieren?
 
-🎨 Image prompt: Two professionals collaborating intensely over a document, with AI visualization overlay showing structured analysis. Creative digital art blending real people silhouettes with AI network patterns.
 -->
 
 ---
@@ -56,7 +55,6 @@ Wenn man das nicht überzeugend machen kann, ist die Idee noch nicht reif.
 Brainstorming: KI stellt Fragen, zieht Ideen heraus — generiert sie NICHT selbst.
 Das ist der Unterschied zu "einfach ChatGPT fragen".
 
-🎨 Image prompt: A glowing lightbulb over an open book, representing ideation and structured thinking. Warm orange and blue tones, digital art style similar to /bmad-ai-lightbulb.png.
 -->
 
 ---
@@ -91,7 +89,6 @@ Es ist nicht ein starres Dokument, sondern lebt mit dem Projekt.
 Der PM Agent stellt gezielte Fragen: "Wer sind die Nutzer?" "Was sind die Qualitätsziele?"
 Die Antworten werden strukturiert im PRD.md dokumentiert.
 
-🎨 Image prompt: A professional document on a desk with structured sections highlighted, representing well-organized requirements. Clean, corporate digital art style with warm lighting.
 -->
 
 ---
@@ -126,7 +123,6 @@ Keine offenen Fragen ins Blaue — gezielte Fragen basierend auf Best Practices.
 Wichtig: Der Agent prüft auch Konsistenz und Vollständigkeit.
 "Sie haben SSO erwähnt — haben Sie auch Anforderungen für Single Sign-Out?"
 
-🎨 Image prompt: Not needed — sequence diagram slide.
 -->
 
 ---
@@ -175,7 +171,6 @@ Zeige besonders:
 
 Backup: Screenshot/Recording falls Live-Demo Probleme macht.
 
-🎨 Image prompt: A secret agent in a trenchcoat looking at classified documents with glowing AI overlays, representing the PM Agent analyzing requirements. Digital art, dramatic lighting, dark background similar to /bmad-secret-agent-analysis.png.
 -->
 
 ---
@@ -213,5 +208,4 @@ Der Architect macht technische Entscheidungen explizit in Architecture Decision 
 Implementation Readiness Check: Gate-Kontrolle bevor Code geschrieben wird.
 Ergebnis: PASS, CONCERNS oder FAIL — mit konkreten Verbesserungsvorschlägen.
 
-🎨 Image prompt: Not needed — mermaid diagram slide.
 -->

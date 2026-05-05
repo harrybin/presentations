@@ -19,7 +19,6 @@ Warum scheitern Softwareprojekte – und was kostet uns das wirklich?
 Einstieg in den ersten Hauptteil. Starte mit einer provokanten Frage ans Publikum:
 "Wie viele von euch haben schon ein Projekt erlebt, das wegen unklarer Anforderungen in Schieflage geraten ist?"
 
-🎨 Image prompt: A burning airplane symbolizing a failed software project, dramatic light, dark stormy sky. Cinematic digital art style similar to /bmad-project-failure-aircraft.png.
 -->
 
 ---
@@ -48,7 +47,6 @@ Hauptgrund Nummer 1: unklare Anforderungen.
 IBM-Studie: Ein Bug, der in der Requirements-Phase entdeckt wird, kostet 1x.
 Derselbe Bug in der Design-Phase: 5x. Produktion: 100x.
 
-🎨 Image prompt: A giant technical debt mountain with developers struggling to climb. Metaphorical illustration showing a mountain of messy code and sticky notes, dark humorous style similar to /bmad-technical-debt-mountain.png.
 -->
 
 ---
@@ -87,7 +85,6 @@ Dieses Diagramm aus der IBM-Studie "Minimizing Code Defects to Improve Software 
 
 Punkt: Wir müssen Fehler früher finden — idealerweise bevor eine einzige Zeile Code geschrieben wird.
 
-🎨 Image prompt: Not needed — mermaid diagram slide.
 -->
 
 ---
@@ -121,7 +118,6 @@ Das Problem: Jede Ebene interpretiert die Anforderung nach eigenem Verständnis.
 
 Die Lösung: Strukturierte Anforderungsanalyse, die alle Stakeholder einbezieht und Edge Cases explizit macht.
 
-🎨 Image prompt: A broken chain between business people on one side and developers on the other, with test failures visible in the gap. Digital art style, red and grey tones representing failure and disconnection.
 -->
 
 ---
@@ -168,5 +164,4 @@ showCopyright: false
 Die Brücke zum Hauptthema: BMad bietet einen strukturierten Rahmen, um KI methodisch einzusetzen.
 Nicht KI als Zauberstab, sondern KI als methodischer Kollaborateur.
 
-🎨 Image prompt: Split image showing chaos vs. order — left side messy whiteboard with sticky notes and frustrated team, right side clean structured workflow diagram with AI assistant. Digital art style.
 -->

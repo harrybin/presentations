@@ -16,7 +16,6 @@ Wie die effiziente Organisation von Projektwissen KI-Ergebnisse dramatisch verbe
 Context Engineering ist eines der wichtigsten Konzepte in der modernen KI-gestützten Entwicklung.
 "Garbage in, garbage out" — aber für KI: "Context in, quality out".
 
-🎨 Image prompt: A satellite in orbit with glowing data streams connecting to Earth below, representing organized information flow and context management. Digital art, dark space background with blue energy connections, similar to /bmad-context-satellite.png.
 -->
 
 ---
@@ -53,7 +52,6 @@ Heute: Context Engineering — welches Wissen hat die KI zur Verfügung?
 
 BMad löst dieses Problem durch strukturierte Dokumente, die von Phase zu Phase weitergegeben werden.
 
-🎨 Image prompt: A developer surrounded by organized code modules and documentation blocks flowing into an AI brain, representing structured context engineering. Digital art with glowing connections.
 -->
 
 ---
@@ -97,7 +95,6 @@ Ein Dev-Agent, der eine Story implementiert, hat Zugriff auf:
 
 Das verhindert inkonsistente Entscheidungen zwischen verschiedenen Agenten/Sessions.
 
-🎨 Image prompt: Not needed — mermaid diagram slide.
 -->
 
 ---
@@ -140,7 +137,6 @@ Jest für Tests mit mindestens 80% Coverage, React Query für API-Calls."
 
 Jeder Agent, der Code schreibt, hält sich automatisch an diese Regeln.
 
-🎨 Image prompt: A control center with multiple screens showing governance rules, compliance checks, and policy enforcement for a software project. Digital art, professional corporate style.
 -->
 
 ---
@@ -188,7 +184,6 @@ Zeige besonders:
 
 Backup: Vorbereitetes project-context.md-Beispiel zeigen.
 
-🎨 Image prompt: Multiple security shields forming a protective layer around project documents, representing governance and consistency enforcement. Digital art, blue and silver tones.
 -->
 
 ---
@@ -228,5 +223,4 @@ Keine langen Gespräche um den Kontext zu etablieren — alles ist bereits dokum
 
 Stories entstehen aus PRD + Architecture — also mit vollständigem Business- und Tech-Kontext.
 
-🎨 Image prompt: A developer reading a structured story card with clear requirements and acceptance criteria glowing on a tablet screen. Digital art, warm lighting, professional software development environment.
 -->

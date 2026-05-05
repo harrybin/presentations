@@ -18,7 +18,6 @@ BMad als Brücke zwischen Anforderung, Architektur und qualitätsgesichertem Cod
 <!--
 Das Abschlusskapitel: Wie alle Teile zusammenpassen.
 
-🎨 Image prompt: Two hands reaching toward each other across a gap, with documents on one side (business requirements) and test results on the other, bridged by AI energy. Digital art, inspiring composition.
 -->
 
 ---
@@ -70,7 +69,6 @@ Jeder Schritt ist nachvollziehbar, jedes Artefakt ist auditierbar.
 
 Dieser Flow funktioniert für Teams aller Größen — von Einzelentwicklern bis Enterprise-Teams.
 
-🎨 Image prompt: Not needed — mermaid diagram slide.
 -->
 
 ---
@@ -108,7 +106,6 @@ Real-world Zahlen (aus BMad-Community):
 - 50% schnellere PRD-Erstellung durch strukturierten PM-Agent-Workflow
 - Nahezu 100% Requirement-zu-Test-Traceability
 
-🎨 Image prompt: A confident pilot in cockpit with all systems showing green, representing software quality and readiness for flight (release). Professional digital art, cockpit environment.
 -->
 
 ---
@@ -157,7 +154,6 @@ Für alles was in Produktion geht und gewartet wird: absolut empfehlenswert.
 
 Einstieg: Beginne mit "Quick Flow" für kleine Features, skaliere dann zu BMad Method.
 
-🎨 Image prompt: Not needed — text comparison slide.
 -->
 
 
@@ -194,5 +190,4 @@ Zitat aufgreifen: Ein Twist auf das bekannte "Der beste Zeitpunkt um einen Baum 
 
 Noch einmal die Einladung: Heute noch bmad-method installieren und ausprobieren!
 
-🎨 Image prompt: A glowing lightbulb transforming into a structured flowchart, representing the transformation from vague ideas to structured requirements. Digital art, warm inspiring tones similar to /bmad-ai-lightbulb.png.
 -->

@@ -19,7 +19,6 @@ Vom PRD zur validierten Test-Suite — risikobasiert, automatisiert, auditierbar
 Kapitel 5: Das Herzstück des Talks — der Test Architect (TEA).
 "Was wäre, wenn eure Test-Suite direkt aus den Spezifikationen entstehen würde?"
 
-🎨 Image prompt: A sophisticated diagnostic dashboard showing test coverage maps, risk matrices, and automated test pipelines. Digital art, dark background with green and blue metrics, similar to /bmad-tea-diagnostics.png.
 -->
 
 ---
@@ -50,7 +49,6 @@ Es nutzt den Context aus PRD und Architecture, um Tests abzuleiten.
 
 Installation: npx bmad-method install → "Test Architect (TEA)" auswählen
 
-🎨 Image prompt: A meticulous test architect reviewing blueprints of test suites, with risk matrices and coverage charts visible. Digital art, professional engineering environment style.
 -->
 
 ---
@@ -99,7 +97,6 @@ Jeder Schritt produziert auditierbare Artefakte.
 Besonders wichtig: Requirements Tracing — jeder Test zeigt, welche Anforderung er abdeckt.
 Das Release Gate ist evidenzbasiert: "Sind alle P0-Tests grün? Ist Coverage-Ziel erreicht?"
 
-🎨 Image prompt: Not needed — mermaid diagram slide.
 -->
 
 ---
@@ -135,7 +132,6 @@ P0-Tests müssen immer 100% grün sein — das ist das Release Gate.
 P1-Tests haben 95%+ Abdeckung als Ziel.
 P2-P3 nach verfügbaren Ressourcen.
 
-🎨 Image prompt: A security lock on a vault representing high-priority P0 tests that must always pass. Dark, serious digital art with red danger indicators, similar to /bmad-risk-lock.png.
 -->
 
 ---
@@ -179,7 +175,6 @@ TEA generiert Gherkin-Szenarien direkt aus den Akzeptanzkriterien im PRD.
 Der Entwickler implementiert Code, bis diese Tests grün sind.
 Die Tests sind die lebende Spezifikation — immer aktuell, immer ausführbar.
 
-🎨 Image prompt: A robot reading a test specification document and translating it into automated test code, representing ATDD automation. Futuristic digital art, warm tones.
 -->
 
 ---
@@ -232,7 +227,6 @@ Highlight:
 
 Backup: Vorbereitete Test-Files als Fallback.
 
-🎨 Image prompt: A pilot in the cockpit with AI co-pilot analyzing test results and flight data, representing TEA as the AI test co-pilot. Professional digital art, cockpit lighting, similar to /bmad-human-ai-copilot.png.
 -->
 
 ---
@@ -285,7 +279,6 @@ Fehlende Tests sind sofort sichtbar — kein "wir haben schon genug Tests" ohne 
 
 Das Release Gate ist transparent: Alle P0-Tests müssen grün sein UND vollständig abgedeckt.
 
-🎨 Image prompt: Not needed — mermaid diagram slide.
 -->
 
 ---
@@ -329,5 +322,4 @@ Für das Auth-System aus unserem Beispiel:
 - Security: SQL Injection, XSS, CSRF automatisch geprüft
 - GDPR: Datenlöschung vollständig verifiziert
 
-🎨 Image prompt: An evolution chart showing testing maturity from basic unit tests to comprehensive NFR testing. Digital art visualization of testing pyramid evolution.
 -->

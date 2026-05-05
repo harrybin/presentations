@@ -33,8 +33,6 @@ Willkommen! Dieser Talk zeigt wie die BMad-Methode (Build More Architect Dreams)
 Dauer: 60 Minuten inkl. 3 Live-Demos und Q&A.
 
 Audience-Hook: "Wer hat schon mal ein Projekt erlebt, das wegen unklarer Anforderungen in Schieflage geraten ist?" — Fast alle Hände sollten sich heben.
-
-🎨 Image prompt: A developer surrounded by floating words and concepts that gradually transform into structured code and test reports. Digital art style, developer-themed background, similar to /bmad-dev-ideas-to-tests.png but with AI overlay elements.
 -->
 
 ---
@@ -68,8 +66,6 @@ Pause nach jeder Aussage. Die letzte Zeile leise und mit Überzeugung sagen.
 Quelle: Standish Group CHAOS Report.
 
 BMad = Build More Architect Dreams — gleich mehr dazu.
-
-🎨 Image prompt: A dramatic scene of a burning airplane in a night sky, symbolizing failed software projects. Dark, cinematic digital art with emergency lights and stormy atmosphere, similar to /bmad-project-failure-aircraft.png style but even more dramatic.
 -->
 
 ---
@@ -138,8 +134,6 @@ Mögliche Fragen vorbereiten:
 - "Ist BMad für Solo-Entwickler geeignet?" → Ja! Quick Flow ist der Einstieg
 - "Wie lange dauert die Einarbeitung?" → TEA Lite in 30 Min, Full BMad in 1-2 Wochen mit Academy
 - "Kann ich eigene Agenten bauen?" → Ja, mit BMad Builder
-
-🎨 Image prompt: A speaker pointing toward the audience with glowing question marks floating around, inviting engagement. Warm, welcoming digital art similar to /bmad-questions-audience.png atmosphere.
 -->
 
 ---

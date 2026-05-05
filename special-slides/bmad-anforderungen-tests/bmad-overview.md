@@ -15,7 +15,6 @@ KI-gesteuertes agiles Entwickeln vom ersten Gedanken bis zum Deployment
 <!--
 Einführung in BMad. Frage ans Publikum: "Wer kennt BMad bereits?"
 
-🎨 Image prompt: A fleet of spaceships representing multiple AI agents working together, flying in formation through space. Futuristic digital art, dark background with vibrant neon lights, similar style to /bmad-agent-fleet.png.
 -->
 
 ---
@@ -45,7 +44,6 @@ Wichtig: BMad ersetzt keine agilen Methoden, sondern setzt sie mit KI-Unterstüt
 Website: https://docs.bmad-method.org
 GitHub: https://github.com/bmad-code-org/BMAD-METHOD
 
-🎨 Image prompt: A glowing lightbulb made of neural network nodes, representing AI-powered ideas. Warm blue light, dark background, futuristic digital art similar to /bmad-ai-lightbulb.png.
 -->
 
 ---
@@ -85,7 +83,6 @@ BMad ist komplett kostenlos und Open Source.
 Die Community ist aktiv und hilfreich.
 Der Start mit npx bmad-method install dauert 5 Minuten.
 
-🎨 Image prompt: A fleet of spaceships launching toward a bright horizon, representing teams starting their BMad journey. Inspiring digital art, warm sunrise colors, futuristic style similar to /bmad-agent-fleet.png.
 -->
 
 ---
@@ -128,7 +125,6 @@ Dies ist der Kern des Context Engineerings in BMad.
 Phase 1 ist optional, Phase 2 ist obligatorisch.
 Für kleine Projekte gibt es den "Quick Flow" der die Phasen 1-3 überspringt.
 
-🎨 Image prompt: Not needed — mermaid diagram slide.
 -->
 
 ---
@@ -163,7 +159,6 @@ Das Besondere: Die Agenten kommunizieren über strukturierte Dokumente miteinand
 
 Party Mode: Mehrere Agenten können zusammen in einer Session arbeiten und diskutieren.
 
-🎨 Image prompt: A team of diverse AI robot heads representing different agent specializations — each with unique features like blueprints, code symbols, test tubes. Digital art, friendly futuristic style.
 -->
 
 ---
@@ -188,7 +183,6 @@ Der entscheidende Unterschied: BMad schafft persistenten, strukturierten Kontext
 KI direkt fragen ist wie mit einem goldfish mit Gedächtnis zu arbeiten — jede Session startet von Null.
 BMad baut Kontext auf, der von Agent zu Agent weitergegeben wird.
 
-🎨 Image prompt: A pilot in a cockpit with AI co-pilot displays, symbolizing human-AI collaboration with structure and clarity. Professional digital art, warm cockpit lighting, similar to /bmad-human-ai-copilot.png.
 -->
 
 ---
@@ -218,5 +212,4 @@ Für uns heute besonders relevant: TEA — der Test Architect.
 
 Installation: npx bmad-method install → Modul auswählen
 
-🎨 Image prompt: An ecosystem visualization showing multiple modules connecting to a central hub, like nodes in a network. Futuristic digital art with glowing connections, dark background.
 -->
