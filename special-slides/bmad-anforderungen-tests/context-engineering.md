@@ -42,7 +42,8 @@ showCopyright: false
 
 <v-click>
 
-> 💡 **"Context is the new prompt engineering"** — mit Struktur statt Trick
+> 💡 **"Context is the new prompt engineering"** — mit Struktur statt Trick <br/>
+(Harness Context)
 
 </v-click>
 
@@ -101,7 +102,7 @@ Das verhindert inkonsistente Entscheidungen zwischen verschiedenen Agenten/Sessi
 
 ---
 layout: image-right
-background: /bmad-governance-control-center.png
+background: /bmad-project-context-agent-brain.png
 hideInToc: true
 showCopyright: false
 ---

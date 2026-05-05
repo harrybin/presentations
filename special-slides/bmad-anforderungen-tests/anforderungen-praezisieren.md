@@ -60,52 +60,6 @@ Das ist der Unterschied zu "einfach ChatGPT fragen".
 -->
 
 ---
-layout: two-column
-hideInToc: true
-showCopyright: false
----
-
-# PRFAQ: Working Backwards mit KI
-
-::left::
-
-## Ohne PRFAQ ❌
-
-```
-"Wir brauchen ein User-Auth-System 
-mit SSO und RBAC."
-
-→ Teams diskutieren wochen-
-  lang über Details
-→ Budget explodiert  
-→ Launch-Termin verfehlt
-```
-
-::right::
-
-## Mit PRFAQ + BMad ✅
-
-```
-"Seattle, 1. März 2026 —
-XYZ Corp gibt Matterflow bekannt,
-die erste Auth-Plattform, die..."
-
-→ Klare Value Proposition
-→ Echte Customer FAQs
-→ Scope ist definiert
-```
-
-<!--
-PRFAQ (Press Release FAQ) ist Amazons Working Backwards Methode.
-BMad adaptiert diese als interaktiven KI-Challenge-Prozess.
-
-Der Analyst-Agent stellt provozierende Fragen: "Was tun Nutzer, wenn sie ihr Passwort vergessen?"
-"Was passiert bei einem Sicherheitsvorfall?" — Schwachstellen werden früh aufgedeckt.
-
-🎨 Image prompt: Not needed — text-heavy comparison slide.
--->
-
----
 layout: image-right
 background: /bmad-governance-control-center.png
 hideInToc: true
@@ -123,10 +77,11 @@ showCopyright: false
 - Enthält:
   - **Functional Requirements (FRs)** — was soll das System tun?
   - **Non-Functional Requirements (NFRs)** — Qualität, Performance, Security
-  - **User Stories** mit Akzeptanzkriterien
   - **Scope** — was ist IN und was ist OUT
+  
 - Wird **Basis für alle weiteren Phasen**
-
+  - z.B. Grundlage für Fragen zum Erstellenvon **User Stories** mit Akzeptanzkriterien
+  
 </v-clicks>
 
 <!--

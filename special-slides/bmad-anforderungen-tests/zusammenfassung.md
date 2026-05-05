@@ -160,45 +160,6 @@ Einstieg: Beginne mit "Quick Flow" für kleine Features, skaliere dann zu BMad M
 🎨 Image prompt: Not needed — text comparison slide.
 -->
 
----
-layout: image-right
-background: /bmad-agent-fleet.png
-hideInToc: true
-showCopyright: false
----
-
-# Erste Schritte mit BMad
-
-<br/>
-
-<v-clicks>
-
-1. **Installieren**: `npx bmad-method install`
-2. **Tutorial starten**: `bmad-help` für intelligente Führung
-3. **Klein anfangen**: Quick Flow für das nächste kleine Feature
-4. **TEA hinzufügen**: `npx bmad-method install` → TEA Modul
-5. **Community**: Discord, GitHub, YouTube
-
-</v-clicks>
-
-<v-click>
-
-```
-🌐 docs.bmad-method.org
-📦 npmjs.com/package/bmad-method  
-```
-
-</v-click>
-
-<!--
-Call-to-Action: Was können die Zuhörer heute noch tun?
-
-BMad ist komplett kostenlos und Open Source.
-Die Community ist aktiv und hilfreich.
-Der Start mit npx bmad-method install dauert 5 Minuten.
-
-🎨 Image prompt: A fleet of spaceships launching toward a bright horizon, representing teams starting their BMad journey. Inspiring digital art, warm sunrise colors, futuristic style similar to /bmad-agent-fleet.png.
--->
 
 ---
 layout: image-left

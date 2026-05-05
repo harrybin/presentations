@@ -150,7 +150,7 @@ showCopyright: false
 
 <v-click>
 
-## Mit BMad ✅
+## Mit KI ✅
 
 </v-click>
 

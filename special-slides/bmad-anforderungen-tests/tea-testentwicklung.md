@@ -192,6 +192,9 @@ isDark: true
 
 # 🎬 Demo 3: TEA Test Design Workflow
 
+<br/>
+<br/>
+
 <v-click>
 
 ```bash
