@@ -53,8 +53,6 @@ hideInToc: true
 
 ## Nicht als Zauberstab — sondern als methodischer Kollaborateur?
 
-## Willkommen in der Welt der BMad-Methode.
-
 </v-clicks>
 
 <!--

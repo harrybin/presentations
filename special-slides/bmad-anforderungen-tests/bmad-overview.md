@@ -92,7 +92,7 @@ showCopyright: false
 
 ## BMad: 4 Phasen, 1 Framework
 
-### Klissischer Prozess, kein (A)TDD
+### Klassischer Prozess, kein (A)TDD
 
 <br/>
 
@@ -123,7 +123,6 @@ flowchart LR
 - Context Engineering als roter Faden
 - Phase 1 optional, Phase 2 verpflichtend
 - Quick Flow für kleine Vorhaben (Phase 1-3 überspringen)
-
 -->
 
 ---
