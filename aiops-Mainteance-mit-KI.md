@@ -17,7 +17,6 @@ coverImage: /aiops-cover-bg.png
 description: "AIOps: Wie KI die Maintenance von Softwaresystemen revolutioniert — Root Cause Analysis, Technical Debt, Legacy-Modernisierung und Auto-Dokumentation"
 hideInToc: true
 routeAlias: aiops-Mainteance-mit-KI
-showCopyright: false
 ---
 
 # AIOps: Maintenance von Softwaresystemen durch KI
@@ -126,7 +125,6 @@ Bereite Backup-Antworten vor zu:
 ---
 layout: thank-you
 hideInToc: true
-isDark: true
 ---
 
 # Danke!
