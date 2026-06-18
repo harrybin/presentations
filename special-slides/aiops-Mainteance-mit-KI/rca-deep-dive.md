@@ -84,6 +84,36 @@ Quellen:
 -->
 
 ---
+layout: two-cols-header
+---
+
+# Smart Detection Alerts
+
+<v-clicks depth="2">
+
+* ML-gestützte Anomalie-Erkennung
+  * Fast Echtzeit
+    * 20min &rarr; vorherige 40min &rarr; 7 Tage
+  * X-Fache der Standardabweichung
+    * Minium Level basierend auf Anzahl Requests
+  * Findet komplexe Anomalien automatisch
+* Aktionen:
+  * E-Mail-Benachrichtigung als Standard
+  * Optional: Webhooks, Logic Apps, Azure Functions
+
+</v-clicks>
+
+<!--
+[click]
+
+[click] Rollendes Zeitfenster: Prüft laufende 20 Minuten gegen vorherige 40 Minuten und letzte 7 Tage
+
+[click] Anomalien basieren auf X-facher Standardabweichung, angepasst an die Anzahl der Requests. Kleine App mit 100 Requests/Tag hat niedrigere Schwelle als große App mit 1 Mio Requests/Tag.
+
+[click] Seiten, die auf bestimmten Browser-Konstellationen langsam laden, ein Server, der langsamer lädt als die anderen etc.. und auch Kombinationen daraus
+-->
+
+---
 hideInToc: true
 ---
 
