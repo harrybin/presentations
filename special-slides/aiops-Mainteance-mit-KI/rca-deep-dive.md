@@ -10,9 +10,8 @@ background: /rca-diagnostics-large.png
 Von "Ich vermute" zu "Ich sehe"
 
 <!--
-Jetzt geht's ans Eingemachte. Hier hört "netter Assistent, der ein bisschen Code schreibt" auf — und hier fängt echte KI-gestützte Diagnostik an. Das ist der Paradigmenwechsel.
-
-🎨 Image prompt: A pilot in a futuristic cockpit with holographic diagnostic displays overlaying the windshield, representing AI-assisted system diagnostics. Digital art, warm cockpit lighting with blue holographic overlays similar to /pilot-large.jpg.
+&rarr; Ursachenanalyse
+Jetzt geht's ans Eingemachte. Hier hört "netter Assistent, der ein bisschen Code schreibt" auf - und hier fängt echte KI-gestützte Diagnostik an. Das ist der Paradigmenwechsel.
 -->
 
 ---
@@ -25,7 +24,7 @@ hideInToc: true
 
 <v-clicks>
 
-- **Code-Copilot** arbeitet auf _statischem Code_ zur **Entwicklungszeit**
+- **GitHub Copilot** arbeitet auf _statischem Code_ zur **Entwicklungszeit**
 - **Azure Copilot** arbeitet auf _Live-Telemetrie_ zur **Laufzeit**
 - Völlig andere **Datenebene**:
   - Logs, Metriken, Traces
@@ -42,11 +41,9 @@ hideInToc: true
 </v-click>
 
 <!--
-Kernaussage: Code-Copilot = statischer Quellcode. Azure Copilot = Live-Telemetrie, Metriken, Logs und Alerts. Das ist eine komplett andere Dimension.
+Kernaussage: GitHub Copilot = statischer Quellcode. Azure Copilot = Live-Telemetrie, Metriken, Logs und Alerts. Das ist eine komplett andere Dimension.
 
 Du fragst im Azure Portal: "Warum ist meine Web-App langsam?" und Azure Copilot wählt automatisch das richtige Diagnose-Tool, führt Checks durch, identifiziert Ursachen und schlägt Lösungen vor.
-
-🎨 Image prompt: Two contrasting panels — left: static code in an IDE; right: live production monitoring with flowing data streams and AI analysis. Digital art, dark theme with code-green accents.
 -->
 
 ---
@@ -59,7 +56,7 @@ hideInToc: true
 
 <v-clicks>
 
-- **Transaction Diagnostics**
+- **Transaction Diagnostics** <span style="color: red;">#TODO &rarr; HB was wollen wir hier genau zeigen?</span>
   - End-to-End Gantt-Chart
   - Browser → Frontend → Backend → DB
   - Über Service-Grenzen hinweg
@@ -72,9 +69,9 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Application Insights Transaction Diagnostics zeigt einen Request als Gantt-Chart über alle Services hinweg — vom Browser über Frontend und Backend bis zur Datenbank. Jeder Hop ist sichtbar mit Timings.
+Application Insights Transaction Diagnostics zeigt einen Request als Gantt-Chart über alle Services hinweg - vom Browser über Frontend und Backend bis zur Datenbank. Jeder Hop ist sichtbar mit Timings.
 
-Smart Detection nutzt Machine Learning um Anomalien automatisch zu erkennen: Failure Spikes, Performance-Verschlechterung, Memory Leaks — und das bevor ein Mensch überhaupt einen Alert bemerkt.
+Smart Detection nutzt Machine Learning um Anomalien automatisch zu erkennen: Failure Spikes, Performance-Verschlechterung, Memory Leaks - und das bevor ein Mensch überhaupt einen Alert bemerkt.
 
 Quellen:
 - https://learn.microsoft.com/en-us/azure/azure-monitor/app/transaction-search-and-diagnostics
@@ -119,6 +116,8 @@ hideInToc: true
 
 # RCA in Aktion: Connection Pool Exhaustion
 
+<span style="color: red;">#TODO &rarr; HB: Hast du eine Quelle dafür, dass Smart Detection Alerts den Azure Copilot auslösen?</span>
+
 ```mermaid {scale: 0.7}
 sequenceDiagram
     participant User as 👤 User
@@ -145,9 +144,9 @@ Konkretes Beispiel: Ein User löst einen Checkout aus. Die API fragt die DB ab, 
 
 Smart Detection erkennt den Anomalie-Spike. Azure Copilot analysiert automatisch den Connection Pool und die Query Performance. Ergebnis: Die Library v2.1 hat einen Bug, der bei mehr als 500 gleichzeitigen Requests den Connection Pool erschöpft.
 
-Von "wir vermuten es liegt an der DB" zu "es ist Library v2.1, Zeile 847, Connection Pool max_size=10 statt 100" — in 30 Sekunden statt 2 Stunden.
+Von "wir vermuten es liegt an der DB" zu "es ist Library v2.1, Zeile 847, Connection Pool max_size=10 statt 100" - in 30 Sekunden statt 2 Stunden.
 
-🎨 Image prompt: Not needed — this slide uses a mermaid diagram.
+🎨 Image prompt: Not needed - this slide uses a mermaid diagram.
 -->
 
 ---
@@ -178,6 +177,4 @@ hideInToc: true
 **Key Message:** Von der Frage zur Ursache in unter 60 Sekunden statt Stunden manueller Suche.
 
 **Fallback:** Falls Demo nicht live möglich, Screenshots der Azure Portal UI zeigen und den Flow erklären.
-
-🎨 Image prompt: A dramatic cockpit view with holographic AI diagnostic overlays on a dark sky background, representing the developer being guided by AI through system diagnostics.
 -->
