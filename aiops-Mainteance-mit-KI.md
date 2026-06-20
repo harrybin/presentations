@@ -10,7 +10,7 @@ browserExporter: true
 record: false
 editor: true
 overviewSnapshots: false
-glowEnabled: true
+glowEnabled: false
 ###### slides start ######
 layout: cover
 coverImage: /aiops-cover-bg.png
@@ -24,14 +24,12 @@ routeAlias: aiops-Mainteance-mit-KI
 <!--
 Willkommen zum Talk "AIOps: Maintenance von Softwaresystemen durch KI" auf der INFINITE AI CONFERENCE 2026.
 Dauer: 60 Minuten inkl. Demos und Q&A.
-
-🎨 Image prompt: A futuristic control room with holographic displays showing code metrics, server health dashboards, and AI neural network visualizations. Style: digital art, warm lighting with blue and purple accents, similar to /devcontainer.jpeg style.
 -->
 
 ---
 title: Speaker
 layout: intro
-src: special-slides/speaker.md
+src: special-slides/speaker-with-JD.md
 ---
 
 ---
@@ -55,8 +53,6 @@ hideInToc: true
 <!--
 Teaser-Slide: Emotionaler Einstieg. Pause nach jedem Punkt.
 Das ist kein Sci-Fi — das ist der Alltag von AIOps. In den nächsten 60 Minuten zeigen wir euch, wie KI nicht nur Code schreibt, sondern Systeme diagnostiziert, Technical Debt bekämpft und Legacy-Systeme modernisiert.
-
-🎨 Image prompt: A dramatic scene of a burning airplane (metaphor for system failure) at night with emergency lights, digital art style similar to /plane-burning-left.jpg.
 -->
 
 ---
