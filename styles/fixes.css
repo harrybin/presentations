@@ -1,0 +1,9 @@
+.grid-column {
+    h2 + ul {
+        margin-top: 0
+    }
+
+    h2:has(+ ul) {
+        margin-bottom: 0
+    }
+}

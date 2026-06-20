@@ -11,8 +11,6 @@ Künstliche Intelligenz trifft IT-Operations
 
 <!--
 Einführung in AIOps. Gartner hat den Begriff 2017 geprägt. Heute ist es ein Schlüsselkonzept für die Wartung moderner Softwaresysteme.
-
-🎨 Image prompt: A satellite orbiting Earth with glowing data streams connecting ground stations, representing monitoring and observability at scale. Digital art, dark background with blue and purple accents similar to /devcontainer.jpeg.
 -->
 
 ---
@@ -29,21 +27,31 @@ hideInToc: true
 - Geprägt von **Gartner (2017)**
 - Kombination: **Big Data** + **Machine Learning**
 - Angewendet auf:
-  - 📊 Monitoring & Observability
-  - 🚨 Incident Management
-  - 🔍 Root Cause Analysis
-  - 📈 Capacity Planning
-  - ⚡ Auto-Remediation
+  - Monitoring & Observability
+  - Incident Management
+  - Root Cause Analysis
+  - Capacity Planning
+  - Auto-Remediation
 
 </v-clicks>
 
 <!--
-AIOps wurde 2017 von Gartner definiert als die Anwendung von ML und Big Data auf IT-Operations. Es geht über einfache Alerting-Regeln hinaus — die KI erkennt Muster, korreliert Events und schlägt Lösungen vor.
+AIOps wurde 2016 von Gartner definiert als die Anwendung von ML und Big Data auf IT-Operations. Es geht über einfache Alerting-Regeln hinaus — die KI erkennt Muster, korreliert Events und schlägt Lösungen vor.
 
 Wichtig: AIOps ist nicht ein einzelnes Tool, sondern ein Paradigma. Es umfasst den gesamten Lifecycle von der Erkennung bis zur automatischen Behebung.
-
-🎨 Image prompt: A lightbulb made of circuit boards and neural networks, glowing with warm blue light, representing AI-powered innovation. Digital art style similar to /idea-new.png.
 -->
+
+---
+hideInToc: true
+layout: center
+---
+
+# “there is no future of IT Operations that does not include AIOps.”
+<br>
+
+_Gartner, 2022_ 
+
+<!-- Starke Worte. Und das konnte man bereits im Gartner Report 2022 nachlesen. -->
 
 ---
 hideInToc: true
@@ -80,11 +88,9 @@ graph LR
 ```
 
 <!--
-Die AIOps-Pipeline visualisiert: Daten aus verschiedenen Quellen (Logs, Metriken, Traces, Events) werden aggregiert, durch ML analysiert, Root Causes identifiziert und automatische Maßnahmen eingeleitet.
+Die AIOps-Pipeline visualisiert: Daten aus verschiedenen Quellen (Logs, Metriken, Traces, Events) werden aggregiert (Big Data), durch ML analysiert, Root Causes identifiziert und automatische Maßnahmen eingeleitet.
 
 Drei Kernfähigkeiten der ML-Analyse: Anomalie-Erkennung (ist das normal?), Pattern Matching (haben wir das schon mal gesehen?) und Event-Korrelation (hängen diese Alerts zusammen?).
-
-🎨 Image prompt: Not needed — this slide uses a mermaid diagram.
 -->
 
 ---
@@ -96,7 +102,7 @@ hideInToc: true
 
 ::left::
 
-## Traditional Ops ❌
+## Traditional Ops
 
 <v-clicks>
 
@@ -112,7 +118,7 @@ hideInToc: true
 
 <v-click>
 
-## AIOps ✅
+## AIOps
 
 </v-click>
 
@@ -130,6 +136,4 @@ hideInToc: true
 Der zentrale Unterschied: Traditional Ops ist regelbasiert und reaktiv — der Mensch stellt Schwellwerte ein und reagiert auf Alerts. AIOps nutzt ML um proaktiv Muster zu erkennen und Probleme zu lösen, bevor sie eskalieren.
 
 Alert Fatigue ist ein reales Problem: Teams ignorieren 30-50% ihrer Alerts weil sie Rauschen sind. AIOps priorisiert und korreliert, sodass nur actionable Alerts durchkommen.
-
-🎨 Image prompt: Split screen — left: chaotic ops dashboard with red alerts and overwhelmed operator; right: calm AIOps dashboard with green metrics and AI assistant. Digital art, dark theme.
 -->
