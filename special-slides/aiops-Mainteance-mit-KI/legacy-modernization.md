@@ -33,9 +33,9 @@ _Manuell vs. Azure Copilot + Migration Agent_
 
 - **Manuelles** Code- und Architektur-Audit
 - Dependency-Updates **von Hand**
-- Große „Big Bang“-Rewrites
+- Häufig „Big Bang“-Rewrites aus Zeitdruck
 - Wochen bis **Monate** pro System
-- Hohes **Risiko** bei jedem Release
+- Risiko steigt mit Umfang und Komplexität
 
 </v-clicks>
 
@@ -49,12 +49,12 @@ _Manuell vs. Azure Copilot + Migration Agent_
 
 <v-clicks>
 
-- **Automatischer** Code- und Dependency-Scan über die gesamte Landschaft
-- Azure Migrate + Migration Agent bauen einen **Migrations- / Upgrade-Plan**
+- **Automatischer** Code- und Dependency-Scan über viele Systeme
+- Azure Migrate + Migration Agent unterstützen bei **Migrations- / Upgrade-Plan**
 - GitHub Copilot modernisiert Code (APIs, Build, Config) per Pull Request
-- **Inkrementelle** Transformationen statt Big Bang
+- Erleichtert **inkrementelle** Schritte, wenn das Team sich dafür entscheidet
 - **Test-Loop**: Fix → Build → Test → Iterate
-- CVE- und Compliance-Scan der Dependencies **on top**
+- Optional: CVE- und Compliance-Scans einfach in den Workflow integrierbar
 
 </v-clicks>
 
