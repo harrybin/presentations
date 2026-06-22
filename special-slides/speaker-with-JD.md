@@ -57,9 +57,9 @@ Consultant & Trainer
 
 ## Jonathan David
 
-Fullstack Dev | AI Enthusiast
+Fullstack | AI Enthusiast
 
-IT Consultant
+Consultant
 
 
 
