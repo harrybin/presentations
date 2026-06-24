@@ -60,7 +60,8 @@ background: /bulb.jpeg
 hideInToc: true
 ---
 
-# Das Problem mit Doku
+# Das Problem
+<br>
 
 <v-clicks>
 
@@ -88,45 +89,35 @@ background: /code-right.png
 hideInToc: true
 ---
 
-# Der Doku-Agent: Spezifikationen aus Code ableiten
+# Dokumentation aus Code
 
 <br>
 
 <v-clicks>
 
-- .NET10 **Console-App** mit GitHub Copilot SDK
-- Scannt ein Repo (Projekt- oder Mono-Repo)
-- Erkennt Technologien pro Projekt (Marker-Files + KI)
-- Baut Kontext aus:
-  - Projektdateien, gefiltertem File-Tree
-  - ausgewählten Source-Files
-  - bestehender Doku:
-    - READMEs im Repo
-    - Seiten aus **Confluence**
-    - Ticket-Infos aus **Jira**
-- Generiert Markdown-Dokumente pro Projekt:
-  - z.B. Overview, Architektur, Onboarding …
+- **GitHub Actions + Copilot**: Doku-Generierung als CI/CD-Step
+  - GitHub Copilot CLI
+  - On-demand oder per Schedule (z.B. wöchentlich)
+- **Copilot Coding Agent**: Issue zuweisen → Agent schreibt Doku-PR
+- **GitHub Agentic Workflow**
+  - Markdown beschreibt den Workflow
+- Ergebnis: Pull Request mit generierten Docs
+  - Team reviewt, korrigiert, ergänzt Domain-Wissen
 
 </v-clicks>
 
 <!--
-Kundenprojekt, kein Produkt-Pitch:
+GitHub Copilot bietet mehrere Ansätze für automatisierte Doku-Generierung:
 
-- .NET 10 Console-App mit Spectre.Console als UI.
-- Läuft aktuell manuell: Root-Folder angeben (z.B. "src"), die App findet die Projekte in den Subfoldern.
-- Pro Projekt:
-  - Technologie-Erkennung (.NET, Node, …) via Marker-Files + optionaler AI-Klassifikation.
-  - Projektanalyse: Projektdateien, File-Tree, relevante Source-Files.
-  - Zusätzliche Doku-Quellen:
-    - READMEs und andere Markdown-Dateien im Repo,
-    - geladene Confluence-Seiten,
-    - relevante Jira-Inhalte (Beschreibungen, Acceptance Criteria).
-  - Über den Copilot SDK eine Session, die Docs generiert:
-    - Project overview, Technical requirements, Developer onboarding,
-      Architecture, Project recommendations, Data model,
-      Security overview, Testing strategy, Configuration reference.
+[click] - GitHub Actions: GitHub Copilot CLI Docs generieren und als PR einstellen.
+  On-demand (manuell getriggert) oder regelmäßig per Cron.
 
-Zielbild: als GitHub Action laufen lassen - on demand oder z.B. wöchentlich über 100+ Repos.
+[click] - Copilot Coding Agent (github.com): Issue erstellen "Generate architecture docs for service X"
+  → Agent analysiert Repo autonom, öffnet PR mit Markdown-Doku.
+
+[click] - Agentic Workflows erlauben mehrstufige Logik: Repo-Scan, Kontext-Aufbau, Doku-Output.
+
+[click] - Human-in-the-loop bleibt: PR-Review durch das Team ist kein Optional-Step.
 -->
 
 
@@ -136,7 +127,7 @@ background: /bulb.jpeg
 hideInToc: true
 ---
 
-# Von Null-Doku zu „Review statt Erstschreiben“
+# Unterstützung durch KI
 
 <br>
 
@@ -149,14 +140,14 @@ hideInToc: true
 - Devs schreiben nicht mehr alles selbst, sondern:
   - prüfen
   - korrigieren
-  - Lücken schließen
+  - schließen Lücken
 
-- Kontext-abhängig: Je besser der Kontext (Doku in GitHub/Confluence/Jira) desto besser der Output
-- KI sieht nur Code & Docs, hat aber natürlich kein implizites Team-Wissen
+- Kontext-abhängig: Je besser der Kontext (Prompt, Doku in GitHub/Confluence/Jira) desto besser der Output
+  - KI sieht nur Code & Docs, hat aber natürlich kein implizites Team-Wissen
 </v-clicks>
 
 <!--
-- Zielanwendung: 200+ Repos automatisch mit "good enough"-Doku versorgen.
+- Ziel: Repos automatisch mit Dokumentation versorgen, die "Gut Genug" ist.
 - Danach übernehmen die Teams: PR-Review auf die MD-Files, Anpassungen, Domain-Wissen ergänzen.
 
 Human-in-the-loop ist nicht optional. Die KI kennt Code und Artefakte,
@@ -170,7 +161,7 @@ hideInToc: true
 ---
 
 <div class="flex flex-col h-full text-center justify-center">
-  <h1>Demo: Doku-Agent<br/>auf einem echten Repo</h1>
+  <h1>Demo</h1>
 </div>
 
 <v-click>
@@ -178,8 +169,19 @@ hideInToc: true
 </v-click>
 
 <!--
-**DEMO: Auto-Doku als Batch-Lauf (ca. 5-7 Minuten)**
+**DEMO: Doku-Agent – Batch-Lauf auf einem echten Repo (ca. 5-7 Minuten)**
 
+Unser Tool: .NET 10 Console-App mit GitHub Copilot SDK + Spectre.Console als UI.
+- Läuft aktuell manuell: Root-Folder angeben (z.B. "src"), findet Projekte in Subfoldern.
+- Pro Projekt:
+  - Technologie-Erkennung (.NET, Node, …) via Marker-Files + optionaler AI-Klassifikation.
+  - Kontext: Projektdateien, File-Tree, relevante Source-Files.
+  - Doku-Quellen: READMEs im Repo, Confluence-Seiten, Jira-Inhalte.
+  - Generiert via Copilot SDK: Project overview, Technical requirements, Developer onboarding,
+    Architecture, Project recommendations, Data model, Security overview, Testing strategy.
+- Zielbild: als GitHub Action – on demand oder wöchentlich über 100+ Repos.
+
+Demo-Ablauf:
 1. Console-App im Terminal starten.
 2. Root-Folder eines realistischen Repos angeben (Mono-Repo mit mehreren Services).
 3. Zeigen, wie Projekte und Technologien erkannt werden.
