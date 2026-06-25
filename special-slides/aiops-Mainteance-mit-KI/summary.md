@@ -22,6 +22,7 @@ hideInToc: true
 
 # Key Takeaways
 
+<br/>
 <v-clicks>
 
 1. **AIOps** unterstützt und beschleunigt Ops - saubere DevOps/<abbr title="Site Reliability Engineering">SRE</abbr>-Arbeit bleibt die Grundlage

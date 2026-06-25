@@ -112,7 +112,7 @@ hideInToc: true
 
 # DORA: KI-Adoption richtig machen
 
-<span class="text-red">TODO &rarr; HB: Wie passt sich DORA in das Thema Governance ein? </span>
+> Governance entscheidet, ob KI angenommen wird – DORA liefert die Zahlen dazu.
 
 ::one::
 
@@ -171,16 +171,25 @@ background: /world-left.jpg
 hideInToc: true
 ---
 
-# Real-World: Home Assistant
+## Real-World: Home Assistant
 
-<v-clicks>
 
 - Großes Open-Source-Projekt mit sehr aktiver Community
+  
+ <v-click> 
+
 - Dedizierte `.github/copilot-instructions.md` im Repo
 - Konkrete Regeln, wann Copilot Vorschläge machen soll
 - Präzise Review-Regeln:
   - _"Do not suggest extra defensive checks for inputs already validated by HA schemas"_
-- Zusätzlich: Claude Code mit eigener `SKILL.md`
+
+</v-click>
+<v-clicks>
+
+- **Agentic Issue-Triage** via GitHub Actions + `actions/ai-inference`
+  - Copilot erkennt Duplikate bei Integration-Issues → Ersteller automatisch benachrichtigt
+  - Copilot erkennt nicht-englische Issues → werden automatisch geschlossen
+  - Custom-Integration-Issues: strukturiertes Issue-Formular → Label `problem in custom integration` → Ersteller wird zum Plugin-Maintainer-Repo weitergeleitet
 
 </v-clicks>
 
@@ -209,5 +218,12 @@ Es ist ein gutes Beispiel dafür, wie Governance im Alltag aussieht:
   - gegebenenfalls Anpassungen,
   - Merge erst, wenn ein Mensch zustimmt.
 
+Agentic Issue-Triage:
+- Das Projekt nutzt GitHub Actions mit `actions/ai-inference` (GitHub Models API) für vollautomatische Issue-Triage:
+  - `detect-duplicate-issues.yml`: Sobald ein `integration:`-Label auf einem Issue gesetzt wird, analysiert GPT-4o ähnliche Issues aus den letzten 6 Monaten. Bei Duplikat-Fund wird automatisch ein Kommentar gepostet, der den Ersteller benachrichtigt und auf die bestehenden Issues verweist. Das Issue erhält das Label `potential-duplicate`.
+  - `detect-non-english-issues.yml`: GPT-4o-mini analysiert jedes neue Issue. Nicht-englische Issues werden automatisch mit Label `non-english` versehen, ein Kommentar erklärt die Anforderung, und das Issue wird geschlossen.
+- Custom Integration Issues (3rd-party Plugins/HACS): Das Issue-Formular fragt nach "Link to integration documentation on our website". Ist die Integration nicht im offiziellen HA-Katalog, kennzeichnen Maintainer das Issue mit `problem in custom integration`, schließen es und verweisen den Ersteller auf das Repository der Custom Integration.
+
 Quelle: https://github.com/home-assistant/core/blob/dev/.github/copilot-instructions.md
+Quelle Workflows: https://github.com/home-assistant/core/tree/dev/.github/workflows
 -->
