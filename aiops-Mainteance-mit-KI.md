@@ -24,7 +24,7 @@ routeAlias: aiops-Mainteance-mit-KI
 
 <!--
 Willkommen zum Talk "AIOps: Maintenance von Softwaresystemen durch KI" auf der INFINITE AI CONFERENCE 2026.
-Dauer: 60 Minuten inkl. Demos und Q&A.
+Dauer: 90 Minuten inkl. Demos und Q&A.
 -->
 
 ---
@@ -39,13 +39,13 @@ coverImage: /server-outage-large.png
 hideInToc: true
 ---
 
-# Es ist 3 Uhr nachts. Ihre Checkout-API ist down.
+# Es ist 3 Uhr nachts. Die Checkout-API ist down.
 
 <v-clicks>
 
 ## 47.000 Kunden warten.
 
-## Ihr Team sucht seit 2 Stunden die Ursache.
+## Dein Team sucht seit 2 Stunden die Ursache.
 
 ## Was wäre, wenn eine KI das in 30 Sekunden löst?
 
