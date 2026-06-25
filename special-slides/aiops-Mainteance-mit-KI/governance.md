@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 6
 background: /governance-large.png
 ---
 
@@ -21,11 +22,12 @@ hideInToc: true
 
 # Security by Design
 
+<br/>
 <v-clicks>
 
 - **Copilot Coding Agent**
   - Arbeitet nur auf eigenen Branches
-  - Kann PRs nicht selbst mergen
+  - erstellt PRs (⚠️ achtung kann auch direkt committen)
   - CI/CD läuft über Branch-Protection-Regeln
 - **Code Scanning Autofix**
   - CodeQL findet Issues, Copilot schlägt Fixes vor
@@ -62,21 +64,29 @@ hideInToc: true
 
 # "Found Means Fixed": Code Scanning Autofix
 
-```mermaid {scale: 0.65}
-graph LR
-    A[Code Push] --> B[CodeQL<br/>Analyse]
-    B --> C{Vulnerability<br/>gefunden?}
+<br/>
+
+```mermaid {scale: 0.5}
+flowchart LR
+  subgraph Autofix Flow
+    A[Code Push] --> B[CodeQL]
+    B --> C{Vulnera-<br/>bility?}
     C -->|Nein| D[✅ Clean]
-    C -->|Ja| E[Copilot<br/>generiert Fix]
-    E --> F[Erklärung +<br/>Code-Vorschlag]
-    F --> G[Developer<br/>Review]
-    G -->|Accept| H[✅ Gefixt]
+    C -->|Ja| E[Copilot Fix]
+    E --> F[Fix + Erklärung]
+  end
+
+  subgraph Developer Review
+    G[Review] -->|Accept| H[✅ Gefixt]
     G -->|Modify| I[✏️ Anpassen]
     I --> H
+  end
 
-    style B fill:#6366f1,color:#fff
-    style E fill:#f59e0b,color:#fff
-    style G fill:#10b981,color:#fff
+  F --> G
+
+  style B fill:#6366f1,color:#fff
+  style E fill:#f59e0b,color:#fff
+  style G fill:#10b981,color:#fff
 ```
 
 <v-clicks>

@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 1
 background: /aiops-monitoring-large.png
 ---
 
@@ -43,55 +44,22 @@ Wichtig: AIOps ist nicht ein einzelnes Tool, sondern ein Paradigma. Es umfasst d
 
 ---
 hideInToc: true
-layout: center
+layout: image-right
+background: /gartner.png
+backgroundSize: 20%
 ---
 
+
+<br>
+<br>
+
 # “there is no future of IT Operations that does not include AIOps.”
+
 <br>
 
 _Gartner, 2022_ 
 
 <!-- Starke Worte. Und das konnte man bereits im Gartner Report 2022 nachlesen. -->
-
----
-hideInToc: true
----
-
-# AIOps-Pipeline
-
-```mermaid {scale: 0.55}
-graph LR
-    A1[Logs] --> A[Aggregation]
-    A2[Metriken] --> A
-    A3[Traces] --> A
-    A4[Events] --> A
-
-    A --> C[ML-Analyse]
-
-    C --> C1[Anomalie-<br/>Erkennung]
-    C --> C2[Pattern<br/>Matching]
-    C --> C3[Event-<br/>Korrelation]
-
-    C1 --> D[Root Cause]
-    C2 --> D
-    C3 --> D
-
-    D --> F[Automation]
-
-    F --> F1[Auto-<br/>Remediation]
-    F --> F2[Ticket-<br/>Erstellung]
-    F --> F3[Runbook<br/>Execution]
-
-    style C fill:#6366f1,color:#fff
-    style D fill:#f59e0b,color:#fff
-    style F fill:#10b981,color:#fff
-```
-
-<!--
-Die AIOps-Pipeline visualisiert: Daten aus verschiedenen Quellen (Logs, Metriken, Traces, Events) werden aggregiert (Big Data), durch ML analysiert, Root Causes identifiziert und automatische Maßnahmen eingeleitet.
-
-Drei Kernfähigkeiten der ML-Analyse: Anomalie-Erkennung (ist das normal?), Pattern Matching (haben wir das schon mal gesehen?) und Event-Korrelation (hängen diese Alerts zusammen?).
--->
 
 ---
 layout: two-column
@@ -133,7 +101,51 @@ hideInToc: true
 </v-clicks>
 
 <!--
+MTTR = Mean Time To Repair oder Mean Time To Restore/Recover.
 Der zentrale Unterschied: Traditional Ops ist regelbasiert und reaktiv — der Mensch stellt Schwellwerte ein und reagiert auf Alerts. AIOps nutzt ML um proaktiv Muster zu erkennen und Probleme zu lösen, bevor sie eskalieren.
 
 Alert Fatigue ist ein reales Problem: Teams ignorieren 30-50% ihrer Alerts weil sie Rauschen sind. AIOps priorisiert und korreliert, sodass nur actionable Alerts durchkommen.
+-->
+
+---
+hideInToc: true
+---
+
+# AIOps-Pipeline
+
+<br/>
+<br/>
+
+```mermaid {scale: 0.55}
+graph LR
+    A1[Logs] --> A[Aggregation]
+    A2[Metriken] --> A
+    A3[Traces] --> A
+    A4[Events] --> A
+
+    A --> C[ML-Analyse]
+
+    C --> C1[Anomalie-<br/>Erkennung]
+    C --> C2[Pattern<br/>Matching]
+    C --> C3[Event-<br/>Korrelation]
+
+    C1 --> D[Root Cause]
+    C2 --> D
+    C3 --> D
+
+    D --> F[Automation]
+
+    F --> F1[Auto-<br/>Remediation]
+    F --> F2[Ticket-<br/>Erstellung]
+    F --> F3[Runbook<br/>Execution]
+
+    style C fill:#6366f1,color:#fff
+    style D fill:#f59e0b,color:#fff
+    style F fill:#10b981,color:#fff
+```
+
+<!--
+Die AIOps-Pipeline visualisiert: Daten aus verschiedenen Quellen (Logs, Metriken, Traces, Events) werden aggregiert (Big Data), durch ML analysiert, Root Causes identifiziert und automatische Maßnahmen eingeleitet.
+
+Drei Kernfähigkeiten der ML-Analyse: Anomalie-Erkennung (ist das normal?), Pattern Matching (haben wir das schon mal gesehen?) und Event-Korrelation (hängen diese Alerts zusammen?).
 -->

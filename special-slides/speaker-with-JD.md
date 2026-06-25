@@ -3,9 +3,9 @@ layout: two-column
 hideInToc: true
 ---
 
-<h1 class="h-auto!"> Your Trainers </h1>
+**Who are we?**
 
-<div class="grid grid-cols-2 mt-10 ml-20 gap-30">
+<div class="grid grid-cols-2 mt-5 ml-20 gap-30">
 
 <!-- Speaker 1 -->
 <div>

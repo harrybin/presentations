@@ -11,6 +11,7 @@ record: false
 editor: true
 overviewSnapshots: false
 glowEnabled: false
+author: "Infinite AI Conference"
 ###### slides start ######
 layout: cover
 coverImage: /aiops-cover-bg.png
@@ -59,6 +60,7 @@ Das ist kein Sci-Fi — das ist der Alltag von AIOps. In den nächsten 60 Minute
 layout: image-right
 background: /compass-right.png
 hideInToc: true
+title: Agenda
 ---
 
 <h1 class="h-auto!"> Agenda </h1>

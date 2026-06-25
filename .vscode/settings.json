@@ -6,9 +6,15 @@
         "devcontainer_20m.md",
         "githubCopilotDelphi.md",
         "msWebUiReact.md",
-        "bmad-anforderungen-tests.md"
+        "bmad-anforderungen-tests.md",
+        "aiops-Mainteance-mit-KI.md"
     ],
     "chat.tools.terminal.autoApprove": {
         "Add-Type": true
-    }
+    },
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "text": "Use conventional commit message format. Omit the feature name. Regard: this project is not software source code, it are slide decks. Mention the titles of the slides changed. You can find the titles in changed *.md files using a front matter syntax with the keyword \"title:\"."
+        }
+    ]
 }

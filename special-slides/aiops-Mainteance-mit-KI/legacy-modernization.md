@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 4
 background: /evolution-left.jpg
 ---
 
@@ -72,9 +73,9 @@ genau wie ein erfahrener Dev, nur hört er nicht um 18 Uhr auf.
 hideInToc: true
 ---
 
-# Case Study: Java 17 → 21
+# Case Study: C#/.NET Framework 4.7.2 → .NET 8
 
-### Spring WebFlow Legacy-Modernisierung im Azure-Kontext
+### ASP.NET MVC + WPF Legacy-Modernisierung im Azure-Kontext
 
 <br>
 
@@ -92,9 +93,9 @@ graph LR
 
 ```mermaid {scale: 0.6}
 graph LR
-    C[Code-Modernisierung<br/>mit GitHub Copilot Agent] --> D[Build<br/>+ Test-Loop]
+  C[Code-Modernisierung<br/>mit @modernize-dotnet] --> D[Build<br/>+ Test-Loop]
     D -->|❌ Fehler| C
-    D -->|✅ Grün| E[CVE-Check<br/>Dependencies]
+  D -->|✅ Grün| E[CVE-Check<br/>+ Package-Update]
     E --> F[Bereit für Azure-Deployment<br/>z.B. App Service/AKS]
 
     style C fill:#4b5563,color:#fff
@@ -104,32 +105,35 @@ graph LR
 
 <v-click>
 
-```java
-// Vorher (deprecated in Java 21)
-View view = this.resolver.resolveViewName("intro", new Locale("EN"));
+```csharp
+// Vorher (.NET Framework)
+using System.Data.SqlClient;
 
-// Nachher (Java 21 konform, von Copilot-Agent modernisiert)
-View view = this.resolver.resolveViewName("intro", Locale.of("EN"));
+// Nachher (modern .NET, von Copilot modernisiert)
+using Microsoft.Data.SqlClient;
 ```
 
 </v-click>
 
 <!--
-Wichtig: Der eigentliche Java-17-→21-Case kommt direkt aus GitHub Copilot Agent Mode / App Modernization,
+Wichtig: Der eigentliche .NET-Framework-→.NET-Case kommt aus GitHub Copilot Modernization,
 also ohne „magischen“ Azure Copilot im Code-Editor.
 
 Die Verbindung zu Azure sieht in der Praxis so aus:
 - Azure Migrate + Azure Copilot Migration Agent helfen dir vorher, deine Workloads zu inventarisieren,
   Risiken zu sehen und zu entscheiden, welche Apps du „nur“ rehostest und welche du wirklich modernisierst.
-- Für genau diese Modernisierungs-Kandidaten startest du dann GitHub Copilot App Modernization:
-  der Agent erstellt einen Upgrade-Plan, führt Code-Transformationen (OpenRewrite, Framework-Updates, Config-Fixes) aus, baut das Projekt, fixt Build- und Testfehler und macht CVE-Checks.
-- Am Ende hast du eine Java-21-fitte Codebase mit allen Tests grün – und eine App, die sich deutlich entspannter nach Azure heben lässt (Container, App Service, AKS etc.).
+- Für genau diese Modernisierungs-Kandidaten startest du dann GitHub Copilot App Modernization mit @modernize-dotnet:
+  Assessment → Plan → Execution, inklusive Framework-Upgrade, Package-Updates, Build-Fixes und Test-Validierung.
+- Am Ende hast du eine .NET-8-fitte Codebase mit allen Tests grün – und eine App, die sich deutlich entspannter
+  nach Azure heben lässt (Container, App Service, AKS etc.).
 
-Quelle: https://github.blog/ai-and-ml/github-copilot/a-step-by-step-guide-to-modernizing-java-projects-with-github-copilot-agent-mode/
+Quellen:
+- https://learn.microsoft.com/en-us/dotnet/core/porting/github-copilot-app-modernization/overview
+- https://learn.microsoft.com/en-us/dotnet/core/porting/github-copilot-app-modernization/how-to-upgrade-with-github-copilot
+- https://learn.microsoft.com/en-us/dotnet/core/porting/framework-overview
 
 Kurz: Azure Copilot sagt dir *wo* und *wie* du modernisieren solltest,
-GitHub Copilot Agent macht dann die Drecksarbeit *im Code*.
-Quelle für den Java-Case: GitHub-Blog „Step-by-step guide to modernizing Java projects with GitHub Copilot agent mode“.
+GitHub Copilot Modernization macht dann die Drecksarbeit *im Code*.
 -->
 
 ---
@@ -140,6 +144,7 @@ hideInToc: true
 
 # Copilot Coding Agent
 
+<br/>
 <v-clicks>
 
 - GitHub Issues **direkt an Copilot** zuweisen
@@ -182,6 +187,7 @@ Offizielle Doku:
 layout: cover
 background: /evolution-left.jpg
 hideInToc: true
+title: Demo - Legacy-Modernisierung
 ---
 
 <div class="flex flex-col h-full text-center justify-center">
@@ -208,7 +214,7 @@ hideInToc: true
 
 **Key Message:** Von der Analyse über die Migration bis zur Dokumentation - alles in einem Flow.
 
-**Fallback:** Zeige den dokumentierten Java-17-zu-21-Flow als Walkthrough mit Screenshots.
+**Fallback:** Zeige den dokumentierten .NET-Framework-zu-.NET-8-Flow als Walkthrough mit Screenshots.
 
 🎨 Image prompt: An evolutionary transformation scene - old machinery morphing into sleek modern technology with AI energy flowing through the transformation. Digital art similar to /evolution-left.jpg.
 -->

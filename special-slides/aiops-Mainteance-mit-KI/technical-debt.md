@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 3
 background: /technical-debt-large.png
 ---
 
@@ -7,6 +8,7 @@ background: /technical-debt-large.png
 
 ::intro::
 
+<br/>
 Was sagen die Daten wirklich?
 
 <!--
@@ -21,6 +23,7 @@ hideInToc: true
 
 # Die Datenlage: Pro
 
+<br/>
 <v-clicks>
 
 - **GitHub <abbr title="Randomized Controlled Trial">RCT</abbr>** (202 devs):
@@ -56,6 +59,7 @@ hideInToc: true
 
 # Die Datenlage: Contra
 
+
 <v-clicks>
 
 - **DORA Gen AI Report**:
@@ -75,7 +79,7 @@ hideInToc: true
 <!--
 Jetzt die Contra-Seite - und die ist wichtig für die Glaubwürdigkeit.
 
-[click] DORA zeigt: 25% mehr KI-Adoption korreliert mit 7,2% weniger Delivery Stability. Warum? Die "Batch Size Trap" - KI erzeugt schneller mehr Code, der in größeren Batches reviewed werden muss. Schnellere Erzeugung ohne disziplinierte kleine Batches untergräbt die Qualität.
+[click] DORA (= DevOps Research and Assessment.) zeigt: 25% mehr KI-Adoption korreliert mit 7,2% weniger Delivery Stability. Warum? Die "Batch Size Trap" - KI erzeugt schneller mehr Code, der in größeren Batches reviewed werden muss. Schnellere Erzeugung ohne disziplinierte kleine Batches untergräbt die Qualität.
 
 [click] Sonatype warnt: LLMs halluzinieren bei Dependency-Empfehlungen - sie schlagen Versionen vor, die nicht existieren.
 
@@ -141,6 +145,7 @@ Die Botschaft: KI löst das Technical-Debt-Problem nicht automatisch. Aber mit d
 layout: cover
 coverImage: /technical-debt-large.png
 hideInToc: true
+title: Demo - Copilot Code Review
 ---
 
 <div class="flex flex-col h-full text-center justify-center">

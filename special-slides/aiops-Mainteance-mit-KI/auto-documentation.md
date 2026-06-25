@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 5
 background: /bulb.jpeg
 ---
 
@@ -158,10 +159,11 @@ aber nicht alle Business-Entscheidungen, impliziten Randbedingungen oder Prozess
 layout: cover
 background: /bulb.jpeg
 hideInToc: true
+title: Demo - Auto-Dokumentation
 ---
 
 <div class="flex flex-col h-full text-center justify-center">
-  <h1>Demo</h1>
+  <h1>Demo: Auto-Dokumentation</h1>
 </div>
 
 <v-click>

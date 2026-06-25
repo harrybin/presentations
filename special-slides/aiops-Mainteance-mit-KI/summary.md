@@ -1,5 +1,6 @@
 ---
 layout: chapter
+chapterNumber: 7
 background: /aiops-monitoring-large.png
 ---
 
