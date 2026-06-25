@@ -57,6 +57,7 @@ Quellen:
 
 ---
 layout: two-cols-header
+hideInToc: true
 ---
 
 # Smart Detection Alerts

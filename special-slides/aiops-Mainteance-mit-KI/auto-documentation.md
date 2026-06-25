@@ -4,19 +4,17 @@ chapterNumber: 5
 background: /bulb.jpeg
 ---
 
-# Auto-Dokumentation als Nebenprodukt
+# Dokumentations-Kickstarter
 
 ::intro::
 
-Doku entsteht aus der Entwicklung, nicht als Extra-Task
+
 
 <!--
 Doku wird selten priorisiert.
 Niemand steht morgens auf und denkt: "Geil, heute schreibe ich 30 Seiten Architektur-Doku!"
 Solange das Team da ist, fragt man jemanden.
 Sobald Leute gehen, wird fehlende Doku teuer.
-
-Idee: Doku nicht als separaten Task behandeln, sondern als Nebenprodukt der Entwicklung.
 -->
 
 
@@ -142,10 +140,19 @@ hideInToc: true
   - prüfen
   - korrigieren
   - schließen Lücken
-
 - Kontext-abhängig: Je besser der Kontext (Prompt, Doku in GitHub/Confluence/Jira) desto besser der Output
   - KI sieht nur Code & Docs, hat aber natürlich kein implizites Team-Wissen
 </v-clicks>
+
+<v-click>
+
+<div class="absolute py-2 px-4 top-80% left-1/3 rotate--6 transform -translate-x-1/2 -translate-y-1/2 text-center bg-lime ">
+
+ABER: <br> Work IQ CLI
+
+</div>
+
+</v-click>
 
 <!--
 - Ziel: Repos automatisch mit Dokumentation versorgen, die "Gut Genug" ist.
@@ -153,6 +160,9 @@ hideInToc: true
 
 Human-in-the-loop ist nicht optional. Die KI kennt Code und Artefakte,
 aber nicht alle Business-Entscheidungen, impliziten Randbedingungen oder Prozesse.
+
+[click] Work IQ, seit dem 16.06. verfügbar (General Availability) hat Zugriff auf die Office 365-Umgebung und Copilot kann das als MCP-Server nutzen.
+Eröffnet mehr Kontext z.B. aus Sharepoint-Dokumenten, Meeting-Protokollen
 -->
 
 ---
