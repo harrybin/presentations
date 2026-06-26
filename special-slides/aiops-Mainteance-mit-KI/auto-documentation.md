@@ -145,16 +145,6 @@ hideInToc: true
   - KI sieht nur Code & Docs, hat aber natürlich kein implizites Team-Wissen
 </v-clicks>
 
-<v-click>
-
-<div class="absolute py-2 px-4 top-80% left-1/3 rotate--6 transform -translate-x-1/2 -translate-y-1/2 text-center bg-lime ">
-
-ABER: <br> <b>Work IQ</b>
-
-</div>
-
-</v-click>
-
 <!--
 [click]
 - Ziel: Repos automatisch mit Dokumentation versorgen, die "Gut Genug" ist.
@@ -162,9 +152,6 @@ ABER: <br> <b>Work IQ</b>
 
 Human-in-the-loop ist nicht optional. Die KI kennt Code und Artefakte,
 aber nicht alle Business-Entscheidungen, impliziten Randbedingungen oder Prozesse.
-
-[click:11] Work IQ, seit dem 16.06. verfügbar (General Availability) hat Zugriff auf die Office 365-Umgebung und Copilot kann das als MCP-Server nutzen.
-Eröffnet mehr Kontext z.B. aus Sharepoint-Dokumenten, Meeting-Protokollen
 -->
 
 ---
