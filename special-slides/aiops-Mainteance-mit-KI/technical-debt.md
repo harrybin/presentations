@@ -4,13 +4,12 @@ chapterNumber: 3
 background: /technical-debt-large.png
 ---
 
-# Technical Debt mit KI abbauen
+# Technical Debt mit KI vermeiden
 
 ::intro::
 
-
 <!--
-Technical Debt ist oft politisch induziert: "seid schneller, billiger". Hilft KI wirklich dagegen? Die Antwort ist differenziert - und genau das macht sie glaubwürdig.
+TODO: In den Technical Debt slides geht es ja mehr um weitere Technical Debt zu vermeiden, als eigentlich darum Technical Debt abzubauen.
 -->
 
 ---
@@ -101,7 +100,7 @@ Quellen:
 hideInToc: true
 ---
 
-# Die Qualitäts-Geschwindigkeits-Balance
+# Geschwindigkeit vs. Qualität
 
 ```mermaid {scale: 0.65}
 graph TB
@@ -130,13 +129,25 @@ graph TB
 ```
 
 <!--
-Dieses Diagramm zeigt den entscheidenden Unterschied:
+Das ist die Kernbotschaft dieses Kapitels: KI macht Teams nicht automatisch besser, sondern erstmal nur schneller.
 
-OHNE Guardrails: KI generiert schneller → größere Batches → langsamere Reviews → weniger Stabilität → mehr Technical Debt. Das ist die DORA-Warnung.
+Guardrails: 
+* Schutzmechanismen
+* klare Prozesse
+* Disziplin
 
-MIT Guardrails: KI generiert schneller → kleine Batches erzwingen → automatisiertes Code Review → Tests + SCA/SBOM → schneller UND sauberer.
+Ohne Guardrails kippt dieser Geschwindigkeitsgewinn schnell ins Negative.
+Die KI produziert mehr Code in kürzerer Zeit, dadurch wachsen die Changesets, Reviews werden langsamer und oberflächlicher, und am Ende leidet die Stabilität.
+Genau so entsteht neue Technical Debt.
 
-Die Botschaft: KI löst das Technical-Debt-Problem nicht automatisch. Aber mit den richtigen Guardrails wird sie zum Hebel FÜR Qualität statt dagegen.
+Mit Guardrails kann derselbe Produktivitätsschub aber in die andere Richtung wirken.
+Wir halten die Batches klein, lassen automatisierte Reviews darüberlaufen und prüfen mit Tests sowie SCA oder SBOM nach.
+Dann bedeutet mehr Geschwindigkeit nicht mehr Chaos, sondern mehr Durchsatz bei saubererem Code.
+
+Die eigentliche Aussage der Folie ist also nicht: KI löst Technical Debt.
+Die Aussage ist: KI verstärkt das bestehende Engineering-System.
+Mit schwachen Prozessen erzeugen wir schneller neue Schulden.
+Mit guten Guardrails liefern wir schneller und sauberer.
 -->
 
 ---

@@ -11,45 +11,7 @@ background: /bulb.jpeg
 
 
 <!--
-Doku wird selten priorisiert.
-Niemand steht morgens auf und denkt: "Geil, heute schreibe ich 30 Seiten Architektur-Doku!"
-Solange das Team da ist, fragt man jemanden.
-Sobald Leute gehen, wird fehlende Doku teuer.
--->
-
-
----
-layout: image-right
-background: /code-right.png
-hideInToc: true
----
-
-# Was heute schon geht: PR-Summaries & Living Docs
-
-<br>
-
-<v-clicks>
-
-- **PR-Summaries**: Ein Klick → strukturierte Zusammenfassung
-  - Was hat sich geändert, warum, welche Dateien?
-- **Copilot Code Review**: Multi-Line-Kommentare erklären den Code-Intent
-- **`@workspace`**: Fragen gegen die ganze Codebase
-  - _"Wie funktioniert der Checkout-Flow?"_
-- Laut GitHub-Surveys hilft KI vielen Devs, fremde Codebases schneller zu verstehen
-
-</v-clicks>
-
-<!--
-Status quo ohne eigenes Tooling:
-
-- PR-Summary: Klick auf das Copilot-Icon im PR → strukturierte Zusammenfassung der Änderungen.
-- Copilot Code Review: Review-Kommentare, die nicht nur Styling anmerken, sondern erklären, was ein Block tut.
-- @workspace in Copilot Chat: Kontext über die gesamte Codebase, z.B. "Wie funktioniert der Shipping-Flow?".
-
-Offizielle Copilot-Doku (z.B. Cloud/Coding Agent):
-- About GitHub Copilot cloud agent: https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/agents/cloud-agent/about-cloud-agent [web:82]
-- Using Copilot agents & session logs: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/track-copilot-sessions
-- Blog: "GitHub Copilot: Meet the new coding agent": https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/
+Fragen wer gerne Doku schreibt
 -->
 
 
@@ -80,6 +42,42 @@ hideInToc: true
 
 Überleitung: KI ist im Stack ohnehin vorhanden - also Doku aus Code plus bestehender Doku generieren.
 -->
+
+
+
+---
+layout: image-right
+background: /code-right.png
+hideInToc: true
+---
+
+# Was heute schon geht: Ohne Tooling
+
+<br>
+
+<v-clicks>
+
+- **PR-Summaries**: Ein Klick → strukturierte Zusammenfassung
+  - Was hat sich geändert, warum, welche Dateien?
+- **Copilot Code Review**: Multi-Line-Kommentare erklären den Code-Intent
+- **`@workspace`**: Fragen gegen die ganze Codebase
+  - _"Wie funktioniert der Checkout-Flow?"_
+
+</v-clicks>
+
+<!--
+Status quo ohne eigenes Tooling:
+
+- PR-Summary: Klick auf das Copilot-Icon im PR → strukturierte Zusammenfassung der Änderungen.
+- Copilot Code Review: Review-Kommentare, die nicht nur Styling anmerken, sondern erklären, was ein Block tut.
+- @workspace in Copilot Chat: Kontext über die gesamte Codebase, z.B. "Wie funktioniert der Shipping-Flow?".
+
+Offizielle Copilot-Doku (z.B. Cloud/Coding Agent):
+- About GitHub Copilot cloud agent: https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/agents/cloud-agent/about-cloud-agent [web:82]
+- Using Copilot agents & session logs: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/track-copilot-sessions
+- Blog: "GitHub Copilot: Meet the new coding agent": https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/
+-->
+
 
 
 ---

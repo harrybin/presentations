@@ -33,17 +33,17 @@ hideInToc: true
   
 <br/>
 
-- **Smart Detection** (ML-basiert)
+- **Smart Detection (Alerts)**
   - Failure Anomalies
-  - Performance Degradation
-  - Memory Leaks
-  - **Bevor** ein Mensch es merkt
+  - Performance Anomalies
+  - Trace Degradation / Memory Leaks
 
 </v-clicks>
 
 <!--
-Application Insights Transaction Diagnostics zeigt einen Request als Gantt-Chart über alle Services hinweg - vom Browser über Frontend und Backend bis zur Datenbank. Jeder Hop ist sichtbar mit Timings.
-<a href="/azure-end-to-end-transaction-log.png">azure-end-to-end-transaction-log.png</a>
+TODO: SCHEISS AUF TRANSACTION DIAGS...
+HIER VIELLEICHT MEHR AUF AppInsights EINGEHEN
+
 
 Smart Detection nutzt Machine Learning um Anomalien automatisch zu erkennen: Failure Spikes, Performance-Verschlechterung, Memory Leaks - und das bevor ein Mensch überhaupt einen Alert bemerkt.
 Leider können wir das nicht zeigen, da die Demo App nicth regelmäßig genug Traffic hat, um Smart Detection auszulösen. 
@@ -51,8 +51,6 @@ Leider können wir das nicht zeigen, da die Demo App nicth regelmäßig genug Tr
 Quellen:
 - https://learn.microsoft.com/en-us/azure/azure-monitor/app/transaction-search-and-diagnostics
 - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/proactive-diagnostics
-
-🎨 Image prompt: A satellite view of interconnected data streams with a magnifying glass focusing on an anomaly point. Dark background with glowing blue data nodes.
 -->
 
 ---
@@ -144,6 +142,7 @@ Die Aussage der Folie ist also: Nicht erst manuell Logs zusammensuchen, sondern 
 layout: image-right
 background: /aiops-paradigmenwechsel.png
 hideInToc: true
+hide: true
 ---
 
 # Der Paradigmenwechsel
@@ -187,7 +186,7 @@ title: Demo - Azure Copilot
 ---
 
 <div class="flex flex-col h-full text-center justify-center">
-  <h1>Demo: Azure Copilot<br/>Root Cause Analysis</h1>
+  <h1>Demo: Root Cause Analysis</h1>
 </div>
 
 <v-click>
