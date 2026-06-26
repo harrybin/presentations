@@ -4,12 +4,10 @@ chapterNumber: 3
 background: /technical-debt-large.png
 ---
 
-# Technical Debt mit KI bekämpfen
+# Technical Debt mit KI abbauen
 
 ::intro::
 
-<br/>
-Was sagen die Daten wirklich?
 
 <!--
 Technical Debt ist oft politisch induziert: "seid schneller, billiger". Hilft KI wirklich dagegen? Die Antwort ist differenziert - und genau das macht sie glaubwürdig.

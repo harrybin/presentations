@@ -130,10 +130,11 @@ hideInToc: true
 
 <br>
 
-<v-clicks>
+<v-clicks depth="2">
 
 - Vorher: "Wir sollten mal Doku schreiben ..."
-- Jetzt: Ein Lauf über einen Repo-Ordner:
+- Ziel: "Wir haben Doku, die erstmal gut genug ist."
+  - Repo analysieren
   - mehrere Projekte auf einmal
   - Automatisch Markdown-Files als Kickstart bzw. lebende Doku
 - Devs schreiben nicht mehr alles selbst, sondern:
@@ -148,20 +149,21 @@ hideInToc: true
 
 <div class="absolute py-2 px-4 top-80% left-1/3 rotate--6 transform -translate-x-1/2 -translate-y-1/2 text-center bg-lime ">
 
-ABER: <br> Work IQ CLI
+ABER: <br> <b>Work IQ</b>
 
 </div>
 
 </v-click>
 
 <!--
+[click]
 - Ziel: Repos automatisch mit Dokumentation versorgen, die "Gut Genug" ist.
 - Danach übernehmen die Teams: PR-Review auf die MD-Files, Anpassungen, Domain-Wissen ergänzen.
 
 Human-in-the-loop ist nicht optional. Die KI kennt Code und Artefakte,
 aber nicht alle Business-Entscheidungen, impliziten Randbedingungen oder Prozesse.
 
-[click] Work IQ, seit dem 16.06. verfügbar (General Availability) hat Zugriff auf die Office 365-Umgebung und Copilot kann das als MCP-Server nutzen.
+[click:11] Work IQ, seit dem 16.06. verfügbar (General Availability) hat Zugriff auf die Office 365-Umgebung und Copilot kann das als MCP-Server nutzen.
 Eröffnet mehr Kontext z.B. aus Sharepoint-Dokumenten, Meeting-Protokollen
 -->
 
