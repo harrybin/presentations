@@ -15,7 +15,7 @@ author: "Infinite AI Conference"
 ###### slides start ######
 layout: cover
 coverImage: /aiops-cover-bg.png
-description: "AIOps: Wie KI die Maintenance von Softwaresystemen revolutioniert — Root Cause Analysis, Technical Debt, Legacy-Modernisierung und Auto-Dokumentation"
+description: "AIOps: Wie KI die Maintenance von Softwaresystemen revolutioniert - Root Cause Analysis, Technical Debt, Legacy-Modernisierung und Auto-Dokumentation"
 hideInToc: true
 routeAlias: aiops-Mainteance-mit-KI
 ---
@@ -53,7 +53,7 @@ hideInToc: true
 
 <!--
 Teaser-Slide: Emotionaler Einstieg. Pause nach jedem Punkt.
-Das ist kein Sci-Fi — das ist der Alltag von AIOps. In den nächsten 60 Minuten zeigen wir euch, wie KI nicht nur Code schreibt, sondern Systeme diagnostiziert, Technical Debt bekämpft und Legacy-Systeme modernisiert.
+Das ist kein Sci-Fi - das ist der Alltag von AIOps. In den nächsten 60 Minuten zeigen wir euch, wie KI nicht nur Code schreibt, sondern Systeme diagnostiziert, Technical Debt bekämpft und Legacy-Systeme modernisiert.
 -->
 
 ---
@@ -113,7 +113,7 @@ hideInToc: true
 <h1 class="h-auto!">Questions?</h1>
 
 <!--
-Q&A Session — ca. 10 Minuten.
+Q&A Session - ca. 10 Minuten.
 Bereite Backup-Antworten vor zu:
 - "Ersetzt KI den Ops-Engineer?" → Nein, sie macht ihn schneller und präziser.
 - "Was kostet AIOps?" → GitHub Copilot Business ab $19/user/month, Azure Monitor nach Verbrauch.
@@ -164,8 +164,8 @@ hideInToc: true
 
 **Speakers:**
 
-- Harald Binkle — Xebia, Microsoft MVP
-- Jonathan David — Xebia
+- Harald Binkle - Xebia, Microsoft MVP
+- Jonathan David - Xebia
 
 <!--
 Konferenz-Referenzfolie mit Links und Kontakt-Infos.

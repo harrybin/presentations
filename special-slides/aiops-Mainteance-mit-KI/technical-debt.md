@@ -62,7 +62,7 @@ hideInToc: true
 <v-clicks>
 
 - **DORA Gen AI Report** 2024:
-  - 25% mehr KI-Adoption →
+  - 25% mehr KI-Verwendung →
   - **7,2% weniger Delivery Stability**
   - Ursache: **"Batch Size Trap"**
 - **Sonatype State of the Software Supply Chain** 2026:

@@ -26,10 +26,10 @@ hideInToc: true
 <br/>
 <v-clicks>
 
-- **Transaction Diagnostics** 
-  - End-to-End Gantt-Chart
-  - Browser → Frontend → Backend → DB
-  - Über Service-Grenzen hinweg
+- **Application Insights**
+  - Monitoring/Observability für laufende Anwendungen
+  - Basis-Telemetrie: Requests, Dependencies, Exceptions, Traces
+  - Dazu Metriken, Availability sowie Browser- und Nutzungssignale
   
 <br/>
 
@@ -41,12 +41,12 @@ hideInToc: true
 </v-clicks>
 
 <!--
-TODO: SCHEISS AUF TRANSACTION DIAGS...
-HIER VIELLEICHT MEHR AUF AppInsights EINGEHEN
+Application Insights ist hier vor allem die Datengrundlage:
+Es liefert die Telemetrie aus der laufenden Anwendung – also z. B. Requests, Dependencies, Exceptions und Traces, aber auch Metriken, Availability- sowie Browser- und Nutzungssignale.
 
+Das ist für die meisten hier vermutlich nichts Neues.
 
-Smart Detection nutzt Machine Learning um Anomalien automatisch zu erkennen: Failure Spikes, Performance-Verschlechterung, Memory Leaks - und das bevor ein Mensch überhaupt einen Alert bemerkt.
-Leider können wir das nicht zeigen, da die Demo App nicth regelmäßig genug Traffic hat, um Smart Detection auszulösen. 
+Smart Detection nutzt Machine Learning, um Anomalien automatisch zu erkennen: Failure Spikes, Performance-Verschlechterung, Memory Leaks - und das bevor ein Mensch überhaupt einen Alert bemerkt.
 
 Quellen:
 - https://learn.microsoft.com/en-us/azure/azure-monitor/app/transaction-search-and-diagnostics

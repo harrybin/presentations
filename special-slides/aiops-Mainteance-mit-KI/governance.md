@@ -112,7 +112,7 @@ hideInToc: true
 
 # DORA: KI-Adoption richtig machen
 
-> Governance entscheidet, ob KI angenommen wird – DORA liefert die Zahlen dazu.
+> Governance entscheidet, ob KI angenommen wird.
 
 ::one::
 
