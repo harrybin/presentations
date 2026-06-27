@@ -8,9 +8,7 @@ background: /technical-debt-large.png
 
 ::intro::
 
-<!--
-TODO: In den Technical Debt slides geht es ja mehr um weitere Technical Debt zu vermeiden, als eigentlich darum Technical Debt abzubauen.
--->
+
 
 ---
 layout: image-right
@@ -38,7 +36,11 @@ hideInToc: true
 <!--
 Die Pro-Seite hat starke, belastbare Studien. Die GitHub RCT-Studie (randomisiert-kontrolliert, 202 Teilnehmer) zeigt signifikante Verbesserungen bei Funktionalität, Maintainability und Readability.
 
-Accenture bestätigt im Enterprise-Kontext: 84% mehr erfolgreiche Builds - also weniger kaputte Deployments.
+Accenture bestätigt im Enterprise-Kontext: 84% mehr erfolgreiche Builds während der Einführung von Copilot - also weniger kaputte Deployments.
+
+Diese Daten trotzdem vorsichtig interpretieren, da sie von GitHub selbst stammen.
+
+Was man ableiten kann: KI hilft in klar definierten Aufgaben gut. Es fehlt noch belastbare Erkenntis bei großen Architekturentscheidungen
 
 
 Quellen:
@@ -59,13 +61,13 @@ hideInToc: true
 
 <v-clicks>
 
-- **DORA Gen AI Report**:
+- **DORA Gen AI Report** 2024:
   - 25% mehr KI-Adoption →
   - **7,2% weniger Delivery Stability**
   - Ursache: **"Batch Size Trap"**
-- **Sonatype 2026**:
+- **Sonatype State of the Software Supply Chain** 2026:
   - LLMs halluzinieren **Dependency-Versionen**
-  - _"AI should not guess."_ - Brian Fox, CTO
+  - und das mit "hoher Selbstsicherheit"
 - **Studienlage**:
   - Voreingenommenheit und Abhängigkeit <small class="text-xs italic">- The Psychology of Learning From Machines, Stanford</small>
   - Reduzierung eigenständiger Problemlösungsfähigkeiten <small class="text-xs italic">- Computing Education in the Era of Generative AI, Paul Denny et al.</small>
@@ -74,11 +76,12 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Jetzt die Contra-Seite - und die ist wichtig für die Glaubwürdigkeit.
+Jetzt die Contra-Seite
 
-[click] DORA (= DevOps Research and Assessment.) zeigt: 25% mehr KI-Adoption korreliert mit 7,2% weniger Delivery Stability. Warum? Die "Batch Size Trap" - KI erzeugt schneller mehr Code, der in größeren Batches reviewed werden muss. Schnellere Erzeugung ohne disziplinierte kleine Batches untergräbt die Qualität.
+[click] DORA (= DevOps Research and Assessment) Studio von 2024 zeigt: Teams mit hoher KI-Adoption haben ~7% weniger Delivery Stability. Warum? Die "Batch Size Trap" - KI erzeugt schneller mehr Code, der in größeren Batches reviewed werden muss. mehr Code pro PR, langsamere Reviews, mehr versteckte Fehler...
 
-[click] Sonatype warnt: LLMs halluzinieren bei Dependency-Empfehlungen - sie schlagen Versionen vor, die nicht existieren.
+[click] Sonatype warnt: LLMs halluzinieren bei Dependency-Empfehlungen. Fast immer kein Zugriff auf Datenbanken / Security Advisories, werden gerne falsche / schädliche Versionen vorschlagen. (z.B. auch wegen Data-Cutoff)
+(wobei man auch sagen kann, Menschen machen gerne ähnliche Fehler z.B. OSS neuer = besser)
 
 [click]
 [1] KI fördert Automatisierungsbias und Abhängigkeit. Insbesondere Anfänger neigen dazu, KI-generierte Lösungen ungeprüft zu übernehmen und deren Qualität oder Korrektheit nicht ausreichend zu hinterfragen.
@@ -181,6 +184,4 @@ title: Demo - Copilot Code Review
 **Key Message:** "Copilot Code Review handles PR reviews, allowing teams to focus on complex tasks." - Suvarna Rane, Software Dev Manager, General Motors
 
 **Fallback:** Screenshots der GitHub UI mit echten Copilot Code Review Comments zeigen.
-
-🎨 Image prompt: Two developers collaborating with AI code review suggestions floating between them as holographic cards. Digital art, collaborative warm lighting.
 -->
