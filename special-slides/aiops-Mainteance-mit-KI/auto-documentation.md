@@ -59,7 +59,7 @@ hideInToc: true
 
 - **PR-Summaries**: Ein Klick → strukturierte Zusammenfassung
   - Was hat sich geändert, warum, welche Dateien?
-- **Copilot Code Review**: Multi-Line-Kommentare erklären den Code-Intent
+- **Copilot Code Review**: Multi-Line-Kommentare erklären den Code-Intent #TODO KLINGT AUCH NACH BULLSHIT!
 - **`@workspace`**: Fragen gegen die ganze Codebase
   - _"Wie funktioniert der Checkout-Flow?"_
 
@@ -128,16 +128,13 @@ hideInToc: true
 
 <br>
 
-<v-clicks depth="2">
+<v-clicks>
 
-- Vorher: "Wir sollten mal Doku schreiben ..."
+- "Wir sollten mal Doku schreiben ..."
 - Ziel: "Wir haben Doku, die erstmal gut genug ist."
-  - Repo analysieren
-  - mehrere Projekte auf einmal
-  - Automatisch Markdown-Files als Kickstart bzw. lebende Doku
 - Devs schreiben nicht mehr alles selbst, sondern:
-  - prüfen
-  - korrigieren
+  - prüfen / korrigieren
+  - ergänzen
   - schließen Lücken
 - Kontext-abhängig: Je besser der Kontext (Prompt, Doku in GitHub/Confluence/Jira) desto besser der Output
   - KI sieht nur Code & Docs, hat aber natürlich kein implizites Team-Wissen

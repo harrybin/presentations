@@ -78,7 +78,11 @@ hideInToc: true
 <!--
 Jetzt die Contra-Seite
 
-[click] DORA (= DevOps Research and Assessment) Studio von 2024 zeigt: Teams mit hoher KI-Adoption haben ~7% weniger Delivery Stability. Warum? Die "Batch Size Trap" - KI erzeugt schneller mehr Code, der in größeren Batches reviewed werden muss. mehr Code pro PR, langsamere Reviews, mehr versteckte Fehler...
+[click] DORA (= DevOps Research and Assessment) Studio von 2024 zeigt: Teams mit hoher KI-Adoption haben ~7% weniger Delivery Stability. 
+
+Delivery Stability = wie zuverlässig Änderungen in die Production gelangen, ohne etwas kaputt zu machen<br>
+
+Warum? Die "Batch Size Trap" - KI erzeugt schneller mehr Code, der in größeren Batches reviewed werden muss. mehr Code pro PR, langsamere Reviews, mehr versteckte Fehler...
 
 [click] Sonatype warnt: LLMs halluzinieren bei Dependency-Empfehlungen. Fast immer kein Zugriff auf Datenbanken / Security Advisories, werden gerne falsche / schädliche Versionen vorschlagen. (z.B. auch wegen Data-Cutoff)
 (wobei man auch sagen kann, Menschen machen gerne ähnliche Fehler z.B. OSS neuer = besser)
@@ -105,31 +109,20 @@ hideInToc: true
 
 # Geschwindigkeit vs. Qualität
 
+<br><br>
+
 ```mermaid {scale: 0.65}
 graph TB
-    subgraph MIT["Mit Guardrails"]
+    subgraph _
         A2[KI generiert<br/>schneller Code] --> B2[Kleine Batches<br/>erzwingen]
         B2 --> C2[Automatisiertes<br/>Code Review]
-        C2 --> D2[Tests<br/>+ SCA/SBOM]
-        D2 --> E2[Schneller UND<br/>sauberer]
+        C2 --> D2[Tests<br/>+ Dependency<br>Scanning]
+        D2 --> E2[Weniger<br>Technical Debt<br/>+ höhere Qualität]
     end
 
-    style MIT fill:#052e16,color:#86efac
     style E2 fill:#16a34a,color:#fff
 ```
 
-```mermaid {scale: 0.65}
-graph TB
-    subgraph OHNE["❌ Ohne Guardrails"]
-        A1[KI generiert<br/>schneller Code] --> B1[Größere<br/>Batches]
-        B1 --> C1[Langsamere<br/>Reviews]
-        C1 --> D1[Weniger<br/>Stabilität]
-        D1 --> E1[Mehr<br/>Technical Debt]
-    end
-
-    style OHNE fill:#450a0a,color:#fca5a5
-    style E1 fill:#dc2626,color:#fff
-```
 
 <!--
 Das ist die Kernbotschaft dieses Kapitels: KI macht Teams nicht automatisch besser, sondern erstmal nur schneller.
