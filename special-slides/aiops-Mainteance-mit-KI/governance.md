@@ -11,6 +11,7 @@ background: /governance-large.png
 Vertrauen durch Kontrolle
 
 <!--
+⚠️ Speakerwechsel ⚠️
 KI ohne Governance ist gefährlich. In diesem Abschnitt zeigen wir, wie ihr KI-gestützte Maintenance sicher und kontrolliert einführt - mit dem Menschen als letzte Entscheidungsinstanz.
 -->
 
@@ -108,6 +109,7 @@ GHAS (GitHub Advanced Security) Teams, die Autofix nutzen, beheben Probleme 7x s
 ---
 layout: three-column
 hideInToc: true
+hide: true
 ---
 
 # DORA: KI-Adoption richtig machen

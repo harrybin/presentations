@@ -17,6 +17,7 @@ layout: cover
 coverImage: /aiops-cover-bg.png
 description: "AIOps: Wie KI die Maintenance von Softwaresystemen revolutioniert - Root Cause Analysis, Technical Debt, Legacy-Modernisierung und Auto-Dokumentation"
 hideInToc: true
+showCopyright: false
 routeAlias: aiops-Mainteance-mit-KI
 ---
 
@@ -123,18 +124,23 @@ Bereite Backup-Antworten vor zu:
 ---
 layout: thank-you
 hideInToc: true
+showCopyright: false
 ---
 
 # Danke!
 
+
+<br/>
+
 <QRCode class="ml-40px"
   type="svg"
   :data="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"
-  :dotsOptions="{ color: 'white', type: 'extra-rounded', roundSize: false}"
+  :dotsOptions="{ type: 'extra-rounded', roundSize: false}"
   :width="250"
   :height="250"
   image="logo.svg"
 />
+<br/>
 
 <a :href="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"
    :text="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"></a>

@@ -30,6 +30,7 @@ hideInToc: true
 3. **Technical Debt**: KI hilft, aber nur **mit Guardrails** (kleine Batches, automatisierte Reviews, SCA)
 4. **Legacy-Modernisierung**: Agent Mode scannt, plant, übernimmt große Teile von Migration und Tests automatisch
 5. **Auto-Doku** unterstützt dabei, Wissenslücken zu schließen
+6. **KI-Governance**: klare Policy, Human-in-the-Loop, Security-Scans, Reviews
 
 </v-clicks>
 
@@ -47,6 +48,7 @@ hideInToc: true
 3. Technical Debt: KI kann beim Aufräumen und Absichern helfen, solange wir sie bewusst in Batches, mit Reviews und Security-Scans einsetzen.
 4. Legacy-Modernisierung: Agenten nehmen uns viel Fleißarbeit ab (Scans, Pläne, Code-Änderungen, Tests), aber Architektur-Entscheidungen und Freigaben treffen weiterhin Menschen.
 5. Auto-Dokumentation: Wo sich Teams oft aus Zeit und Budget-Gründen schwer tun, kann KI helfen, Dokumentation aktuell zu halten und eine Grundlage zu schaffen, auf der das Team aufbauen kann.
+6. KI-Governance: klare Policy, Human-in-the-Loop, Security-Scans, Reviews. KI ist kein Zauberstab, der automatisch alles richtig macht - wir müssen sie bewusst einsetzen und kontrollieren.
 
 Der rote Faden: KI ist kein Zauberstab und keine Revolution, die plötzlich alle guten Praktiken einführt.
 Sie beschleunigt Teams dabei, Dinge zu tun, die viele bisher aus Zeit- oder Wissensgründen vernachlässigt haben.
@@ -159,8 +161,8 @@ hideInToc: true
 
 <v-click>
 <div class="text-center p-4 bg-cyan-900/30 rounded-lg">
-  <div class="text-5xl font-bold text-cyan-400">TBD</div>
-  <div class="mt-2 text-sm">???</div>
+  <div class="text-5xl font-bold text-cyan-400">???</div>
+  <div class="mt-2 text-sm">Wie sind Eure Zahlen?</div>
 </div>
 </v-click>
 
