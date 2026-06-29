@@ -37,7 +37,7 @@ level: 2
 1. Pick **Model** (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>.</kbd>)
 1. **Tooling** (MCP, Extensions, Toolsets, etc.)
 1. Use Voice Chat
-1. **Delegate** to Coding Agent
+1. **Delegate** to Cloud Agent
 1. **Send** and Dispatch (Enter)
 </div>
 

@@ -59,7 +59,7 @@ hideInToc: true
 <v-clicks>
 
 - **Code-Kommentare**
-- **`@workspace`**: Fragen gegen die ganze Codebase
+- **`@codebase`**: Fragen gegen die ganze Codebase
   - _"Wie funktioniert der Checkout-Flow?"_
 - **PR-Summaries**: Ein Klick → strukturierte Zusammenfassung
   - Was hat sich geändert, warum, welche Dateien?
@@ -70,13 +70,13 @@ hideInToc: true
 Status quo ohne eigenes Tooling:
 
 - Ziemlich gut Code zu kommentieren
-- @workspace in Copilot Chat: Kontext über die gesamte Codebase, z.B. "Wie funktioniert der Checkout-Flow?".
+- @codebase in Copilot Chat: Kontext über die gesamte Codebase, z.B. "Wie funktioniert der Checkout-Flow?".
 - PR-Summary: Klick auf das Copilot-Icon im PR → strukturierte Zusammenfassung der Änderungen.
 
-Offizielle Copilot-Doku (z.B. Cloud/Coding Agent):
+Offizielle Copilot-Doku (z.B. Cloud/Cloud Agent):
 - About GitHub Copilot cloud agent: https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/agents/cloud-agent/about-cloud-agent
 - Using Copilot agents & session logs: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/track-copilot-sessions
-- Blog: "GitHub Copilot: Meet the new coding agent": https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/
+- Blog: "GitHub Copilot: Meet the new Cloud Agent": https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/
 -->
 
 
@@ -96,7 +96,7 @@ hideInToc: true
 - **GitHub Actions + Copilot**: Doku-Generierung als CI/CD-Step
   - GitHub Copilot CLI
   - On-demand oder per Schedule (z.B. wöchentlich)
-- **Copilot Coding Agent**: Issue zuweisen → Agent schreibt Doku-PR
+- **Copilot Cloud Agent**: Issue zuweisen → Agent schreibt Doku-PR
 - **GitHub Agentic Workflow**
   - Markdown beschreibt den Workflow
 - Ergebnis: Pull Request mit generierten Docs
@@ -110,7 +110,7 @@ GitHub Copilot bietet mehrere Ansätze für automatisierte Doku-Generierung:
 [click] - GitHub Actions: GitHub Copilot CLI Docs generieren und als PR einstellen.
   On-demand (manuell getriggert) oder regelmäßig per Cron.
 
-[click] - Copilot Coding Agent (github.com): Issue erstellen "Generate architecture docs for service X"
+[click] - Copilot Cloud Agent (github.com): Issue erstellen "Generate architecture docs for service X"
   → Agent analysiert Repo autonom, öffnet PR mit Markdown-Doku.
 
 [click] - Agentic Workflows erlauben mehrstufige Logik: Repo-Scan, Kontext-Aufbau, Doku-Output.

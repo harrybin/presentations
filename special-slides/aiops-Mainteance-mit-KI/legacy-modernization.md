@@ -142,7 +142,7 @@ background: /secret-agent-large.png
 hideInToc: true
 ---
 
-# Copilot Coding Agent
+# Copilot Cloud Agent
 
 <br/>
 <v-clicks>
@@ -159,13 +159,13 @@ hideInToc: true
 
 <v-click>
 
-> _"The GitHub Copilot coding agent integrates into our current workflow and turns specs into production code in minutes."_  
+> _"The GitHub Copilot Cloud Agent integrates into our current workflow and turns specs into production code in minutes."_  
 > – **Alex Devkar**, SVP Engineering, Carvana
 
 </v-click>
 
 <!--
-Seit 2025 können GitHub Issues direkt an den Copilot Coding Agent (heute: Copilot Cloud Agent) zugewiesen werden – genau wie an ein Teammitglied.
+Seit 2025 können GitHub Issues direkt an den Copilot Cloud Agent (heute: Copilot Cloud Agent) zugewiesen werden – genau wie an ein Teammitglied.
 
 Ablauf:
 - Du weist ein Issue an Copilot zu, der Agent reagiert mit dem 👀-Emoji und startet eine Session.
@@ -180,7 +180,7 @@ Security / Governance:
 
 Offizielle Doku:
 - GitHub Docs: [About GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)
-- GitHub Blog: [GitHub Copilot: Meet the new coding agent](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/)
+- GitHub Blog: [GitHub Copilot: Meet the new Cloud Agent](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/)
 -->
 
 ---
@@ -199,22 +199,10 @@ title: Demo - Legacy-Modernisierung
 </v-click>
 
 <!--
-**DEMO 3: Legacy-Modernisierung mit Agent Mode (ca. 8 Minuten)**
+**DEMO 3: Legacy-Modernisierung mit Agent Mode (ca. 5 Minuten)**
 
-1. Öffne VS Code mit dem ContainerShips API Projekt (oder ein vorbereitetes Legacy-Projekt)
-2. Starte Copilot Agent Mode (Ctrl+Shift+I oder Chat → Agent)
-3. Prompt: "Analysiere dieses Projekt auf veraltete Dependencies und deprecated APIs. Erstelle einen Upgrade-Plan."
-4. Zeige wie der Agent:
-   - Die Codebase scannt
-   - Einen strukturierten Plan erstellt
-   - Code-Transformationen vorschlägt
-5. Prompt: "Führe die Migration durch und stelle sicher, dass alle Tests bestehen."
-6. Zeige die iterative Fix-and-Test-Loop
-7. Abschluss: Prompt "Erstelle eine PR-Summary für die Änderungen."
-
-**Key Message:** Von der Analyse über die Migration bis zur Dokumentation - alles in einem Flow.
-
-**Fallback:** Zeige den dokumentierten .NET-Framework-zu-.NET-8-Flow als Walkthrough mit Screenshots.
-
-🎨 Image prompt: An evolutionary transformation scene - old machinery morphing into sleek modern technology with AI energy flowing through the transformation. Digital art similar to /evolution-left.jpg.
+1. Öffne VS Code mit dem Projekt 'demo-legacy-modernization' im Branch 'upgrade-dotnet-10'
+2. Zeige die [modernization extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-modernize)
+3. Zeige den Prompt/chatverlauf aus der Datei 'migration-chat-export.md'
 -->
+

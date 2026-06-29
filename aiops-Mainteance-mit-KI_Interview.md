@@ -10,7 +10,7 @@ Also: "Netter Assistent" = Copilot schlägt dir in der IDE `async/await` statt C
 
 ### End-to-End-Ablauf: Von Smart Detection bis zum automatisch bearbeiteten GitHub Issue
 
-Der folgende Ablauf beschreibt, wie ein Performance-Problem **vollautomatisch** von der Erkennung in Azure über die Analyse bis hin zur Code-Bearbeitung durch den GitHub Copilot Coding Agent fließen kann — **ohne Azure DevOps**, rein über Azure Cloud + GitHub.
+Der folgende Ablauf beschreibt, wie ein Performance-Problem **vollautomatisch** von der Erkennung in Azure über die Analyse bis hin zur Code-Bearbeitung durch den GitHub Copilot Cloud Agent fließen kann — **ohne Azure DevOps**, rein über Azure Cloud + GitHub.
 
 #### Ablauf in 6 Schritten
 
@@ -31,7 +31,7 @@ flowchart TD
     E["🤖 <b>5. Issue → Copilot</b><br/>Logic App weist Issue zu<br/>(assignee: copilot-swe-agent)"] -->|Assignment| F
 
     subgraph github ["🐙 GitHub (automatisiert)"]
-        F["🛠️ <b>6. Copilot Coding Agent</b><br/>Startet VM, analysiert Code,<br/>erstellt Draft-PR"]
+        F["🛠️ <b>6. Copilot Cloud Agent</b><br/>Startet VM, analysiert Code,<br/>erstellt Draft-PR"]
     end
 
     subgraph manual ["👤 Mensch im Loop (parallel)"]
@@ -40,7 +40,7 @@ flowchart TD
 
     F -->|PR ready| G
     H -->|Tiefe Analyse fließt in| G
-    G["✅ <b>Mensch reviewed & approved</b><br/>Kontext aus Azure Copilot +<br/>Draft-PR vom Coding Agent"]
+    G["✅ <b>Mensch reviewed & approved</b><br/>Kontext aus Azure Copilot +<br/>Draft-PR vom Cloud Agent"]
 
     style A fill:#0078D4,color:#fff,stroke:#005A9E
     style B fill:#0078D4,color:#fff,stroke:#005A9E
@@ -55,7 +55,7 @@ flowchart TD
     style manual fill:#FFF3E0,stroke:#FF8C00,stroke-width:2px
 ```
 
-> **Warum ist Azure Copilot nicht im automatisierten Pfad?** Azure Copilot im Azure Portal ist ein **rein interaktives Tool** — es gibt keine API, um es programmatisch zu triggern. Es kann daher kein automatisierter Schritt sein. Stattdessen ist es der **parallele menschliche Analyse-Kanal**: Der Ops-Engineer erhält über die Action Group eine Benachrichtigung (E-Mail/SMS), öffnet das Portal und nutzt Azure Copilot, um die Ursache tiefgehend zu verstehen. Diese Erkenntnisse fließen dann in die **PR-Review** ein, wo der Mensch den automatisch generierten Fix des Coding Agent mit dem Diagnosewissen aus Azure Copilot bewertet.
+> **Warum ist Azure Copilot nicht im automatisierten Pfad?** Azure Copilot im Azure Portal ist ein **rein interaktives Tool** — es gibt keine API, um es programmatisch zu triggern. Es kann daher kein automatisierter Schritt sein. Stattdessen ist es der **parallele menschliche Analyse-Kanal**: Der Ops-Engineer erhält über die Action Group eine Benachrichtigung (E-Mail/SMS), öffnet das Portal und nutzt Azure Copilot, um die Ursache tiefgehend zu verstehen. Diese Erkenntnisse fließen dann in die **PR-Review** ein, wo der Mensch den automatisch generierten Fix des Cloud Agent mit dem Diagnosewissen aus Azure Copilot bewertet.
 
 #### Schritt 1: Smart Detection erkennt das Problem
 
@@ -122,7 +122,7 @@ Der Logic-App-Flow sieht so aus:
 
 > **Alternativ ohne Logic App**: Die Action Group kann auch direkt einen **Webhook** an die [GitHub REST API](https://docs.github.com/en/rest/issues/issues#create-an-issue) senden (via Azure Function als Middleware, die das Alert-JSON in die GitHub-API-Struktur transformiert). Die Logic-App-Variante ist aber No-Code und in Minuten aufgesetzt.
 
-#### Schritt 6: GitHub Copilot Coding Agent übernimmt
+#### Schritt 6: GitHub Copilot Cloud Agent übernimmt
 
 Sobald das Issue [Copilot zugewiesen](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/) wird, passiert folgendes automatisch:
 
@@ -187,7 +187,7 @@ Die Web-App muss mit [Application Insights](https://learn.microsoft.com/en-us/az
 
 #### D. GitHub-Repo vorbereiten
 
-1. **Copilot Coding Agent aktivieren**: Repository Settings → Features → Copilot → "Copilot coding agent" aktivieren (erfordert Copilot Enterprise oder Pro+)
+1. **Copilot Cloud Agent aktivieren**: Repository Settings → Features → Copilot → "Copilot Cloud Agent" aktivieren (erfordert Copilot Enterprise oder Pro+)
 2. **`.github/copilot-instructions.md`** anlegen mit Kontext für den Agent:
    ```markdown
    # Copilot Instructions
@@ -208,7 +208,7 @@ Zusätzlich zum automatisierten Flow kann ein Ops-Engineer den Alert auch **inte
 4. Ergebnis: Potenzielle Ursachen + Lösungsvorschläge + Link zu den [Transaction Diagnostics](https://learn.microsoft.com/en-us/azure/azure-monitor/app/transaction-search-and-diagnostics)
 5. Follow-up: *"Give me a summary of these diagnostics"* → Copilot fasst die Insights zusammen
 
-Dieser manuelle Pfad ist **komplementär** zum automatisierten Flow — der Mensch bekommt die tiefe Diagnostik, während der Coding Agent parallel bereits am Fix arbeitet.
+Dieser manuelle Pfad ist **komplementär** zum automatisierten Flow — der Mensch bekommt die tiefe Diagnostik, während der Cloud Agent parallel bereits am Fix arbeitet.
 
 ### Zusammenfassung: Was wo konfiguriert wird
 
@@ -219,9 +219,9 @@ Dieser manuelle Pfad ist **komplementär** zum automatisierten Flow — der Mens
 | **Logic App** | Azure Portal → Logic Apps | HTTP-Trigger → GitHub Issue erstellen → Copilot zuweisen |
 | **Action Group** | Azure Monitor → Alerts → Action Groups | Verknüpft Alert Rule mit Logic App |
 | **Alert Rules** | Azure Monitor → Alerts → Alert Rules | Smart Detection Rules + Action Group zuweisen |
-| **GitHub Repo** | github.com → Settings | Copilot Coding Agent aktivieren + Instructions pflegen |
+| **GitHub Repo** | github.com → Settings | Copilot Cloud Agent aktivieren + Instructions pflegen |
 
-> **Kein Azure DevOps involviert.** Die gesamte Kette läuft über Azure Monitor → Logic Apps → GitHub REST API → GitHub Copilot Coding Agent. Der einzige "Mensch im Loop" ist das finale PR-Review.
+> **Kein Azure DevOps involviert.** Die gesamte Kette läuft über Azure Monitor → Logic Apps → GitHub REST API → GitHub Copilot Cloud Agent. Der einzige "Mensch im Loop" ist das finale PR-Review.
 
 ---
 
@@ -248,7 +248,7 @@ Dieser manuelle Pfad ist **komplementär** zum automatisierten Flow — der Mens
 | **Dependency-/Framework-Upgrades** | [Agent Mode](https://github.blog/ai-and-ml/github-copilot/a-step-by-step-guide-to-modernizing-java-projects-with-github-copilot-agent-mode/) + OpenRewrite | Java 17→21: `new Locale("EN")` → `Locale.of("EN")` projektübergreifend. **1.177 Tests grün** nach Auto-Upgrade, inkl. CVE-Scan | 🟢 Voll |
 | **Deprecated APIs ersetzen** | Agent Mode + Test-Loop | `DateTime.Now` → `DateTimeOffset.UtcNow`, sync → `async/await`, `HttpWebRequest` → `HttpClient`. Agent iteriert bis alle Tests grün | 🟢 Voll |
 | **Neuen Debt verhindern (pro PR)** | [Copilot Code Review](https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/) | Fängt fehlende React-Hook-Dependencies, Endlosschleifen, unvalidierten Input. **60M+ Reviews**, 71% actionable, WEX: **~30% mehr Code shipped** | 🟡 Semi |
-| **Tech-Debt-Issues abarbeiten** | [Coding Agent](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/) | Issue *"Migrate 47 Endpoints XML→JSON"* → Copilot zuweisen → VM → Draft-PR mit Tests. Carvana: *"specifications to production code in minutes"* | 🟡 Semi |
+| **Tech-Debt-Issues abarbeiten** | [Cloud Agent](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/) | Issue *"Migrate 47 Endpoints XML→JSON"* → Copilot zuweisen → VM → Draft-PR mit Tests. Carvana: *"specifications to production code in minutes"* | 🟡 Semi |
 | **Legacy-Code verstehen** | `@workspace` Chat | *"Welche Klassen haben >500 Zeilen?"*, *"Finde alle TODO/FIXME/HACK"*. **60-71%** der Devs: KI macht Codebase-Verständnis "einfach" | 🔴 Manuell |
 
 > 🟢 = KI arbeitet autonom, Mensch merged nur. 🟡 = KI wird getriggert, Mensch entscheidet pro Vorschlag. 🔴 = Mensch promptet, KI beschleunigt Analyse.
@@ -291,7 +291,7 @@ Das [Home-Assistant/core](https://github.com/home-assistant/core) Projekt (75k+ 
 
 **Warum relevant für den Talk**: Das ist "Auto-Doc im Vorbeigehen" und "Governance mit Mensch im Loop" in Reinform — ein Projekt mit 3.000+ Issues setzt KI ein, aber mit klaren Leitplanken.
 
-### 2. GitHub Copilot Coding Agent: Issues direkt an Copilot zuweisen
+### 2. GitHub Copilot Cloud Agent: Issues direkt an Copilot zuweisen
 
 Seit Mai 2025 können [GitHub Issues direkt an Copilot zugewiesen](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/) werden — genau wie an ein Teammitglied. Der Agent:
 - Reagiert mit einem 👀 Emoji auf das Issue
@@ -300,9 +300,9 @@ Seit Mai 2025 können [GitHub Issues direkt an Copilot zugewiesen](https://githu
 - Reagiert automatisch auf Review-Kommentare und arbeitet Feedback ein
 
 **Enterprise-Zitate:**
-> *"The Copilot coding agent is opening up doors for human developers to have their own agent-driven team, all working in parallel to amplify their work."* — **James Zabinski, DevEx Lead bei EY**
+> *"The Copilot Cloud Agent is opening up doors for human developers to have their own agent-driven team, all working in parallel to amplify their work."* — **James Zabinski, DevEx Lead bei EY**
 
-> *"The GitHub Copilot coding agent fits into our existing workflow and converts specifications to production code in minutes."* — **Alex Devkar, SVP Engineering, Carvana**
+> *"The GitHub Copilot Cloud Agent fits into our existing workflow and converts specifications to production code in minutes."* — **Alex Devkar, SVP Engineering, Carvana**
 
 **Security by Design**: Der Agent kann nur auf Branches pushen, die er selbst erstellt hat. Der PR-Ersteller kann nicht selbst approven. GitHub Actions laufen erst nach menschlicher Freigabe.
 

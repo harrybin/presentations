@@ -25,7 +25,7 @@ hideInToc: true
 <br/>
 <v-clicks>
 
-- **Copilot Coding Agent**
+- **Copilot Cloud Agent**
   - Arbeitet nur auf eigenen Branches
   - erstellt PRs (⚠️ achtung kann auch direkt committen)
   - CI/CD läuft über Branch-Protection-Regeln
@@ -53,7 +53,7 @@ Security ist hier nicht „Add-on“, sondern Teil des Designs:
 
 Quelle (Autofix): GitHub-Blog „Found means fixed: Introducing code scanning autofix, powered by GitHub Copilot and CodeQL“
 - https://github.blog/news-insights/product-news/found-means-fixed-introducing-code-scanning-autofix-powered-by-github-copilot-and-codeql/
-Quelle (Copilot Agent Sicherheitsmodell): GitHub Docs zu Copilot Cloud / Coding Agent
+Quelle (Copilot Agent Sicherheitsmodell): GitHub Docs zu Copilot Cloud / Cloud Agent
 - https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/agents/cloud-agent/about-cloud-agent
 - https://docs.github.com/en/copilot/responsible-use/agents
 -->
