@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 chapterNumber: 4
 background: /evolution-left.jpg

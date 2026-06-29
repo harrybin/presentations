@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 chapterNumber: 2
 background: /rca-diagnostics-large.png

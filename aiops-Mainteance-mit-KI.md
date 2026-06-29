@@ -1,4 +1,4 @@
-﻿---
+---
 theme: "@xebia/slidev-theme-xebia-2026"
 transition: "fade"
 addons:

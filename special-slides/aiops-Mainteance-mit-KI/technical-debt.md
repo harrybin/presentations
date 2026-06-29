@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 chapterNumber: 3
 background: /technical-debt-large.png

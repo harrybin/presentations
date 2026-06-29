@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 chapterNumber: 6
 background: /governance-large.png

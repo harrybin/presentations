@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 chapterNumber: 5
 background: /bulb.jpeg
