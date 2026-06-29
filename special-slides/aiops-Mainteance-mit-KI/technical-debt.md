@@ -109,7 +109,9 @@ hideInToc: true
 
 # Geschwindigkeit vs. Qualität
 
-<br><br>
+<br>
+
+<ReviewFunnel />
 
 ```mermaid {scale: 0.65}
 graph TB
