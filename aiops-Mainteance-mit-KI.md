@@ -1,4 +1,4 @@
----
+﻿---
 theme: "@xebia/slidev-theme-xebia-2026"
 transition: "fade"
 addons:
@@ -32,12 +32,14 @@ Dauer: 90 Minuten inkl. Demos und Q&A.
 title: Speaker
 layout: intro
 src: special-slides/speaker-with-JD.md
+showCopyright: false
 ---
 
 ---
 layout: cover
 coverImage: /server-outage-large.png
 hideInToc: true
+showCopyright: false
 ---
 
 # Es ist 3 Uhr nachts. Die Produkt-Katalog-API ist down.
@@ -62,6 +64,7 @@ layout: image-right
 background: /compass-right.png
 hideInToc: true
 title: Agenda
+showCopyright: false
 ---
 
 <h1 class="h-auto!"> Agenda </h1>
@@ -78,30 +81,37 @@ title: Agenda
 
 ---
 src: /special-slides/aiops-Mainteance-mit-KI/what-is-aiops.md
+showCopyright: false
 ---
 
 ---
 src: /special-slides/aiops-Mainteance-mit-KI/rca-deep-dive.md
+showCopyright: false
 ---
 
 ---
 src: /special-slides/aiops-Mainteance-mit-KI/technical-debt.md
+showCopyright: false
 ---
 
 ---
 src: /special-slides/aiops-Mainteance-mit-KI/legacy-modernization.md
+showCopyright: false
 ---
 
 ---
 src: /special-slides/aiops-Mainteance-mit-KI/auto-documentation.md
+showCopyright: false
 ---
 
 ---
 src: /special-slides/aiops-Mainteance-mit-KI/governance.md
+showCopyright: false
 ---
 
 ---
 src: /special-slides/aiops-Mainteance-mit-KI/summary.md
+showCopyright: false
 ---
 
 ---
@@ -109,6 +119,7 @@ layout: cover
 coverImage: /finger-large.jpg
 title: Questions?
 hideInToc: true
+showCopyright: false
 ---
 
 <h1 class="h-auto!">Questions?</h1>
@@ -154,6 +165,7 @@ layout: image-right
 background: /aiops-cover.svg
 level: 2
 hideInToc: true
+showCopyright: false
 ---
 
 # Konferenz-Referenzen
@@ -180,6 +192,7 @@ Konferenz-Referenzfolie mit Links und Kontakt-Infos.
 ---
 level: 2
 hideInToc: true
+showCopyright: false
 ---
 
 # End of presentation

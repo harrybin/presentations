@@ -1,6 +1,7 @@
----
+﻿---
 layout: two-column
 hideInToc: true
+showCopyright: false
 ---
 
 **Who are we?**

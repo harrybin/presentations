@@ -1,7 +1,8 @@
----
+﻿---
 layout: chapter
 chapterNumber: 2
 background: /rca-diagnostics-large.png
+showCopyright: false
 ---
 
 # Root Cause Analysis mit KI
@@ -21,6 +22,7 @@ Jetzt geht's ans Eingemachte. Hier hört "netter Assistent, der ein bisschen Cod
 layout: image-left
 background: /aiops-monitoring-large.png
 hideInToc: true
+showCopyright: false
 ---
 
 # Application Insights & Smart Detection
@@ -59,6 +61,7 @@ Quellen:
 ---
 layout: two-cols-header
 hideInToc: true
+showCopyright: false
 ---
 
 # Smart Detection Alerts
@@ -89,6 +92,7 @@ hideInToc: true
 
 ---
 hideInToc: true
+showCopyright: false
 ---
 
 # RCA in Aktion: Connection Pool Exhaustion
@@ -146,6 +150,7 @@ layout: image-right
 background: /aiops-paradigmenwechsel.png
 hideInToc: true
 hide: true
+showCopyright: false
 ---
 
 # Der Paradigmenwechsel
@@ -186,6 +191,7 @@ layout: cover
 coverImage: /rca-diagnostics-large.png
 hideInToc: true
 title: Demo - Azure Copilot
+showCopyright: false
 ---
 
 <div class="flex flex-col h-full text-center justify-center">
