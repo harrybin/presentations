@@ -37,9 +37,11 @@ hideInToc: true
 </v-clicks>
 
 <!--
-AIOps wurde 2016 von Gartner definiert als die Anwendung von ML und Big Data auf IT-Operations. Es geht über einfache Alerting-Regeln hinaus — die KI erkennt Muster, korreliert Events und schlägt Lösungen vor.
+AIOps wurde 2016 von Gartner definiert als die Anwendung von ML und Big Data auf IT-Operations. 
+Es geht über einfache Alerting-Regeln hinaus — die KI erkennt Muster, korreliert Events und schlägt Lösungen vor.
 
 Wichtig: AIOps ist nicht ein einzelnes Tool, sondern ein Paradigma. Es umfasst den gesamten Lifecycle von der Erkennung bis zur automatischen Behebung.
+Remediation = Wiederherstellung, Reparatur. In der IT bedeutet Auto-Remediation, dass die KI automatisch Maßnahmen ergreift, um ein Problem zu beheben.
 -->
 
 ---
@@ -104,7 +106,7 @@ hideInToc: true
 MTTR = Mean Time To Repair oder Mean Time To Restore/Recover.
 Der zentrale Unterschied: Traditional Ops ist regelbasiert und reaktiv — der Mensch stellt Schwellwerte ein und reagiert auf Alerts. AIOps nutzt ML um proaktiv Muster zu erkennen und Probleme zu lösen, bevor sie eskalieren.
 
-Alert Fatigue ist ein reales Problem: Teams ignorieren 30-50% ihrer Alerts weil sie Rauschen sind. AIOps priorisiert und korreliert, sodass nur actionable Alerts durchkommen.
+Alert Fatigue ist ein reales Problem: **Teams ignorieren 30-50% ihrer Alerts** weil sie **Rauschen** sind. AIOps priorisiert und korreliert, sodass nur actionable Alerts durchkommen.
 -->
 
 ---

@@ -11,6 +11,8 @@ background: /rca-diagnostics-large.png
 Von "Ich vermute" zu "Ich sehe"
 
 <!--
+⚠️Speakerwechsel⚠️
+
 &rarr; Ursachenanalyse
 Jetzt geht's ans Eingemachte. Hier hört "netter Assistent, der ein bisschen Code schreibt" auf - und hier fängt echte KI-gestützte Diagnostik an. Das ist der Paradigmenwechsel.
 -->
@@ -41,11 +43,12 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Application Insights ist hier vor allem die Datengrundlage:
+Application Insights [**Azure**] ist hier vor allem die Datengrundlage:
 Es liefert die Telemetrie aus der laufenden Anwendung – also z. B. Requests, Dependencies, Exceptions und Traces, aber auch Metriken, Availability- sowie Browser- und Nutzungssignale.
 
 Das ist für die meisten hier vermutlich nichts Neues.
 
+Nächste Folie beschriebt (also hier noch nicht erwähnen):
 Smart Detection nutzt Machine Learning, um Anomalien automatisch zu erkennen: Failure Spikes, Performance-Verschlechterung, Memory Leaks - und das bevor ein Mensch überhaupt einen Alert bemerkt.
 
 Quellen:
@@ -196,13 +199,12 @@ title: Demo - Azure Copilot
 <!--
 **DEMO 1: Azure Copilot RCA (ca. 8 Minuten)**
 0. Zeige die App → <a href="https://purple-rock-09516260f.7.azurestaticapps.net/">Product Catalog App</a>
-1. Öffne Azure Portal → <a href="https://portal.azure.com/#@harrybin.de/resource/subscriptions/175a348e-b5e6-4bde-b695-534e7e719c32/resourceGroups/rg-productcatalog/providers/Microsoft.Insights/components/pc-appinsights/overview">Azure Portal - AppInsights</a>
-2. Frage Azure Copilot: "Warum ist meine Web-App langsam?"
-3. Zeige wie Copilot automatisch Diagnose-Tools auswählt
-4. Navigiere zu Application Insights → Transaction Diagnostics
-5. Zeige die End-to-End Gantt-Chart eines langsamen Requests
-6. Zeige Smart Detection Alerts und deren ML-basierte Erkennung
-7. Demonstriere die Korrelation: Alert → Root Cause → Fix-Vorschlag
+1. K6 load test aus dem repo der Web-App starten  (triggert Fehler 429 gegenüber ComosDB [too many Requests])
+2. Öffne Azure Portal → <a href="https://portal.azure.com/#@harrybin.de/resource/subscriptions/175a348e-b5e6-4bde-b695-534e7e719c32/resourceGroups/rg-productcatalog/providers/Microsoft.Insights/components/pc-appinsights/overview">Azure Portal - AppInsights</a>
+3. Observability Agent triggern: <a href="/Obersevaility-Agent.png">Obersevaility-Agent</a>
+4. Logic Apps, wurden Ausgelöst: <a href="https://portal.azure.com/#@harrybin.de/resource/subscriptions/175a348e-b5e6-4bde-b695-534e7e719c32/resourceGroups/rg-productcatalog/providers/Microsoft.Logic/workflows/productcatalog-alert-to-github-issue/logicApp">Logic Apps</a>
+5. Zeige Issue auf GitHub: <a href="https://github.com/xebia/demo-root-cause-analysis/issues
+ ">GitHub Issue</a>
 
 **Key Message:** Von der Frage zur Ursache in unter 60 Sekunden statt Stunden manueller Suche.
 

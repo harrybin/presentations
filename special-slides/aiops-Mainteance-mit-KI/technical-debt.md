@@ -162,17 +162,17 @@ title: Demo - Copilot Code Review
 </v-click>
 
 <!--
+⚠️ Speakerwechsel ⚠️
+
 **DEMO 2: Copilot Code Review (ca. 7 Minuten)**
 
-1. Öffne ein GitHub Repository mit Copilot Code Review aktiviert
-2. Erstelle einen PR mit absichtlich problematischem Code:
-   - Fehlende Dependency im React useCallback Hook
-   - Potentielle Endlosschleife in Retry-Logik
-   - Unvalidierter User-Input
-3. Zeige wie Copilot Code Review automatisch triggered wird
-4. Zeige die Multi-Line Comments mit Code-Fix-Vorschlägen
-5. Demonstriere Batch-Autofix: mehrere Issues auf einmal fixen
-6. Zeige die Stille bei gutem Code (29% der Reviews: kein Kommentar = kein Problem)
+1. Öffne ein GitHub Repository: <a href="https://github.com/xebia/demo-root-cause-analysis/edit/main/src/ProductCatalog.Api/Services/CosmosProductService.cs">Product API Service</a>
+2. Ändere:
+   1.  Zeile 94: Füge einen Kommentar hinzu: "// I don't like to pay anaything"
+   2.  Zeile 95 (Price -Bedingung) "kleiner" in "größer gleich" (führt zu falschem Verhalten)
+   3.  Zeile 100: Guid.NewGuid().ToString() nach: Guid.Empty.ToString()
+3. Branch erstellen und Copilot als Reviewer hinzufügen
+4. Bearbeitung beobachten, und erklären
 
 **Key Message:** "Copilot Code Review handles PR reviews, allowing teams to focus on complex tasks." - Suvarna Rane, Software Dev Manager, General Motors
 
