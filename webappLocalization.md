@@ -16,6 +16,7 @@ editor: true
 overviewSnapshots: false
 # background glow animation
 glowEnabled: true
+showCopyright: false
 ###### slides start ######
 layout: cover
 #background: /devcontainer.jpeg
@@ -23,7 +24,6 @@ layout: cover
 hideInToc: true
 routeAlias: webappLocalization
 background: /developer-in-words.png
-showCopyright: false
 ---
 
 # It's all greek to me! 

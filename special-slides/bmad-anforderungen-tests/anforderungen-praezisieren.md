@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 3
 background: /bmad-collaboration-requirements.png
-showCopyright: false
+
 isDark: true
 ---
 
@@ -25,7 +25,7 @@ Von der vagen Idee zum strukturierten PRD — mit KI-Agenten als Sparring-Partne
 layout: image-right
 background: /bmad-ai-lightbulb.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Phase 1: Analyse — Den Problemraum erkunden
@@ -61,7 +61,7 @@ showCopyright: false
 layout: image-right
 background: /bmad-governance-control-center.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Phase 2: Das PRD — Das Herzstück
@@ -92,7 +92,7 @@ showCopyright: false
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 ## PRD-Workflow: Von der Idee zum Dokument
@@ -127,7 +127,7 @@ sequenceDiagram
 layout: image-right
 background: /bmad-secret-agent-analysis.png
 hideInToc: true
-showCopyright: false
+
 isDark: true
 ---
 
@@ -170,7 +170,7 @@ bmad-create-prd
 layout: image-right
 background: /bmad-governance-control-center.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 ## Vom PRD zur Architektur: Phase 3

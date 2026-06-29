@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 1
 background: /bmad-project-failure-aircraft.png
-showCopyright: false
+
 isDark: true
 ---
 
@@ -25,7 +25,7 @@ Warum scheitern Softwareprojekte – und was kostet uns das wirklich?
 layout: image-right
 background: /bmad-technical-debt-mountain.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Die teuersten Anforderungsfehler
@@ -50,7 +50,7 @@ showCopyright: false
 ---
 layout: two-column
 hideInToc: true
-showCopyright: false
+
 ---
 
 ::left::
@@ -76,7 +76,7 @@ xychart-beta
 
 <br/>
 
-  <img src="/bmad-kosten-anforderungsfehler.png" alt="Kosten von Anforderungsfehlern" style="width:100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">  
+  <img src="../../public/bmad-kosten-anforderungsfehler.png" alt="Kosten von Anforderungsfehlern" style="width:100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">  
 
 <!--
 - Diagrammquelle: IBM-Studie 2008
@@ -89,7 +89,7 @@ xychart-beta
 layout: image-left
 background: /bmad-requirement-test-gap.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Die Anforderungs-Test-Lücke
@@ -120,7 +120,7 @@ showCopyright: false
 ---
 layout: two-column
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Was wäre, wenn KI helfen könnte?

@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 2
 background: /bmad-agent-fleet.png
-showCopyright: false
+
 isDark: true
 ---
 
@@ -22,7 +22,7 @@ KI-gesteuertes agiles Entwickeln vom ersten Gedanken bis zum Deployment
 layout: image-right
 background: /bmad-ai-lightbulb.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Was ist BMad?
@@ -51,7 +51,7 @@ showCopyright: false
 layout: image-right
 background: /bmad-agent-fleet.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Erste Schritte mit BMad
@@ -87,7 +87,7 @@ showCopyright: false
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 ## BMad: 4 Phasen, 1 Framework
@@ -129,7 +129,7 @@ flowchart LR
 layout: image-right
 background: /bmad-agents-specialized-experts.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # BMad Agenten: Spezialisierte KI-Experten
@@ -163,7 +163,7 @@ showCopyright: false
 layout: image-left
 background: /bmad-human-ai-copilot.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # BMad vs. "einfach KI fragen"
@@ -187,7 +187,7 @@ showCopyright: false
 layout: image-right
 background: /bmad-governance-control-center.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # BMad-Module: Das Ökosystem

@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 6
 background: /governance-large.png
-showCopyright: false
+
 ---
 
 # Governance: Der Mensch im Loop
@@ -20,7 +20,7 @@ KI ohne Governance ist gefährlich. In diesem Abschnitt zeigen wir, wie ihr KI-g
 layout: image-right
 background: /security-shields-right.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Security by Design
@@ -63,7 +63,7 @@ Quelle (Copilot Agent Sicherheitsmodell): GitHub Docs zu Copilot Cloud / Cloud A
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 # "Found Means Fixed": Code Scanning Autofix
@@ -113,7 +113,7 @@ GHAS (GitHub Advanced Security) Teams, die Autofix nutzen, beheben Probleme 7x s
 layout: three-column
 hideInToc: true
 hide: true
-showCopyright: false
+
 ---
 
 # DORA: KI-Adoption richtig machen
@@ -175,7 +175,7 @@ Quelle: https://dora.dev/ai/gen-ai-report/
 layout: image-right
 background: /world-left.jpg
 hideInToc: true
-showCopyright: false
+
 ---
 
 ## Real-World: Home Assistant

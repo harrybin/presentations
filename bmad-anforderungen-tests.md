@@ -18,7 +18,7 @@ coverImage: /bmad-dev-ideas-to-tests.png
 description: "KI-gestützte Anforderungs- und Testfallentwicklung mit der BMad-Methode — Von der vagen Idee zur validierten Testsuite"
 hideInToc: true
 routeAlias: bmad-anforderungen-tests
-showCopyright: false
+
 author: ADC 2026
 isDark: true
 ---
@@ -68,7 +68,7 @@ layout: image-right
 title: Agenda
 background: /bmad-navigation-compass-ai.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 <h1 class="h-auto!"> Agenda </h1>
@@ -134,7 +134,7 @@ isDark: true
 title: Feedback
 layout: two-column
 hideInToc: true
-showCopyright: false
+
 ---
 
 ::left::
@@ -168,7 +168,7 @@ background: /thank_you.jpeg
 title: Danke
 hideInToc: true
 isDark: true
-showCopyright: false
+
 ---
 
 
@@ -195,7 +195,7 @@ showCopyright: false
 ---
 level: 2
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Ressourcen & Links

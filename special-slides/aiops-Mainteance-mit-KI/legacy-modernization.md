@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 4
 background: /evolution-left.jpg
-showCopyright: false
+
 ---
 
 # Legacy-Modernisierung mit KI-Agenten
@@ -22,7 +22,7 @@ und wie GitHub Copilot beim eigentlichen Code-Upgrade hilft (z.B. Java/.NET, Bui
 ---
 layout: two-column
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Modernisierungs-Strategien  
@@ -73,7 +73,7 @@ genau wie ein erfahrener Dev, nur hört er nicht um 18 Uhr auf.
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Case Study: C#/.NET Framework 4.7.2 → .NET 8
@@ -143,7 +143,7 @@ GitHub Copilot Modernization macht dann die Drecksarbeit *im Code*.
 layout: image-right
 background: /secret-agent-large.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Copilot Cloud Agent
@@ -192,7 +192,7 @@ layout: cover
 background: /evolution-left.jpg
 hideInToc: true
 title: Demo - Legacy-Modernisierung
-showCopyright: false
+
 ---
 
 <div class="flex flex-col h-full text-center justify-center">

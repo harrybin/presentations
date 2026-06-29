@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 4
 background: /bmad-context-satellite.png
-showCopyright: false
+
 isDark: true
 ---
 
@@ -22,7 +22,7 @@ Wie die effiziente Organisation von Projektwissen KI-Ergebnisse dramatisch verbe
 layout: image-right
 background: /bmad-dev-ideas-to-tests.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Was ist Context Engineering?
@@ -57,7 +57,7 @@ showCopyright: false
 hideInToc: true
 layout: image-right
 background: /bmad-context-hierarchy.png
-showCopyright: false
+
 ---
 
 ## Context-Hierarchie in BMad
@@ -99,7 +99,7 @@ graph TD
 layout: image-right
 background: /bmad-project-context-agent-brain.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # project-context.md: Das Gehirn des Projekts
@@ -139,7 +139,7 @@ bmad-generate-project-context
 layout: image-right
 background: /bmad-security-shields.png
 hideInToc: true
-showCopyright: false
+
 isDark: true
 ---
 
@@ -180,7 +180,7 @@ bmad-generate-project-context
 layout: image-left
 background: /bmad-collaboration-requirements.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Epics & Stories: Kontextualisierte Arbeitspakete

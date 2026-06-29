@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 3
 background: /technical-debt-large.png
-showCopyright: false
+
 ---
 
 # Technical Debt mit KI vermeiden
@@ -15,7 +15,7 @@ showCopyright: false
 layout: image-right
 background: /datenlage-pro-right.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Die Datenlage: Pro
@@ -56,7 +56,7 @@ Quellen:
 layout: image-right
 background: /governance-large.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Die Datenlage: Contra
@@ -108,7 +108,7 @@ Quellen:
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Geschwindigkeit vs. Qualität
@@ -157,7 +157,7 @@ layout: cover
 coverImage: /technical-debt-large.png
 hideInToc: true
 title: Demo - Copilot Code Review
-showCopyright: false
+
 ---
 
 <div class="flex flex-col h-full text-center justify-center">

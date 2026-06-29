@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 7
 background: /aiops-monitoring-large.png
-showCopyright: false
+
 ---
 
 # Zusammenfassung & Ausblick
@@ -19,7 +19,7 @@ Zusammenfassung des Talks. Die wichtigsten Takeaways auf einen Blick.
 layout: image-right
 background: /idea-new.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Key Takeaways
@@ -59,7 +59,7 @@ Und sie gibt uns bessere Argumente - gegenüber Management, Security und unserem
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 # AIOps-Adoption Roadmap
@@ -121,7 +121,7 @@ Call to action:
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Zahlen zum Mitnehmen

@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 6
 background: /bmad-collaboration-requirements.png
-showCopyright: false
+
 isDark: true
 ---
 
@@ -22,7 +22,7 @@ BMad als Brücke zwischen Anforderung, Architektur und qualitätsgesichertem Cod
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 ## Der komplette BMad-Workflow
@@ -74,7 +74,7 @@ flowchart TD
 layout: image-right
 background: /bmad-human-ai-copilot.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Qualitätssteigerung in der Praxis
@@ -109,7 +109,7 @@ showCopyright: false
 ---
 layout: two-column
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Wann lohnt sich BMad?
@@ -159,7 +159,7 @@ showCopyright: false
 layout: image-left
 background: /bmad-ai-lightbulb.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Zusammenfassung

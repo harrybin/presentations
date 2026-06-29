@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 5
 background: /bulb.jpeg
-showCopyright: false
+
 ---
 
 # Dokumentations-Kickstarter
@@ -21,7 +21,7 @@ Fragen wer gerne Doku schreibt
 layout: image-right
 background: /bulb.jpeg
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Das Problem
@@ -52,7 +52,7 @@ showCopyright: false
 layout: image-right
 background: /code-right.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Ohne Tooling
@@ -88,7 +88,7 @@ Offizielle Copilot-Doku (z.B. Cloud/Cloud Agent):
 layout: image-right
 background: /code-right.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Dokumentation Automatisieren
@@ -127,7 +127,7 @@ GitHub Copilot bietet mehrere Ansätze für automatisierte Doku-Generierung:
 layout: image-right
 background: /bulb.jpeg
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Unterstützung durch KI
@@ -160,7 +160,7 @@ layout: cover
 background: /bulb.jpeg
 hideInToc: true
 title: Demo - Auto-Dokumentation
-showCopyright: false
+
 ---
 
 <div class="flex flex-col h-full text-center justify-center">

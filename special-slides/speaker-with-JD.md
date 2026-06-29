@@ -1,4 +1,4 @@
-﻿---
+---
 layout: two-column
 hideInToc: true
 showCopyright: false
@@ -29,7 +29,7 @@ Consultant & Trainer
 
 <div>
 
-<img src="/MVP_Badge.png" alt="MVP" style="width:60px; height: auto;" />
+<img src="../public/MVP_Badge.png" alt="MVP" style="width:60px; height: auto;" />
 </div>
 </div>
 
@@ -37,12 +37,12 @@ Consultant & Trainer
 <div class="grid grid-cols-2 gap-8">
 <div>
 
-<a href="https://github.com/harrybin"><img src="/icon-xebia-github.svg" alt="GitHub" style="width: 48px; height: 48px; display: inline-block; vertical-align: middle;" /> harrybin</a>
+<a href="https://github.com/harrybin"><img src="../public/icon-xebia-github.svg" alt="GitHub" style="width: 48px; height: 48px; display: inline-block; vertical-align: middle;" /> harrybin</a>
 </div>
 
 <div>
 
-<a href="https://www.linkedin.com/in/harald-binkle"><img src="/LinkedIn_icon.svg" alt="LinkedIn" style="width: 48px; height: 48px; display: inline-block; vertical-align: middle;" /></a>
+<a href="https://www.linkedin.com/in/harald-binkle"><img src="../public/LinkedIn_icon.svg" alt="LinkedIn" style="width: 48px; height: 48px; display: inline-block; vertical-align: middle;" /></a>
 </div>
 
 </div>
@@ -69,12 +69,12 @@ Consultant
 <div class="grid grid-cols-2 gap-8">
 <div>
 
-<a href="https://github.com/bux"><img src="/icon-xebia-github.svg" alt="GitHub" style="width: 48px; height: 48px; display: inline-block; vertical-align: middle;" /> bux</a>
+<a href="https://github.com/bux"><img src="../public/icon-xebia-github.svg" alt="GitHub" style="width: 48px; height: 48px; display: inline-block; vertical-align: middle;" /> bux</a>
 </div>
 
 <div>
 
-<a href="https://www.linkedin.com/in/jonathan-david-12042859/"><img src="/LinkedIn_icon.svg" alt="LinkedIn" style="width: 48px; height: 48px; display: inline-block; vertical-align: middle;" /></a>
+<a href="https://www.linkedin.com/in/jonathan-david-12042859/"><img src="../public/LinkedIn_icon.svg" alt="LinkedIn" style="width: 48px; height: 48px; display: inline-block; vertical-align: middle;" /></a>
 </div>
 </div>
 

@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 1
 background: /aiops-monitoring-large.png
-showCopyright: false
+
 ---
 
 # Was ist AIOps?
@@ -19,7 +19,7 @@ Einführung in AIOps. Gartner hat den Begriff 2017 geprägt. Heute ist es ein Sc
 layout: image-right
 background: /idea-new.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # AIOps: Definition & Scope
@@ -51,7 +51,7 @@ hideInToc: true
 layout: image-right
 background: /gartner.png
 backgroundSize: 20%
-showCopyright: false
+
 ---
 
 
@@ -69,7 +69,7 @@ _Gartner, 2022_
 ---
 layout: two-column
 hideInToc: true
-showCopyright: false
+
 ---
 
 # AIOps vs. Traditional Ops
@@ -115,7 +115,7 @@ Alert Fatigue ist ein reales Problem: **Teams ignorieren 30-50% ihrer Alerts** w
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 # AIOps-Pipeline

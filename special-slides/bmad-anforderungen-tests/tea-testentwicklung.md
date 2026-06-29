@@ -2,7 +2,7 @@
 layout: chapter
 chapterNumber: 5
 background: /bmad-tea-diagnostics.png
-showCopyright: false
+
 isDark: true
 ---
 
@@ -25,7 +25,7 @@ Vom PRD zur validierten Test-Suite — risikobasiert, automatisiert, auditierbar
 layout: image-right
 background: /bmad-governance-control-center.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Was ist der Test Architect (TEA)?
@@ -53,7 +53,7 @@ showCopyright: false
 
 ---
 hideInToc: true
-showCopyright: false
+
 ---
 
 # TEA Workflow-Übersicht
@@ -103,7 +103,7 @@ flowchart LR
 layout: image-left
 background: /bmad-risk-lock.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # Risk-based Testing: P0-P3 Priorisierung
@@ -138,7 +138,7 @@ showCopyright: false
 layout: image-right
 background: /bmad-agent-fleet.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # ATDD: Tests vor dem Code
@@ -181,7 +181,7 @@ Feature: User Authentication
 layout: image-right
 background: /bmad-human-ai-copilot.png
 hideInToc: true
-showCopyright: false
+
 isDark: true
 ---
 
@@ -227,7 +227,7 @@ bmad-testarch-trace
 ---
 layout: two-column
 hideInToc: true
-showCopyright: false
+
 ---
 
 
@@ -280,7 +280,7 @@ graph LR
 layout: image-right
 background: /bmad-governance-control-center.png
 hideInToc: true
-showCopyright: false
+
 ---
 
 # NFR Assessment: Nicht-funktionale Anforderungen
