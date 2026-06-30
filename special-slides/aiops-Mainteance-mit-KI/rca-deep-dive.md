@@ -37,7 +37,7 @@ hideInToc: true
   
 <br/>
 
-- **Smart Detection Alerts**
+- **Smart Detector Alerts**
   - Failure Anomalies
   - Performance Anomalies
   - Trace Degradation / Memory Leaks
@@ -64,7 +64,7 @@ hideInToc: true
 
 ---
 
-# Smart Detection Alerts
+# Smart Detector Alerts
 
 <v-clicks depth="2">
 
@@ -127,7 +127,7 @@ sequenceDiagram
     API-->>FE: 500 Internal Error
     FE-->>User: ❌ Fehler
 
-    Note over AI: Smart Detection Alert!
+    Note over AI: Smart Detector Alert!
     API<<->>AI: Daten sammeln: Connection Pool
     DB<<->>AI: Daten sammeln: Query Performance
     AI->>LA: 🎯 Call to create GitHub issue<br/>with all information
