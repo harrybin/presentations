@@ -45,15 +45,19 @@ hideInToc: true
 
 # Es ist 3 Uhr nachts. Die Produkt-Katalog-API ist down.
 
-<v-clicks>
+<v-click>
 
-## **47.000 Kunden** können nicht auf den Produkt-Katalog zugreifen.
+## **47.000 Kunden** können nicht auf die Applikation zugreifen.
 
 ## Dein Team sucht **seit 2 Stunden** die Ursache.
 
-## Was wäre, wenn eine **KI** das in **30 Sekunden** löst?
+</v-click>
 
-</v-clicks>
+<v-click>
+
+## Was wäre, wenn eine **KI** das in **ein paar Minuten** löst?
+
+</v-click>
 
 <!--
 Teaser-Slide: Emotionaler Einstieg. Pause nach jedem Punkt.

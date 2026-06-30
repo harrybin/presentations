@@ -37,7 +37,7 @@ hideInToc: true
   
 <br/>
 
-- **Smart Detection (Alerts)**
+- **Smart Detection Alerts**
   - Failure Anomalies
   - Performance Anomalies
   - Trace Degradation / Memory Leaks
