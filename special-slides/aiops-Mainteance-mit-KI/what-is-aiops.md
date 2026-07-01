@@ -24,6 +24,8 @@ hideInToc: true
 
 # AIOps: Definition & Scope
 
+<br>
+
 <v-clicks>
 
 - **AIOps** = Artificial Intelligence for IT Operations

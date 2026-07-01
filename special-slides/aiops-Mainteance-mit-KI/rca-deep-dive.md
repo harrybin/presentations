@@ -28,21 +28,25 @@ hideInToc: true
 # Application Insights & Smart Detection
 
 <br/>
-<v-clicks>
+<v-click>
 
 - **Application Insights**
   - Monitoring/Observability für laufende Anwendungen
   - Basis-Telemetrie: Requests, Dependencies, Exceptions, Traces
   - Dazu Metriken, Availability sowie Browser- und Nutzungssignale
   
+</v-click>
+
 <br/>
+
+<v-click>
 
 - **Smart Detector Alerts**
   - Failure Anomalies
   - Performance Anomalies
   - Trace Degradation / Memory Leaks
 
-</v-clicks>
+</v-click>
 
 <!--
 Application Insights [**Azure**] ist hier vor allem die Datengrundlage:
@@ -59,12 +63,15 @@ Quellen:
 -->
 
 ---
-layout: two-cols-header
+layout: image-right
+background: /aiops-monitoring-large.png
 hideInToc: true
 
 ---
 
 # Smart Detector Alerts
+
+<br>
 
 <v-clicks depth="2">
 

@@ -25,10 +25,13 @@ hideInToc: true
 
 - **GitHub <abbr title="Randomized Controlled Trial">RCT</abbr>** (202 devs):
   - **53%** wahrscheinlicher alle Unit Tests bestanden
-  - +2,5% Maintainability
-  - +3,6% Readability
-- **Accenture Enterprise**:
-  - **84%** mehr erfolgreiche Builds
+  - **+2,5%** Maintainability
+  - **+3,6%** Readability
+- **DORA Gen AI Report** 2026 (+25% KI-Nutzung →):
+  - **+7,5%** Documentation Quality
+  - **+3,4%** Code Quality
+  - **+3,1%** Code Review Speed
+  - **-1,8%** Code Complexity
 - **Copilot Code Review** (60M+ Reviews):
   - **12.000+** Organisationen
   - **20%** aller Reviews auf GitHub
@@ -38,7 +41,7 @@ hideInToc: true
 <!--
 Die Pro-Seite hat starke, belastbare Studien. Die GitHub RCT-Studie (randomisiert-kontrolliert, 202 Teilnehmer) zeigt signifikante Verbesserungen bei Funktionalität, Maintainability und Readability.
 
-Accenture bestätigt im Enterprise-Kontext: 84% mehr erfolgreiche Builds während der Einführung von Copilot - also weniger kaputte Deployments.
+DORA zeigt: bei +25% KI-Adoption verbessern sich mehrere Engineering-Signale spürbar – v.a. Documentation Quality (+7,5%) und Code Quality (+3,4%), außerdem werden Reviews schneller (+3,1%) und Code Complexity sinkt leicht (-1,8%)
 
 Diese Daten trotzdem vorsichtig interpretieren, da sie von GitHub selbst stammen.
 
@@ -64,7 +67,7 @@ hideInToc: true
 
 <v-clicks>
 
-- **DORA Gen AI Report** 2024:
+- **DORA Gen AI Report** 2026:
   - 25% mehr KI-Verwendung →
   - **7,2% weniger Delivery Stability**
   - Ursache: **"Batch Size Trap"**
@@ -81,9 +84,11 @@ hideInToc: true
 <!--
 Jetzt die Contra-Seite
 
-[click] DORA (= DevOps Research and Assessment) Studio von 2024 zeigt: Teams mit hoher KI-Adoption haben ~7% weniger Delivery Stability. 
+[click] DORA (= DevOps Research and Assessment) Report zeigt: Teams mit hoher KI-Adoption haben weniger Delivery Stability. 
 
 Delivery Stability = wie zuverlässig Änderungen in die Production gelangen, ohne etwas kaputt zu machen<br>
+
+Das ist dieselbe DORA-Studie wie eben auf der Pro-Seite. Dort ging es um lokale Code-/Prozess-Metriken (Doku, Qualität, Review-Speed) – hier sehen wir jetzt die Delivery-Ebene: mehr KI-Nutzung korreliert mit weniger Stabilität in Production.
 
 Warum? Die "Batch Size Trap" - KI erzeugt schneller mehr Code, der in größeren Batches reviewed werden muss. mehr Code pro PR, langsamere Reviews, mehr versteckte Fehler...
 
