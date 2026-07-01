@@ -26,7 +26,7 @@ routeAlias: githubCopilotDelphi
 
 ---
 
-<img src="/ekon29.png" width="40%" class="mt--20 mb-20" />
+<img src="./public/ekon29.png" width="40%" class="mt--20 mb-20" />
 
 # GitHub Copilot especially for Delphi Developers
 
@@ -42,7 +42,7 @@ title: Is Delphi ready for AI-assisted Development?
 
 <h1 class="h-auto">Is Delphi ready for AI-assisted Development?</h1>
 
-<img src="/apple-2e.jpg" class="h-80 object-contain mx-auto" />
+<img src="./public/apple-2e.jpg" class="h-80 object-contain mx-auto" />
 
 
 <!-- 
@@ -122,10 +122,9 @@ level: 2
 hideInToc: true
 ---
 
-![](/ekon29.png)  Oct 2025
+![](./public/ekon29.png)  Oct 2025
 
 <br/>
 
 # End of presentation
-
 

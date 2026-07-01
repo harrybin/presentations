@@ -8,7 +8,7 @@ level: 2
 
 ::left::
 
-<img src="/copilot-chat-1.png" style="height: 400px">
+<img src="../../../public/copilot-chat-1.png" style="height: 400px">
 
 ::right::
 
@@ -59,10 +59,10 @@ level: 2
 
 ::left::
 
-<img src="/copilot-chat-2.png" alt="Copilot Chat tools menu" style="max-height: 260px; border-radius: 8px;"> 
+<img src="../../../public/copilot-chat-2.png" alt="Copilot Chat tools menu" style="max-height: 260px; border-radius: 8px;"> 
 
 <br />
-<img src="/copilot-chat-3.png" alt="Participants, models and tool selection" style="max-height: 260px; border-radius: 8px;">
+<img src="../../../public/copilot-chat-3.png" alt="Participants, models and tool selection" style="max-height: 260px; border-radius: 8px;">
 
 ::right::
 

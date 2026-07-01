@@ -460,7 +460,7 @@ backgroundSize: 60%
 
 # Tooling 
 
-## VSCode extension: [i18n Ally](https://marketplace.visualstudio.com/items?itemName=antfu.i18n-ally) ![](/i18nAlly-logo.png)
+## VSCode extension: [i18n Ally](https://marketplace.visualstudio.com/items?itemName=antfu.i18n-ally) ![](./public/i18nAlly-logo.png)
 
 <br/>
 
@@ -564,7 +564,7 @@ level: 2
 
 ## Demo Tanslation!
 
-![](/webextension-message-mapping.png)
+![](./public/webextension-message-mapping.png)
 
 <!--
 Show:
@@ -782,7 +782,7 @@ level: 2
 
 ## Demo Weblate!
 
-![](/weblate-logo.png)
+![](./public/weblate-logo.png)
 
 <!--
 
@@ -815,7 +815,7 @@ level: 2
 hideInToc: true
 ---
 
-![](/dwx_2025.png)  Juli 2025
+![](./public/dwx_2025.png)  Juli 2025
 
 <br/>
 

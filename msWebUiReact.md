@@ -1238,7 +1238,7 @@ layout: end
 hideInToc: true
 ---
 
-![](/ddc25.png)  Nov 2025
+![](./public/ddc25.png)  Nov 2025
 
 <br/>
 
