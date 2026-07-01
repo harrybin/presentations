@@ -157,7 +157,7 @@ aber nicht alle Business-Entscheidungen, impliziten Randbedingungen oder Prozess
 
 ---
 layout: cover
-background: /bulb.jpeg
+background: /auto-documentation-demo-cover.png
 hideInToc: true
 title: Demo - Auto-Dokumentation
 
