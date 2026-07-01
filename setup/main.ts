@@ -3,24 +3,30 @@ import { defineAppSetup } from "@slidev/types";
 export default defineAppSetup(({ router }) => {
   if (typeof window === "undefined" || !router) return;
 
-  const base = (
-    router as typeof router & {
-      options?: {
-        history?: {
-          base?: string;
-        };
-      };
-    }
-  ).options?.history?.base ?? "";
+  const routerOptions =
+    "options" in router
+      ? (router.options as
+          | {
+              history?: {
+                base?: string;
+              };
+            }
+          | undefined)
+      : undefined;
+  const base = routerOptions?.history?.base ?? "";
   const normalizedBase = base.endsWith("/") ? base.slice(0, -1) : base;
   const baseWithoutLeadingSlash = normalizedBase.replace(/^\//, "");
 
   if (!normalizedBase) return;
 
+  const hasPathPrefix = (path: string, prefix: string) =>
+    path.startsWith(prefix) &&
+    (path.length === prefix.length || path[prefix.length] === "/");
+
   const stripBase = (path: string) => {
-    if (path.startsWith(normalizedBase))
+    if (hasPathPrefix(path, normalizedBase))
       return path.slice(normalizedBase.length) || "/";
-    if (baseWithoutLeadingSlash && path.startsWith(baseWithoutLeadingSlash))
+    if (baseWithoutLeadingSlash && hasPathPrefix(path, baseWithoutLeadingSlash))
       return path.slice(baseWithoutLeadingSlash.length) || "/";
     return path;
   };
