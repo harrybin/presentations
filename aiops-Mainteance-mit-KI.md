@@ -19,7 +19,7 @@ layout: cover
 coverImage: /aiops-cover-bg.png
 description: "AIOps: Wie KI die Maintenance von Softwaresystemen revolutioniert - Root Cause Analysis, Technical Debt, Legacy-Modernisierung und Auto-Dokumentation"
 hideInToc: true
-routeAlias: aiops-Mainteance-mit-KI
+publicDeckPath: aiops-Mainteance-mit-KI
 ---
 
 # AIOps: Maintenance von Softwaresystemen durch KI
@@ -150,7 +150,7 @@ hideInToc: true
 
 <QRCode class="ml-40px"
   type="svg"
-  :data="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"
+  :data="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"
   :dotsOptions="{ type: 'extra-rounded', roundSize: false}"
   :width="250"
   :height="250"
@@ -158,8 +158,8 @@ hideInToc: true
 />
 <br/>
 
-<a :href="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"
-   :text="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"></a>
+<a :href="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"
+   :text="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"></a>
 
 <!--
 Danke für eure Aufmerksamkeit! QR-Code führt zur Online-Version der Slides.

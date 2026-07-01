@@ -2,7 +2,7 @@
 
 ## Repo shape
 
-- Multi-deck Slidev workspace: `slides.md` is the index and every other `*.md` in the repo root is a standalone talk (e.g. `webappLocalization.md`). The build (`build.sh`) iterates root markdown files (excluding `slides.md`/`README.md`) and emits to `dist/<file-name>` with `--base "/<file-name>/"`, so keep each deck’s `routeAlias` identical to its filename for correct routing from the overview slide.
+- Multi-deck Slidev workspace: `slides.md` is the index and every other `*.md` in the repo root is a standalone talk (e.g. `webappLocalization.md`). The build (`build.sh`) iterates root markdown files (excluding `slides.md`/`README.md`) and emits to `dist/<file-name>` with `--base "/<file-name>/"`. For standalone decks, store the published subpath in `publicDeckPath` and avoid `routeAlias`, because matching alias/base values duplicate the deck segment during navigation.
 - Shared content lives under `special-slides/` (generic speaker/Q&A/thank-you plus deck-specific folders) and `copilot-slides/` (agenda + chapter fragments). Include them with `src: /special-slides/...` or `src: /copilot-slides/...` blocks to avoid duplication.
 - Theme, transitions, and addons are standardized (see opening frontmatter of any deck). Copy that block when creating new material.
 

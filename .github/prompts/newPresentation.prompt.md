@@ -11,7 +11,7 @@ Create a new slidev presentation regarding the topic information followed after 
 - The presentation should be structured similer to the slide decks (`*.md`) already present in the root of this repository excluding the `slides.md`.
 - analog to those slide decks use slidev markdown syntax.
   - use the same theme, transitions and addons as well asthe other fromtmatter options
-  - use a proper routeAlias based on the presentation topic
+  - for standalone decks, set `publicDeckPath` to the published subpath and do not add `routeAlias`
 - ensure the deck contains the following elements:
   - cover slide
   - speaker introduction slide (`special-slides/speaker.md`)

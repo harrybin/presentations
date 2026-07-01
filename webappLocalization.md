@@ -22,7 +22,7 @@ layout: cover
 #background: /devcontainer.jpeg
 #description: Explore the benefits, configuration, and impact of Dev-Containers on modern development workflows.
 hideInToc: true
-routeAlias: webappLocalization
+publicDeckPath: webappLocalization
 background: /developer-in-words.png
 ---
 
