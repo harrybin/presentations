@@ -16,7 +16,7 @@ title: Why VSCode + Delphi?
 level: 2
 ---
 
-<ImageTitle title="VSCode + Delphi" image-url="/logo-vsc.png" />
+<ImageTitle title="VSCode + Delphi" image-url="../../public/logo-vsc.png" />
 
 ## Modern Development Experience
 
@@ -86,7 +86,7 @@ level: 2
 
 </div>
 
-<img src="/logo-vsc.png" style="width: 50%;" />
+<img src="../../public/logo-vsc.png" style="width: 50%;" />
 
 
 ---
@@ -245,4 +245,3 @@ level: 2
 <!--
 You don't have to choose one or the other. Use each tool for what it does best to maximize productivity.
 -->
-

@@ -192,18 +192,17 @@ level: 2
 
 # Tip: Change Copilot Completions Model
 
-<img src="/copilot-change-completions-model-1.png" style="width:75%">
+<img src="../../public/copilot-change-completions-model-1.png" style="width:75%">
 
 <br />
 
-<img src="/copilot-change-completions-model-2.png" style="width:75%">
+<img src="../../public/copilot-change-completions-model-2.png" style="width:75%">
 
 <br />
 
-<img src="/copilot-change-completions-model-3.png" style="width:75%">
+<img src="../../public/copilot-change-completions-model-3.png" style="width:75%">
 
 <!--
 Default model for Copilot Completions is **GPT-4o**. Nevertheless the model can be changed.
 -->
-
 
