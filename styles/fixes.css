@@ -11,3 +11,14 @@
 .slidev-layout ul ul {
     margin-top: 0
 }
+
+html, body, #app, #page-root, .slidev-layout {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
