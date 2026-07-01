@@ -28,7 +28,7 @@ hideInToc: true
 <v-clicks>
 
 1. **AIOps** unterstützt und beschleunigt Ops - saubere DevOps/<abbr title="Site Reliability Engineering">SRE</abbr>-Arbeit bleibt die Grundlage
-2. **RCA in Sekunden** statt Stunden - Azure Copilot + App Insights + Smart Detection
+2. **RCA in Minuten** statt Stunden - Azure Copilot + App Insights + Smart Detection
 3. **Technical Debt**: KI hilft, aber nur **mit Guardrails** (kleine Batches, automatisierte Reviews, SCA)
 4. **Legacy-Modernisierung**: Agent Mode scannt, plant, übernimmt große Teile von Migration und Tests automatisch
 5. **Auto-Doku** unterstützt dabei, Wissenslücken zu schließen
