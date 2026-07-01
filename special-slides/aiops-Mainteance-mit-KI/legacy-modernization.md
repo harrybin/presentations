@@ -143,7 +143,7 @@ GitHub Copilot Modernization macht dann die Drecksarbeit *im Code*.
 layout: image-right
 background: /secret-agent-large.png
 hideInToc: true
-
+hide: true
 ---
 
 # Copilot Cloud Agent
