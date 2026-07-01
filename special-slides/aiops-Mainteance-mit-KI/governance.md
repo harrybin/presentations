@@ -5,7 +5,7 @@ background: /governance-large.png
 
 ---
 
-# Governance: Der Mensch im Loop
+# Governance und der Mensch im Loop
 
 ::intro::
 
