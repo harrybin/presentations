@@ -12,15 +12,15 @@ hideInToc: true
 
 <QRCode class="ml-40px"
   type="svg"
-  :data="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"
+  :data="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"
   :dotsOptions="{ color: 'white' ,  type: 'extra-rounded', roundSize: false}"
   :width="250"
   :height="250"
   image="logo.svg"
 />
 
-<a :href="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`" 
-   :text="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"></a>
+<a :href="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`" 
+   :text="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"></a>
 
 <!-- 
 Thank you for joining this session. 

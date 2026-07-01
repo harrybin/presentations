@@ -17,7 +17,7 @@ layout: cover
 coverImage: /bmad-dev-ideas-to-tests.png
 description: "KI-gestützte Anforderungs- und Testfallentwicklung mit der BMad-Methode — Von der vagen Idee zur validierten Testsuite"
 hideInToc: true
-routeAlias: bmad-anforderungen-tests
+publicDeckPath: bmad-anforderungen-tests
 
 author: ADC 2026
 isDark: true
@@ -178,7 +178,7 @@ isDark: true
 
 <QRCode class="ml-40px"
   type="svg"
-  :data="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"
+  :data="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"
   :dotsOptions="{ color: 'white', type: 'extra-rounded', roundSize: false}"
   :width="250"
   :height="250"
@@ -187,8 +187,8 @@ isDark: true
 
 <br/>
 
-<a :href="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"
-   :text="`https://presentations.harrybin.de/${$slidev.configs.routeAlias}/`"></a>
+<a :href="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"
+   :text="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"></a>
 
 
 

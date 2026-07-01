@@ -17,12 +17,12 @@ overviewSnapshots: false
 # background glow animation
 glowEnabled: true
 ###### slides start ######
-# the routeAlias must be named like the entry md file
+# public deck path for the published subsite
 layout: cover
 background: /pilot-large.jpg
 description: "GitHub Copilot especially for Delphi Developers"
 hideInToc: true
-routeAlias: githubCopilotDelphi
+publicDeckPath: githubCopilotDelphi
 
 ---
 
@@ -127,4 +127,3 @@ hideInToc: true
 <br/>
 
 # End of presentation
-
