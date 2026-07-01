@@ -3,7 +3,15 @@ import { defineAppSetup } from "@slidev/types";
 export default defineAppSetup(({ router }) => {
   if (typeof window === "undefined" || !router) return;
 
-  const base: string = (router as any).options?.history?.base ?? "";
+  const base = (
+    router as typeof router & {
+      options?: {
+        history?: {
+          base?: string;
+        };
+      };
+    }
+  ).options?.history?.base ?? "";
   const normalizedBase = base.endsWith("/") ? base.slice(0, -1) : base;
   const baseWithoutLeadingSlash = normalizedBase.replace(/^\//, "");
 
@@ -17,18 +25,18 @@ export default defineAppSetup(({ router }) => {
     return path;
   };
 
-  const push = router.push.bind(router);
-  const replace = router.replace.bind(router);
+  type NavigationTarget = Parameters<typeof router.push>[0];
+  type NavigationMethod = (to: NavigationTarget) => ReturnType<typeof router.push>;
 
-  router.push = (to: any) => {
-    if (to?.path) return push({ ...to, path: stripBase(to.path) });
-    if (typeof to === "string") return push(stripBase(to));
-    return push(to);
+  const wrapNavigationMethod = (navigate: NavigationMethod): NavigationMethod => {
+    return (to) => {
+      if (typeof to === "string") return navigate(stripBase(to));
+      if (to && typeof to === "object" && "path" in to && typeof to.path === "string")
+        return navigate({ ...to, path: stripBase(to.path) });
+      return navigate(to);
+    };
   };
 
-  router.replace = (to: any) => {
-    if (to?.path) return replace({ ...to, path: stripBase(to.path) });
-    if (typeof to === "string") return replace(stripBase(to));
-    return replace(to);
-  };
+  router.push = wrapNavigationMethod(router.push.bind(router) as NavigationMethod);
+  router.replace = wrapNavigationMethod(router.replace.bind(router) as NavigationMethod);
 });
