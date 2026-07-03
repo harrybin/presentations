@@ -14,6 +14,7 @@ glowEnabled: false
 author: "Infinite AI Conference"
 showCopyright: false
 xebiaLogo: /infinite-ai-conference-banner.png
+date: "2026-07-01"
 ###### slides start ######
 layout: cover
 coverImage: /aiops-cover-bg.png
