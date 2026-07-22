@@ -14,14 +14,6 @@ from pathlib import Path
 import json
 import shutil
 
-project_root = Path(".")
-dist_dir = project_root / "dist"
-deck_roots = sorted(
-    file.stem
-    for file in project_root.glob("*.md")
-    if file.name not in {"README.md", "slides.md"}
-)
-
 redirect_script = """    <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
@@ -43,28 +35,39 @@ redirect_script = """    <!-- Start Single Page Apps for GitHub Pages -->
     </script>
     <!-- End Single Page Apps for GitHub Pages -->"""
 
-for index_file in dist_dir.rglob("index.html"):
-    content = index_file.read_text()
-    if "Single Page Apps for GitHub Pages" in content:
-        continue
-    if "</head>" not in content:
-        raise SystemExit(f"Unable to inject SPA redirect script into {index_file}: missing </head> tag")
-    index_file.write_text(content.replace("</head>", f"{redirect_script}\n  </head>", 1))
+def main():
+    project_root = Path(".")
+    dist_dir = project_root / "dist"
+    deck_roots = sorted(
+        file.stem
+        for file in project_root.glob("*.md")
+        if file.name not in {"README.md", "slides.md"}
+    )
 
-root_404_file = dist_dir / "404.html"
-source_404_file = project_root / "public" / "404.html"
-if not root_404_file.exists() and source_404_file.exists():
-    shutil.copyfile(source_404_file, root_404_file)
+    for index_file in dist_dir.rglob("index.html"):
+        content = index_file.read_text()
+        if "Single Page Apps for GitHub Pages" in content:
+            continue
+        if "</head>" not in content:
+            raise SystemExit(f"Unable to inject SPA redirect script into {index_file}: missing </head> tag")
+        index_file.write_text(content.replace("</head>", f"{redirect_script}\n  </head>", 1))
 
-if root_404_file.exists():
-    content = root_404_file.read_text()
-    if "__SPA_DECK_ROOTS__" in content:
-        root_404_file.write_text(content.replace("__SPA_DECK_ROOTS__", json.dumps(deck_roots)))
+    root_404_file = dist_dir / "404.html"
+    source_404_file = project_root / "public" / "404.html"
+    if not root_404_file.exists() and source_404_file.exists():
+        shutil.copyfile(source_404_file, root_404_file)
 
-    for deck_root in deck_roots:
-        deck_404_file = dist_dir / deck_root / "404.html"
-        if not deck_404_file.exists():
-            shutil.copyfile(root_404_file, deck_404_file)
+    if root_404_file.exists():
+        content = root_404_file.read_text()
+        if "__SPA_DECK_ROOTS__" in content:
+            root_404_file.write_text(content.replace("__SPA_DECK_ROOTS__", json.dumps(deck_roots)))
+
+        for deck_root in deck_roots:
+            deck_404_file = dist_dir / deck_root / "404.html"
+            if not deck_404_file.exists():
+                shutil.copyfile(root_404_file, deck_404_file)
+
+main()
 PY
 }
 
