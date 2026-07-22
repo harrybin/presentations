@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // Adapted for the multi-deck Slidev setup in this repository.
+      // This script converts an incoming deep-link path into a query string
+      // and redirects to the correct SPA root so GitHub Pages can serve index.html.
+      var knownDeckRoots = __SPA_DECK_ROOTS__;
+
+      var l = window.location;
+      var pathSegments = l.pathname.split('/').filter(Boolean);
+      var deckRoot = pathSegments.length > 1 && knownDeckRoots.indexOf(pathSegments[0]) !== -1
+        ? pathSegments[0]
+        : '';
+      var appRoot = deckRoot ? '/' + deckRoot : '';
+      var routePath = deckRoot
+        ? '/' + pathSegments.slice(1).join('/')
+        : l.pathname;
+
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        appRoot + '/?/' +
+        routePath.replace(/^\//, '').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
