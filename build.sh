@@ -29,11 +29,14 @@ redirect_script = """    <!-- Start Single Page Apps for GitHub Pages -->
       // https://github.com/rafgraph/spa-github-pages
       (function(l) {
         if (l.search[1] === '/') {
+          var pathname = l.pathname.endsWith('/')
+            ? l.pathname.slice(0, -1)
+            : l.pathname.replace(/\/index\.html$/, '');
           var decoded = l.search.slice(1).split('&').map(function(s) {
             return s.replace(/~and~/g, '&')
           }).join('?');
           window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + decoded + l.hash
+            pathname + decoded + l.hash
           );
         }
       }(window.location))
@@ -45,7 +48,7 @@ for index_file in dist_dir.rglob("index.html"):
     if "Single Page Apps for GitHub Pages" in content:
         continue
     if "</head>" not in content:
-        raise SystemExit(f"Unable to inject SPA redirect script into {index_file}")
+        raise SystemExit(f"Unable to inject SPA redirect script into {index_file}: missing </head> tag")
     index_file.write_text(content.replace("</head>", f"{redirect_script}\n  </head>", 1))
 
 root_404_file = dist_dir / "404.html"

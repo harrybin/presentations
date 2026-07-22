@@ -10,7 +10,15 @@
       // Adapted for the multi-deck Slidev setup in this repository.
       // This script converts an incoming deep-link path into a query string
       // and redirects to the correct SPA root so GitHub Pages can serve index.html.
-      var knownDeckRoots = __SPA_DECK_ROOTS__;
+      var knownDeckRoots = [];
+      try {
+        knownDeckRoots = __SPA_DECK_ROOTS__;
+      } catch (error) {
+        knownDeckRoots = [];
+      }
+      if (!Array.isArray(knownDeckRoots)) {
+        knownDeckRoots = [];
+      }
 
       var l = window.location;
       var pathSegments = l.pathname.split('/').filter(Boolean);
