@@ -54,7 +54,7 @@ def main():
 
     root_404_file = dist_dir / "404.html"
     source_404_file = project_root / "public" / "404.html"
-    if not root_404_file.exists() and source_404_file.exists():
+    if source_404_file.exists():
         shutil.copyfile(source_404_file, root_404_file)
 
     if root_404_file.exists():
