@@ -14,7 +14,7 @@ from pathlib import Path
 import json
 import shutil
 
-redirect_script = """    <!-- Start Single Page Apps for GitHub Pages -->
+redirect_script = r"""    <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
@@ -76,7 +76,7 @@ build_slides() {
   for file in *.md; do
     if [[ "$file" != "README.md" && "$file" != "slides.md" ]]; then
       local output_dir="${file%.md}"
-      npx slidev build --out "./dist/$output_dir" --base "/$output_dir/" "$file"
+      npx slidev build --out "./dist/$output_dir" --base "/$output_dir/" "$file" || { echo "ERROR: Failed to build $file"; exit 1; }
     fi
   done
 }
