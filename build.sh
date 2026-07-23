@@ -64,9 +64,8 @@ def main():
 
         for deck_root in deck_roots:
             deck_dir = dist_dir / deck_root
-            deck_404_file = deck_dir / "404.html"
-            if deck_dir.is_dir() and not deck_404_file.exists():
-                shutil.copyfile(root_404_file, deck_404_file)
+            if deck_dir.is_dir():
+                shutil.copyfile(root_404_file, deck_dir / "404.html")
 
 main()
 PY
