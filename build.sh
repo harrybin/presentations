@@ -14,7 +14,7 @@ from pathlib import Path
 import json
 import shutil
 
-redirect_script = """    <!-- Start Single Page Apps for GitHub Pages -->
+redirect_script = r"""    <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
@@ -63,9 +63,9 @@ def main():
             root_404_file.write_text(content.replace("__SPA_DECK_ROOTS__", json.dumps(deck_roots)))
 
         for deck_root in deck_roots:
-            deck_404_file = dist_dir / deck_root / "404.html"
-            if not deck_404_file.exists():
-                shutil.copyfile(root_404_file, deck_404_file)
+            deck_dir = dist_dir / deck_root
+            if deck_dir.is_dir():
+                shutil.copyfile(root_404_file, deck_dir / "404.html")
 
 main()
 PY
