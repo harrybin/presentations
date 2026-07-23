@@ -741,7 +741,7 @@ hideInToc: true
 hide: true
 ---
 
-![](/dwx_2025.png)  Juli 2025
+![](./public/dwx_2025.png)  Juli 2025
 
 <br/>
 
@@ -754,7 +754,7 @@ hideInToc: true
 hide: true
 ---
 
-![](/MD-conf.svg)  Mai 2025
+![](./public/MD-conf.svg)  Mai 2025
 
 <br/>
 
