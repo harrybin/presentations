@@ -387,47 +387,6 @@ including a DEMO
 -->
 
 ---
-title: "Example: Data Science Dev-Container"
-hideInToc: true
----
-
-<h1 class="h-auto!"> Example: Data Science Dev-Container </h1>
-
-```json {*|6}{maxHeight:'250px'}
-// filepath: .devcontainer/devcontainer.json
-{
-  "name": "Data Science Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
-  "postCreateCommand": "pip install -r requirements.txt",
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python"
-      }
-    }
-  },
-  "remoteUser": "vscode"
-}
-```
-
-<v-clicks>
-
-- **Python**: Pre-installed Python 3.12 environment
-- **Jupyter Notebooks**: Ready-to-use Jupyter Notebook support
-- **Dependencies**: Install additional Python libraries via `requirements.txt`
-- **Docker-in-Docker**: Run Docker commands within the container
-
-</v-clicks>
-
-<!-- Notes -->
-<!-- 
-This example demonstrates how to set up a Dev-Container for data science projects, including Python, Jupyter, and other dependencies. 
--->
-
----
 hideInToc: true
 ---
 # Available Features
@@ -624,10 +583,236 @@ title: Performance Tweaks
 
 ---
 layout: image-left
+background: /devcontainer2.jpeg
+hideInToc: true
+---
+
+# Conclusion
+
+<v-clicks>
+
+- **IaC**: Define environments with `devcontainer.json` for consistency and version control.
+- **Security**: Isolated environments reduce dependency conflicts and vulnerabilities.
+- **Vs. Dockerfiles/Compose**: Simplified setup (e.g. include mountpoint definitions), and includes predefined features.
+- **Remote Development**: Supports remote development with VS Code, no need to run Docker locally.
+- **GitHub Codespaces**: Enables cloud-based, consistent environments directly from repositories.
+
+</v-clicks>
+
+<!-- Notes -->
+<!-- 
+By adopting Dev-Containers, you can transform your development process into something more efficient, secure, and enjoyable.
+-->
+
+---
+layout: image-right
+background: /gh-copilot-logo.png
+backgroundSize: 70%
+---
+
+# Dev-Containers + GitHub Copilot
+
+One of the most effective setups in modern software engineering:
+
+<v-clicks>
+
+- Dev-Containers fix **"works on my machine"**
+- Copilot accelerates the **coding workflow**
+- Together: a clean, reproducible, **context-aware** workspace
+
+</v-clicks>
+
+<v-click>
+
+<Aside type="tip" title="Dev joke">
+
+_"Works on my machine!"_ — _"Fine, we ship your machine."_
+With Dev-Containers we actually do — Copilot moves in too. 🤖📦
+
+</Aside>
+
+</v-click>
+
+<!-- Notes -->
+<!-- 
+Combining VS Code Dev Containers with GitHub Copilot is one of the most effective setups in modern software engineering.
+Where Dev Containers solve the "works on my machine" problem by standardizing environments, Copilot accelerates the actual coding workflow. Together, they create a clean, reproducible, and context-aware workspace.
+-->
+
+---
+title: How Copilot runs inside the container
+hideInToc: true
+---
+
+<h1 class="h-auto!"> How Copilot Runs Inside the Container </h1>
+
+```mermaid
+flowchart LR
+    classDef uiBox fill:#4B83CD,color:white,stroke:#333
+    classDef copilotBox fill:#EB7533,color:white,stroke:#333
+    classDef resBox fill:#6CB33F,color:white,stroke:#333
+    classDef cloudBox fill:#24292F,color:white,stroke:#333
+    classDef frameBox fill:white,stroke:#333,color:#4B83CD,font-weight:bold,font-size:24px
+
+    Cloud["GitHub / Copilot model endpoints"]:::cloudBox
+
+    subgraph Host["Local OS"]
+        VSCodeUI["VS Code UI + Copilot Chat"]:::uiBox
+    end
+
+    subgraph DevContainer["Dev-Container"]
+        CopilotExt["Copilot extension"]:::copilotBox
+        Env[("SDKs · CLIs · libraries")]:::resBox
+        Term["Terminal / agent commands"]:::resBox
+
+        CopilotExt L_env@-->|"reads real versions"| Env
+        CopilotExt L_term@-->|"executes sandboxed"| Term
+    end
+
+    VSCodeUI L_auth@-->|"auth delegation"| CopilotExt
+    CopilotExt L_cloud@-->|"model streaming"| Cloud
+
+    class Host frameBox
+    class DevContainer frameBox
+
+    L_env@{animation: slow}
+    L_term@{animation: slow}
+    L_auth@{animation: slow}
+    L_cloud@{animation: slow}
+```
+
+<v-click>
+
+<Aside type="note" title="Blast radius">
+
+The agent breaks things **inside the container** — rebuild = fresh start.
+
+</Aside>
+
+</v-click>
+
+<!-- Notes -->
+<!-- 
+Copilot runs next to the VS Code Server inside the container: it sees the real toolchain, its agent commands are sandboxed, auth is delegated from the host, and only model traffic leaves towards GitHub.
+-->
+
+---
+layout: image-right
+background: /bot-head.png
+backgroundSize: 80%
+hideInToc: true
+---
+
+# Advantages
+
+<v-clicks>
+
+- ✅ **Environment-aware suggestions**
+  sees the _real_ SDKs & library versions → fewer hallucinations
+- ✅ **Sandboxed agent commands**
+  run in the container, not on your host
+- ✅ **Instant team onboarding**
+  Copilot declared in `devcontainer.json`
+- ✅ **Copilot writes your Dev-Container**
+  `devcontainer.json`, `Dockerfile`, compose — in seconds
+
+</v-clicks>
+
+<!-- Notes -->
+<!-- 
+- Accurate, Environment-Aware AI Suggestions: Copilot reads the environment inside the container - including installed SDKs, CLI tools, libraries, and framework versions. This drastically reduces "hallucinations" where Copilot suggests methods or syntax for a different library version than the one your project actually uses.
+- Safer Terminal & Agent Interactions: Copilot Chat or Agent mode terminal commands take place inside the isolated container rather than on your host machine. This protects your host OS from accidental package pollution or disruptive filesystem changes.
+- Instant Onboarding: every team member who spins up the container automatically gets the correct AI tooling without manual setup.
+- Meta-Benefit: Copilot itself excels at writing and maintaining devcontainer.json, Dockerfile, and docker-compose.yml configurations.
+-->
+
+---
+layout: image-left
+background: /plane-burning-left.jpg
+hideInToc: true
+---
+
+# Disadvantages & Challenges
+
+<v-clicks>
+
+- ⚠️ **System overhead**
+  Docker/WSL 2 + servers + AI indexing → CPU, RAM, battery
+- ⚠️ **Credential persistence**
+  SSH keys / Git creds may need forwarding or mounts
+- ⚠️ **Network egress**
+  enterprise proxies must whitelist GitHub endpoints
+- ⚠️ **Extension discipline**
+  local extensions must be declared in `devcontainer.json`
+
+</v-clicks>
+
+<!-- Notes -->
+<!-- 
+- Higher System Overhead: Running Docker Desktop or WSL2 alongside VS Code server instances, language servers, and Copilot's background indexing can be resource-heavy on CPU, RAM, and battery life.
+- Auth & Credential Persistence: Authentication tokens for GitHub Copilot usually persist seamlessly through VS Code host delegation, but SSH keys, Git credentials, or custom LLM endpoint tokens sometimes require explicit SSH agent forwarding or volume mounts to persist cleanly across container rebuilds.
+- Network & Egress Restrictions: In strict enterprise setups Copilot requires explicitly whitelisting GitHub endpoints for telemetry and model streaming.
+- Extension Configuration Discipline: local extensions aren't automatically available inside the container unless declared.
+-->
+
+---
+layout: two-column
+hideInToc: true
+---
+
+# Quick Setup
+
+::left::
+
+Add Copilot + Chat to `.devcontainer/devcontainer.json` — loaded automatically for everyone:
+
+<v-click>
+
+<Aside type="tip" title="One rebuild, whole team">
+
+Commit once — every rebuild ships the AI tooling to the whole team.
+
+</Aside>
+
+</v-click>
+
+
+
+::right::
+
+```json {2-4|5-12|*}
+{
+  "name": "My Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ]
+    }
+  }
+}
+```
+
+<v-click>
+
+<Link to="questions" class="text-xl">Done or Time left? ➡️</Link>
+
+</v-click>
+
+<!-- Notes -->
+<!-- 
+With this in place, every container rebuild ships the AI tooling automatically.
+-->
+
+---
+title: A Special Dev-Container (optional)
+layout: image-left
 background: /wsl_pinguin.jpeg
 ---
 
-# A Special Dev-Container
+# A Special Dev-Container <span class="text-2xl opacity-60">(optional)</span>
 
 ## WSL (Windows Subsystem for Linux)
 
@@ -655,16 +840,19 @@ background: /wsl_pinguin.jpeg
 </v-click>
 
 <!-- Notes -->
+<!--
+OPTIONAL slide - present only if time permits.
+-->
 
 ---
-title: Windows Dev Drive
+title: Windows Dev Drive (optional)
 layout: image-right
 background: /dev-drive.png
 backgroundSize: 80%
 hideInToc: true
 ---
 
-<h1 class="h-auto!"> Windows Dev Drive </h1>
+<h1 class="h-auto!"> Windows Dev Drive <span class="text-2xl opacity-60">(optional)</span> </h1>
 
 <v-clicks>
 
@@ -686,6 +874,8 @@ hideInToc: true
 
 <!-- Notes -->
 <!-- 
+OPTIONAL slide - present only if time permits.
+
 Dev Drive is Microsoft's answer to performance issues in Windows development environments. It provides native Windows performance improvements without needing WSL virtualization.
 
 ## Benefits vs WSL
@@ -697,115 +887,6 @@ Dev Drive is Microsoft's answer to performance issues in Windows development env
 - **Simplified setup** - no Linux subsystem required
 
 [https://learn.microsoft.com/en-us/windows/dev-drive/](https://learn.microsoft.com/en-us/windows/dev-drive/)
--->
-
-
----
-layout: image-left
-background: /devcontainer2.jpeg
-hideInToc: true
----
-
-# Conclusion
-
-<v-clicks>
-
-- **IaC**: Define environments with `devcontainer.json` for consistency and version control.
-- **Security**: Isolated environments reduce dependency conflicts and vulnerabilities.
-- **Vs. Dockerfiles/Compose**: Simplified setup (e.g. include mountpoint definitions), and includes predefined features.
-- **Remote Development**: Supports remote development with VS Code, no need to run Docker locally.
-- **GitHub Codespaces**: Enables cloud-based, consistent environments directly from repositories.
-
-</v-clicks>
-
-<!-- Notes -->
-<!-- 
-By adopting Dev-Containers, you can transform your development process into something more efficient, secure, and enjoyable.
--->
-
----
-
-# Dev-Containers + GitHub Copilot
-
-Combining VS Code Dev Containers with GitHub Copilot is one of the most effective setups in modern software engineering.
-
-<v-click>
-
-Where Dev Containers solve the **"works on my machine"** problem by standardizing environments, Copilot accelerates the actual coding workflow. Together, they create a clean, reproducible, and context-aware workspace.
-
-</v-click>
-
-<!-- Notes -->
-<!-- 
-Two complementary tools: Dev Containers standardize the environment, Copilot speeds up the work inside it.
--->
-
----
-hideInToc: true
----
-
-# Advantages
-
-<v-clicks>
-
-- **Accurate, Environment-Aware AI Suggestions:** Copilot reads the environment inside the container—including installed SDKs, CLI tools, libraries, and framework versions. This drastically reduces "hallucinations" where Copilot suggests methods or syntax for a different library version than the one your project actually uses.
-- **Safer Terminal & Agent Interactions:** If you use Copilot Chat or Agent mode to execute terminal commands or run scripts, those actions take place **inside the isolated container** rather than on your host machine. This protects your host OS from accidental package pollution or disruptive filesystem changes.
-- **Instant Onboarding for the Entire Team:** By defining GitHub Copilot (and Copilot Chat) directly inside `devcontainer.json` under `customizations.vscode.extensions`, every team member who spins up the container automatically gets the correct AI tooling and extensions installed without manual setup.
-- **Meta-Benefit (Copilot writes your Dev Container):** Copilot itself excels at writing and maintaining `devcontainer.json`, `Dockerfile`, and `docker-compose.yml` configurations. You can prompt Copilot to inspect your repository and build a tailored container configuration in seconds.
-
-</v-clicks>
-
-<!-- Notes -->
-<!-- 
-The agent-mode sandboxing aspect is a big one: destructive commands stay inside the container.
--->
-
----
-hideInToc: true
----
-
-# Disadvantages & Challenges
-
-<v-clicks>
-
-- **Higher System Overhead:** Running Docker Desktop or WSL2 alongside VS Code server instances, language servers, and Copilot's background indexing can be resource-heavy on CPU, RAM, and battery life.
-- **Auth & Credential Persistence:** Authentication tokens for GitHub Copilot usually persist seamlessly through VS Code host delegation, but SSH keys, Git credentials, or custom LLM endpoint tokens sometimes require explicit SSH agent forwarding or volume mounts to persist cleanly across container rebuilds.
-- **Network & Egress Restrictions:** In strict enterprise setups where Dev Containers use tight outbound firewall rules or proxies, Copilot requires explicitly whitelisting GitHub endpoints (e.g., `api.github.com`, proxy services) for telemetry and model streaming to function.
-- **Extension Configuration Discipline:** Extensions installed on your local VS Code host aren't automatically available inside the container unless declared in `devcontainer.json` or enabled in your VS Code user settings.
-
-</v-clicks>
-
-<!-- Notes -->
-<!-- 
-Mostly operational friction: resources, credentials, enterprise proxies, and extension discipline.
--->
-
----
-hideInToc: true
----
-
-# Quick Setup
-
-To ensure GitHub Copilot and Copilot Chat automatically load whenever anyone opens the project in a Dev Container, add them to your `.devcontainer/devcontainer.json`:
-
-```json
-{
-  "name": "My Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "GitHub.copilot",
-        "GitHub.copilot-chat"
-      ]
-    }
-  }
-}
-```
-
-<!-- Notes -->
-<!-- 
-With this in place, every container rebuild ships the AI tooling automatically.
 -->
 
 ---

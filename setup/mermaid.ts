@@ -104,14 +104,20 @@ svg {
 .flowchart-link,
 .edge-thickness-normal,
 .edge-thickness-thick {
-  stroke-dasharray: 8 7;
-  animation: mermaid-edge-flow 1.8s linear infinite;
+  stroke-dasharray: 8 7 !important;
+  animation: mermaid-edge-flow 3.2s linear infinite !important;
   stroke-width: 2px;
+}
+
+/* neutralize mermaid's built-in fast dash animation (edge IDs with animation: slow/fast) */
+.edge-animation-slow,
+.edge-animation-fast {
+  animation: mermaid-edge-flow-reset 3.2s linear infinite !important;
 }
 
 .arrowheadPath,
 marker path {
-  animation: mermaid-arrow-pulse 1.8s ease-in-out infinite;
+  animation: mermaid-arrow-pulse 3.6s ease-in-out infinite;
   transform-origin: center;
 }
 
@@ -122,6 +128,15 @@ marker path {
 @keyframes mermaid-edge-flow {
   to {
     stroke-dashoffset: -30;
+  }
+}
+
+@keyframes mermaid-edge-flow-reset {
+  from {
+    stroke-dashoffset: 30;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
 

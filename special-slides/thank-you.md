@@ -14,6 +14,7 @@ hideInToc: true
   type="svg"
   :data="`https://presentations.harrybin.de/${$slidev.configs.publicDeckPath || $slidev.configs.routeAlias}/`"
   :dotsOptions="{ color: 'white' ,  type: 'extra-rounded', roundSize: false}"
+  :backgroundOptions="{ round: 0.05, color: '#1a1a2e' }"
   :width="250"
   :height="250"
   image="logo.svg"

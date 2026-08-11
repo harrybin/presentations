@@ -1,9 +1,11 @@
 ---
-layout: cover-dark
+layout: cover
 background: /finger-large.jpg
+backgroundPosition: 20% 100%
 title: Questions?
+routeAlias: questions
 hideInToc: true
 ---
 
 <!-- issue in theme. See: https://github.com/xebia/presentation-templates/issues/12 -->
-<h1 class="h-auto!">Questions?</h1>
+# Questions?
