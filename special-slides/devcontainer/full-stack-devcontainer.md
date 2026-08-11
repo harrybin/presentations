@@ -19,7 +19,7 @@ hide: true
 // filepath: .devcontainer/devcontainer.json
 {
   "name": "Full-Stack Dev Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0", 
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0", 
   "postCreateCommand": "dotnet restore",
 }
 ```
@@ -28,7 +28,7 @@ hide: true
 // filepath: .devcontainer/devcontainer.json
 { 
   "name": "Full-Stack Dev Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0", 
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0", 
   "postCreateCommand": "dotnet restore",
   "customizations": {
     "vscode": {
@@ -46,7 +46,7 @@ hide: true
 // filepath: .devcontainer/devcontainer.json
 {
   "name": "Full-Stack Dev Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
   "features": {    
     "ghcr.io/devcontainers/features/node:1": {
       "version": "22"
@@ -61,7 +61,7 @@ hide: true
 // filepath: .devcontainer/devcontainer.json
 {
   "name": "Full-Stack Dev Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
   "features": {    
     "ghcr.io/devcontainers/features/node:1": {
       "version": "22"
@@ -149,7 +149,7 @@ lets' create a devcontainer for a full-stack project
 [click] add azure functions support
 
 - **Web Frontend**: Node.js and npm for frontend development
-- **C# Backend**: .NET 7.0 environment for backend services
+- **C# Backend**: .NET 9.0 environment for backend services
 - **PostgreSQL Database**: Pre-configured PostgreSQL database
 - **Azure Functions**: Ready-to-use Azure Functions support
 - **Extensions**: Includes necessary VS-Code extensions for full-stack development
@@ -168,7 +168,7 @@ hideInToc: true
 // filepath: .devcontainer/devcontainer.json
 {
   "name": "Full-Stack Dev Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
   "features": {
     "ghcr.io/itsmechlark/features/postgresql:1": {
       "version": "15",
@@ -201,7 +201,7 @@ hideInToc: true
 <!-- Notes -->
 <!--
 - **Web Frontend**: Node.js and npm for frontend development
-- **C# Backend**: .NET 7.0 environment for backend services
+- **C# Backend**: .NET 9.0 environment for backend services
 - **PostgreSQL Database**: Pre-configured PostgreSQL database
 - **Extensions**: Includes necessary VS-Code extensions for full-stack development
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120" viewBox="0 0 360 120">
+  <defs>
+    <linearGradient id="nsc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b2fc9"/>
+      <stop offset="1" stop-color="#29a8e0"/>
+    </linearGradient>
+  </defs>
+  <text x="10" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="url(#nsc)">&lt;/&gt; .NET SAAR</text>
+  <text x="10" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="url(#nsc)">CONNECT</text>
+  <text x="10" y="106" font-family="Segoe UI, Arial, sans-serif" font-size="14" letter-spacing="3" fill="#29a8e0">CODE TRIFFT SAAR</text>
+</svg>
