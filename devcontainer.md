@@ -822,7 +822,7 @@ level: 2
 hideInToc: true
 ---
 
-![](/net-saar-connect.svg)  18. August 2026
+![](./public/net-saar-connect.svg)  18. August 2026
 
 <br/>
 
@@ -834,7 +834,7 @@ level: 2
 hideInToc: true
 ---
 
-![](/dwx_2025.png)  Juli 2025
+![](./public/dwx_2025.png)  Juli 2025
 
 <br/>
 
@@ -846,7 +846,7 @@ level: 2
 hideInToc: true
 ---
 
-![](/MD-conf.svg)  Mai 2025
+![](./public/MD-conf.svg)  Mai 2025
 
 <br/>
 

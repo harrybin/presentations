@@ -66,7 +66,7 @@ level: 2
 
 <br />
 
-![](/settings-instruction-files-1.png)
+![](../../public/settings-instruction-files-1.png)
 
 <!--
 Default: enabled
@@ -238,7 +238,7 @@ Add a comment at the end of the file: 'Contains AI-generated edits.'
 
 <br />
 
-![](/settings-instruction-files-2.png)
+![](../../public/settings-instruction-files-2.png)
 
 <!--
 ℹ️ `applyTo`: Glob pattern for files. To always include use `**`.
