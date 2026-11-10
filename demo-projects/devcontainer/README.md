@@ -1,54 +1,53 @@
 # Container Ships Demo Project
 
-A full-stack demo application using .NET 9 with PostgreSQL for the backend and React 19 for the frontend.
+A full-stack demo application using a .NET 9 API and a React 18 frontend.
 
 ## Project Structure
 
-- **backend**: Contains the .NET 9 API that connects to PostgreSQL
-- **frontend**: Contains the React 19 UI
-- **app-data**: Stores PostgreSQL data
+- **backend**: Contains the .NET 9 API with in-memory sample ships and containers
+- **frontend**: Contains the React 18 UI and its own npm lockfile
 
 ## Getting Started
 
 ### Prerequisites
 
-- Docker and Docker Compose (for running PostgreSQL in the dev container)
+- Docker with Dev Containers support, if using the supplied development container
 - .NET 9 SDK
-- Node.js (version 18+)
+- Node.js 24 and npm for the frontend
 
 ### Running the Backend
 
-1. Start PostgreSQL:
-   ```bash
-   # PostgreSQL is set up automatically if using the dev container
+1. From this demo's directory, navigate to the backend:
+
+   ```powershell
+   Set-Location .\backend
    ```
 
-2. Navigate to the backend/ContainerShipsAPI directory:
-   ```bash
-   cd backend/ContainerShipsAPI
-   ```
+2. Run the application:
 
-3. Run the application:
-   ```bash
+   ```powershell
    dotnet run
    ```
 
-4. The API will be available at http://localhost:5139
+3. Check the actual startup URL; the development launch profile uses http://localhost:5139.
 
 ### Running the Frontend
 
-1. Navigate to the frontend/container-ships-ui directory:
-   ```bash
-   cd frontend/container-ships-ui
+1. From this demo's directory, navigate to the frontend:
+
+   ```powershell
+   Set-Location .\frontend
    ```
 
 2. Install dependencies:
-   ```bash
-   npm install
+
+   ```powershell
+   npm ci
    ```
 
 3. Start the development server:
-   ```bash
+
+   ```powershell
    npm start
    ```
 
@@ -62,4 +61,4 @@ A full-stack demo application using .NET 9 with PostgreSQL for the backend and R
 
 ## Database
 
-The application uses PostgreSQL with Entity Framework Core for data access. The database is automatically seeded with sample data on startup.
+The current controller serves sample data from static in-memory lists. The supplied API project does not configure PostgreSQL or Entity Framework Core; no database setup is required for this implementation.

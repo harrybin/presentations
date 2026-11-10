@@ -1,7 +1,18 @@
 {
   "overrides": [
     {
-      "files": ["slides.md", "pages/*.md"],
+      "files": [
+        "slides.md",
+        "aiops-Mainteance-mit-KI.md",
+        "bmad-anforderungen-tests.md",
+        "devcontainer.md",
+        "devcontainer_20m.md",
+        "githubCopilotDelphi.md",
+        "msWebUiReact.md",
+        "webappLocalization.md",
+        "special-slides/**/*.md",
+        "copilot-slides/**/*.md"
+      ],
       "options": {
         "parser": "slidev",
         "plugins": ["prettier-plugin-slidev"]

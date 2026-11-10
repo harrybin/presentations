@@ -2,15 +2,15 @@
 
 ## Repo shape
 
-- Multi-deck Slidev workspace: `slides.md` is the index and every other `*.md` in the repo root is a standalone talk (e.g. `webappLocalization.md`). The build (`build.sh`) iterates root markdown files (excluding `slides.md`/`README.md`) and emits to `dist/<file-name>` with `--base "/<file-name>/"`. For standalone decks, store the published subpath in `publicDeckPath` and avoid `routeAlias`, because matching alias/base values duplicate the deck segment during navigation.
+- Multi-deck Slidev workspace: `slides.md` is the index. The build (`build.sh`) treats every other root `*.md` except `README.md` as a deck and emits to `dist/<file-name>` with `--base "/<file-name>/"`. Do not put scratch or tracking markdown in the root. For standalone decks, store the published subpath in `publicDeckPath` and avoid `routeAlias`, because matching alias/base values duplicate the deck segment during navigation.
 - Shared content lives under `special-slides/` (generic speaker/Q&A/thank-you plus deck-specific folders) and `copilot-slides/` (agenda + chapter fragments). Include them with `src: /special-slides/...` or `src: /copilot-slides/...` blocks to avoid duplication.
-- Theme, transitions, and addons are standardized (see opening frontmatter of any deck). Copy that block when creating new material.
+- New decks use the 2026 Xebia theme; use `aiops-Mainteance-mit-KI.md` for applicable headmatter settings, not its title, speaker, images, or path. Existing decks also use an older Xebia theme: preserve their theme when editing.
 
 ## Running & building
 
-- Install once with `npm install`, then preview any deck via `npx slidev <deck>.md` (VS Code exposes ready-made tasks for the popular decks). Use `npx slidev slides.md` to test the index site locally.
-- `npm run build` (invokes `build.sh`) requires a bash-compatible shell; it wipes `dist/`, builds the index, then batch-builds every deck so that the static site mirrors production at https://presentations.harrybin.dev.
-- Formatting relies on `prettier` plus `prettier-plugin-slidev` (`npm run format`).
+- Use npm and the locked dependencies. See [README setup and validation](../README.md#setup-and-validation) for the runtime, prerequisites, and commands. There is no root `dev`, `test`, or `lint` script. Use the local CLI with an explicit entry; do not implicitly download another Slidev package.
+- The `build` script requires Bash, sudo, Python available as `python`, and authorized package-registry access. It deletes/recreates `dist`, builds the index and all root entries, then patches GitHub Pages routing. Confirm cleanup affects only generated output; do not substitute generic deployment examples.
+- The `format` script runs `slidev format`, which organizes Slidev markdown, not its content. Prettier plus `prettier-plugin-slidev` handles content formatting through `.prettierrc`; check only affected files and do not mass-format unrelated decks.
 
 ## Authoring slides
 
@@ -27,7 +27,7 @@
 
 - Global wrappers: `global-top.vue` shows the progress bar (via `slidev-component-progress`); `global-bottom.vue` renders the glow effect controlled by frontmatter keys `glowEnabled`, `glow`, `glowOpacity`, `glowHue`, and `glowSeed`. Disable animations per deck with `glowEnabled: false` or tune the distribution values (e.g., `glow: top-right`).
 - Custom Vue components in `components/`: `Aside.vue` provides consistent callouts (`<Aside type="warning" title="Heads up">...</Aside>`), while `PartialWebContent.vue` can live-fetch static HTML snippets (`url`, optional `regex`, and `scale/width/height` props).
-- Follow the theme’s layout presets (see https://sli.dev/builtin/layouts). The default frontmatter already locks the Xebia theme, fade transition, and addon list—deviate only with a clear reason.
+- Follow the target theme's layout presets; [Slidev built-ins](https://sli.dev/builtin/layouts) are not an exhaustive list of Xebia layouts. Preserve the target deck's transition and addons.
 
 ## Content conventions
 
@@ -38,6 +38,5 @@
 ## References
 
 - Slidev syntax & frontmatter: https://sli.dev/guide/syntax and https://sli.dev/custom/#frontmatter (type definitions live in `packages/types/src/config.ts` upstream).
-- Supported layouts list for the xebia theme: https://github.com/xebia/presentation-templates/tree/main/slidev-theme-xebia/layouts
-  - hoe touse these layouts: https://github.com/xebia/presentation-templates/blob/main/slidev-theme-xebia/example.md
+- The previously referenced Xebia repository layout/example URLs returned HTTP 404 on 2026-11-10. Use existing same-theme decks and the authorized installed theme's layouts; do not invent replacement links or assume registry access.
 - Use `/public` for imagery, `/special-slides` & `/copilot-slides` for shared markdown, and `components/` for Vue enhancements.

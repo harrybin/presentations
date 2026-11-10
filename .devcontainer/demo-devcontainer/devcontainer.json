@@ -3,7 +3,7 @@
     "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:9.0",
     "features": {
         "ghcr.io/devcontainers/features/node:1": {
-            "version": "22"
+            "version": "24"
         }
     },
     "forwardPorts": [
