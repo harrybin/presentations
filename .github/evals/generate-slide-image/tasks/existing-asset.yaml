@@ -1,0 +1,9 @@
+id: negative-trigger-002
+name: Reuse an existing asset
+description: Use the existing asset and verify the slide reference; do not activate generation, submit data externally, or overwrite the image.
+tags:
+  - negative-trigger
+inputs:
+  prompt: "Use the existing public/pilot-large.jpg on this slide. Only fix the reference; do not create new artwork."
+expected:
+  should_trigger: false

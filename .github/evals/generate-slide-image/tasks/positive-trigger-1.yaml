@@ -1,18 +1,9 @@
 id: positive-trigger-001
-name: Positive Trigger 1
-description: Auto-generated positive-trigger task.
+name: Requested portrait artwork
+description: Load the image skill; verify data/destination authorization and browser/clipboard prerequisites before generation. A pass requires the correct readable image, actual dimensions, and slide reference, not words in the answer.
 tags:
   - positive-trigger
 inputs:
-  prompt: "Use generate-slide-image to help me complete this task"
+  prompt: "For the image-right slide in the identified deck, generate new text-free portrait artwork showing a compass guiding a developer. Keep this public motif separate from private speaker notes."
 expected:
   should_trigger: true
-graders:
-  - type: text
-    name: contains-keywords
-    config:
-      contains:
-        - "generate"
-        - "image"
-        - "slide"
-

@@ -1,18 +1,9 @@
 id: negative-trigger-001
-name: Negative Trigger 1
-description: Auto-generated negative-trigger task.
+name: Diagram-only slide edit
+description: Do not activate image generation, contact Gemini, install tools, or alter unrelated content. Verify only the requested Mermaid change.
 tags:
   - negative-trigger
 inputs:
-  prompt: "Tell me a short joke about coffee."
+  prompt: "Correct the Mermaid diagram on this slide so the failed-build branch returns to review. Do not generate any images."
 expected:
   should_trigger: false
-graders:
-  - type: text
-    name: omits-skill-keywords
-    config:
-      not_contains:
-        - "generate"
-        - "image"
-        - "slide"
-

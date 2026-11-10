@@ -1,14 +1,14 @@
-# Slidev Skills for Claude Code
+# Slidev Skill
 
-Agent skills that help Claude Code understand and work with [Slidev](https://sli.dev) presentations.
+An imported skill for working with [Slidev](https://sli.dev) presentations, adapted to this repository's npm multi-deck workspace.
 
-## Installation
+## Provenance and local use
 
-```bash
-npx skills add slidevjs/slidev
-```
+The upstream source is `slidevjs/slidev`, recorded in `skills-lock.json`. The recorded source hash is not a substitute for reviewing bundled instructions or a verified integrity guarantee. This copy is already stored in `.github/skills/slidev`; do not reinstall it merely to use it.
 
-This will add the Slidev skill to your Claude Code configuration.
+Local adaptations replace the generic pnpm/scaffolding quickstart with the actual npm scripts, preserve the custom multi-deck build/routing, and clarify optional export dependencies and theme selection. Keep the existing references as generic, on-demand feature documentation, not deployment instructions for this repository.
+
+When updating from upstream, review its diff and preserve/reconcile these adaptations explicitly. Do not manually invent a replacement lock hash, automatically overwrite local guidance, or install dependencies without a task that authorizes it.
 
 ## What's Included
 
@@ -24,13 +24,15 @@ The Slidev skill provides Claude Code with knowledge about:
 
 ## Usage
 
-Once installed, Claude Code will automatically use Slidev knowledge when:
+On a client that supports discovery of `.github/skills`, the agent can load the skill when relevant to:
 
 - Creating new presentations
 - Adding slides with code examples
 - Setting up animations and transitions
 - Configuring themes and layouts
 - Exporting presentations
+
+Discovery does not prove execution or compliance. Copilot clients support repository skills, but exact client/version support and tools must be checked in the session. The upstream Claude Code description is not proof that this repository location is discovered by every other client. Do not load the skill for unrelated Markdown or demo-only application edits.
 
 ### Example Prompts
 

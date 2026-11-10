@@ -15,18 +15,20 @@ slidev slides.md
 ```
 
 Options:
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--port` | 3030 | Server port |
-| `--open` | false | Open browser |
-| `--remote [password]` | - | Enable remote access |
-| `--bind` | 0.0.0.0 | Bind address |
-| `--base` | / | Base URL path |
-| `--log` | warn | Log level |
-| `--force` | false | Force optimizer re-bundle |
-| `--theme` | - | Override theme |
+
+| Option                | Default | Description               |
+| --------------------- | ------- | ------------------------- |
+| `--port`              | 3030    | Server port               |
+| `--open`              | false   | Open browser              |
+| `--remote [password]` | -       | Enable remote access      |
+| `--bind`              | 0.0.0.0 | Bind address              |
+| `--base`              | /       | Base URL path             |
+| `--log`               | warn    | Log level                 |
+| `--force`             | false   | Force optimizer re-bundle |
+| `--theme`             | -       | Override theme            |
 
 Examples:
+
 ```bash
 slidev --port 8080 --open
 slidev --remote mypassword
@@ -40,15 +42,17 @@ slidev build [entry]
 ```
 
 Options:
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--out` | dist | Output directory |
-| `--base` | / | Base URL for deployment |
-| `--download` | false | Include PDF download |
-| `--theme` | - | Override theme |
-| `--without-notes` | false | Exclude presenter notes |
+
+| Option            | Default | Description             |
+| ----------------- | ------- | ----------------------- |
+| `--out`           | dist    | Output directory        |
+| `--base`          | /       | Base URL for deployment |
+| `--download`      | false   | Include PDF download    |
+| `--theme`         | -       | Override theme          |
+| `--without-notes` | false   | Exclude presenter notes |
 
 Examples:
+
 ```bash
 slidev build --base /my-repo/
 slidev build --download --out public
@@ -62,21 +66,23 @@ slidev export [entry]
 ```
 
 Options:
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--output` | - | Output filename |
-| `--format` | pdf | pdf / png / pptx / md |
-| `--timeout` | 30000 | Timeout per slide (ms) |
-| `--range` | - | Slide range (e.g., 1,4-7) |
-| `--dark` | false | Export dark mode |
-| `--with-clicks` | false | Include click steps |
-| `--with-toc` | false | PDF table of contents |
-| `--wait` | 0 | Wait ms before export |
-| `--wait-until` | networkidle | Wait condition |
-| `--omit-background` | false | Transparent background |
-| `--executable-path` | - | Browser path |
+
+| Option              | Default     | Description               |
+| ------------------- | ----------- | ------------------------- |
+| `--output`          | -           | Output filename           |
+| `--format`          | pdf         | pdf / png / pptx / md     |
+| `--timeout`         | 30000       | Timeout per slide (ms)    |
+| `--range`           | -           | Slide range (e.g., 1,4-7) |
+| `--dark`            | false       | Export dark mode          |
+| `--with-clicks`     | false       | Include click steps       |
+| `--with-toc`        | false       | PDF table of contents     |
+| `--wait`            | 0           | Wait ms before export     |
+| `--wait-until`      | networkidle | Wait condition            |
+| `--omit-background` | false       | Transparent background    |
+| `--executable-path` | -           | Browser path              |
 
 Examples:
+
 ```bash
 slidev export
 slidev export --format pptx
@@ -100,16 +106,20 @@ slidev theme eject [entry]
 ```
 
 Options:
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--dir` | theme | Output directory |
-| `--theme` | - | Theme to eject |
+
+| Option    | Default | Description      |
+| --------- | ------- | ---------------- |
+| `--dir`   | theme   | Output directory |
+| `--theme` | -       | Theme to eject   |
 
 Extracts theme to local directory for customization.
 
 ## npm Script Usage
 
+The following script definitions are generic examples, not this repository's scripts. Here, use the existing `start` script for the index and a local CLI call for a specific deck; no `dev` script is defined. See the skill entry and root README before choosing commands.
+
 In package.json:
+
 ```json
 {
   "scripts": {
@@ -121,6 +131,7 @@ In package.json:
 ```
 
 With arguments (note `--`):
+
 ```bash
 npm run dev -- --port 8080 --open
 npm run export -- --format pptx
