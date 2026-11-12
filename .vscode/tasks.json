@@ -9,7 +9,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev slides.md",
+      "command": "npx slidev slides.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -23,7 +23,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev devcontainer.md",
+      "command": "npx slidev devcontainer.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -37,7 +37,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev githubCopilotDelphi.md",
+      "command": "npx slidev githubCopilotDelphi.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -51,7 +51,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev webappLocalization.md",
+      "command": "npx slidev webappLocalization.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -65,7 +65,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev msWebUiReact.md",
+      "command": "npx slidev msWebUiReact.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -79,7 +79,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev aiops-Mainteance-mit-KI.md",
+      "command": "npx slidev aiops-Mainteance-mit-KI.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -93,7 +93,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev bmad-anforderungen-tests.md",
+      "command": "npx slidev bmad-anforderungen-tests.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
