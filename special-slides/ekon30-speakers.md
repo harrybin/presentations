@@ -9,7 +9,7 @@ hideInToc: true
 
 <div>
 
-<img src="/hbinkle.jpg" class="w-36 h-36 rounded-full object-cover mb-4" />
+<img src="../public/hbinkle.jpg" class="w-36 h-36 rounded-full object-cover mb-4" />
 
 ## Harald Binkle
 

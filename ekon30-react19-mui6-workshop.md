@@ -16,7 +16,7 @@ showCopyright: false
 description: "Vierstündiger Workshop für den Einstieg aus der Desktopentwicklung: moderne Browser-Apps mit TypeScript, React und Material UI verstehen und bauen."
 publicDeckPath: ekon30-react19-mui6-workshop
 ###### slides start ######
-layout: cover
+layout: cover-dark
 coverImage: /msWebUiReact-cover.png
 hideInToc: true
 ---
@@ -38,7 +38,61 @@ src: /special-slides/speaker.md
 ---
 
 ---
-layout: cover
+title: Vorbereitung
+layout: default
+hideInToc: true
+---
+
+# Vorbereitung: Übungsrepo
+
+<div class="grid grid-cols-2 gap-10 items-center mt-6">
+
+<div>
+
+**Bitte mitbringen**
+
+<v-clicks>
+
+- Node.js 24+, npm und Git
+- VS Code sowie einen aktuellen Browser
+- Repository klonen und `npm install` ausführen
+
+</v-clicks>
+
+```bash
+git clone https://github.com/harrybin/ekon30-react-typescript-workshop.git
+cd ekon30-react-typescript-workshop
+npm install
+npm run dev
+```
+
+**Repo:** [github.com/harrybin/ekon30-react-typescript-workshop](https://github.com/harrybin/ekon30-react-typescript-workshop)
+
+</div>
+
+<div class="text-center">
+
+<QRCode
+  type="svg"
+  :data="'https://github.com/harrybin/ekon30-react-typescript-workshop'"
+  :dotsOptions="{ color: '#164e8a', type: 'extra-rounded', roundSize: false }"
+  :backgroundOptions="{ color: '#ffffff' }"
+  :width="220"
+  :height="220"
+/>
+
+<p>Scannen, klonen, App starten</p>
+
+</div>
+
+</div>
+
+<!--
+Vorbereitung: Starterprojekt klonen, npm-Abhängigkeiten installieren und lokale App starten. Bei Setup-Problemen vorab den Workshop-README-Hinweisen folgen.
+-->
+
+---
+layout: cover-dark
 coverImage: /msWebUiReact-strategic-answer.jpg
 hideInToc: true
 ---
@@ -82,8 +136,7 @@ Parallelen zu Desktopentwicklung erleichtern den Einstieg: UI-Komponenten, Prope
 
 ---
 title: Agenda
-layout: image-right
-background: /react-steps.png
+layout: default
 hideInToc: true
 ---
 
@@ -175,6 +228,8 @@ background: /msWebUiReact-tooling.jpg
 
 </v-clicks>
 
+**Repo-Übung:** `exercises/01-tooling.md`
+
 <!--
 Geführte Einrichtung: VS Code, Extensions, Node/npm-Skripte, Browser-Konsole und Breakpoints. Setup vorab vereinfachen, damit Teilnehmende nicht lange installieren müssen.
 -->
@@ -203,6 +258,8 @@ type ApiResult<T> = {
 <v-click>
 
 **Übung 2 · 35 Minuten:** `Session`-Interface, generischen API-Typ und typisierte Beispieldaten anlegen.
+
+**Repo-Übung:** `exercises/02-typescript.md`
 
 </v-click>
 
@@ -290,6 +347,8 @@ background: /msWebUiReact-demo1.jpg
 
 </v-clicks>
 
+**Repo-Übung:** `exercises/03-components-hooks.md`
+
 <!--
 Geführt: eine Komponente bauen, Event-Handler ergänzen und mit React DevTools/Browser-Tools untersuchen.
 -->
@@ -364,6 +423,8 @@ background: /msWebUiReact-tooling.jpg
 
 </v-clicks>
 
+**Repo-Übung:** `exercises/04-material-ui.md`
+
 <!--
 Geführt: Komponenten zuerst, dann Layout und Breakpoints. CSS-Fallstricke zeigen, die beim Wechsel von Desktop-Layouts zu responsiven Browser-Layouts häufig auftreten.
 -->
@@ -405,6 +466,8 @@ background: /msWebUiReact-demo1.jpg
 - **Ergebnis:** Filter und Merkliste mit klarer State-Verantwortung
 
 </v-clicks>
+
+**Repo-Übung:** `exercises/05-context.md`
 
 <!--
 Checkpoint: Teilnehmende erklären, welcher State lokal, abgeleitet oder gemeinsam genutzt wird. Bei Zeit einen Effect für eine externe Synchronisation demonstrieren.
@@ -459,6 +522,8 @@ background: /msWebUiReact-mobile-push.jpg
 
 </v-clicks>
 
+**Repo-Übung:** `exercises/06-fetch.md`
+
 <!--
 Geführt: vorbereiteten API-Endpunkt oder Mock verwenden, damit Netz-/CORS-Probleme nicht die Übung blockieren. Im Debugger Request, Status und Response prüfen.
 -->
@@ -477,6 +542,7 @@ background: /msWebUiReact-tooling.jpg
 - AutoRest kann aus API-Beschreibungen Clients erzeugen
 - generierter Code spart Routine, ersetzt aber kein API-Verständnis
 - API-Vertrag, Fehlerfälle und Versionierung bleiben wichtig
+- **Repo-Vertiefung:** `exercises/optional.md`
 
 </v-clicks>
 
@@ -498,6 +564,7 @@ background: /msWebUiReact-css-challenge.png
 - `memo`/Memoization nicht reflexartig einsetzen
 - Listen mit stabilen Keys rendern
 - Netzwerk, Bundle-Größe und UI getrennt untersuchen
+- **Repo-Vertiefung:** `exercises/optional.md`
 
 </v-clicks>
 
@@ -518,6 +585,7 @@ layout: default
 - API-Basis-URL konfigurierbar halten, keine Secrets ins Frontend
 - Unit-/Component-Tests als nächste Ausbaustufe
 - Playwright für browserbasierte Integrationstests optional vorstellen
+- **Repo-Vertiefung:** `exercises/optional.md`
 
 </v-clicks>
 
@@ -541,6 +609,8 @@ background: /msWebUiReact-strategic-answer.jpg
 - **Ergebnis:** lauffähige App und konkrete nächste Verbesserung
 
 </v-clicks>
+
+**Repo-Vertiefung:** `exercises/optional.md`
 
 <!--
 Der Abschluss verbindet Browser- und React-Debugging mit Testbarkeit und Wartbarkeit. Bei schneller Gruppe Playwright-Test demonstrieren; sonst in die optionale Vertiefung verweisen.

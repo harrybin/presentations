@@ -16,7 +16,7 @@ showCopyright: false
 description: "60-Minuten-Vortrag: Mit GitHub Copilot und Spec-Driven Development vom PRD zu überprüfbarem, agentisch erstelltem Code."
 publicDeckPath: ekon30-spec-driven-development
 ###### slides start ######
-layout: cover
+layout: cover-dark
 coverImage: /bmad-agent-fleet.png
 hideInToc: true
 ---
@@ -38,7 +38,7 @@ src: /special-slides/ekon30-speakers.md
 ---
 
 ---
-layout: cover
+layout: cover-dark
 coverImage: /bmad-project-failure-aircraft.png
 hideInToc: true
 ---
@@ -184,8 +184,7 @@ Die Fragen sind hier wichtiger als eine vorschnelle Lösung. Gute Spec-Arbeit ma
 
 ---
 title: Der Entwicklungsfluss
-layout: image-right
-background: /bmad-agent-fleet.png
+layout: default
 ---
 
 # Artefakte statt Mega-Prompt

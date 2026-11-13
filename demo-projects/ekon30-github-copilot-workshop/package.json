@@ -1,0 +1,12 @@
+{
+  "name": "ekon30-github-copilot-workshop",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

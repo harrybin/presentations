@@ -16,13 +16,14 @@ showCopyright: false
 description: "60-Minuten-Vortrag mit GitHub Copilot: Instructions, Prompts, Skills, Tools und Custom Agents passend zur Aufgabe einsetzen."
 publicDeckPath: ekon30-ai-context-setup
 ###### slides start ######
-layout: cover
+layout: cover-dark
 coverImage: /bmad-context-satellite.png
 hideInToc: true
 ---
 
 # AI Context Setup
-## Instructions, Prompts, Skills, Tools, Custom Agents — was ist für was?
+## Instructions, Prompts, Skills, Tools & Custom Agents
+### Was ist wofür?
 
 **Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 60 Min. · GitHub Copilot · Harald Binkle & Thomas Tomow**
 
@@ -38,7 +39,7 @@ src: /special-slides/ekon30-speakers.md
 ---
 
 ---
-layout: cover
+layout: cover-dark
 coverImage: /bmad-ai-lightbulb.png
 hideInToc: true
 ---

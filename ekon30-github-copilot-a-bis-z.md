@@ -16,7 +16,7 @@ showCopyright: false
 description: "Vierstündiger Hands-on-Workshop mit GitHub Copilot: von Code Completion und Chat bis zu Agenten, Skills und Tools."
 publicDeckPath: ekon30-github-copilot-a-bis-z
 ###### slides start ######
-layout: cover
+layout: cover-dark
 coverImage: /gh-copilot-logo.png
 hideInToc: true
 ---
@@ -38,7 +38,60 @@ src: /special-slides/ekon30-speakers.md
 ---
 
 ---
-layout: cover
+title: Vorbereitung
+layout: default
+hideInToc: true
+---
+
+# Vorbereitung: Übungsrepo
+
+<div class="grid grid-cols-2 gap-10 items-center mt-6">
+
+<div>
+
+**Bitte mitbringen**
+
+<v-clicks>
+
+- VS Code, Git und Node.js 24+
+- GitHub Copilot und Copilot Chat angemeldet
+- Repository vorab klonen und `npm test` ausführen
+
+</v-clicks>
+
+```bash
+git clone https://github.com/harrybin/ekon30-github-copilot-workshop.git
+cd ekon30-github-copilot-workshop
+npm test
+```
+
+**Repo:** [github.com/harrybin/ekon30-github-copilot-workshop](https://github.com/harrybin/ekon30-github-copilot-workshop)
+
+</div>
+
+<div class="text-center">
+
+<QRCode
+  type="svg"
+  :data="'https://github.com/harrybin/ekon30-github-copilot-workshop'"
+  :dotsOptions="{ color: '#164e8a', type: 'extra-rounded', roundSize: false }"
+  :backgroundOptions="{ color: '#ffffff' }"
+  :width="220"
+  :height="220"
+/>
+
+<p>Scannen, klonen, Tests starten</p>
+
+</div>
+
+</div>
+
+<!--
+Vorbereitung: sicherstellen, dass GitHub Copilot in VS Code angemeldet und das Workshop-Repository geklont ist. Die Tests verwenden Node.js ohne zusätzliche npm-Pakete.
+-->
+
+---
+layout: cover-dark
 coverImage: /pilot-large.jpg
 hideInToc: true
 ---
@@ -82,8 +135,7 @@ Vorabhinweis: VS Code und Copilot-Extensions, GitHub-Anmeldung und ein Beispielp
 
 ---
 title: Agenda
-layout: image-right
-background: /compass-right.png
+layout: default
 hideInToc: true
 ---
 
@@ -153,6 +205,8 @@ background: /copilot-change-completions-model-2.png
 
 </v-clicks>
 
+**Repo-Übung:** `exercises/01-completions.md`
+
 <!--
 Geführte Übung: 5 Min Demo, 15 Min eigenes Arbeiten, 10 Min Checkpoint. Sprache frei wählbar. Bei Delphi bestehende Unit und Tests nehmen; sonst TS-Beispiel verwenden. Frage: Welche Annahme hat Copilot nicht erkennen können?
 -->
@@ -173,6 +227,8 @@ background: /copilot-chat-2.png
 - **Ergebnis:** nachvollziehbarer Plan und eine geprüfte Verbesserung
 
 </v-clicks>
+
+**Repo-Übung:** `exercises/02-chat.md`
 
 <!--
 Geführt: erst Ask/Explain ohne Edit, dann den kleinsten sinnvollen Änderungsauftrag. Teilnehmende vergleichen Antwort und tatsächlichen Code. Slash-Commands und Chat-Kontext variieren je nach Copilot-Oberfläche.
@@ -227,6 +283,8 @@ background: /copilot-chat-3.png
 
 </v-clicks>
 
+**Repo-Übung:** `exercises/03-agent-mode.md`
+
 <!--
 Zeitbox: 8 Min gemeinsames Plan-Beispiel, 22 Min Umsetzung, 10 Min Diff-/Testreview. In der Demo bewusst einen Randfall einbauen. Falls der Agent zu breit arbeitet: stoppen, Scope verkleinern, Plan aktualisieren.
 -->
@@ -268,6 +326,8 @@ background: /settings-instruction-files-2.png
 - **Ergebnis:** Vorher/Nachher-Beispiel, das die Regelwirkung zeigt
 
 </v-clicks>
+
+**Repo-Übung:** `exercises/04-instructions-prompts.md`
 
 <!--
 Geführt: Regeln als konkrete Vorgaben schreiben, nicht als Wunschliste. Mit demselben Auftrag vorher/nachher vergleichen. Keine sensiblen oder personenbezogenen Repo-Inhalte verwenden.
@@ -322,6 +382,8 @@ background: /bmad-context-hierarchy.png
 
 </v-clicks>
 
+**Repo-Übung:** `exercises/05-skills-agents.md`
+
 <!--
 Gruppenübung, 15 Minuten innerhalb des Bausteins: erst Papierentwurf, danach Verzeichnisstruktur betrachten. Nicht alle Teilnehmenden müssen heute echte Tools installieren.
 -->
@@ -342,6 +404,8 @@ background: /bmad-governance-control-center.png
 - was braucht menschliche Bestätigung?
 
 </v-clicks>
+
+**Repo-Übung:** `exercises/06-tools-mcp.md` (optional)
 
 <!--
 Demo nur mit einem vorbereiteten, möglichst lesenden Beispielserver. Verbindung, Tool-Input und Rückgabe prüfen. Keine echten Kundendaten, Zugangsdaten oder unkontrollierten Schreibaktionen.
@@ -385,6 +449,8 @@ background: /bmad-human-ai-copilot.png
 - **Ergebnis:** überprüfbarer PR-Entwurf und persönlicher nächster Schritt
 
 </v-clicks>
+
+**Repo-Übung:** `exercises/07-capstone.md`
 
 <!--
 10 Min bauen, 5 Min Review in Zweiergruppen, 5 Min teilen. Ohne PR-Rechte lokal committen oder Diff zeigen.
