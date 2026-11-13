@@ -13,7 +13,7 @@ overviewSnapshots: false
 glowEnabled: true
 author: "Harald Binkle"
 showCopyright: false
-description: "Vierstündiger Workshop: Eine moderne, responsive Web-App mit React 19, TypeScript und Material UI 6 schrittweise bauen."
+description: "Vierstündiger Workshop für den Einstieg aus der Desktopentwicklung: moderne Browser-Apps mit TypeScript, React und Material UI verstehen und bauen."
 publicDeckPath: ekon30-react19-mui6-workshop
 ###### slides start ######
 layout: cover
@@ -22,12 +22,12 @@ hideInToc: true
 ---
 
 # Workshop: Moderne Web-Applikationen
-## mit React 19 und Material UI 6 in TypeScript
+## mit React und Material-UI in TypeScript
 
 **Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle**
 
 <!--
-Wir bauen heute gemeinsam einen kleinen EKON-Sessionplaner: von typisierten Daten und wiederverwendbaren Komponenten bis zu Formularen, responsivem Layout und optimistischem UI-Feedback.
+Wir bauen heute gemeinsam eine Browser-App und ordnen die Web-Technologien ein: von Node.js, TypeScript und React über Material UI und REST-Daten bis zu Debugging, Wartbarkeit und Performance. Beispiele knüpfen an bekannte Muster aus der Desktopentwicklung an.
 -->
 
 ---
@@ -43,19 +43,19 @@ coverImage: /msWebUiReact-strategic-answer.jpg
 hideInToc: true
 ---
 
-# Vom UI-Baukasten zur Web-App
-## Schritt für Schritt, mit nachvollziehbarem State
+# Von der Desktop-App zur Browser-App
+## Vertraute Konzepte, neue Laufzeit und Architektur
 
 <v-clicks>
 
-- Inhalte strukturieren
-- Interaktionen bauen
-- Feedback und Fehlerzustände gestalten
+- Browser-App und Website unterscheiden
+- TypeScript, React und Material UI einordnen
+- eine testbare und wartbare App aufbauen
 
 </v-clicks>
 
 <!--
-Die Herausforderung ist nicht JSX auswendig zu lernen. Es geht darum, Datenfluss, Komponenten und Browserverhalten zusammenzubringen.
+Die Herausforderung ist nicht nur JSX: Wir betrachten Browser-Laufzeit, Bundling, Komponenten, Datenfluss und die Unterschiede zu Desktop-UI.
 -->
 
 ---
@@ -65,19 +65,19 @@ background: /msWebUiReact-decision-tree.jpg
 hideInToc: true
 ---
 
-# Ein Workshop mit sichtbarem Ergebnis
+# Für den Wechsel aus der Desktopentwicklung
 
 <v-clicks>
 
-- **Zielgruppe:** Entwickler:innen mit JavaScript- oder TypeScript-Grundlagen
-- **Ergebnis:** responsive Sessionplaner mit Filter, Formular und Pending-State
-- **Stack:** React 19, TypeScript, Material UI 6
-- **Vorkenntnisse:** HTML/CSS hilfreich; React-Vorerfahrung nicht erforderlich
+- **Zielgruppe:** Entwickler:innen, besonders mit Desktop-UI-Erfahrung
+- **Ergebnis:** strukturierte Browser-App mit typisierten Daten und Material UI
+- **Stack:** TypeScript, React, Material UI, Node.js und Vite
+- **Vorkenntnisse:** Programmierkenntnisse; HTML/CSS- oder React-Vorkenntnisse sind nicht nötig
 
 </v-clicks>
 
 <!--
-Der Praxisfokus folgt dem vorhandenen React-Deck im Repository, geht aber von der Architekturübersicht in ein echtes gemeinsames Build-Erlebnis.
+Parallelen zu Desktopentwicklung erleichtern den Einstieg: UI-Komponenten, Properties, Events und State bleiben vertraut. Neu sind unter anderem Browser-Laufzeit, deklaratives Rendering und der Build-Prozess.
 -->
 
 ---
@@ -87,20 +87,22 @@ background: /react-steps.png
 hideInToc: true
 ---
 
-# Vier Stunden · vom Modell zum Erlebnis
+# Vier Stunden · vom Werkzeug zur Web-App
 
 | Zeit | Baustein |
 |---|---|
-| 00:00–00:15 | Einstieg, Setup, Ziel-App |
-| 00:15–01:05 | React-Modell und TypeScript-Daten |
-| 01:05–01:15 | Pause |
-| 01:15–02:25 | Material UI, Layout, State und Listen |
-| 02:25–02:35 | Pause |
-| 02:35–03:15 | React 19 Actions und optimistisches Feedback |
-| 03:15–04:00 | Qualität, Capstone und Review |
+| 00:00–00:20 | Web-App vs. Website, VS Code und Node.js |
+| 00:20–00:55 | TypeScript: Types, Interfaces und Generics |
+| 00:55–01:35 | Funktionales React: Komponenten, Props und Lifecycle |
+| 01:35–01:45 | Pause |
+| 01:45–02:25 | Material UI: Komponenten, Layout und Styling |
+| 02:25–03:00 | Hooks, State und React Context |
+| 03:00–03:10 | Pause |
+| 03:10–03:40 | REST-Daten, Fetch API und optional AutoRest |
+| 03:40–04:00 | Debugging, Performance, Tests und Ausblick |
 
 <!--
-Die Blöcke ergeben 240 Minuten inklusive Pausen. Für den Workshop wird ein Starter-Repository vorbereitet und vorab getestet, damit Setup-Probleme die geführten Übungen nicht verdrängen.
+Die Blöcke ergeben 240 Minuten inklusive Pausen. Vite ist der vorbereitete Bundler; webpack wird als Alternative eingeordnet. AutoRest, Tests mit Playwright und App-Konfiguration sind optionale Vertiefungen abhängig von Tempo und Vorkenntnissen. Das Starter-Repository wird vorab getestet.
 -->
 
 ---
@@ -108,10 +110,10 @@ layout: chapter-dark
 background: /msWebUiReact-crossroads.jpg
 ---
 
-# 01 · React in einem Satz
+# 01 · Was steckt in einer Browser-App?
 
 <!--
-React rendert UI aus Daten und Zustand. Ereignisse führen zu neuen Daten; React berechnet das UI neu.
+Webseite und Web-App unterscheiden sich in Interaktion, Zustand und Datenfluss. Die App läuft im Browser, wird aber typischerweise mit Node-basierten Werkzeugen entwickelt und gebündelt.
 -->
 
 ---
@@ -120,19 +122,113 @@ layout: image-right
 background: /msWebUiReact-demo1.jpg
 ---
 
-# Ein Ziel für alle Übungen
+# Ein roter Faden für die Übungen
 
 <v-clicks>
 
-- Session-Liste mit Track und Zeit
-- Filter nach Track und Suchbegriff
-- Session zur Merkliste hinzufügen
-- Formular mit Pending-, Erfolgs- und Fehlerfeedback
+- kleine browserbasierte Fachanwendung
+- Datenmodell und UI-Komponenten schrittweise ergänzen
+- Inhalte aus einer REST-Schnittstelle laden
+- Build, Debugging und Erweiterbarkeit nachvollziehen
 
 </v-clicks>
 
 <!--
-Vorhandenen Starter zeigen: lauffähige App, ein paar Beispieldaten, keine versteckten fertigen Übungen.
+Ein kleines Konferenz- oder Katalogbeispiel dient als durchgehende App. Vorhandenen Starter zeigen: lauffähig, mit wenigen Daten und ohne versteckte fertige Übungen.
+-->
+
+---
+title: Node.js und der Frontend-Werkzeugkasten
+layout: image-right
+background: /msWebUiReact-tooling.jpg
+---
+
+# Entwickeln mit Node.js, bauen für den Browser
+
+<v-clicks>
+
+- Node.js führt Entwicklungs- und Build-Werkzeuge aus
+- npm verwaltet Projektabhängigkeiten und Skripte
+- Vite startet Dev-Server und bündelt die App
+- Extensions ergänzen TypeScript, React und Browser-Debugging
+
+</v-clicks>
+
+<!--
+Node.js ist hier zunächst die Werkzeug-Laufzeit, nicht automatisch der Server für die ausgelieferte Browser-App. Vite wird praktisch eingesetzt; webpack wird als verbreitete Alternative eingeordnet.
+-->
+
+---
+title: Übung 1 · Projekt starten und Umgebung verstehen
+layout: image-left
+background: /msWebUiReact-tooling.jpg
+---
+
+# 20 Minuten · Vite und Debugging
+
+<v-clicks>
+
+- Starter installieren und Vite-Dev-Server starten
+- Projektstruktur und npm-Skripte finden
+- Browser-DevTools und VS-Code-Debugging öffnen
+- **Ergebnis:** App lokal gestartet und Debugger einsatzbereit
+
+</v-clicks>
+
+<!--
+Geführte Einrichtung: VS Code, Extensions, Node/npm-Skripte, Browser-Konsole und Breakpoints. Setup vorab vereinfachen, damit Teilnehmende nicht lange installieren müssen.
+-->
+
+---
+title: TypeScript modelliert Datenverträge
+layout: default
+---
+
+# TypeScript: JavaScript mit statischen Typen
+
+```ts
+interface Session {
+  id: string
+  title: string
+  speaker: string
+  track: string
+}
+
+type ApiResult<T> = {
+  data: T
+  receivedAt: Date
+}
+```
+
+<v-click>
+
+**Übung 2 · 35 Minuten:** `Session`-Interface, generischen API-Typ und typisierte Beispieldaten anlegen.
+
+</v-click>
+
+<!--
+Anhand des Beispieltyps Types, Interfaces und Generics erklären. Desktop-Parallele: Verträge für Daten zwischen UI und Services werden explizit. Danach ein Objekt typisieren und einen absichtlich fehlerhaften Wert vom TypeScript-Compiler finden lassen.
+-->
+
+---
+title: React entwickelt UI deklarativ
+layout: image-right
+background: /msWebUiReact-transfers.jpg
+---
+
+# Komponenten, Props und Rendering
+
+<v-clicks>
+
+- Komponenten beschreiben UI als Funktion ihrer Daten
+- Props übertragen Daten und Callbacks
+- Events lösen State-Änderungen aus
+- React rendert die betroffenen Teile erneut
+
+</v-clicks>
+
+<!--
+Desktop-Parallele: Komponenten und Ereignisse sind vertraut; anders ist, dass das UI deklarativ aus aktuellem State abgeleitet wird, statt imperative Controls direkt zu verändern.
 -->
 
 ---
@@ -157,30 +253,56 @@ Analogie zu vertrauten UI-Frameworks: Komponenten kapseln Darstellung und Verhal
 -->
 
 ---
-title: TypeScript modelliert Produktdaten
-layout: default
+title: Hooks statt Lifecycle-Methoden
+layout: image-left
+background: /msWebUiReact-state-management.jpg
 ---
 
-# Erst Datenform, dann Oberfläche
+# Lifecycle-Konzepte funktional abbilden
 
-```ts
-type Session = {
-  id: string
-  title: string
-  speaker: string
-  track: string
-  startsAt: string
-}
-```
+<v-clicks>
 
-<v-click>
+- `useState` für lokalen State
+- `useEffect` für Synchronisation mit externen Systemen
+- Props und State steuern erneutes Rendern
+- Effects gezielt einsetzen, nicht als Ersatz für Datenfluss
 
-**Übung 1 · 30 Minuten:** Typ ergänzen, Beispieldaten erfassen, `SessionCard` bauen.
-
-</v-click>
+</v-clicks>
 
 <!--
-Checkpoint: `SessionCard` erhält ein Session-Objekt per Props und rendert es ohne any. Bei Bedarf startsAt als ISO-String belassen; Datumsformatierung später ergänzen.
+Lifecycle Methods als historisches Klassenkomponenten-Modell erwähnen, aber den Workshop konsequent mit funktionalen Komponenten und Hooks gestalten. Mount/Update/Unmount nicht mechanisch auf mehrere Effects übertragen.
+-->
+
+---
+title: Übung 3 · Komponente und Hook
+layout: image-left
+background: /msWebUiReact-demo1.jpg
+---
+
+# 20 Minuten · React-Grundlagen anwenden
+
+<v-clicks>
+
+- `SessionCard` aus typisierten Props erstellen
+- lokale Auswahl mit `useState` abbilden
+- State-Änderung und erneutes Rendering beobachten
+- **Ergebnis:** interaktive Komponente ohne imperative DOM-Manipulation
+
+</v-clicks>
+
+<!--
+Geführt: eine Komponente bauen, Event-Handler ergänzen und mit React DevTools/Browser-Tools untersuchen.
+-->
+
+---
+layout: chapter-dark
+background: /msWebUiReact-crossroads.jpg
+---
+
+# 02 · Material UI und State
+
+<!--
+Material UI bietet einen produktiven UI-Baukasten. Danach organisieren wir Komponenten-State und geteilte Daten mit Hooks und Context.
 -->
 
 ---
@@ -196,193 +318,232 @@ background: /msWebUiReact-fluent-ui.jpg
 - Theme für Farbe, Typografie und Abstände
 - Layout mit Grid/Stack und responsiven Breakpoints
 - Komponenten passend zur Aufgabe wählen
-- Accessibility-Verhalten der Komponenten bewusst erhalten
+- CSS gezielt dort ergänzen, wo es wirklich nötig ist
 
 </v-clicks>
 
 <!--
-Material UI 6 unterstützt React 19; beim Setup Paketversionen und Peer Dependencies bewusst festlegen. Bestehendes React-Deck im Repository zeigt UI-Framework-Auswahl und State-Management-Kontext.
-Quelle: https://mui.com/material-ui/migration/upgrade-to-v6/
+Material UI bietet vorgefertigte Komponenten, Layout-Primitives und Theme-Optionen. Ziel ist eine brauchbare Oberfläche, ohne jedes Detail mit handgeschriebenem CSS zu lösen. Für dieses EKON-Angebot Material UI 6 verwenden.
 -->
 
 ---
-title: Übung 2 · App-Shell und responsives Layout
-layout: image-left
-background: /msWebUiReact-tooling.jpg
----
-
-# 35 Minuten · aus Bausteinen wird eine App
-
-<v-clicks>
-
-- App-Bar, Hauptbereich und Session-Liste aufbauen
-- Theme und zwei Breakpoints anwenden
-- mobile Darstellung im Browser prüfen
-- **Ergebnis:** lesbare App-Shell auf schmalem und breitem Viewport
-
-</v-clicks>
-
-<!--
-Geführt: erst Layoutstruktur, dann Theme. Nicht in CSS-Feinheiten verlieren. Checkpoint am Ende: Überschrift, Filterbereich und Liste bleiben auf Mobile gut bedienbar.
--->
-
----
-title: State gehört zur Interaktion
-layout: image-right
-background: /msWebUiReact-state-management.jpg
----
-
-# State dort halten, wo er gebraucht wird
-
-<v-clicks>
-
-- lokale Eingabe: Suchfeld
-- abgeleiteter State: gefilterte Sessions
-- gemeinsamer State: Merkliste
-- State-Library erst bei echtem Bedarf
-
-</v-clicks>
-
-<!--
-Verweis auf das vorhandene React-State-Management-Material: mit lokalem State starten und gemeinsame Datenflüsse erst dann abstrahieren, wenn die App es verlangt.
--->
-
----
-title: Übung 3 · Filter und Merkliste
-layout: image-left
-background: /msWebUiReact-demo1.jpg
----
-
-# 35 Minuten · Ereignisse sichtbar machen
-
-<v-clicks>
-
-- Such- und Trackfilter kombinieren
-- abgeleitete Liste aus Props und State berechnen
-- Session merken/entfernen und UI aktualisieren
-- **Ergebnis:** interaktive Liste ohne doppelte Datenhaltung
-
-</v-clicks>
-
-<!--
-Checkpoint: Filter können nacheinander geändert werden; die Quelle der Sessiondaten bleibt eindeutig. Bei Zeit: leeren Zustand gestalten.
--->
-
----
-layout: chapter-dark
-background: /msWebUiReact-css-challenge.png
----
-
-# 02 · Formulare und React 19
-
-<!--
-Jetzt wird die UI asynchron: Nutzereingaben müssen Validierung, Pending- und Fehlerzustände zeigen.
--->
-
----
-title: Formulare sind Zustandsmaschinen
+title: Material UI für Komponenten, Layout und Styling
 layout: image-right
 background: /msWebUiReact-summary.jpg
 ---
 
-# Was Nutzer:innen während einer Aktion sehen
+# Komponenten, Layout und Styling
 
 <v-clicks>
 
-- Eingabe und Validierung
-- Absenden und Pending-Zustand
-- Erfolg oder konkreter Fehler
-- bei Optimismus: Rücknahme bei Fehlschlag
+- MUI-Komponenten für wiederkehrende UI-Muster
+- Stack/Grid und responsive Breakpoints
+- Theme für konsistente Farben und Typografie
+- CSS-Fallstricke beim Wechsel vom Desktop ins Web
 
 </v-clicks>
 
 <!--
-Nicht nur den Happy Path zeigen. UI-Feedback ist Teil des fachlichen Verhaltens.
+Desktop-Analogie: Component Library und Theme entsprechen einem UI-Baukasten mit zentralen Stilvorgaben. Unterschiede im CSS-Layoutmodell und responsiven Verhalten sichtbar machen.
 -->
 
 ---
-title: Übung 4 · Action mit Feedback
-layout: default
+title: Übung 4 · Responsive MUI-Oberfläche
+layout: image-left
+background: /msWebUiReact-tooling.jpg
 ---
 
-# 40 Minuten · Session vorschlagen
+# 40 Minuten · konsistent statt CSS-intensiv
 
 <v-clicks>
 
-- Formular mit typisierten Eingaben erstellen
-- `useActionState` für Ergebnis und Pending-Zustand einsetzen
-- Fehler verständlich anzeigen und Erfolg rückmelden
-- **Ergebnis:** Formular, das auch während der Aktion Orientierung gibt
+- App-Bar, Filterbereich und Ergebnisliste mit MUI bauen
+- Theme und responsive Layout-Komponenten anwenden
+- mobile und breite Ansicht vergleichen
+- **Ergebnis:** nutzbare Oberfläche mit wenig eigenem CSS
 
 </v-clicks>
 
 <!--
-useActionState ist ein React-Hook für Action-Ergebnisse und Pending-State. Kleine Demo, danach geführt implementieren. API-Details mit der aktuellen React-Dokumentation abgleichen.
-Quelle: https://react.dev/reference/react/useActionState
+Geführt: Komponenten zuerst, dann Layout und Breakpoints. CSS-Fallstricke zeigen, die beim Wechsel von Desktop-Layouts zu responsiven Browser-Layouts häufig auftreten.
 -->
 
 ---
-title: Übung 5 · Optimistisches UI
+title: State teilen mit React Context
+layout: image-right
+background: /msWebUiReact-state-management.jpg
+---
+
+# Context für gemeinsam benötigte Daten
+
+<v-clicks>
+
+- lokaler State bleibt nah an der Komponente
+- Context vermeidet unnötiges Weiterreichen durch viele Ebenen
+- Hooks kapseln wiederverwendbares Verhalten
+- State-Libraries erst bei konkretem Bedarf
+
+</v-clicks>
+
+<!--
+Verweis auf das bestehende React-State-Management-Material im Repository. Context ist kein universeller Ersatz für Server-State- oder State-Management-Lösungen.
+-->
+
+---
+title: Übung 5 · Hooks und Context
+layout: image-left
+background: /msWebUiReact-demo1.jpg
+---
+
+# 35 Minuten · Zustand sauber organisieren
+
+<v-clicks>
+
+- Such- und Trackfilter mit Hooks ergänzen
+- gemeinsam benötigte Auswahl über Context teilen
+- unnötige und doppelte State-Werte vermeiden
+- **Ergebnis:** Filter und Merkliste mit klarer State-Verantwortung
+
+</v-clicks>
+
+<!--
+Checkpoint: Teilnehmende erklären, welcher State lokal, abgeleitet oder gemeinsam genutzt wird. Bei Zeit einen Effect für eine externe Synchronisation demonstrieren.
+-->
+
+---
+layout: chapter-dark
+background: /msWebUiReact-mobile-push.jpg
+---
+
+# 03 · Daten, Debugging und Qualität
+
+<!--
+Mit Datenzugriff wird die Browser-App zu einer realistischen Client-Anwendung. Lade-, Erfolgs- und Fehlerzustände sind Bestandteil der UI.
+-->
+
+---
+title: Daten abrufen mit Fetch
+layout: image-right
+background: /msWebUiReact-demo1.jpg
+---
+
+# REST-Daten in den Komponentenfluss holen
+
+<v-clicks>
+
+- Browser `fetch`-API für HTTP-Aufrufe
+- JSON-Antworten in TypeScript-Typen überführen
+- Laden, Fehler und leere Ergebnisse sichtbar machen
+- HTTP-Fehler explizit behandeln
+
+</v-clicks>
+
+<!--
+`fetch` weist bei HTTP 4xx/5xx nicht automatisch ein Promise zurück: Response.ok prüfen. TypeScript-Typen validieren Laufzeitdaten nicht von selbst; API-Antworten als externe Eingabe behandeln.
+-->
+
+---
+title: Übung 6 · REST-Daten und UI-Zustände
 layout: image-left
 background: /msWebUiReact-mobile-push.jpg
 ---
 
-# 30 Minuten · sofort reagieren, ehrlich bleiben
+# 30 Minuten · von HTTP zu gerenderten Daten
 
 <v-clicks>
 
-- gemerkte Session sofort im UI markieren
-- `useOptimistic` für vorläufige UI-Aktualisierung nutzen
-- Fehler simulieren und Rollback-Verhalten beobachten
-- **Ergebnis:** responsives Feedback ohne Erfolg vorzutäuschen
+- Sessions über die Browser-Fetch-API laden
+- Loading-, Fehler- und Erfolgszustand darstellen
+- typisierte Daten an die Komponenten weiterreichen
+- **Ergebnis:** App zeigt echte oder lokal simulierte REST-Daten
 
 </v-clicks>
 
 <!--
-useOptimistic ist für temporäre optimistische UI während einer Action gedacht. Deutlich machen, dass das Backend-Ergebnis weiterhin maßgeblich ist.
-Quelle: https://react.dev/reference/react/useOptimistic
+Geführt: vorbereiteten API-Endpunkt oder Mock verwenden, damit Netz-/CORS-Probleme nicht die Übung blockieren. Im Debugger Request, Status und Response prüfen.
 -->
 
 ---
-title: Qualität ist Teil der Oberfläche
+title: REST-Clients und AutoRest
 layout: image-right
+background: /msWebUiReact-tooling.jpg
+---
+
+# Von Hand geschrieben bis generiert
+
+<v-clicks>
+
+- `fetch` eignet sich für den Einstieg und kleine Clients
+- AutoRest kann aus API-Beschreibungen Clients erzeugen
+- generierter Code spart Routine, ersetzt aber kein API-Verständnis
+- API-Vertrag, Fehlerfälle und Versionierung bleiben wichtig
+
+</v-clicks>
+
+<!--
+AutoRest ist ein optionaler Überblick oder eine vorbereitete Demo: OpenAPI-Beschreibung zeigen und generierte Typen/Clientmethoden nachvollziehen. Nur vertiefen, wenn Zeit und Setup passen.
+-->
+
+---
+title: Fallstricke und Performance
+layout: image-left
 background: /msWebUiReact-css-challenge.png
 ---
 
-# Prüfen, was Menschen erleben
+# Erst messen, dann optimieren
 
 <v-clicks>
 
-- Tastaturbedienung und sichtbarer Fokus
-- verständliche Labels und Fehlermeldungen
-- leere, ladende und fehlerhafte Zustände
-- schmale Viewports und Vergrößerung
+- unnötige Renders und zu große Komponenten erkennen
+- `memo`/Memoization nicht reflexartig einsetzen
+- Listen mit stabilen Keys rendern
+- Netzwerk, Bundle-Größe und UI getrennt untersuchen
 
 </v-clicks>
 
 <!--
-Im Capstone nicht nur den Code zeigen lassen. Eine Person testet die App ausschließlich mit Tastatur oder Mobile-Viewport.
+Do's and Don'ts mit React DevTools und Browser Performance Panel besprechen. Vor Optimierung einen konkreten Engpass reproduzieren und messen.
 -->
 
 ---
-title: Capstone · euer Sessionplaner
+title: Testbarkeit und App-Konfiguration
+layout: default
+---
+
+# Wartbarkeit ist eine Architekturentscheidung
+
+<v-clicks>
+
+- Komponenten und Datenzugriff trennen
+- API-Basis-URL konfigurierbar halten, keine Secrets ins Frontend
+- Unit-/Component-Tests als nächste Ausbaustufe
+- Playwright für browserbasierte Integrationstests optional vorstellen
+
+</v-clicks>
+
+<!--
+Optionale Vertiefung: kleine Komponentenprüfung oder vorbereiteter Playwright-Test. Konfigurationswerte im gebündelten Frontend sind öffentlich, daher keine vertraulichen Schlüssel dort ablegen.
+-->
+
+---
+title: Abschlussübung · prüfen und verbessern
 layout: image-right
 background: /msWebUiReact-strategic-answer.jpg
 ---
 
-# 15 Minuten · zeigen, prüfen, weiterdenken
+# 20 Minuten · eure Web-App auf dem Prüfstand
 
 <v-clicks>
 
-- eine eigene Session hinzufügen
-- Filter, Liste und Merkliste demonstrieren
-- Pending-/Fehlerzustand zeigen
-- nächste Verbesserung priorisieren
+- App im Debugger untersuchen und einen Fehler beheben
+- einen messbaren Performance- oder UX-Fallstrick finden
+- optionale Testidee für eine Komponente formulieren
+- **Ergebnis:** lauffähige App und konkrete nächste Verbesserung
 
 </v-clicks>
 
 <!--
-Abschlussrunde in Dreiergruppen. Ziel ist eine funktionierende Basis, keine vollständige Produktionsarchitektur.
+Der Abschluss verbindet Browser- und React-Debugging mit Testbarkeit und Wartbarkeit. Bei schneller Gruppe Playwright-Test demonstrieren; sonst in die optionale Vertiefung verweisen.
 -->
 
 ---
@@ -390,19 +551,20 @@ title: Takeaways
 layout: statement
 ---
 
-# Datenfluss zuerst. UI in kleinen Schritten.
+# Vertraute UI-Ideen. Neue Browser-Realität.
 
 <v-clicks>
 
-- Typen machen Annahmen sichtbar
-- Komponenten halten Verantwortungen überschaubar
-- MUI beschleunigt konsistente UI, ersetzt aber kein UX-Urteil
-- React 19 Actions helfen beim Umgang mit asynchronem Feedback
+- TypeScript stärkt Datenverträge und Refactoring
+- React modelliert UI funktional aus Props und State
+- Hooks und Context strukturieren Verhalten und gemeinsamen State
+- Material UI beschleunigt konsistente Oberflächen, ganz ohne CSS geht es nicht
+- Debugging, Tests und Messungen sichern Wartbarkeit und Performance
 
 </v-clicks>
 
 <!--
-Überleitung zum bestehenden Microsoft-UI-Deck: Die Technologien lassen sich in Modernisierungsentscheidungen einordnen, nicht nur in einer Demo-App.
+Die zentrale Mitnahme: Web-Apps sind nicht einfach Desktop-UIs im Browser. Wer Laufzeit, Datenfluss und Werkzeugkette versteht, kann vorhandene Entwicklungserfahrung gezielt übertragen.
 -->
 
 ---
@@ -415,16 +577,16 @@ hideInToc: true
 
 <v-clicks>
 
-- [EKON 30 · React 19 und Material UI 6](https://entwickler-konferenz.de/frameworks-and-tools/workshop-moderne-web-applikationen-mit-react-19-und-material-ui-6-in-typescript)
-- [React: useActionState](https://react.dev/reference/react/useActionState) · [useOptimistic](https://react.dev/reference/react/useOptimistic)
+- [EKON 30 · React und Material UI in TypeScript](https://entwickler-konferenz.de/frameworks-and-tools/workshop-moderne-web-applikationen-mit-react-19-und-material-ui-6-in-typescript)
+- [React: Hooks](https://react.dev/reference/react) · [Context](https://react.dev/learn/passing-data-deeply-with-context)
 - [Material UI: Upgrade auf v6](https://mui.com/material-ui/migration/upgrade-to-v6/)
 - [Material UI: TypeScript](https://mui.com/material-ui/guides/typescript/)
-- Vorab: Node.js/npm und Git; Starterprojekt wird bereitgestellt
+- Vorab: Node.js/npm und Git; VS Code und Browser. AutoRest, Playwright-Tests und Konfigurationsvarianten sind optionale Vertiefungen.
 
 </v-clicks>
 
 <!--
-Im Vorfeld aktuellen Browser, Node-Version, React/MUI-Kompatibilität und Starterprojekt gegen die vorhandenen Paketversionen testen.
+Im Vorfeld aktuellen Browser, Node-Version, React/MUI-Kompatibilität und Starterprojekt gegen die verwendeten Paketversionen testen. Material UI 6 bleibt gemäß EKON-Ausschreibung im Workshop; der Fokus liegt auf grundlegenden UI-Mustern und nicht auf neueren React-19-spezifischen Formular-APIs.
 -->
 
 ---

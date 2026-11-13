@@ -50,6 +50,6 @@ routeAlias: index
 
 <a href="/ekon30-github-copilot-a-bis-z/" target="_blank">Workshop: GitHub Copilot von A bis Z [4 Std.]</a>
 
-<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React 19 und Material UI 6 in TypeScript [4 Std.]</a>
+<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript [4 Std.]</a>
 
 <a href="/ekon30-ai-context-setup/" target="_blank">AI Context Setup – Instructions, Prompts, Skills, Tools, Custom Agents, was ist für was? [60 Min]</a>
