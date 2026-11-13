@@ -1,9 +1,9 @@
 ---
-agent: agent
+name: newpresentation
 description: Create a deck using this repository's existing Slidev conventions.
+disable-model-invocation: true
 argument-hint: "Topic, audience, duration, and optional demo or visual requirements"
 ---
-
 Create a new slidev presentation regarding the topic information followed after the instructions.
 
 ## Instructions:

@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: EKON Session Catalog
+  version: 1.0.0
+paths:
+  /sessions:
+    get:
+      summary: List conference sessions
+      responses:
+        "200":
+          description: The available sessions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Session"
+components:
+  schemas:
+    Session:
+      type: object
+      required:
+        - id
+        - title
+        - speaker
+        - track
+        - startsAt
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        speaker:
+          type: string
+        track:
+          type: string
+        startsAt:
+          type: string
+          format: date-time
