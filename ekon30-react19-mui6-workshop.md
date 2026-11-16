@@ -15,13 +15,17 @@ author: "Harald Binkle"
 showCopyright: false
 description: "Vierstündiger Workshop für den Einstieg aus der Desktopentwicklung: moderne Browser-Apps mit TypeScript, React und Material UI verstehen und bauen."
 publicDeckPath: ekon30-react19-mui6-workshop
+htmlAttrs:
+  class: ekon30-deck
 ###### slides start ######
-layout: cover-dark
+layout: cover
 coverImage: /msWebUiReact-cover.png
+isDark: true
 hideInToc: true
 ---
 
 # Workshop: Moderne Web-Applikationen
+
 ## mit React und Material-UI in TypeScript
 
 **Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle**
@@ -92,12 +96,14 @@ Vorbereitung: Starterprojekt klonen, npm-Abhängigkeiten installieren und lokale
 -->
 
 ---
-layout: cover-dark
+layout: cover
 coverImage: /msWebUiReact-strategic-answer.jpg
+isDark: true
 hideInToc: true
 ---
 
 # Von der Desktop-App zur Browser-App
+
 ## Vertraute Konzepte, neue Laufzeit und Architektur
 
 <v-clicks>
@@ -142,25 +148,26 @@ hideInToc: true
 
 # Vier Stunden · vom Werkzeug zur Web-App
 
-| Zeit | Baustein |
-|---|---|
-| 00:00–00:20 | Web-App vs. Website, VS Code und Node.js |
-| 00:20–00:55 | TypeScript: Types, Interfaces und Generics |
+| Zeit        | Baustein                                             |
+| ----------- | ---------------------------------------------------- |
+| 00:00–00:20 | Web-App vs. Website, VS Code und Node.js             |
+| 00:20–00:55 | TypeScript: Types, Interfaces und Generics           |
 | 00:55–01:35 | Funktionales React: Komponenten, Props und Lifecycle |
-| 01:35–01:45 | Pause |
-| 01:45–02:25 | Material UI: Komponenten, Layout und Styling |
-| 02:25–03:00 | Hooks, State und React Context |
-| 03:00–03:10 | Pause |
-| 03:10–03:40 | REST-Daten, Fetch API und optional AutoRest |
-| 03:40–04:00 | Debugging, Performance, Tests und Ausblick |
+| 01:35–01:45 | Pause                                                |
+| 01:45–02:25 | Material UI: Komponenten, Layout und Styling         |
+| 02:25–03:00 | Hooks, State und React Context                       |
+| 03:00–03:10 | Pause                                                |
+| 03:10–03:40 | REST-Daten, Fetch API und optional AutoRest          |
+| 03:40–04:00 | Debugging, Performance, Tests und Ausblick           |
 
 <!--
 Die Blöcke ergeben 240 Minuten inklusive Pausen. Vite ist der vorbereitete Bundler; webpack wird als Alternative eingeordnet. AutoRest, Tests mit Playwright und App-Konfiguration sind optionale Vertiefungen abhängig von Tempo und Vorkenntnissen. Das Starter-Repository wird vorab getestet.
 -->
 
 ---
-layout: chapter-dark
+layout: chapter
 background: /msWebUiReact-crossroads.jpg
+isDark: true
 ---
 
 # 01 · Was steckt in einer Browser-App?
@@ -228,7 +235,7 @@ background: /msWebUiReact-tooling.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/01-tooling.md`
+**Repo-Übung:** [Tooling](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/01-tooling.md)
 
 <!--
 Geführte Einrichtung: VS Code, Extensions, Node/npm-Skripte, Browser-Konsole und Breakpoints. Setup vorab vereinfachen, damit Teilnehmende nicht lange installieren müssen.
@@ -243,23 +250,23 @@ layout: default
 
 ```ts
 interface Session {
-  id: string
-  title: string
-  speaker: string
-  track: string
+  id: string;
+  title: string;
+  speaker: string;
+  track: string;
 }
 
 type ApiResult<T> = {
-  data: T
-  receivedAt: Date
-}
+  data: T;
+  receivedAt: Date;
+};
 ```
 
 <v-click>
 
 **Übung 2 · 35 Minuten:** `Session`-Interface, generischen API-Typ und typisierte Beispieldaten anlegen.
 
-**Repo-Übung:** `exercises/02-typescript.md`
+**Repo-Übung:** [TypeScript](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/02-typescript.md)
 
 </v-click>
 
@@ -275,14 +282,28 @@ background: /msWebUiReact-transfers.jpg
 
 # Komponenten, Props und Rendering
 
-<v-clicks>
-
-- Komponenten beschreiben UI als Funktion ihrer Daten
-- Props übertragen Daten und Callbacks
-- Events lösen State-Änderungen aus
-- React rendert die betroffenen Teile erneut
-
-</v-clicks>
+<div class="ekon30-flow ekon30-flow--five">
+  <div v-click class="ekon30-flow__step">
+    <strong>Props + State</strong>
+    <p>Daten und Callbacks gehen in die Komponente</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Komponente</strong>
+    <p>Beschreibt UI als Funktion ihrer Daten</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Browser-UI</strong>
+    <p>Zeigt den gerenderten Stand</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Event</strong>
+    <p>Callback löst eine State-Änderung aus</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>React-Render</strong>
+    <p>Aktualisiert die betroffenen Teile</p>
+  </div>
+</div>
 
 <!--
 Desktop-Parallele: Komponenten und Ereignisse sind vertraut; anders ist, dass das UI deklarativ aus aktuellem State abgeleitet wird, statt imperative Controls direkt zu verändern.
@@ -347,15 +368,16 @@ background: /msWebUiReact-demo1.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/03-components-hooks.md`
+**Repo-Übung:** [Komponenten & Hooks](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/03-components-hooks.md)
 
 <!--
 Geführt: eine Komponente bauen, Event-Handler ergänzen und mit React DevTools/Browser-Tools untersuchen.
 -->
 
 ---
-layout: chapter-dark
+layout: chapter
 background: /msWebUiReact-crossroads.jpg
+isDark: true
 ---
 
 # 02 · Material UI und State
@@ -423,7 +445,7 @@ background: /msWebUiReact-tooling.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/04-material-ui.md`
+**Repo-Übung:** [Material UI](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/04-material-ui.md)
 
 <!--
 Geführt: Komponenten zuerst, dann Layout und Breakpoints. CSS-Fallstricke zeigen, die beim Wechsel von Desktop-Layouts zu responsiven Browser-Layouts häufig auftreten.
@@ -467,15 +489,16 @@ background: /msWebUiReact-demo1.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/05-context.md`
+**Repo-Übung:** [React Context](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/05-context.md)
 
 <!--
 Checkpoint: Teilnehmende erklären, welcher State lokal, abgeleitet oder gemeinsam genutzt wird. Bei Zeit einen Effect für eine externe Synchronisation demonstrieren.
 -->
 
 ---
-layout: chapter-dark
+layout: chapter
 background: /msWebUiReact-mobile-push.jpg
+isDark: true
 ---
 
 # 03 · Daten, Debugging und Qualität
@@ -522,7 +545,7 @@ background: /msWebUiReact-mobile-push.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/06-fetch.md`
+**Repo-Übung:** [Fetch](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/06-fetch.md)
 
 <!--
 Geführt: vorbereiteten API-Endpunkt oder Mock verwenden, damit Netz-/CORS-Probleme nicht die Übung blockieren. Im Debugger Request, Status und Response prüfen.
@@ -542,7 +565,7 @@ background: /msWebUiReact-tooling.jpg
 - AutoRest kann aus API-Beschreibungen Clients erzeugen
 - generierter Code spart Routine, ersetzt aber kein API-Verständnis
 - API-Vertrag, Fehlerfälle und Versionierung bleiben wichtig
-- **Repo-Vertiefung:** `exercises/optional.md`
+- **Repo-Vertiefung:** [Optionale Übungen](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/optional.md)
 
 </v-clicks>
 
@@ -564,7 +587,7 @@ background: /msWebUiReact-css-challenge.png
 - `memo`/Memoization nicht reflexartig einsetzen
 - Listen mit stabilen Keys rendern
 - Netzwerk, Bundle-Größe und UI getrennt untersuchen
-- **Repo-Vertiefung:** `exercises/optional.md`
+- **Repo-Vertiefung:** [Optionale Übungen](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/optional.md)
 
 </v-clicks>
 
@@ -585,7 +608,7 @@ layout: default
 - API-Basis-URL konfigurierbar halten, keine Secrets ins Frontend
 - Unit-/Component-Tests als nächste Ausbaustufe
 - Playwright für browserbasierte Integrationstests optional vorstellen
-- **Repo-Vertiefung:** `exercises/optional.md`
+- **Repo-Vertiefung:** [Optionale Übungen](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/optional.md)
 
 </v-clicks>
 
@@ -610,7 +633,7 @@ background: /msWebUiReact-strategic-answer.jpg
 
 </v-clicks>
 
-**Repo-Vertiefung:** `exercises/optional.md`
+**Repo-Vertiefung:** [Optionale Übungen](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/optional.md)
 
 <!--
 Der Abschluss verbindet Browser- und React-Debugging mit Testbarkeit und Wartbarkeit. Bei schneller Gruppe Playwright-Test demonstrieren; sonst in die optionale Vertiefung verweisen.
@@ -660,9 +683,11 @@ Im Vorfeld aktuellen Browser, Node-Version, React/MUI-Kompatibilität und Starte
 -->
 
 ---
+
 src: /special-slides/questions.md
 ---
 
 ---
+
 src: /special-slides/thank-you.md
 ---

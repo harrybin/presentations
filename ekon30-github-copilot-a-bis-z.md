@@ -13,21 +13,25 @@ overviewSnapshots: false
 glowEnabled: true
 author: "Harald Binkle & Thomas Tomow"
 showCopyright: false
-description: "Vierstündiger Hands-on-Workshop mit GitHub Copilot: von Code Completion und Chat bis zu Agenten, Skills und Tools."
+description: "Vierstündiger Delphi-Workshop mit GitHub Copilot, Lazarus/Free Pascal und interaktiver Übungsführung."
 publicDeckPath: ekon30-github-copilot-a-bis-z
+htmlAttrs:
+  class: ekon30-deck
 ###### slides start ######
-layout: cover-dark
+layout: cover
 coverImage: /gh-copilot-logo.png
+isDark: true
 hideInToc: true
 ---
 
 # Workshop: GitHub Copilot von A bis Z
-## Vom ersten Vorschlag zum eigenen Agent-Workflow
+
+## Delphi · Lazarus · geführte Übungen
 
 **Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle & Thomas Tomow**
 
 <!--
-Start: heute baut jede Person ein kleines Feature und passt Copilot an ein konkretes Projekt an. Wir wechseln regelmäßig zwischen kurzer Erklärung, geführter Übung und gemeinsamem Checkpoint.
+Start: heute baut jede Person ein kleines Delphi-kompatibles Pascal-Feature mit Lazarus/Free Pascal und passt Copilot an ein konkretes Projekt an. Der Browser-Guide begleitet die Übungen in VS Code; kein RAD Studio erforderlich.
 -->
 
 ---
@@ -43,7 +47,7 @@ layout: default
 hideInToc: true
 ---
 
-# Vorbereitung: Übungsrepo
+# Vorbereitung: Delphi-Werkbank
 
 <div class="grid grid-cols-2 gap-10 items-center mt-6">
 
@@ -53,9 +57,9 @@ hideInToc: true
 
 <v-clicks>
 
-- VS Code, Git und Node.js 24+
-- GitHub Copilot und Copilot Chat angemeldet
-- Repository vorab klonen und `npm test` ausführen
+- Lazarus + Free Pascal im `PATH`
+- VS Code, Git, Node.js 24+ und Copilot
+- Repo klonen, Tests und Guide starten
 
 </v-clicks>
 
@@ -63,6 +67,7 @@ hideInToc: true
 git clone https://github.com/harrybin/ekon30-github-copilot-workshop.git
 cd ekon30-github-copilot-workshop
 npm test
+npm run guide
 ```
 
 **Repo:** [github.com/harrybin/ekon30-github-copilot-workshop](https://github.com/harrybin/ekon30-github-copilot-workshop)
@@ -80,23 +85,68 @@ npm test
   :height="220"
 />
 
-<p>Scannen, klonen, Tests starten</p>
+<p>Repo → README → Setup → Guide</p>
 
 </div>
 
 </div>
 
 <!--
-Vorbereitung: sicherstellen, dass GitHub Copilot in VS Code angemeldet und das Workshop-Repository geklont ist. Die Tests verwenden Node.js ohne zusätzliche npm-Pakete.
+Vorbereitung: README im Übungsrepo lesen, Repository klonen und als eigenen VS-Code-Ordner öffnen. fpc -iV und lazbuild --version prüfen. npm test baut mit lazbuild und startet die Pascal-Checks. Node.js dient nur dem Guide und den Build-Aufrufen, nicht den Codeübungen.
 -->
 
 ---
-layout: cover-dark
+title: Geführter Workshop
+layout: default
+hideInToc: true
+---
+
+# Dein Guide neben dem Pascal-Code
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+<div>
+
+**Verstehen → Umsetzen → Prüfen**
+
+<v-clicks>
+
+- acht Übungen mit klaren Zeitboxen
+- Copilot-Prompts bewusst kopieren
+- Hinweise bei Bedarf aufklappen
+- eigene Nachweise und Notizen exportieren
+
+</v-clicks>
+
+</div>
+<div>
+
+**Start in VS Code**
+
+```bash
+npm run guide
+```
+
+`Simple Browser: Show` öffnen und die **vollständige URL aus dem Terminal** einfügen.
+
+Fortschritt bleibt lokal. Haken sind **Selbstauskunft**, keine automatischen Tests.
+
+</div>
+</div>
+
+<!--
+Vorbild: https://github.com/octodemo/copilot-governance-at-scale
+Unser Guide ist eine eigenständige lokale Browser-Oberfläche, keine registrierte native Copilot-Canvas-Erweiterung. In VS Code neben dem Code im Simple Browser oder in einem normalen Browser öffnen. In der Copilot App bei lokalem Checkout den Browser-Arbeitsbereich verwenden, sofern verfügbar, sonst den Systembrowser. Keine automatische Terminalausführung oder Agent-Actions. Prüfschritte werden nur mit eigenem Nachweis als selbst bestätigt gezählt.
+-->
+
+---
+layout: cover
 coverImage: /pilot-large.jpg
+isDark: true
 hideInToc: true
 ---
 
 # Copilot schreibt schneller.
+
 ## Ihr entscheidet, was richtig ist.
 
 <v-clicks>
@@ -122,15 +172,15 @@ hideInToc: true
 
 <v-clicks>
 
-- **Zielgruppe:** Einsteiger:innen bis Fortgeschrittene, Delphi optional
-- **Voraussetzung:** VS Code, Git, GitHub-Konto und Copilot-Zugang
+- **Zielgruppe:** Delphi-Entwickler:innen mit und ohne Copilot-Erfahrung
+- **Toolchain:** VS Code + Lazarus/Free Pascal, kein RAD Studio nötig
 - **Ergebnis:** Feature mit Tests plus projektspezifische Copilot-Anpassung
 - **Arbeitsmodus:** kurze Inputs, angeleitete Übungen, gemeinsamer Capstone
 
 </v-clicks>
 
 <!--
-Vorabhinweis: VS Code und Copilot-Extensions, GitHub-Anmeldung und ein Beispielprojekt installieren. Free-Zugang kann je nach aktuellen Limits für Übungen reichen. Für Delphi-Übungen zusätzlich RAD Studio oder Lazarus und die DelphiLSP-Erweiterung.
+Vorabhinweis: Lazarus inklusive Free Pascal und PATH vorbereiten. Sprachunterstützung in VS Code ist hilfreich, aber keine kostenpflichtige Delphi-Erweiterung ist Voraussetzung. Inline-Completions werden in VS Code geübt; Chat und Agent-Aufgaben können auch in der Copilot App erfolgen.
 -->
 
 ---
@@ -141,24 +191,26 @@ hideInToc: true
 
 # Vier Stunden · gemeinsam bauen
 
-| Zeit | Baustein |
-|---|---|
-| 00:00–00:15 | Setup, Ziele, sicherer Arbeitsmodus |
-| 00:15–01:20 | Completions und Chat · Übungen 1–2 |
-| 01:20–01:30 | Pause |
-| 01:30–02:10 | Agent Mode · Übung 3 |
+| Zeit        | Baustein                              |
+| ----------- | ------------------------------------- |
+| 00:00–00:15 | Lazarus, Guide, sicherer Arbeitsmodus |
+| 00:15–01:20 | Completions und Chat · Übungen 1–2    |
+| 01:20–01:30 | Pause                                 |
+| 01:30–02:10 | Agent Mode · Übung 3                  |
 | 02:10–02:45 | Instructions & Prompt Files · Übung 4 |
-| 02:45–02:55 | Pause |
-| 02:55–03:40 | Skills, Custom Agents, Tools/MCP |
-| 03:40–04:00 | Capstone, Review und Transfer |
+| 02:45–02:55 | Pause                                 |
+| 02:55–03:20 | Skills & Custom Agents · Übung 5      |
+| 03:20–03:40 | Tools & MCP · Übung 6                 |
+| 03:40–04:00 | Capstone, Review und Transfer         |
 
 <!--
-240 Minuten inklusive zwei 10-Minuten-Pausen. Bei verzögertem Setup optionale Delphi-Demo in die Nachbereitung verschieben, nicht die Übungen kürzen.
+240 Minuten inklusive zwei 10-Minuten-Pausen. Vorab-Setup ist erforderlich, damit wir die Übungszeiten nicht mit Installationen verbrauchen. Alle Codeaufgaben verwenden Delphi-kompatibles Object Pascal, gebaut mit Lazarus.
 -->
 
 ---
-layout: chapter-dark
+layout: chapter
 background: /copilot-change-completions-model-1.png
+isDark: true
 ---
 
 # 01 · Ein guter Startpunkt
@@ -194,21 +246,21 @@ layout: image-left
 background: /copilot-change-completions-model-2.png
 ---
 
-# 30 Minuten · kleine Funktion, echter Test
+# Kleine Funktion, echter Test
 
 <v-clicks>
 
-- vorhandene Funktion im Beispielprojekt ergänzen
+- `FormatSessionCaption` in einer Pascal-Unit ergänzen
 - Copilot-Vorschlag annehmen, verändern oder verwerfen
 - Grenzfall selbst ergänzen und mit Test absichern
 - **Ergebnis:** Funktion + Test + kurzer Review-Kommentar
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/01-completions.md`
+**Guide 1 · 30 Min.** → [Übung: Completions](https://github.com/harrybin/ekon30-github-copilot-workshop/blob/main/exercises/01-completions.md)
 
 <!--
-Geführte Übung: 5 Min Demo, 15 Min eigenes Arbeiten, 10 Min Checkpoint. Sprache frei wählbar. Bei Delphi bestehende Unit und Tests nehmen; sonst TS-Beispiel verwenden. Frage: Welche Annahme hat Copilot nicht erkennen können?
+Geführte Übung: 5 Min Demo, 15 Min eigenes Arbeiten, 10 Min Checkpoint. In src/SessionCatalog.pas eine neue Funktion ergänzen und in tests/CatalogTests.lpr prüfen. npm test baut mit lazbuild und startet die Tests. Sprache ist Object Pascal im Delphi-Modus. Im Guide die Prüfkriterien und eigene Beobachtung festhalten.
 -->
 
 ---
@@ -217,26 +269,27 @@ layout: image-right
 background: /copilot-chat-2.png
 ---
 
-# 35 Minuten · erst verstehen, dann ändern
+# Erst verstehen, dann ändern
 
 <v-clicks>
 
-- ein Modul erklären lassen — mit konkreten Dateireferenzen
+- `FilterSessions` und dynamische Arrays erklären lassen
 - Refactoring oder Tests als separaten Auftrag formulieren
 - Scope, Nicht-Ziele und erwarteten Output nennen
 - **Ergebnis:** nachvollziehbarer Plan und eine geprüfte Verbesserung
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/02-chat.md`
+**Guide 2 · 35 Min.** → [Übung: Chat](https://github.com/harrybin/ekon30-github-copilot-workshop/blob/main/exercises/02-chat.md)
 
 <!--
-Geführt: erst Ask/Explain ohne Edit, dann den kleinsten sinnvollen Änderungsauftrag. Teilnehmende vergleichen Antwort und tatsächlichen Code. Slash-Commands und Chat-Kontext variieren je nach Copilot-Oberfläche.
+Geführt: erst Ask/Explain ohne Edit, dann genau einen Randfall testen. Teilnehmende vergleichen Antwort und tatsächlichen Pascal-Code, insbesondere const und Array-Aliasing. Keine unbelegten Unicode-Garantien. Beobachtung im Guide dokumentieren, danach erste Pause.
 -->
 
 ---
-layout: chapter-dark
+layout: chapter
 background: /secret-agent-large.png
+isDark: true
 ---
 
 # 02 · Vom Chat zur agentischen Aufgabe
@@ -252,15 +305,28 @@ layout: default
 
 # Gute Delegation ist konkret
 
-<v-clicks>
-
-- **Ziel:** welches Verhalten soll entstehen?
-- **Kontext:** welche Dateien und Regeln zählen?
-- **Grenzen:** was soll ausdrücklich nicht geändert werden?
-- **Nachweis:** welche Tests oder Checks müssen laufen?
-- **Rückmeldung:** Änderungen, Annahmen und offene Fragen nennen
-
-</v-clicks>
+<div class="ekon30-flow ekon30-flow--five">
+  <div v-click class="ekon30-flow__step">
+    <strong>Ziel</strong>
+    <p>Welches Verhalten soll entstehen?</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Kontext</strong>
+    <p>Welche Dateien und Regeln zählen?</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Grenzen</strong>
+    <p>Was soll ausdrücklich unverändert bleiben?</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Nachweis</strong>
+    <p>Welche Tests oder Checks müssen laufen?</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Rückmeldung</strong>
+    <p>Änderungen, Annahmen und offene Fragen nennen</p>
+  </div>
+</div>
 
 <!--
 Ein gutes Prompt-Beispiel live formulieren. Nicht die Länge zählt, sondern klare Erfolgskriterien und ein sicherer Umfang.
@@ -272,18 +338,18 @@ layout: image-right
 background: /copilot-chat-3.png
 ---
 
-# 40 Minuten · planen, umsetzen, reviewen
+# Planen, umsetzen, reviewen
 
 <v-clicks>
 
-- kleines Feature aus einem vorbereiteten Backlog wählen
+- `CountSessionsByTrack` aus dem Backlog umsetzen
 - Agent zuerst Plan und offene Fragen liefern lassen
 - Task nach Freigabe umsetzen und Tests ausführen lassen
 - **Ergebnis:** Feature-Branch mit Test, geprüftem Diff und Notizen
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/03-agent-mode.md`
+**Guide 3 · 40 Min.** → [Übung: Agent Mode](https://github.com/harrybin/ekon30-github-copilot-workshop/blob/main/exercises/03-agent-mode.md)
 
 <!--
 Zeitbox: 8 Min gemeinsames Plan-Beispiel, 22 Min Umsetzung, 10 Min Diff-/Testreview. In der Demo bewusst einen Randfall einbauen. Falls der Agent zu breit arbeitet: stoppen, Scope verkleinern, Plan aktualisieren.
@@ -306,7 +372,7 @@ background: /settings-instruction-files-1.png
 </v-clicks>
 
 <!--
-Beispiele: TypeScript Strictness oder Delphi-Konventionen in Instructions; „Erzeuge Tests für diese Änderung“ als Prompt File. Copilot-Featureunterstützung hängt von IDE und Oberfläche ab.
+Beispiele: Delphi/FPC-Kompatibilität, unveränderte Eingabearrays und npm test in Instructions; „Prüfe Tests für diese Änderung“ als Prompt File. Copilot-Featureunterstützung hängt von IDE und Oberfläche ab.
 Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
@@ -316,7 +382,7 @@ layout: image-right
 background: /settings-instruction-files-2.png
 ---
 
-# 35 Minuten · Regeln sichtbar machen
+# Regeln sichtbar machen
 
 <v-clicks>
 
@@ -327,15 +393,16 @@ background: /settings-instruction-files-2.png
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/04-instructions-prompts.md`
+**Guide 4 · 35 Min.** → [Übung: Instructions & Prompts](https://github.com/harrybin/ekon30-github-copilot-workshop/blob/main/exercises/04-instructions-prompts.md)
 
 <!--
 Geführt: Regeln als konkrete Vorgaben schreiben, nicht als Wunschliste. Mit demselben Auftrag vorher/nachher vergleichen. Keine sensiblen oder personenbezogenen Repo-Inhalte verwenden.
 -->
 
 ---
-layout: chapter-dark
+layout: chapter
 background: /bmad-agents-specialized-experts.png
+isDark: true
 ---
 
 # 03 · Fähigkeiten passend zuschneiden
@@ -382,10 +449,10 @@ background: /bmad-context-hierarchy.png
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/05-skills-agents.md`
+**Guide 5 · 25 Min.** → [Übung: Skills & Agents](https://github.com/harrybin/ekon30-github-copilot-workshop/blob/main/exercises/05-skills-agents.md)
 
 <!--
-Gruppenübung, 15 Minuten innerhalb des Bausteins: erst Papierentwurf, danach Verzeichnisstruktur betrachten. Nicht alle Teilnehmenden müssen heute echte Tools installieren.
+25 Minuten inklusive Input: Workflow als .github/skills/catalog-test-review/SKILL.md mit Trigger und Prüfschritten anlegen. Reviewer-Agent optional. Tatsächlichen Skill-Aufruf beobachten oder manuellen Kontextweg ausdrücklich dokumentieren. Keine Toolinstallation erforderlich.
 -->
 
 ---
@@ -405,31 +472,35 @@ background: /bmad-governance-control-center.png
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/06-tools-mcp.md` (optional)
+**Guide 6 · 20 Min.** → [Übung: Tools & MCP](https://github.com/harrybin/ekon30-github-copilot-workshop/blob/main/exercises/06-tools-mcp.md)
 
 <!--
-Demo nur mit einem vorbereiteten, möglichst lesenden Beispielserver. Verbindung, Tool-Input und Rückgabe prüfen. Keine echten Kundendaten, Zugangsdaten oder unkontrollierten Schreibaktionen.
+Die lokale Tool-/Rechteanalyse ist Teil des Workshops. Terminal plus lazbuild benötigt keinen MCP-Server. Eine Live-MCP-Demo ist optional und nur mit vorbereitetem lesendem Beispielserver erlaubt. Ohne Server Trockenübung dokumentieren, keinen Live-Nachweis behaupten.
 -->
 
 ---
-title: Delphi ist ein möglicher Übungsweg
-layout: image-left
-background: /delphi-code.png
+title: Unsere Pascal-Toolchain
+layout: default
 ---
 
-# Dasselbe Prinzip, andere Toolchain
+# Delphi-Code. Lazarus-Build. Sichtbarer Nachweis.
+
+```pascal
+function FindSessionIndex(const Sessions: TSessions;
+  const Id: string): Integer;
+```
 
 <v-clicks>
 
-- VS Code plus DelphiLSP-Erweiterung
-- bestehende Delphi-Unit als Kontext
-- Konventionen und Tests in Instructions festhalten
-- wenn Delphi lokal fehlt: dieselbe Übung in TypeScript durchführen
+- `src/SessionCatalog.pas` · Delphi-kompatibles Object Pascal
+- `CatalogDemo.lpi` · Konsolenprojekt ohne VCL/FMX
+- `npm test` · Lazarus baut **und startet** die Pascal-Tests
+- `npm run build` · Anwendung mit `lazbuild` bauen
 
 </v-clicks>
 
 <!--
-Optionale Delphi-Demo: nur bei vorbereiteter Installation. Copilot-Unterstützung hängt an Editor, Erweiterungen und Projektkontext; keine Garantie für IDE-spezifische Features.
+FPC wird im Delphi-Modus verwendet. Keine JavaScript-Ersatzübungen, keine RAD-Studio-Lizenz erforderlich. Node.js ist nur der plattformübergreifende Starter für Guide und Toolchain. Die beiden .lpi-Dateien lassen sich alternativ direkt in Lazarus öffnen; danach Tests tatsächlich starten. Vollständige RAD-Studio-Kompatibilität wird nicht behauptet.
 -->
 
 ---
@@ -438,22 +509,22 @@ layout: image-right
 background: /bmad-human-ai-copilot.png
 ---
 
-# 20 Minuten · euer Copilot-Workflow
+# Euer Copilot-Workflow
 
 <v-clicks>
 
-- Feature + Erfolgskriterien auswählen
+- `FilterSessionsByTrack` mit Erfolgskriterien umsetzen
 - Instructions/Prompt passend einsetzen
 - Agent in sicherem Scope arbeiten lassen
 - Tests, Diff und offene Punkte als Team prüfen
-- **Ergebnis:** überprüfbarer PR-Entwurf und persönlicher nächster Schritt
+- **Ergebnis:** geprüfter Diff und exportierte Workshop-Notizen
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/07-capstone.md`
+**Guide 7 · 20 Min.** → [Übung: Capstone](https://github.com/harrybin/ekon30-github-copilot-workshop/blob/main/exercises/07-capstone.md)
 
 <!--
-10 Min bauen, 5 Min Review in Zweiergruppen, 5 Min teilen. Ohne PR-Rechte lokal committen oder Diff zeigen.
+10 Min bauen, 5 Min Review in Zweiergruppen, 5 Min teilen und Notizen exportieren. npm test und npm run build ausführen. Ohne PR-Rechte genügt lokaler Diff. Der Export enthält persönliche Angaben zu Prüfschritten und offenen Punkten, kein automatisches Qualitätszertifikat.
 -->
 
 ---
@@ -489,7 +560,8 @@ hideInToc: true
 - [EKON 30 · GitHub Copilot von A bis Z](https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/workshop-github-copilot-von-a-bis-z)
 - [GitHub Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
 - [Bestehende Copilot-Decks und Workshop-Abstract im Repository](https://github.com/harrybin/presentations)
-- Vorab installieren: VS Code, Git, Copilot-Extensions und Beispielprojekt
+- [Vorbild der Übungsführung: Copilot Governance at Scale](https://github.com/octodemo/copilot-governance-at-scale)
+- Vorab installieren: Lazarus/FPC, VS Code, Git, Node.js und Copilot
 
 </v-clicks>
 
@@ -498,9 +570,11 @@ Die Featurematrix in der GitHub-Dokumentation ändert sich; konkrete UI-Schritte
 -->
 
 ---
+
 src: /special-slides/questions.md
 ---
 
 ---
+
 src: /special-slides/thank-you.md
 ---

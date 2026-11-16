@@ -1,0 +1,187 @@
+{
+  "$schema": "https://demotime.show/demo-time.schema.json",
+  "title": "EKON 30 · Spec-Driven Development",
+  "description": "11 Minuten: PRD → Spec → Plan → begrenzte Änderung. Erst die jeweilige Live-Szene zeigen; bei Timeout die folgende Fallback-Szene verwenden.",
+  "version": 3,
+  "timer": 11,
+  "loop": false,
+  "scenes": [
+    {
+      "id": "sdd-reset",
+      "title": "Start · Baseline zurücksetzen",
+      "description": "Setzt nur SessionCatalog.pas zurück und öffnet das PRD.",
+      "moves": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs reset-baseline",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
+        },
+        {
+          "action": "open",
+          "path": "prd.md",
+          "focusTop": true
+        }
+      ]
+    },
+    {
+      "id": "sdd-s1",
+      "title": "S1 · Fragen statt raten",
+      "description": "Maximal 45 Sekunden. Bei guter Antwort eine fachliche Frage auswählen und die Entscheidung in der Spec zeigen; bei Timeout die nächste Fallback-Szene nutzen.",
+      "autoAdvanceAfter": 45,
+      "moves": [
+        {
+          "action": "open",
+          "path": "prd.md",
+          "focusTop": true
+        },
+        {
+          "action": "newCopilotChat"
+        },
+        {
+          "action": "askCopilotChat",
+          "message": "Lies #file:prd.md. Stelle höchstens drei konkrete Fragen zu fachlichen Entscheidungen und Randfällen. Ändere keine Dateien. Triff keine Annahmen als Fakten und schreibe noch keine Implementierung."
+        }
+      ]
+    },
+    {
+      "id": "sdd-s1-fallback",
+      "title": "S1 · Fallback: vorbereitete Fragen",
+      "description": "Die Entscheidungen sind bereits in der Spec dokumentiert; die Live-Antwort muss sie nicht neu erzeugen.",
+      "moves": [
+        {
+          "action": "open",
+          "path": "spec.md",
+          "focusTop": true
+        },
+        {
+          "action": "highlight",
+          "path": "spec.md",
+          "startPlaceholder": "## Vorbereitete Klärungsfragen",
+          "endPlaceholder": "## Akzeptanzkriterien"
+        }
+      ]
+    },
+    {
+      "id": "sdd-s2",
+      "title": "S2 · Ein begrenzter Plan",
+      "description": "Maximal 45 Sekunden. Ergebnis mit vorbereiteten Taskgrenzen und Checks vergleichen; bei Timeout die nächste Fallback-Szene nutzen.",
+      "autoAdvanceAfter": 45,
+      "moves": [
+        {
+          "action": "open",
+          "path": "spec.md",
+          "focusTop": true
+        },
+        {
+          "action": "newCopilotChat"
+        },
+        {
+          "action": "askCopilotChat",
+          "message": "Lies #file:spec.md, #file:SessionCatalog.pas und #file:CatalogTests.lpr. Schlage höchstens drei Tasks mit Abhängigkeiten und prüfbaren Ergebnissen vor. Ändere keine Dateien und starte keine Befehle."
+        }
+      ]
+    },
+    {
+      "id": "sdd-s2-fallback",
+      "title": "S2 · Fallback: vorbereiteter Plan",
+      "description": "Task 2 hängt von Task 1 ab, Task 3 von Task 2. Der Plan ist eine Offline-Referenz und kein live erzeugtes Agent-Ergebnis.",
+      "moves": [
+        {
+          "action": "open",
+          "path": "plan.md",
+          "focusTop": true
+        },
+        {
+          "action": "highlight",
+          "path": "plan.md",
+          "startPlaceholder": "1. **Vertrag prüfen:**",
+          "endPlaceholder": "3. **Prüfen:**"
+        }
+      ]
+    },
+    {
+      "id": "sdd-s3",
+      "title": "S3 · Eine Änderung, echte Tests",
+      "description": "Nur im isolierten .run/baseline-Workspace ausführen. Der Baseline-Test schlägt absichtlich fehl. Maximal 60 Sekunden Agent-Wartezeit; bei Timeout nächste Szene.",
+      "autoAdvanceAfter": 60,
+      "moves": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs test baseline",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
+        },
+        {
+          "action": "open",
+          "path": "SessionCatalog.pas",
+          "focusTop": true
+        },
+        {
+          "action": "highlight",
+          "path": "SessionCatalog.pas",
+          "startPlaceholder": "for J := 0 to High(Result) do",
+          "endPlaceholder": "Break;"
+        },
+        {
+          "action": "newCopilotChat"
+        },
+        {
+          "action": "agentCopilotChat",
+          "message": "Setze #file:spec.md nur in #file:SessionCatalog.pas um. Ändere keine Tests oder anderen Dateien. Bewahre Reihenfolge und Eingaben. Nutze Delphi-kompatibles Object Pascal. Führe selbst nichts aus; nenne Änderungen und offene Punkte. Warte auf meine Prüfung."
+        }
+      ]
+    },
+    {
+      "id": "sdd-s3-fallback",
+      "title": "S3 · Fallback: vorbereitete Referenz",
+      "description": "Bei Timeout oder falschem Scope Copilot abbrechen. Die vorbereitete Lösung ist eine Referenz, kein live erzeugtes Ergebnis.",
+      "moves": [
+        {
+          "action": "cancelCopilotChat"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs test solution",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs diff",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
+        },
+        {
+          "action": "open",
+          "path": "context/beobachtung.md",
+          "focusTop": true
+        }
+      ]
+    },
+    {
+      "id": "sdd-s3-verify",
+      "title": "S3 · Live-Ergebnis prüfen",
+      "description": "Nur wenn die Agent-Antwort rechtzeitig und im richtigen Scope fertig ist: Baseline-Checks ausführen und tatsächlichen Diff prüfen.",
+      "moves": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs test baseline",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs diff",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
+        },
+        {
+          "action": "open",
+          "path": "SessionCatalog.pas",
+          "focusTop": true
+        }
+      ]
+    }
+  ]
+}

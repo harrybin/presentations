@@ -15,14 +15,19 @@ author: "Harald Binkle & Thomas Tomow"
 showCopyright: false
 description: "60-Minuten-Vortrag mit GitHub Copilot: Instructions, Prompts, Skills, Tools und Custom Agents passend zur Aufgabe einsetzen."
 publicDeckPath: ekon30-ai-context-setup
+htmlAttrs:
+  class: ekon30-deck
 ###### slides start ######
-layout: cover-dark
+layout: cover
 coverImage: /bmad-context-satellite.png
+isDark: true
 hideInToc: true
 ---
 
 # AI Context Setup
+
 ## Instructions, Prompts, Skills, Tools & Custom Agents
+
 ### Was ist wofür?
 
 **Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 60 Min. · GitHub Copilot · Harald Binkle & Thomas Tomow**
@@ -39,12 +44,14 @@ src: /special-slides/ekon30-speakers.md
 ---
 
 ---
-layout: cover-dark
+layout: cover
 coverImage: /bmad-ai-lightbulb.png
+isDark: true
 hideInToc: true
 ---
 
 # Mehr Kontext ist nicht immer besser.
+
 ## Der richtige Kontext zur richtigen Aufgabe schon.
 
 <v-clicks>
@@ -95,18 +102,19 @@ hideInToc: true
 - 00–12′ Kontext als knappes Budget
 - 12–30′ Instructions, Prompts und Skills
 - 30–42′ Tools/MCP und Custom Agents
-- 42–53′ Drei Demos plus Kontext-Trade-off
+- 42–53′ Drei Demos und Kontext-Trade-off
 - 53–60′ Entscheidungsraster und Fragen
 
 </v-clicks>
 
 <!--
-Zeiten inklusive Diskussion und Fragen. Bei Zeitdruck Demo 3 als vorbereiteten Diff zeigen.
+Die Zeiten ergeben 60 Minuten inklusive sieben Minuten Abschluss/Fragen. Demostationen: 42:00–45:30 (3½ Min.), 45:30–49:00 (3½ Min.), 49:00–53:00 (4 Min.). Die 11 Minuten enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests, Kontext-Trade-off und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code den Demo-Time-Akt `.run/baseline/.demo/context-setup-talk.json` starten. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
 -->
 
 ---
-layout: chapter-dark
+layout: chapter
 background: /bmad-dev-ideas-to-tests.png
+isDark: true
 ---
 
 # 01 · Der Kontext-Engpass
@@ -222,8 +230,9 @@ Beispiel: Der Slidev-Skill im Repository enthält Konventionen, Referenzen und k
 -->
 
 ---
-layout: chapter-dark
+layout: chapter
 background: /bmad-agents-specialized-experts.png
+isDark: true
 ---
 
 # 02 · Fähigkeiten und Rollen
@@ -279,15 +288,33 @@ title: Auswahlraster
 layout: default
 ---
 
-# Das passende Werkzeug mit vier Verben wählen
+# Das passende Werkzeug nach Aufgabe wählen
 
-| Wenn du … | Nimm … | Beispiel |
-|---|---|---|
-| Regeln **festlegen** willst | Instructions | Projektkonventionen |
-| einen Task **starten** willst | Prompt File | Testcheckliste |
-| Ablaufwissen **laden** willst | Skill | Release-Workflow |
-| Daten **abrufen/ändern** willst | Tool / MCP | Issue- oder API-Zugriff |
-| eine Rolle **abgrenzen** willst | Custom Agent | read-only Reviewer |
+<div class="ekon30-choice-map">
+  <div class="ekon30-choice-map__root">Welche Unterstützung fehlt?</div>
+  <div class="ekon30-choice-map__branches">
+    <div v-click class="ekon30-choice-map__branch">
+      <strong>Regeln festlegen</strong>
+      <p><em>Instructions</em>Projektkonventionen</p>
+    </div>
+    <div v-click class="ekon30-choice-map__branch">
+      <strong>Task starten</strong>
+      <p><em>Prompt File</em>Testcheckliste</p>
+    </div>
+    <div v-click class="ekon30-choice-map__branch">
+      <strong>Ablaufwissen laden</strong>
+      <p><em>Skill</em>Release-Workflow</p>
+    </div>
+    <div v-click class="ekon30-choice-map__branch">
+      <strong>Daten abrufen/ändern</strong>
+      <p><em>Tool / MCP</em>Issue- oder API-Zugriff</p>
+    </div>
+    <div v-click class="ekon30-choice-map__branch">
+      <strong>Rolle abgrenzen</strong>
+      <p><em>Custom Agent</em>read-only Reviewer</p>
+    </div>
+  </div>
+</div>
 
 <!--
 Die Kategorien schließen sich nicht aus. Kombinieren nur, wenn der konkrete Workflow es verlangt; sonst entsteht Konfigurationsballast.
@@ -299,18 +326,18 @@ layout: image-right
 background: /settings-instruction-files-1.png
 ---
 
-# Demo 1 · Instructions verändern den Grundton
+# Demo 1 · Dieselbe Aufgabe, anderer Kontext
 
 <v-clicks>
 
-- dieselbe Aufgabe vor und nach einer Projektregel
-- relevante Regel sichtbar machen
-- Code- und Test-Diff vergleichen
+- **3½ Min.** · Track-Zählung im Pascal-Katalog
+- gleicher Copilot-Auftrag, Regel zusätzlich als Kontext
+- tatsächliche Antworten vergleichen, Wirkung nicht garantieren
 
 </v-clicks>
 
 <!--
-Demo ca. 3 Minuten: eine vorhandene Konvention aus einem Beispielprojekt nutzen. Nicht „KI wird besser“ behaupten, sondern prüfen, ob der relevante Unterschied tatsächlich im Ergebnis und Review sichtbar ist.
+Konkreter Ablauf und Prompt C1: demo-projects/ekon30-talk-demo/README.md. Im eigenen VS-Code-Ordner .run/baseline den Demo-Time-Akt `.run/baseline/.demo/context-setup-talk.json` verwenden: zuerst spec.md und SessionCatalog.pas als expliziten Kontext, dann denselben Auftrag in einem neuen Chat mit zusätzlicher context/copilot-instructions.md wiederholen. Vorlage wird explizit beigefügt und nicht automatisch geladen. Pro Antwort maximal 45 Sekunden; danach context/beobachtung.md als vorbereiteten Fallback zeigen. Gleiche Antworten sind ein gültiges Ergebnis.
 -->
 
 ---
@@ -323,14 +350,15 @@ background: /bmad-context-hierarchy.png
 
 <v-clicks>
 
-- einmalige konkrete Checkliste: Prompt File
-- wiederkehrender mehrstufiger Prozess: Skill
-- unnötige Instruktionen aus dem globalen Kontext entfernen
+- **3½ Min.** · dieselbe Pascal-Track-Zählung
+- Prompt File: konkreter Test-Review-Auftrag
+- Skill: wiederverwendbarer Prüfablauf und Trigger
+- Vorlagen bewusst als Kontext statt globaler Dauerregeln
 
 </v-clicks>
 
 <!--
-Demo ca. 3 Minuten: einen vorhandenen Repo-Prompt mit dem Slidev-Skill vergleichen. Beide sind aus realer Repo-Arbeit abgeleitet.
+context/test-review.prompt.md und context/catalog-review/SKILL.md öffnen. Die Dateien sind Vorlagen außerhalb aktiver .github-Pfade und werden nicht automatisch geladen. Copilot kann optional in höchstens 45 Sekunden den Unterschied erklären; sonst die Artefakte direkt vergleichen. Feature-Support unterscheidet sich nach Oberfläche.
 -->
 
 ---
@@ -343,14 +371,15 @@ background: /bmad-governance-control-center.png
 
 <v-clicks>
 
-- Aufgabe an einen read-only Reviewer geben
-- sichtbare Inputs und erlaubte Fähigkeiten benennen
-- Ergebnis gegen dieselbe Checkliste prüfen
+- **4 Min.** · Reviewer-Rolle und Toolgrenze zeigen
+- Copilot im Ask-Modus um Befunde bitten
+- `KI` ≠ `ki`: Test zeigt den konkreten Fehler
+- bei Timeout vorbereiteten Befund und Testausgabe zeigen
 
 </v-clicks>
 
 <!--
-Demo ca. 3 Minuten: Agent-Konfiguration oder vorbereitetes Beispiel zeigen. Keine externe Schreibaktion ausführen. Unterschied zwischen Agent-Rolle und MCP-Tool explizit machen.
+context/pascal-reviewer.agent.md ist eine Rollen-Vorlage, kein nachweislich technisch beschränkter Agent. Prompt C3 im Ask-Modus, maximal 45 Sekunden; danach Fallback context/beobachtung.md. node demo.mjs test baseline liefert echten fehlgeschlagenen Test. Keine Dateien oder Tests durch Copilot ändern lassen. Ein lokaler Terminal-Toolaufruf braucht keinen MCP-Server; kein externer Zugriff.
 -->
 
 ---
@@ -407,6 +436,7 @@ hideInToc: true
 - [EKON 30 · KI Praxis und Tools für Delphi](https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/)
 - [GitHub Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
 - [Copilot: Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
+- Demo & Ablauf: `demo-projects/ekon30-talk-demo/README.md`
 - Beispiele: `.github/copilot-instructions.md`, `.github/prompts/` und `.github/skills/` in diesem Repository
 
 </v-clicks>
@@ -416,9 +446,11 @@ GitHub aktualisiert Featurematrix und Unterstützung laufend. Vor einem Workshop
 -->
 
 ---
+
 src: /special-slides/questions.md
 ---
 
 ---
+
 src: /special-slides/thank-you.md
 ---
