@@ -19,7 +19,7 @@ htmlAttrs:
   class: ekon30-deck
 ###### slides start ######
 layout: cover
-coverImage: /msWebUiReact-cover.png
+coverImage: msWebUiReact-cover.png
 isDark: true
 hideInToc: true
 ---
@@ -97,7 +97,7 @@ Vorbereitung: Starterprojekt klonen, npm-Abhängigkeiten installieren und lokale
 
 ---
 layout: cover
-coverImage: /msWebUiReact-strategic-answer.jpg
+coverImage: msWebUiReact-strategic-answer.jpg
 isDark: true
 hideInToc: true
 ---
@@ -121,7 +121,7 @@ Die Herausforderung ist nicht nur JSX: Wir betrachten Browser-Laufzeit, Bundling
 ---
 title: Sessionprofil
 layout: image-right
-background: /msWebUiReact-decision-tree.jpg
+background: msWebUiReact-decision-tree.jpg
 hideInToc: true
 ---
 
@@ -166,7 +166,7 @@ Die Blöcke ergeben 240 Minuten inklusive Pausen. Vite ist der vorbereitete Bund
 
 ---
 layout: chapter
-background: /msWebUiReact-crossroads.jpg
+background: msWebUiReact-crossroads.jpg
 isDark: true
 ---
 
@@ -179,7 +179,7 @@ Webseite und Web-App unterscheiden sich in Interaktion, Zustand und Datenfluss. 
 ---
 title: Die Session-App
 layout: image-right
-background: /msWebUiReact-demo1.jpg
+background: msWebUiReact-demo1.jpg
 ---
 
 # Ein roter Faden für die Übungen
@@ -200,7 +200,7 @@ Ein kleines Konferenz- oder Katalogbeispiel dient als durchgehende App. Vorhande
 ---
 title: Node.js und der Frontend-Werkzeugkasten
 layout: image-right
-background: /msWebUiReact-tooling.jpg
+background: msWebUiReact-tooling.jpg
 ---
 
 # Entwickeln mit Node.js, bauen für den Browser
@@ -221,7 +221,7 @@ Node.js ist hier zunächst die Werkzeug-Laufzeit, nicht automatisch der Server f
 ---
 title: Übung 1 · Projekt starten und Umgebung verstehen
 layout: image-left
-background: /msWebUiReact-tooling.jpg
+background: msWebUiReact-tooling.jpg
 ---
 
 # 20 Minuten · Vite und Debugging
@@ -277,7 +277,7 @@ Anhand des Beispieltyps Types, Interfaces und Generics erklären. Desktop-Parall
 ---
 title: React entwickelt UI deklarativ
 layout: image-right
-background: /msWebUiReact-transfers.jpg
+background: msWebUiReact-transfers.jpg
 ---
 
 # Komponenten, Props und Rendering
@@ -312,7 +312,7 @@ Desktop-Parallele: Komponenten und Ereignisse sind vertraut; anders ist, dass da
 ---
 title: Komponenten bilden die UI
 layout: image-left
-background: /msWebUiReact-transfers.jpg
+background: msWebUiReact-transfers.jpg
 ---
 
 # Zerlegen nach Verantwortung
@@ -333,7 +333,7 @@ Analogie zu vertrauten UI-Frameworks: Komponenten kapseln Darstellung und Verhal
 ---
 title: Hooks statt Lifecycle-Methoden
 layout: image-left
-background: /msWebUiReact-state-management.jpg
+background: msWebUiReact-state-management.jpg
 ---
 
 # Lifecycle-Konzepte funktional abbilden
@@ -354,7 +354,7 @@ Lifecycle Methods als historisches Klassenkomponenten-Modell erwähnen, aber den
 ---
 title: Übung 3 · Komponente und Hook
 layout: image-left
-background: /msWebUiReact-demo1.jpg
+background: msWebUiReact-demo1.jpg
 ---
 
 # 20 Minuten · React-Grundlagen anwenden
@@ -376,7 +376,7 @@ Geführt: eine Komponente bauen, Event-Handler ergänzen und mit React DevTools/
 
 ---
 layout: chapter
-background: /msWebUiReact-crossroads.jpg
+background: msWebUiReact-crossroads.jpg
 isDark: true
 ---
 
@@ -389,7 +389,7 @@ Material UI bietet einen produktiven UI-Baukasten. Danach organisieren wir Kompo
 ---
 title: Material UI als konsistenter Baukasten
 layout: image-right
-background: /msWebUiReact-fluent-ui.jpg
+background: msWebUiReact-fluent-ui.jpg
 ---
 
 # Design-Tokens statt CSS-Wildwuchs
@@ -410,7 +410,7 @@ Material UI bietet vorgefertigte Komponenten, Layout-Primitives und Theme-Option
 ---
 title: Material UI für Komponenten, Layout und Styling
 layout: image-right
-background: /msWebUiReact-summary.jpg
+background: msWebUiReact-summary.jpg
 ---
 
 # Komponenten, Layout und Styling
@@ -431,7 +431,7 @@ Desktop-Analogie: Component Library und Theme entsprechen einem UI-Baukasten mit
 ---
 title: Übung 4 · Responsive MUI-Oberfläche
 layout: image-left
-background: /msWebUiReact-tooling.jpg
+background: msWebUiReact-tooling.jpg
 ---
 
 # 40 Minuten · konsistent statt CSS-intensiv
@@ -454,7 +454,7 @@ Geführt: Komponenten zuerst, dann Layout und Breakpoints. CSS-Fallstricke zeige
 ---
 title: State teilen mit React Context
 layout: image-right
-background: /msWebUiReact-state-management.jpg
+background: msWebUiReact-state-management.jpg
 ---
 
 # Context für gemeinsam benötigte Daten
@@ -475,7 +475,7 @@ Verweis auf das bestehende React-State-Management-Material im Repository. Contex
 ---
 title: Übung 5 · Hooks und Context
 layout: image-left
-background: /msWebUiReact-demo1.jpg
+background: msWebUiReact-demo1.jpg
 ---
 
 # 35 Minuten · Zustand sauber organisieren
@@ -497,7 +497,7 @@ Checkpoint: Teilnehmende erklären, welcher State lokal, abgeleitet oder gemeins
 
 ---
 layout: chapter
-background: /msWebUiReact-mobile-push.jpg
+background: msWebUiReact-mobile-push.jpg
 isDark: true
 ---
 
@@ -510,7 +510,7 @@ Mit Datenzugriff wird die Browser-App zu einer realistischen Client-Anwendung. L
 ---
 title: Daten abrufen mit Fetch
 layout: image-right
-background: /msWebUiReact-demo1.jpg
+background: msWebUiReact-demo1.jpg
 ---
 
 # REST-Daten in den Komponentenfluss holen
@@ -531,7 +531,7 @@ background: /msWebUiReact-demo1.jpg
 ---
 title: Übung 6 · REST-Daten und UI-Zustände
 layout: image-left
-background: /msWebUiReact-mobile-push.jpg
+background: msWebUiReact-mobile-push.jpg
 ---
 
 # 30 Minuten · von HTTP zu gerenderten Daten
@@ -554,7 +554,7 @@ Geführt: vorbereiteten API-Endpunkt oder Mock verwenden, damit Netz-/CORS-Probl
 ---
 title: REST-Clients und AutoRest
 layout: image-right
-background: /msWebUiReact-tooling.jpg
+background: msWebUiReact-tooling.jpg
 ---
 
 # Von Hand geschrieben bis generiert
@@ -576,7 +576,7 @@ AutoRest ist ein optionaler Überblick oder eine vorbereitete Demo: OpenAPI-Besc
 ---
 title: Fallstricke und Performance
 layout: image-left
-background: /msWebUiReact-css-challenge.png
+background: msWebUiReact-css-challenge.png
 ---
 
 # Erst messen, dann optimieren
@@ -619,7 +619,7 @@ Optionale Vertiefung: kleine Komponentenprüfung oder vorbereiteter Playwright-T
 ---
 title: Abschlussübung · prüfen und verbessern
 layout: image-right
-background: /msWebUiReact-strategic-answer.jpg
+background: msWebUiReact-strategic-answer.jpg
 ---
 
 # 20 Minuten · eure Web-App auf dem Prüfstand

@@ -18,7 +18,7 @@
 - Speaker notes are HTML comments; only the last comment in a slide is exported, so keep a single trailing `<!-- ... -->` per slide.
 - Bullets should sit inside `<v-clicks> ... </v-clicks>` to align with the talk pacing expectations stated in the existing decks.
 - Use `<Toc minDepth="1" maxDepth="1" />` for agenda slides and reuse the standard agenda fragment (`/copilot-slides/agenda.md`) when possible.
-- Always store deck-specific assets in `public/` and reference them with absolute paths like `/pilot-large.jpg`; add placeholder files there if artwork is pending.
+- Always store deck-specific assets in `public/`; add placeholder files there if artwork is pending. Since decks are published under `/<deck-name>/`, use relative asset URLs such as `pilot-large.jpg` in slide backgrounds and `coverImage` so they resolve beneath the deck base instead of the site root.
 - when a slide is to be extracted to its own file, simply move the selected slide content to a new markdown file and replace the original selected slide content by referencing the newly created slide file using the `src:` attribute.
   - there are at lot of examples in the slides deck: `githubCopilotDelphi.md`.
   - when extracting take care that `---` always starts a new slide or or closes frontmatter. So don't make the original slide invalid.

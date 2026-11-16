@@ -19,7 +19,7 @@ htmlAttrs:
   class: ekon30-deck
 ###### slides start ######
 layout: cover
-coverImage: /bmad-agent-fleet.png
+coverImage: bmad-agent-fleet.png
 isDark: true
 hideInToc: true
 ---
@@ -43,7 +43,7 @@ src: /special-slides/ekon30-speakers.md
 
 ---
 layout: cover
-coverImage: /bmad-project-failure-aircraft.png
+coverImage: bmad-project-failure-aircraft.png
 isDark: true
 hideInToc: true
 ---
@@ -67,7 +67,7 @@ Teaser mit kurzen Pausen. Die Lücke zwischen Absicht und prüfbarem Verhalten i
 ---
 title: Sessionprofil
 layout: image-right
-background: /bmad-context-satellite.png
+background: bmad-context-satellite.png
 hideInToc: true
 ---
 
@@ -89,7 +89,7 @@ In einem Satz: Wir zeigen keinen Autopiloten ohne Kontrolle, sondern einen über
 ---
 title: Agenda
 layout: image-right
-background: /compass-right.png
+background: compass-right.png
 hideInToc: true
 ---
 
@@ -111,7 +111,7 @@ Die Zeiten ergeben 60 Minuten inklusive sieben Minuten Abschluss und Fragen. Dem
 
 ---
 layout: chapter
-background: /bmad-dev-ideas-to-tests.png
+background: bmad-dev-ideas-to-tests.png
 isDark: true
 ---
 
@@ -124,7 +124,7 @@ isDark: true
 ---
 title: Der Engpass ist nicht das Tippen
 layout: image-right
-background: /bmad-kosten-anforderungsfehler.png
+background: bmad-kosten-anforderungsfehler.png
 ---
 
 # Mehr Output ist nicht automatisch mehr Fortschritt
@@ -145,7 +145,7 @@ Das Publikum fragen: Wo wird bei euch „fertig“ heute festgelegt — im Ticke
 ---
 title: PRD ist Orientierung, Spezifikation ist Vertrag
 layout: image-left
-background: /bmad-context-hierarchy.png
+background: bmad-context-hierarchy.png
 ---
 
 # Vom „Warum“ zum testbaren „Was“
@@ -230,7 +230,7 @@ Der aktuelle Spec Kit Kernprozess führt Specify, Plan, Tasks, Implement und Con
 ---
 title: Was „Agent-Squad“ hier bedeutet
 layout: image-left
-background: /bmad-agents-specialized-experts.png
+background: bmad-agents-specialized-experts.png
 ---
 
 # Rollen trennen, Ergebnisse verbinden
@@ -252,7 +252,7 @@ Squad bezeichnet hier die Arbeitsteilung, nicht die Behauptung, dass jede Copilo
 ---
 title: Demo 1 · Aus Idee wird Spec
 layout: image-right
-background: /bmad-context-hierarchy.png
+background: bmad-context-hierarchy.png
 ---
 
 # Demo 1 · Fragen vor Formulierungen
@@ -273,7 +273,7 @@ Konkreter Ablauf und Prompt S1: demo-projects/ekon30-talk-demo/README.md. .run/b
 ---
 title: Demo 2 · Plan und Tasks
 layout: image-left
-background: /bmad-navigation-compass-ai.png
+background: bmad-navigation-compass-ai.png
 ---
 
 # Demo 2 · Planung vor Delegation
@@ -293,7 +293,7 @@ Prompt S2 im Runbook: nur Plan, keine Änderungen. Nach 45 Sekunden ohne verwert
 ---
 title: Demo 3 · Implementieren und konvergieren
 layout: image-right
-background: /bmad-governance-control-center.png
+background: bmad-governance-control-center.png
 ---
 
 # Demo 3 · Code ist ein Zwischenstand
@@ -314,7 +314,7 @@ Vorab im Demo-Verzeichnis `node demo.mjs prepare` und `node demo.mjs test baseli
 ---
 title: Qualitätsgates halten Autonomie überprüfbar
 layout: image-right
-background: /bmad-governance-control-center.png
+background: bmad-governance-control-center.png
 ---
 
 # Autonom arbeiten, nicht autonom freigeben

@@ -19,7 +19,7 @@ htmlAttrs:
   class: ekon30-deck
 ###### slides start ######
 layout: cover
-coverImage: /gh-copilot-logo.png
+coverImage: gh-copilot-logo.png
 isDark: true
 hideInToc: true
 ---
@@ -140,7 +140,7 @@ Unser Guide ist eine eigenständige lokale Browser-Oberfläche, keine registrier
 
 ---
 layout: cover
-coverImage: /pilot-large.jpg
+coverImage: pilot-large.jpg
 isDark: true
 hideInToc: true
 ---
@@ -164,7 +164,7 @@ Teaser: Wir versprechen nicht „Code per Knopfdruck“, sondern üben einen sic
 ---
 title: Sessionprofil
 layout: image-right
-background: /copilot-chat-1.png
+background: copilot-chat-1.png
 hideInToc: true
 ---
 
@@ -209,7 +209,7 @@ hideInToc: true
 
 ---
 layout: chapter
-background: /copilot-change-completions-model-1.png
+background: copilot-change-completions-model-1.png
 isDark: true
 ---
 
@@ -222,7 +222,7 @@ Wir beginnen mit der kleinsten Delegation: Copilot schlägt vor, der Mensch ents
 ---
 title: Arbeitsmodell: Vorschlag, Prüfung, Entscheidung
 layout: image-right
-background: /gh-copilot-logo.png
+background: gh-copilot-logo.png
 ---
 
 # Copilot ergänzt — nicht eure Verantwortung
@@ -243,7 +243,7 @@ Leitplanke für den Tag: keine Secrets in Prompts, keine unbekannten Skripte bli
 ---
 title: Übung 1 · Completion im eigenen Rhythmus
 layout: image-left
-background: /copilot-change-completions-model-2.png
+background: copilot-change-completions-model-2.png
 ---
 
 # Kleine Funktion, echter Test
@@ -266,7 +266,7 @@ Geführte Übung: 5 Min Demo, 15 Min eigenes Arbeiten, 10 Min Checkpoint. In src
 ---
 title: Übung 2 · Chat mit Arbeitskontext
 layout: image-right
-background: /copilot-chat-2.png
+background: copilot-chat-2.png
 ---
 
 # Erst verstehen, dann ändern
@@ -288,7 +288,7 @@ Geführt: erst Ask/Explain ohne Edit, dann genau einen Randfall testen. Teilnehm
 
 ---
 layout: chapter
-background: /secret-agent-large.png
+background: secret-agent-large.png
 isDark: true
 ---
 
@@ -335,7 +335,7 @@ Ein gutes Prompt-Beispiel live formulieren. Nicht die Länge zählt, sondern kla
 ---
 title: Übung 3 · Feature mit Agent Mode
 layout: image-right
-background: /copilot-chat-3.png
+background: copilot-chat-3.png
 ---
 
 # Planen, umsetzen, reviewen
@@ -358,7 +358,7 @@ Zeitbox: 8 Min gemeinsames Plan-Beispiel, 22 Min Umsetzung, 10 Min Diff-/Testrev
 ---
 title: Instructions oder Prompt File?
 layout: image-left
-background: /settings-instruction-files-1.png
+background: settings-instruction-files-1.png
 ---
 
 # Dauerhafte Regeln vs. wiederholbarer Auftrag
@@ -379,7 +379,7 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 ---
 title: Übung 4 · Projektkontext anpassen
 layout: image-right
-background: /settings-instruction-files-2.png
+background: settings-instruction-files-2.png
 ---
 
 # Regeln sichtbar machen
@@ -401,7 +401,7 @@ Geführt: Regeln als konkrete Vorgaben schreiben, nicht als Wunschliste. Mit dem
 
 ---
 layout: chapter
-background: /bmad-agents-specialized-experts.png
+background: bmad-agents-specialized-experts.png
 isDark: true
 ---
 
@@ -414,7 +414,7 @@ Die Begriffe sauber unterscheiden: Skills laden Wissen/Schritte nach Bedarf, Cus
 ---
 title: Skills, Agents und Tools sind verschieden
 layout: image-right
-background: /bmad-agent-fleet.png
+background: bmad-agent-fleet.png
 ---
 
 # Drei Bausteine — drei Aufgaben
@@ -435,7 +435,7 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 ---
 title: Übung · Team-Workflow als Skill
 layout: image-left
-background: /bmad-context-hierarchy.png
+background: bmad-context-hierarchy.png
 ---
 
 # Aus einer Wiederholung wird ein Skill
@@ -458,7 +458,7 @@ background: /bmad-context-hierarchy.png
 ---
 title: MCP: externe Fähigkeiten bewusst anbinden
 layout: image-right
-background: /bmad-governance-control-center.png
+background: bmad-governance-control-center.png
 ---
 
 # Erst Nutzen, dann Berechtigung
@@ -506,7 +506,7 @@ FPC wird im Delphi-Modus verwendet. Keine JavaScript-Ersatzübungen, keine RAD-S
 ---
 title: Capstone · Feature von Anfang bis Review
 layout: image-right
-background: /bmad-human-ai-copilot.png
+background: bmad-human-ai-copilot.png
 ---
 
 # Euer Copilot-Workflow

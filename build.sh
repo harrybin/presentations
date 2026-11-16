@@ -77,6 +77,16 @@ build_slides() {
     if [[ "$file" != "README.md" && "$file" != "slides.md" ]]; then
       local output_dir="${file%.md}"
       npx slidev build --out "./dist/$output_dir" --base "/$output_dir/" "$file" || { echo "ERROR: Failed to build $file"; exit 1; }
+      if grep -q '@xebia/slidev-theme-xebia-2026' "$file"; then
+        local theme_variables="node_modules/@xebia/slidev-theme-xebia-2026/styles/variables.css"
+        local theme_asset_dir="./dist/$output_dir/assets/node_modules/@xebia/slidev-theme-xebia-2026/styles"
+        if [[ ! -f "$theme_variables" ]]; then
+          echo "ERROR: Missing Xebia 2026 theme variables: $theme_variables"
+          exit 1
+        fi
+        mkdir -p "$theme_asset_dir"
+        cp "$theme_variables" "$theme_asset_dir/variables.css"
+      fi
     fi
   done
 }

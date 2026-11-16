@@ -19,7 +19,7 @@ htmlAttrs:
   class: ekon30-deck
 ###### slides start ######
 layout: cover
-coverImage: /bmad-context-satellite.png
+coverImage: bmad-context-satellite.png
 isDark: true
 hideInToc: true
 ---
@@ -45,7 +45,7 @@ src: /special-slides/ekon30-speakers.md
 
 ---
 layout: cover
-coverImage: /bmad-ai-lightbulb.png
+coverImage: bmad-ai-lightbulb.png
 isDark: true
 hideInToc: true
 ---
@@ -69,7 +69,7 @@ Die These ist nicht „Tokens um jeden Preis sparen“, sondern irrelevanten Kon
 ---
 title: Sessionprofil
 layout: image-right
-background: /bmad-context-hierarchy.png
+background: bmad-context-hierarchy.png
 hideInToc: true
 ---
 
@@ -91,7 +91,7 @@ Wir gehen nicht alle Dateien oder Features einer IDE durch. Fokus ist: welches P
 ---
 title: Agenda
 layout: image-right
-background: /compass-right.png
+background: compass-right.png
 hideInToc: true
 ---
 
@@ -113,7 +113,7 @@ Die Zeiten ergeben 60 Minuten inklusive sieben Minuten Abschluss/Fragen. Demosta
 
 ---
 layout: chapter
-background: /bmad-dev-ideas-to-tests.png
+background: bmad-dev-ideas-to-tests.png
 isDark: true
 ---
 
@@ -126,7 +126,7 @@ Ein Agent arbeitet nicht mit unserem unausgesprochenen Wissen. Was nicht im Kont
 ---
 title: Context Engineering heißt Auswahl
 layout: image-right
-background: /bmad-context-satellite.png
+background: bmad-context-satellite.png
 ---
 
 # Kontext steuert Qualität und Aufwand
@@ -168,7 +168,7 @@ Das ist das Entscheidungsmodell für den Rest des Vortrags.
 ---
 title: Instructions · Regeln, die automatisch gelten
 layout: image-left
-background: /settings-instruction-files-1.png
+background: settings-instruction-files-1.png
 ---
 
 # Dauerhafte Erwartungen an die Arbeit
@@ -190,7 +190,7 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 ---
 title: Prompt Files · ein Auftrag auf Abruf
 layout: image-right
-background: /settings-instruction-files-2.png
+background: settings-instruction-files-2.png
 ---
 
 # Wiederholbarer Task, bewusst gestartet
@@ -211,7 +211,7 @@ Prompt Files unter `.github/prompts/*.prompt.md` sind eine manuell aufgerufene V
 ---
 title: Skills · Wissen bei Bedarf laden
 layout: image-left
-background: /bmad-context-hierarchy.png
+background: bmad-context-hierarchy.png
 ---
 
 # Ein gebündelter Workflow statt Dauer-Kontext
@@ -231,7 +231,7 @@ Beispiel: Der Slidev-Skill im Repository enthält Konventionen, Referenzen und k
 
 ---
 layout: chapter
-background: /bmad-agents-specialized-experts.png
+background: bmad-agents-specialized-experts.png
 isDark: true
 ---
 
@@ -244,7 +244,7 @@ Skills sagen, wie eine Aufgabe ausgeführt wird; Custom Agents definieren eine R
 ---
 title: Tools und MCP · handeln oder nachschlagen
 layout: image-right
-background: /bmad-governance-control-center.png
+background: bmad-governance-control-center.png
 ---
 
 # Ein Modell kann nicht alles aus eigener Antwort
@@ -265,7 +265,7 @@ MCP ist keine Qualitätsgarantie und keine allgemeine Berechtigung. Least privil
 ---
 title: Custom Agents · eigene Perspektive und Grenzen
 layout: image-left
-background: /bmad-agents-specialized-experts.png
+background: bmad-agents-specialized-experts.png
 ---
 
 # Spezialist:in mit passendem Werkzeugkasten
@@ -323,7 +323,7 @@ Die Kategorien schließen sich nicht aus. Kombinieren nur, wenn der konkrete Wor
 ---
 title: Demo 1 · eine Regel, ein Test
 layout: image-right
-background: /settings-instruction-files-1.png
+background: settings-instruction-files-1.png
 ---
 
 # Demo 1 · Dieselbe Aufgabe, anderer Kontext
@@ -343,7 +343,7 @@ Konkreter Ablauf und Prompt C1: demo-projects/ekon30-talk-demo/README.md. Im eig
 ---
 title: Demo 2 · Prompt oder Skill?
 layout: image-left
-background: /bmad-context-hierarchy.png
+background: bmad-context-hierarchy.png
 ---
 
 # Demo 2 · einmaliger Auftrag vs. Prozesswissen
@@ -364,7 +364,7 @@ context/test-review.prompt.md und context/catalog-review/SKILL.md öffnen. Die D
 ---
 title: Demo 3 · Agent und Tool-Grenze
 layout: image-right
-background: /bmad-governance-control-center.png
+background: bmad-governance-control-center.png
 ---
 
 # Demo 3 · Spezialist statt Alleskönner
@@ -385,7 +385,7 @@ context/pascal-reviewer.agent.md ist eine Rollen-Vorlage, kein nachweislich tech
 ---
 title: Tokens sparen — Qualität erhalten
 layout: image-left
-background: /bmad-context-hierarchy.png
+background: bmad-context-hierarchy.png
 ---
 
 # Kontextbudget statt Kontextdiät
