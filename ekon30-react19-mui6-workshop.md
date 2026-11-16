@@ -228,7 +228,7 @@ background: /msWebUiReact-tooling.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/01-tooling.md`
+**Repo-Übung:** [Tooling](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/01-tooling.md)
 
 <!--
 Geführte Einrichtung: VS Code, Extensions, Node/npm-Skripte, Browser-Konsole und Breakpoints. Setup vorab vereinfachen, damit Teilnehmende nicht lange installieren müssen.
@@ -259,7 +259,7 @@ type ApiResult<T> = {
 
 **Übung 2 · 35 Minuten:** `Session`-Interface, generischen API-Typ und typisierte Beispieldaten anlegen.
 
-**Repo-Übung:** `exercises/02-typescript.md`
+**Repo-Übung:** [TypeScript](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/02-typescript.md)
 
 </v-click>
 
@@ -347,7 +347,7 @@ background: /msWebUiReact-demo1.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/03-components-hooks.md`
+**Repo-Übung:** [Komponenten & Hooks](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/03-components-hooks.md)
 
 <!--
 Geführt: eine Komponente bauen, Event-Handler ergänzen und mit React DevTools/Browser-Tools untersuchen.
@@ -423,7 +423,7 @@ background: /msWebUiReact-tooling.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/04-material-ui.md`
+**Repo-Übung:** [Material UI](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/04-material-ui.md)
 
 <!--
 Geführt: Komponenten zuerst, dann Layout und Breakpoints. CSS-Fallstricke zeigen, die beim Wechsel von Desktop-Layouts zu responsiven Browser-Layouts häufig auftreten.
@@ -467,7 +467,7 @@ background: /msWebUiReact-demo1.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/05-context.md`
+**Repo-Übung:** [React Context](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/05-context.md)
 
 <!--
 Checkpoint: Teilnehmende erklären, welcher State lokal, abgeleitet oder gemeinsam genutzt wird. Bei Zeit einen Effect für eine externe Synchronisation demonstrieren.
@@ -522,7 +522,7 @@ background: /msWebUiReact-mobile-push.jpg
 
 </v-clicks>
 
-**Repo-Übung:** `exercises/06-fetch.md`
+**Repo-Übung:** [Fetch](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/06-fetch.md)
 
 <!--
 Geführt: vorbereiteten API-Endpunkt oder Mock verwenden, damit Netz-/CORS-Probleme nicht die Übung blockieren. Im Debugger Request, Status und Response prüfen.
@@ -542,7 +542,7 @@ background: /msWebUiReact-tooling.jpg
 - AutoRest kann aus API-Beschreibungen Clients erzeugen
 - generierter Code spart Routine, ersetzt aber kein API-Verständnis
 - API-Vertrag, Fehlerfälle und Versionierung bleiben wichtig
-- **Repo-Vertiefung:** `exercises/optional.md`
+- **Repo-Vertiefung:** [Optionale Übungen](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/optional.md)
 
 </v-clicks>
 
@@ -564,7 +564,7 @@ background: /msWebUiReact-css-challenge.png
 - `memo`/Memoization nicht reflexartig einsetzen
 - Listen mit stabilen Keys rendern
 - Netzwerk, Bundle-Größe und UI getrennt untersuchen
-- **Repo-Vertiefung:** `exercises/optional.md`
+- **Repo-Vertiefung:** [Optionale Übungen](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/optional.md)
 
 </v-clicks>
 
@@ -585,7 +585,7 @@ layout: default
 - API-Basis-URL konfigurierbar halten, keine Secrets ins Frontend
 - Unit-/Component-Tests als nächste Ausbaustufe
 - Playwright für browserbasierte Integrationstests optional vorstellen
-- **Repo-Vertiefung:** `exercises/optional.md`
+- **Repo-Vertiefung:** [Optionale Übungen](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/optional.md)
 
 </v-clicks>
 
@@ -610,7 +610,7 @@ background: /msWebUiReact-strategic-answer.jpg
 
 </v-clicks>
 
-**Repo-Vertiefung:** `exercises/optional.md`
+**Repo-Vertiefung:** [Optionale Übungen](https://github.com/harrybin/ekon30-react-typescript-workshop/blob/main/exercises/optional.md)
 
 <!--
 Der Abschluss verbindet Browser- und React-Debugging mit Testbarkeit und Wartbarkeit. Bei schneller Gruppe Playwright-Test demonstrieren; sonst in die optionale Vertiefung verweisen.

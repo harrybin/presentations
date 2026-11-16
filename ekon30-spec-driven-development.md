@@ -55,7 +55,7 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Teaser mit kurzen Pausen. Die Lücke zwischen Absicht und prüfbarem Verhalten ist der eigentliche Engpass.
+Teaser mit kurzen Pausen. Die Lücke zwischen Absicht und prüfbarem Verhalten ist der eigentliche Engpass. Danach wechseln wir für den roten Faden zum konkreten Session-Katalog: Sessions pro Track zählen.
 -->
 
 ---
@@ -100,7 +100,7 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Die Zeiten ergeben 60 Minuten inklusive Fragen. Falls die Diskussion länger wird, Demo 3 auf den vorbereiteten Ergebnis-PR verkürzen.
+Die Zeiten ergeben 60 Minuten inklusive sieben Minuten Abschluss und Fragen. Demostationen: 42:00–45:00 (3 Min.), 45:00–48:00 (3 Min.), 48:00–53:00 (5 Min.). Die 11 Minuten enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung vor Beginn: demo-projects/ekon30-talk-demo/README.md. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
 -->
 
 ---
@@ -161,25 +161,25 @@ title: Eine gute Spezifikation macht Lücken sichtbar
 layout: default
 ---
 
-# Beispiel: „Termin absagen“
+# Beispiel: Sessions pro Track
 
 <v-click>
 
-**Zu vage:** „Nutzer können einen Termin absagen.“
+**Zu vage:** „Zähle Sessions je Track.“
 
 </v-click>
 
 <v-clicks>
 
-- Wer darf absagen — Teilnehmer:in, Organisator:in oder beide?
-- Was passiert mit Benachrichtigungen und Warteliste?
-- Welche Frist gilt? Welche Zeitzone?
-- Wie wird Erfolg oder ein Konflikt überprüft?
+- Sind `KI` und `ki` derselbe Track?
+- Welche Reihenfolge haben die Ergebnisse?
+- Was passiert bei leerem Track oder leerer Liste?
+- Darf die Eingabe verändert werden?
 
 </v-clicks>
 
 <!--
-Die Fragen sind hier wichtiger als eine vorschnelle Lösung. Gute Spec-Arbeit macht Annahmen explizit und lädt das Team zur Entscheidung ein.
+Dieselbe Fragestellung wie in allen drei Demo-Stationen. Die Spec entscheidet: exakter Vergleich, Reihenfolge des ersten Auftretens, leerer Track als eigener Schlüssel, Eingabe unverändert. Gute Spec-Arbeit macht Annahmen explizit und lädt das Team zur Entscheidung ein.
 -->
 
 ---
@@ -236,14 +236,15 @@ background: /bmad-context-hierarchy.png
 
 <v-clicks>
 
-- PRD-Satz in GitHub Copilot bereitstellen
-- Nutzer, Randfälle und Nicht-Ziele klären lassen
-- Akzeptanzkriterien als beobachtbares Verhalten formulieren
+- **3 Min.** · `prd.md` in Copilot Chat bereitstellen
+- Randfälle und Nicht-Ziele klären lassen
+- Entscheidung: `KI` und `ki` sind verschieden
+- Ergebnis gegen vorbereitete `spec.md` prüfen
 
 </v-clicks>
 
 <!--
-Live-Demo, ca. 3 Minuten: ein kleines Feature wählen, etwa „Wartelistenplatz freigeben“. Copilot zunächst nur Fragen stellen lassen. Unklare Produktentscheidungen markieren und mit dem Publikum eine davon entscheiden. Danach Spec-Artefakt prüfen, nicht ungeprüft übernehmen.
+Konkreter Ablauf und Prompt S1: demo-projects/ekon30-talk-demo/README.md. .run/baseline vorab als eigenen VS-Code-Ordner öffnen. Copilot nur Fragen stellen lassen. Nach 45 Sekunden ohne brauchbare Antwort abbrechen und die vorbereiteten Fragen sowie Entscheidungen in spec.md zeigen. Referenzartefakt nicht als live erzeugt ausgeben.
 -->
 
 ---
@@ -256,14 +257,14 @@ background: /bmad-navigation-compass-ai.png
 
 <v-clicks>
 
-- Spec gegen bestehende Architektur und Repository-Konventionen lesen
-- technische Risiken und Abhängigkeiten benennen
-- Tasks so schneiden, dass jeder Task prüfbar bleibt
+- **3 Min.** · Spec und Pascal-Code als Kontext
+- Plan mit höchstens drei überprüfbaren Tasks
+- Abhängigkeiten und Testfälle gegen die Spec prüfen
 
 </v-clicks>
 
 <!--
-Live-Demo, ca. 3 Minuten: in Copilot Agent Mode zuerst Plan anfordern. Den Plan mit Spec und vorhandenen Tests vergleichen. Eine Task-Abhängigkeit oder einen nicht entschiedenen API-Vertrag sichtbar machen.
+Prompt S2 im Runbook: nur Plan, keine Änderungen. Nach 45 Sekunden ohne verwertbare Antwort den vorbereiteten plan.md zeigen. Aufgabenfolge Vertrag prüfen → implementieren → testen, inklusive Scope-Grenze.
 -->
 
 ---
@@ -276,15 +277,15 @@ background: /bmad-governance-control-center.png
 
 <v-clicks>
 
-- kleine Tasks mit GitHub Copilot umsetzen
-- Tests aus Akzeptanzkriterien ableiten und ausführen
-- Diff und Testergebnis gegen Spec prüfen
-- bei Abweichung Spec/Task korrigieren — nicht stillschweigend die Absicht ändern
+- **5 Min.** · Fehler: `SameText` fasst `KI` und `ki` zusammen
+- Copilot nur die Pascal-Unit ändern lassen
+- Test und Diff gegen die Spec prüfen
+- bei Timeout: vorbereitete Referenzlösung und Test zeigen
 
 </v-clicks>
 
 <!--
-Live-Demo, ca. 5 Minuten: vorbereiteten Branch oder kleines Repository nutzen. Tests, Diff und einen gezielt eingebauten Randfall zeigen. Fallback: vorbereiteter PR und Testlauf, falls Netzwerk oder Modell hakt.
+Vorab im Demo-Verzeichnis node demo.mjs prepare und node demo.mjs test baseline ausführen: Der absichtliche Fehler muss scheitern. Im Vortrag Prompt S3 nur in .run/baseline freigeben und danach node demo.mjs test baseline ausführen. Nach 60 Sekunden oder Scope-Verstoß Agent stoppen; node demo.mjs test solution und node demo.mjs diff zeigen. Solution ist eine vorbereitete Referenz, kein live erzeugtes Agent-Ergebnis. Keine ungeplante Korrekturschleife.
 -->
 
 ---
@@ -341,6 +342,7 @@ hideInToc: true
 - [EKON 30 · KI Praxis und Tools für Delphi](https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/)
 - [GitHub Spec Kit: Prozess und Agentic SDD](https://github.github.com/spec-kit/)
 - [Copilot: Customization Cheat Sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
+- Demo & Ablauf: `demo-projects/ekon30-talk-demo/README.md`
 - Bestehende Repository-Inhalte: BMad, Context Engineering und GitHub Copilot
 
 </v-clicks>
