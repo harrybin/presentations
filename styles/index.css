@@ -8,6 +8,10 @@ html.ekon30-deck .cover-text-dark h2 {
   color: var(--white);
 }
 
+html.ekon30-deck .slidev-page-1 .cover-image[style*="gh-copilot-logo"] {
+  filter: brightness(0) invert(1);
+}
+
 .ekon30-flow,
 .ekon30-choice-map__branches {
   display: grid;
