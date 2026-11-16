@@ -30,7 +30,7 @@ hideInToc: true
 
 ### Was ist wofür?
 
-**Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 60 Min. · GitHub Copilot · Harald Binkle & Thomas Tomow**
+**EKON 30 · Düsseldorf, November 2026 · 60 Min. · GitHub Copilot · Harald Binkle & Thomas Tomow**
 
 <!--
 Leitfrage: Wie geben wir einem Agenten genug Kontext für ein gutes Resultat, ohne bei jeder Aufgabe das ganze Projekt mitzuschicken?

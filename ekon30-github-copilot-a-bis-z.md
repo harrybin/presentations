@@ -28,7 +28,7 @@ hideInToc: true
 
 ## Delphi · Lazarus · geführte Übungen
 
-**Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle & Thomas Tomow**
+**EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle & Thomas Tomow**
 
 <!--
 Start: heute baut jede Person ein kleines Delphi-kompatibles Pascal-Feature mit Lazarus/Free Pascal und passt Copilot an ein konkretes Projekt an. Der Browser-Guide begleitet die Übungen in VS Code; kein RAD Studio erforderlich.

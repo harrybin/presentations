@@ -28,7 +28,7 @@ hideInToc: true
 
 ## mit React und Material-UI in TypeScript
 
-**Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle**
+**EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle**
 
 <!--
 Wir bauen heute gemeinsam eine Browser-App und ordnen die Web-Technologien ein: von Node.js, TypeScript und React über Material UI und REST-Daten bis zu Debugging, Wartbarkeit und Performance. Beispiele knüpfen an bekannte Muster aus der Desktopentwicklung an.

@@ -28,7 +28,7 @@ hideInToc: true
 
 ## Mit AI-Agent-Squads vom PRD zum autonomen Code
 
-**Sessionvorschlag · EKON 30 · Düsseldorf, November 2026 · 60 Min. · Harald Binkle & Thomas Tomow**
+**EKON 30 · Düsseldorf, November 2026 · 60 Min. · Harald Binkle & Thomas Tomow**
 
 <!--
 Einstieg: Ein Agent kann in Minuten viele Dateien ändern. Die entscheidende Frage ist nicht, wie schnell er Code schreibt, sondern ob das Team vorher klar genug beschrieben hat, was richtig bedeutet.
