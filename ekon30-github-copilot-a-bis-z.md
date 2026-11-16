@@ -241,6 +241,44 @@ Leitplanke für den Tag: keine Secrets in Prompts, keine unbekannten Skripte bli
 -->
 
 ---
+title: Foundry-Modelle in VS Code Chat
+layout: default
+---
+
+# Foundry-Modelle in VS Code Chat
+
+<div class="grid grid-cols-3 gap-4 mt-5">
+
+<div class="rounded-xl border border-purple-300/60 bg-white/70 p-4">
+<div class="text-sm font-bold tracking-wide text-purple-700">01 · AUSWÄHLEN</div>
+<h2 class="mt-2">Model Catalog</h2>
+<p>Modell, Region, Deployment-Typ und Nutzungsbedingungen prüfen.</p>
+</div>
+
+<div class="rounded-xl border border-purple-300/60 bg-white/70 p-4">
+<div class="text-sm font-bold tracking-wide text-purple-700">02 · BEREITSTELLEN</div>
+<h2 class="mt-2">Deployment</h2>
+<p>Modell deployen. Der Deployment-Name routet Requests über den Foundry-Endpunkt.</p>
+</div>
+
+<div class="rounded-xl border border-purple-300/60 bg-white/70 p-4">
+<div class="text-sm font-bold tracking-wide text-purple-700">03 · VERBINDEN</div>
+<h2 class="mt-2">VS Code Chat</h2>
+<p><code>Chat: Manage Language Models</code> → <code>Add Models</code> → <strong>Azure</strong>; Endpoint und Deployment-Name konfigurieren.</p>
+</div>
+
+</div>
+
+<div v-click class="mt-4 rounded-lg bg-purple-50/80 px-4 py-3 text-sm">
+<strong>Agent Mode:</strong> BYOK aktivieren und ein Modell mit Tool Calling wählen. Code-Completions bleiben Copilot; Azure-Aufrufe werden separat abgerechnet. Für Foundry-Modelle ist alternativ das Foundry Toolkit als Provider-Extension verfügbar.
+</div>
+
+<!--
+Kurzer Exkurs (2–3 Min.) innerhalb der bestehenden Zeit für Chat/Completions; Agenda und Gesamtzeit bleiben unverändert. Keine echten Schlüssel zeigen. In Copilot-Harness-Sessions muss `chat.agentHost.byokModels.enabled` aktiv sein; Agent-Modelle benötigen Tool Calling.
+Quellen: https://code.visualstudio.com/docs/agent-customization/language-models, https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/endpoints, https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available/.
+-->
+
+---
 title: Übung 1 · Completion im eigenen Rhythmus
 layout: image-left
 background: copilot-change-completions-model-2.png
@@ -561,6 +599,7 @@ hideInToc: true
 - [GitHub Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
 - [Bestehende Copilot-Decks und Workshop-Abstract im Repository](https://github.com/harrybin/presentations)
 - [Vorbild der Übungsführung: Copilot Governance at Scale](https://github.com/octodemo/copilot-governance-at-scale)
+- [VS Code BYOK, Azure-Provider und Foundry-Modellendpunkte](https://code.visualstudio.com/docs/agent-customization/language-models) · [Microsoft Foundry Endpoints](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/endpoints) · [GitHub: BYOK in VS Code](https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available/)
 - Vorab installieren: Lazarus/FPC, VS Code, Git, Node.js und Copilot
 
 </v-clicks>
