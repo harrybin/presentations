@@ -41,3 +41,15 @@ routeAlias: index
 <a href="/bmad-anforderungen-tests/" target="_blank">KI-gestützte Anforderungs- und Testfallentwicklung mit der BMad-Methode [ADC Mar 26]</a>
 
 <a href="/aiops-Mainteance-mit-KI/" target="_blank">AIOps: Maintenance von Softwaresystemen durch KI [INFINITE AI CONF Jul 26]</a>
+
+<br/>
+
+## EKON 30 · Sessionvorschläge 2026
+
+<a href="/ekon30-spec-driven-development/" target="_blank">Spec-Driven Development: Mit AI-Agent-Squads vom PRD zum autonomen Code [60 Min]</a>
+
+<a href="/ekon30-github-copilot-a-bis-z/" target="_blank">Workshop: GitHub Copilot von A bis Z [4 Std.]</a>
+
+<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript [4 Std.]</a>
+
+<a href="/ekon30-ai-context-setup/" target="_blank">AI Context Setup – Instructions, Prompts, Skills, Tools, Custom Agents, was ist für was? [60 Min]</a>

@@ -1,9 +1,9 @@
 ---
-agent: agent
+name: generatemissingimages
 description: Identify missing slide artwork and generate only explicitly authorized images.
+disable-model-invocation: true
 argument-hint: "Identify the deck and whether to inventory or generate artwork"
 ---
-
 - Identify the target deck; ask if it is unclear. List missing background, content, and chapter images with their slide and intended filename.
 - Reuse suitable existing assets first. Finding a missing image is not permission to generate one.
 - Track work with session todos, not a markdown file in the repository root.

@@ -1,0 +1,201 @@
+html.ekon30-deck .slidev-layout h1 {
+  height: auto;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+html.ekon30-deck .cover-text-dark h2 {
+  color: var(--white);
+}
+
+html.ekon30-deck .slidev-page-1 .cover-image[style*="gh-copilot-logo"] {
+  filter: brightness(0) invert(1);
+}
+
+.ekon30-flow,
+.ekon30-choice-map__branches {
+  display: grid;
+  position: relative;
+}
+
+.ekon30-flow {
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin: 2.75rem 0 0;
+}
+
+.ekon30-flow--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ekon30-flow--five,
+.ekon30-choice-map__branches {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.ekon30-flow--six {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.ekon30-flow::before {
+  background: var(--chart9);
+  content: "";
+  height: 2px;
+  left: 0.6rem;
+  position: absolute;
+  right: 0.6rem;
+  top: 0.65rem;
+}
+
+.ekon30-flow__step,
+.ekon30-choice-map__branch {
+  min-width: 0;
+  position: relative;
+}
+
+.ekon30-flow__step {
+  padding-top: 2.2rem;
+}
+
+.ekon30-flow__step::before {
+  background: var(--white);
+  border: 2px solid var(--cta-color);
+  border-radius: 50%;
+  content: "";
+  height: 1.3rem;
+  left: 0.1rem;
+  position: absolute;
+  top: 0;
+  width: 1.3rem;
+  z-index: 1;
+}
+
+.ekon30-flow__step strong,
+.ekon30-choice-map__branch strong {
+  color: var(--cta-color);
+  display: block;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  margin-bottom: 0.45rem;
+}
+
+.ekon30-flow__step p,
+.ekon30-choice-map__branch p {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ekon30-flow__step.slidev-vclick-target,
+.ekon30-choice-map__branch.slidev-vclick-target {
+  transition:
+    opacity 320ms ease,
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 420ms ease;
+}
+
+.ekon30-flow__step.slidev-vclick-hidden,
+.ekon30-choice-map__branch.slidev-vclick-hidden {
+  filter: blur(2px);
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.ekon30-choice-map {
+  margin-top: 1.25rem;
+}
+
+.ekon30-choice-map__root {
+  background: var(--resume-background-light);
+  border: 1px solid var(--chart9);
+  border-radius: 999px;
+  color: var(--secondary-color);
+  margin: 0 auto 2.2rem;
+  padding: 0.45rem 1.1rem;
+  position: relative;
+  text-align: center;
+  width: max-content;
+}
+
+.ekon30-choice-map__root::after {
+  background: var(--chart9);
+  content: "";
+  height: 1.1rem;
+  left: 50%;
+  position: absolute;
+  top: 100%;
+  width: 2px;
+}
+
+.ekon30-choice-map__branches {
+  gap: 1.2rem;
+  padding-top: 1.1rem;
+}
+
+.ekon30-choice-map__branches::before {
+  background: var(--chart9);
+  content: "";
+  height: 2px;
+  left: 8%;
+  position: absolute;
+  right: 8%;
+  top: 0;
+}
+
+.ekon30-choice-map__branch {
+  padding-top: 0.45rem;
+}
+
+.ekon30-choice-map__branch::before {
+  background: var(--chart9);
+  content: "";
+  height: 1.1rem;
+  left: 0.45rem;
+  position: absolute;
+  top: -1.1rem;
+  width: 2px;
+}
+
+.ekon30-choice-map__branch::after {
+  background: var(--white);
+  border: 2px solid var(--cta-color);
+  border-radius: 50%;
+  content: "";
+  height: 0.7rem;
+  left: 0.1rem;
+  position: absolute;
+  top: -1.25rem;
+  width: 0.7rem;
+}
+
+.ekon30-choice-map__branch em {
+  color: var(--secondary-color);
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  .ekon30-flow--five,
+  .ekon30-flow--six,
+  .ekon30-choice-map__branches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ekon30-flow::before,
+  .ekon30-flow__step::before,
+  .ekon30-choice-map__root::after,
+  .ekon30-choice-map__branches::before,
+  .ekon30-choice-map__branch::before,
+  .ekon30-choice-map__branch::after {
+    display: none;
+  }
+
+  .ekon30-flow__step {
+    padding-top: 0;
+  }
+
+  .ekon30-choice-map__branches {
+    padding-top: 0;
+  }
+}

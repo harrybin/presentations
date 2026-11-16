@@ -9,7 +9,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev slides.md",
+      "command": "npx slidev slides.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -23,7 +23,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev devcontainer.md",
+      "command": "npx slidev devcontainer.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -37,7 +37,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev githubCopilotDelphi.md",
+      "command": "npx slidev githubCopilotDelphi.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -51,7 +51,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev webappLocalization.md",
+      "command": "npx slidev webappLocalization.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -65,7 +65,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev msWebUiReact.md",
+      "command": "npx slidev msWebUiReact.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -79,7 +79,7 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev aiops-Mainteance-mit-KI.md",
+      "command": "npx slidev aiops-Mainteance-mit-KI.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -93,11 +93,35 @@
         }
       },
       "type": "shell",
-      "command": "npx slidev bmad-anforderungen-tests.md",
+      "command": "npx slidev bmad-anforderungen-tests.md --remote --tunnel",
       "group": {
         "kind": "build",
         "isDefault": true
       },
+    },
+    {
+      "label": "🚀 EKON 30 · Spec-Driven Development",
+      "type": "shell",
+      "command": "npx slidev ekon30-spec-driven-development.md --remote --tunnel",
+      "group": "build",
+    },
+    {
+      "label": "🚀 EKON 30 · GitHub Copilot Workshop",
+      "type": "shell",
+      "command": "npx slidev ekon30-github-copilot-a-bis-z.md --remote --tunnel",
+      "group": "build",
+    },
+    {
+      "label": "🚀 EKON 30 · React Workshop",
+      "type": "shell",
+      "command": "npx slidev ekon30-react19-mui6-workshop.md --remote --tunnel",
+      "group": "build",
+    },
+    {
+      "label": "🚀 EKON 30 · AI Context Setup",
+      "type": "shell",
+      "command": "npx slidev ekon30-ai-context-setup.md --remote --tunnel",
+      "group": "build",
     },
   ],
   "inputs": [

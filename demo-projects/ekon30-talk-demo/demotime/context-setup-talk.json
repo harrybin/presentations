@@ -1,0 +1,175 @@
+{
+  "$schema": "https://demotime.show/demo-time.schema.json",
+  "title": "EKON 30 · AI Context Setup",
+  "description": "11 Minuten: derselbe Katalog, unterschiedliche Kontextarten. Antwortunterschiede sind möglich, aber nicht garantiert.",
+  "version": 3,
+  "timer": 11,
+  "loop": false,
+  "scenes": [
+    {
+      "id": "context-reset",
+      "title": "Start · Baseline zurücksetzen",
+      "description": "Setzt nur SessionCatalog.pas zurück und öffnet das Beispiel.",
+      "moves": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs reset-baseline",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
+        },
+        {
+          "action": "open",
+          "path": "SessionCatalog.pas",
+          "focusTop": true
+        }
+      ]
+    },
+    {
+      "id": "context-c1-base",
+      "title": "C1 · Auftrag mit explizitem Fachkontext",
+      "description": "Erste Antwort maximal 45 Sekunden abwarten. Danach die unmittelbar folgende Fallback-Szene überspringen oder bei Timeout nutzen.",
+      "autoAdvanceAfter": 45,
+      "moves": [
+        {
+          "action": "open",
+          "path": "spec.md",
+          "focusTop": true
+        },
+        {
+          "action": "newCopilotChat"
+        },
+        {
+          "action": "askCopilotChat",
+          "message": "Prüfe die Track-Zählung anhand der bereitgestellten Dateien. Nenne einen fachlich relevanten Randfall und einen überprüfbaren Test. Ändere keine Dateien und starte keine Befehle.\n\nKontext: #file:spec.md #file:SessionCatalog.pas."
+        }
+      ]
+    },
+    {
+      "id": "context-c1-base-fallback",
+      "title": "C1 · Fallback: vorbereitete Beobachtung",
+      "description": "Die Beobachtung funktioniert auch ohne Live-Antwort. Gleiche Antworten sind ein gültiges Ergebnis.",
+      "moves": [
+        {
+          "action": "open",
+          "path": "context/beobachtung.md",
+          "focusTop": true
+        }
+      ]
+    },
+    {
+      "id": "context-c1-instructions",
+      "title": "C1 · Derselbe Auftrag plus Instructions",
+      "description": "Neue Chat-Sitzung, gleicher Auftrag und gleicher Fachkontext; zusätzlich die projektweite Regel explizit als Datei-Referenz.",
+      "autoAdvanceAfter": 45,
+      "moves": [
+        {
+          "action": "open",
+          "path": "context/copilot-instructions.md",
+          "focusTop": true
+        },
+        {
+          "action": "newCopilotChat"
+        },
+        {
+          "action": "askCopilotChat",
+          "message": "Prüfe die Track-Zählung anhand der bereitgestellten Dateien. Nenne einen fachlich relevanten Randfall und einen überprüfbaren Test. Ändere keine Dateien und starte keine Befehle.\n\nKontext: #file:spec.md #file:SessionCatalog.pas #file:context/copilot-instructions.md."
+        }
+      ]
+    },
+    {
+      "id": "context-c1-instructions-fallback",
+      "title": "C1 · Fallback: Vergleich ohne Behauptung",
+      "description": "Die Dateien sind vorbereitet; keine automatische Anwendung, Qualitätsverbesserung oder Tokenersparnis behaupten.",
+      "moves": [
+        {
+          "action": "open",
+          "path": "context/beobachtung.md",
+          "focusTop": true
+        }
+      ]
+    },
+    {
+      "id": "context-c2",
+      "title": "C2 · Prompt-Auftrag und Skill-Ablaufwissen",
+      "description": "Maximal 45 Sekunden. Optional die Rollen von Prompt und Skill erklären lassen; bei Timeout die nächste Fallback-Szene nutzen.",
+      "autoAdvanceAfter": 45,
+      "moves": [
+        {
+          "action": "open",
+          "path": "context/test-review.prompt.md",
+          "focusTop": true
+        },
+        {
+          "action": "open",
+          "path": "context/catalog-review/SKILL.md",
+          "focusTop": true
+        },
+        {
+          "action": "newCopilotChat"
+        },
+        {
+          "action": "askCopilotChat",
+          "message": "Lies #file:context/test-review.prompt.md und #file:context/catalog-review/SKILL.md. Erkläre kurz, wofür die beiden Dateien jeweils gedacht sind und wann ich sie einsetzen würde. Ändere keine Dateien und starte keine Befehle."
+        }
+      ]
+    },
+    {
+      "id": "context-c2-fallback",
+      "title": "C2 · Fallback: Dateien vergleichen",
+      "description": "Der Prompt beschreibt einen konkreten Auftrag; der Skill bündelt wiederverwendbares Ablaufwissen. Beide Vorlagen bleiben außerhalb der aktiven .github-Pfade.",
+      "moves": [
+        {
+          "action": "open",
+          "path": "context/test-review.prompt.md",
+          "focusTop": true
+        },
+        {
+          "action": "open",
+          "path": "context/catalog-review/SKILL.md",
+          "focusTop": true
+        }
+      ]
+    },
+    {
+      "id": "context-c3",
+      "title": "C3 · Reviewer-Rolle im Ask-Modus",
+      "description": "Maximal 45 Sekunden. Der Prompt bittet nur um Befunde und verbietet Änderungen und Befehle.",
+      "autoAdvanceAfter": 45,
+      "moves": [
+        {
+          "action": "open",
+          "path": "context/pascal-reviewer.agent.md",
+          "focusTop": true
+        },
+        {
+          "action": "newCopilotChat"
+        },
+        {
+          "action": "askCopilotChat",
+          "message": "Lies #file:spec.md, #file:SessionCatalog.pas und #file:CatalogTests.lpr. Melde höchstens zwei konkrete Abweichungen mit Dateireferenz und Begründung. Ändere keine Dateien und starte keine Befehle."
+        }
+      ]
+    },
+    {
+      "id": "context-c3-fallback",
+      "title": "C3 · Fallback: vorbereiteter Befund und Test",
+      "description": "Bei Timeout Chat abbrechen, Baseline-Testausgabe und vorbereiteten Befund zeigen. Das Agent-Template ist keine technisch garantierte Toolbeschränkung.",
+      "moves": [
+        {
+          "action": "cancelCopilotChat"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs test baseline",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
+        },
+        {
+          "action": "open",
+          "path": "context/beobachtung.md",
+          "focusTop": true
+        }
+      ]
+    }
+  ]
+}

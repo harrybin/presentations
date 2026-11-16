@@ -42,7 +42,7 @@ The complete build requires a Bash-compatible environment, `sudo`, Python availa
 npm run build
 ```
 
-For a targeted check, build only the affected deck using an explicitly chosen disposable output directory outside source content. Check the output and the published base path; do not forward generic Slidev base flags to the shell build script.
+For a targeted check, build only the affected deck using an explicitly chosen disposable output directory outside source content. Check the output and the published base path; do not forward generic Slidev base flags to the shell build script. The build also copies the Xebia 2026 theme variables into each matching deck's output because the current theme emits a package-relative CSS import.
 
 The `format` script invokes `slidev format`, which organizes Slidev markdown rather than formatting its contents. Content formatting uses Prettier with the Slidev parser for the deck/fragment paths in `.prettierrc`. Check only affected files; do not mass-format unrelated decks. There are no root `test` or `lint` scripts.
 
