@@ -26,22 +26,18 @@ routeAlias: index
 
 # Presentation Overview
 <span class="presentation-overview-marker"></span>
-<!-- <a href="/webappLocalization/" target="_blank">WebApp-Localization - DWX (Juli 2025)</a> -->
+
+## EKON 30 · Vorträge und Workshops 2026
+
+<a href="/ekon30-spec-driven-development/" target="_blank">Spec-Driven Development: Mit AI-Agent-Squads vom PRD zum autonomen Code [EKON30 Nov 26]</a>
+
+<a href="/ekon30-ai-context-setup/" target="_blank">AI Context Setup – Instructions, Prompts, Skills, Tools, Custom Agents, was ist für was? [EKON30 Nov 26]</a>
+
+<a href="/ekon30-github-copilot-a-bis-z/" target="_blank">Workshop: GitHub Copilot von A bis Z [EKON30 Nov 26]</a>
+
+<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript [EKON30 Nov 26]</a>
 
 <br/>
-<br/>
-
-<details>
-<summary>Sessions 2025</summary>
-<br/>
-<a href="/devcontainer/" target="_blank">Devcontainer - [DWX Juli 25; MD DevDays Mai 25]</a>
-
-<a href="/webappLocalization/" target="_blank">WebApp-Localization - [DWX Juli 25]</a>
-
-<a href="/githubCopilotDelphi/" target="_blank">GitHub Copilot with Delphi - [EKON Oct 25]</a>
-
-<a href="/msWebUiReact/" target="_blank">Microsoft's Web UI Technology: Is It React? [DDC Nov 25]</a>
-</details>
 
 <a href="/bmad-anforderungen-tests/" target="_blank">KI-gestützte Anforderungs- und Testfallentwicklung mit der BMad-Methode [ADC Mar 26]</a>
 
@@ -49,15 +45,17 @@ routeAlias: index
 
 <br/>
 
-## EKON 30 · Vorträge und Workshops 2026
-
-<a href="/ekon30-spec-driven-development/" target="_blank">Spec-Driven Development mit BMad Method: Vom PRD zum überprüfbaren Code</a>
-
-<a href="/ekon30-github-copilot-a-bis-z/" target="_blank">Workshop: GitHub Copilot von A bis Z</a>
-
-<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript</a>
-
-<a href="/ekon30-ai-context-setup/" target="_blank">AI Context Setup – Instructions, Prompts, Skills, Tools, Custom Agents, was ist für was?</a>
+<details>
+<summary>Sessions 2025</summary>
+<br/>
+<a href="/devcontainer/" target="_blank">Devcontainer - [DWX Juli 25; MD DevDays Mai 25]</a>
+<br/>
+<a href="/webappLocalization/" target="_blank">WebApp-Localization - [DWX Juli 25]</a>
+<br/>
+<a href="/githubCopilotDelphi/" target="_blank">GitHub Copilot with Delphi - [EKON Oct 25]</a>
+<br/>
+<a href="/msWebUiReact/" target="_blank">Microsoft's Web UI Technology: Is It React? [DDC Nov 25]</a>
+</details>
 
 <style>
 :global(.slidev-layout:has(.presentation-overview-marker)) {
