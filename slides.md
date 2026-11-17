@@ -25,11 +25,15 @@ routeAlias: index
 ---
 
 # Presentation Overview
+<span class="presentation-overview-marker"></span>
 <!-- <a href="/webappLocalization/" target="_blank">WebApp-Localization - DWX (Juli 2025)</a> -->
 
 <br/>
 <br/>
 
+<details>
+<summary>Sessions 2025</summary>
+<br/>
 <a href="/devcontainer/" target="_blank">Devcontainer - [DWX Juli 25; MD DevDays Mai 25]</a>
 
 <a href="/webappLocalization/" target="_blank">WebApp-Localization - [DWX Juli 25]</a>
@@ -37,6 +41,7 @@ routeAlias: index
 <a href="/githubCopilotDelphi/" target="_blank">GitHub Copilot with Delphi - [EKON Oct 25]</a>
 
 <a href="/msWebUiReact/" target="_blank">Microsoft's Web UI Technology: Is It React? [DDC Nov 25]</a>
+</details>
 
 <a href="/bmad-anforderungen-tests/" target="_blank">KI-gestützte Anforderungs- und Testfallentwicklung mit der BMad-Methode [ADC Mar 26]</a>
 
@@ -44,12 +49,19 @@ routeAlias: index
 
 <br/>
 
-## EKON 30 · Sessionvorschläge 2026
+## EKON 30 · Vorträge und Workshops 2026
 
-<a href="/ekon30-spec-driven-development/" target="_blank">Spec-Driven Development: Mit AI-Agent-Squads vom PRD zum autonomen Code [60 Min]</a>
+<a href="/ekon30-spec-driven-development/" target="_blank">Spec-Driven Development mit BMad Method: Vom PRD zum überprüfbaren Code</a>
 
-<a href="/ekon30-github-copilot-a-bis-z/" target="_blank">Workshop: GitHub Copilot von A bis Z [4 Std.]</a>
+<a href="/ekon30-github-copilot-a-bis-z/" target="_blank">Workshop: GitHub Copilot von A bis Z</a>
 
-<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript [4 Std.]</a>
+<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript</a>
 
-<a href="/ekon30-ai-context-setup/" target="_blank">AI Context Setup – Instructions, Prompts, Skills, Tools, Custom Agents, was ist für was? [60 Min]</a>
+<a href="/ekon30-ai-context-setup/" target="_blank">AI Context Setup – Instructions, Prompts, Skills, Tools, Custom Agents, was ist für was?</a>
+
+<style>
+:global(.slidev-layout:has(.presentation-overview-marker)) {
+  height: 100%;
+  overflow-y: auto;
+}
+</style>

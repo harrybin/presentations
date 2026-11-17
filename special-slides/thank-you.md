@@ -1,9 +1,10 @@
 ---
-layout: cover-dark
-background: /thank_you.jpeg
+layout: cover
+background: thank_you.jpeg
 backgroundPosition: 20% 100%
 title: Thank you
 hideInToc: true
+isDark: true
 ---
 
 <!-- issue in theme. See: https://github.com/xebia/presentation-templates/issues/12 -->

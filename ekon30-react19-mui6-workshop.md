@@ -13,7 +13,7 @@ overviewSnapshots: false
 glowEnabled: true
 author: "Harald Binkle"
 showCopyright: false
-description: "Vierstündiger Workshop für den Einstieg aus der Desktopentwicklung: moderne Browser-Apps mit TypeScript, React und Material UI verstehen und bauen."
+description: "Workshop für den Einstieg aus der Desktopentwicklung: moderne Browser-Apps mit TypeScript, React und Material UI verstehen und bauen."
 publicDeckPath: ekon30-react19-mui6-workshop
 htmlAttrs:
   class: ekon30-deck
@@ -28,7 +28,7 @@ hideInToc: true
 
 ## mit React und Material-UI in TypeScript
 
-**EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle**
+**EKON 30 · Düsseldorf, November 2026 · Harald Binkle**
 
 <!--
 Wir bauen heute gemeinsam eine Browser-App und ordnen die Web-Technologien ein: von Node.js, TypeScript und React über Material UI und REST-Daten bis zu Debugging, Wartbarkeit und Performance. Beispiele knüpfen an bekannte Muster aus der Desktopentwicklung an.
@@ -57,13 +57,14 @@ hideInToc: true
 
 <v-clicks>
 
+- Windows + PowerShell (macOS: Terminal)
 - Node.js 24+, npm und Git
 - VS Code sowie einen aktuellen Browser
 - Repository klonen und `npm install` ausführen
 
 </v-clicks>
 
-```bash
+```powershell
 git clone https://github.com/harrybin/ekon30-react-typescript-workshop.git
 cd ekon30-react-typescript-workshop
 npm install
@@ -146,22 +147,23 @@ layout: default
 hideInToc: true
 ---
 
-# Vier Stunden · vom Werkzeug zur Web-App
+# Vom Werkzeug zur Web-App
 
-| Zeit        | Baustein                                             |
-| ----------- | ---------------------------------------------------- |
-| 00:00–00:20 | Web-App vs. Website, VS Code und Node.js             |
-| 00:20–00:55 | TypeScript: Types, Interfaces und Generics           |
-| 00:55–01:35 | Funktionales React: Komponenten, Props und Lifecycle |
-| 01:35–01:45 | Pause                                                |
-| 01:45–02:25 | Material UI: Komponenten, Layout und Styling         |
-| 02:25–03:00 | Hooks, State und React Context                       |
-| 03:00–03:10 | Pause                                                |
-| 03:10–03:40 | REST-Daten, Fetch API und optional AutoRest          |
-| 03:40–04:00 | Debugging, Performance, Tests und Ausblick           |
+<v-clicks>
+
+- Web-App vs. Website, VS Code und Node.js
+- TypeScript: Types, Interfaces und Generics
+- Funktionales React: Komponenten, Props und Lifecycle
+- Material UI: Komponenten, Layout und Styling
+- Hooks, State und React Context
+- REST-Daten, Fetch API und optional AutoRest
+- Debugging, Performance, Tests und Ausblick
+- Gemeinsame Pausen
+
+</v-clicks>
 
 <!--
-Die Blöcke ergeben 240 Minuten inklusive Pausen. Vite ist der vorbereitete Bundler; webpack wird als Alternative eingeordnet. AutoRest, Tests mit Playwright und App-Konfiguration sind optionale Vertiefungen abhängig von Tempo und Vorkenntnissen. Das Starter-Repository wird vorab getestet.
+Pausen sind eingeplant. Vite ist der vorbereitete Bundler; webpack wird als Alternative eingeordnet. AutoRest, Tests mit Playwright und App-Konfiguration sind optionale Vertiefungen abhängig von Tempo und Vorkenntnissen. Das Starter-Repository wird vorab getestet.
 -->
 
 ---
@@ -429,6 +431,26 @@ Desktop-Analogie: Component Library und Theme entsprechen einem UI-Baukasten mit
 -->
 
 ---
+title: Live-Demo · Ein Theme in zwei Viewports
+layout: image-right
+background: msWebUiReact-tooling.jpg
+---
+
+# Responsive Layout live vergleichen
+
+<v-clicks>
+
+- dieselbe MUI-Oberfläche in schmaler und breiter Ansicht öffnen
+- Breakpoint und Layout-Komponente im Code zeigen
+- Ergebnis im Browser statt nur im Stylesheet beurteilen
+
+</v-clicks>
+
+<!--
+Diese kurze Vorführung gehört in die vorhandene Demo-Zeit von Übung 4. Das Team ändert danach selbst die responsive MUI-Oberfläche und prüft beide Viewports.
+-->
+
+---
 title: Übung 4 · Responsive MUI-Oberfläche
 layout: image-left
 background: msWebUiReact-tooling.jpg
@@ -526,6 +548,36 @@ background: msWebUiReact-demo1.jpg
 
 <!--
 `fetch` weist bei HTTP 4xx/5xx nicht automatisch ein Promise zurück: Response.ok prüfen. TypeScript-Typen validieren Laufzeitdaten nicht von selbst; API-Antworten als externe Eingabe behandeln.
+-->
+
+---
+title: Live-Demo · Vom Request zum UI-Zustand
+layout: default
+---
+
+# Antwort, Fehler und Ladezustand gehören zusammen
+
+<div class="ekon30-flow ekon30-flow--four">
+  <div v-click class="ekon30-flow__step">
+    <strong>Request</strong>
+    <p>URL und Status im Network-Panel prüfen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Response</strong>
+    <p>`response.ok` und JSON-Form kontrollieren</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>UI-Zustand</strong>
+    <p>Loading, Erfolg oder Fehler sichtbar machen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Wiederholen</strong>
+    <p>Erfolgs- und Fehlerpfad testen</p>
+  </div>
+</div>
+
+<!--
+Diese kurze Vorführung gehört in die bestehende Zeit von Übung 6. Mit dem vorbereiteten Endpoint oder Mock arbeiten, damit CORS oder Netzverfügbarkeit nicht den Ablauf blockieren.
 -->
 
 ---
@@ -683,11 +735,9 @@ Im Vorfeld aktuellen Browser, Node-Version, React/MUI-Kompatibilität und Starte
 -->
 
 ---
-
 src: /special-slides/questions.md
 ---
 
 ---
-
 src: /special-slides/thank-you.md
 ---

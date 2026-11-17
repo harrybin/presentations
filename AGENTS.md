@@ -1,5 +1,12 @@
 # Presentations AI Guide
 
+## Repository guidance
+
+- Keep repository-wide contributor instructions in this root `AGENTS.md`. Prefer it over `copilot-instructions.md`; do not maintain a second copy of the same guidance.
+- Every repository and self-contained demo project must have a `README.md`. Every repository must also have a license file when its license and the rights to the covered work are established. Never invent or assume a license; ask the maintainer when either is unclear.
+- Files under `demo-projects/` are included examples, not separate Git repositories unless they have their own repository metadata. Keep a README in each project. Preserve third-party code and assets under their applicable terms.
+- `demo-projects/ekon30-talk-demo/context/copilot-instructions.md` is an intentional teaching fixture used as explicit prompt context, not repository guidance. Do not move or rename it.
+
 ## Repo shape
 
 - Multi-deck Slidev workspace: `slides.md` is the index. The build (`build.sh`) treats every other root `*.md` except `README.md` as a deck and emits to `dist/<file-name>` with `--base "/<file-name>/"`. Do not put scratch or tracking markdown in the root. For standalone decks, store the published subpath in `publicDeckPath` and avoid `routeAlias`, because matching alias/base values duplicate the deck segment during navigation.
@@ -8,7 +15,7 @@
 
 ## Running & building
 
-- Use npm and the locked dependencies. See [README setup and validation](../README.md#setup-and-validation) for the runtime, prerequisites, and commands. There is no root `dev`, `test`, or `lint` script. Use the local CLI with an explicit entry; do not implicitly download another Slidev package.
+- Use npm and the locked dependencies. See [the README setup and validation guide](README.md#setup-and-validation) for the runtime, prerequisites, and commands. There is no root `dev`, `test`, or `lint` script. Use the local CLI with an explicit entry; do not implicitly download another Slidev package.
 - The `build` script requires Bash, sudo, Python available as `python`, and authorized package-registry access. It deletes/recreates `dist`, builds the index and all root entries, then patches GitHub Pages routing. Confirm cleanup affects only generated output; do not substitute generic deployment examples.
 - The `format` script runs `slidev format`, which organizes Slidev markdown, not its content. Prettier plus `prettier-plugin-slidev` handles content formatting through `.prettierrc`; check only affected files and do not mass-format unrelated decks.
 
@@ -19,9 +26,7 @@
 - Bullets should sit inside `<v-clicks> ... </v-clicks>` to align with the talk pacing expectations stated in the existing decks.
 - Use `<Toc minDepth="1" maxDepth="1" />` for agenda slides and reuse the standard agenda fragment (`/copilot-slides/agenda.md`) when possible.
 - Always store deck-specific assets in `public/`; add placeholder files there if artwork is pending. Since decks are published under `/<deck-name>/`, use relative asset URLs such as `pilot-large.jpg` in slide backgrounds and `coverImage` so they resolve beneath the deck base instead of the site root.
-- when a slide is to be extracted to its own file, simply move the selected slide content to a new markdown file and replace the original selected slide content by referencing the newly created slide file using the `src:` attribute.
-  - there are at lot of examples in the slides deck: `githubCopilotDelphi.md`.
-  - when extracting take care that `---` always starts a new slide or or closes frontmatter. So don't make the original slide invalid.
+- When a slide is extracted to its own file, move the selected slide content to a new markdown file and replace the original selected slide content with a `src:` reference. Take care that `---` always starts a new slide or closes frontmatter, so do not make the original slide invalid.
 
 ## Components & styling
 

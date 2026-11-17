@@ -29,7 +29,7 @@ isDark: true
 
 <!--
 - Einstieg: BMad als Weg von Idee zu validierter Testsuite
-- Dauer: 60 Minuten, 3 Live-Demos, Q&A
+- 3 Live-Demos und Q&A
 - Audience Hook: Wer kennt Projekt-Schieflage durch unklare Anforderungen?
 -->
 

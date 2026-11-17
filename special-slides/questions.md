@@ -1,6 +1,6 @@
 ---
 layout: cover
-background: /finger-large.jpg
+background: finger-large.jpg
 backgroundPosition: 20% 100%
 title: Questions?
 routeAlias: questions

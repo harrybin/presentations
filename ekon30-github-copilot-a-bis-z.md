@@ -13,7 +13,7 @@ overviewSnapshots: false
 glowEnabled: true
 author: "Harald Binkle & Thomas Tomow"
 showCopyright: false
-description: "Vierstündiger Delphi-Workshop mit GitHub Copilot, Lazarus/Free Pascal und interaktiver Übungsführung."
+description: "Delphi-Workshop mit GitHub Copilot, Lazarus/Free Pascal und interaktiver Übungsführung."
 publicDeckPath: ekon30-github-copilot-a-bis-z
 htmlAttrs:
   class: ekon30-deck
@@ -28,7 +28,7 @@ hideInToc: true
 
 ## Delphi · Lazarus · geführte Übungen
 
-**EKON 30 · Düsseldorf, November 2026 · 4 Std. · Harald Binkle & Thomas Tomow**
+**EKON 30 · Düsseldorf, November 2026 · Harald Binkle & Thomas Tomow**
 
 <!--
 Start: heute baut jede Person ein kleines Delphi-kompatibles Pascal-Feature mit Lazarus/Free Pascal und passt Copilot an ein konkretes Projekt an. Der Browser-Guide begleitet die Übungen in VS Code; kein RAD Studio erforderlich.
@@ -57,13 +57,14 @@ hideInToc: true
 
 <v-clicks>
 
+- Windows + PowerShell (macOS: Terminal)
 - Lazarus + Free Pascal im `PATH`
 - VS Code, Git, Node.js 24+ und Copilot
 - Repo klonen, Tests und Guide starten
 
 </v-clicks>
 
-```bash
+```powershell
 git clone https://github.com/harrybin/ekon30-github-copilot-workshop.git
 cd ekon30-github-copilot-workshop
 npm test
@@ -122,7 +123,7 @@ hideInToc: true
 
 **Start in VS Code**
 
-```bash
+```powershell
 npm run guide
 ```
 
@@ -189,22 +190,23 @@ layout: default
 hideInToc: true
 ---
 
-# Vier Stunden · gemeinsam bauen
+# Gemeinsam sicher mit Copilot arbeiten
 
-| Zeit        | Baustein                              |
-| ----------- | ------------------------------------- |
-| 00:00–00:15 | Lazarus, Guide, sicherer Arbeitsmodus |
-| 00:15–01:20 | Completions und Chat · Übungen 1–2    |
-| 01:20–01:30 | Pause                                 |
-| 01:30–02:10 | Agent Mode · Übung 3                  |
-| 02:10–02:45 | Instructions & Prompt Files · Übung 4 |
-| 02:45–02:55 | Pause                                 |
-| 02:55–03:20 | Skills & Custom Agents · Übung 5      |
-| 03:20–03:40 | Tools & MCP · Übung 6                 |
-| 03:40–04:00 | Capstone, Review und Transfer         |
+<v-clicks>
+
+- Lazarus, Guide und sicherer Arbeitsmodus
+- Completions und Chat · Übungen 1–2
+- Agent Mode · Übung 3
+- Instructions und Prompt Files · Übung 4
+- Skills und Custom Agents · Übung 5
+- Tools und MCP · Übung 6
+- Zwei Pausen
+- Capstone, Review und Transfer
+
+</v-clicks>
 
 <!--
-240 Minuten inklusive zwei 10-Minuten-Pausen. Vorab-Setup ist erforderlich, damit wir die Übungszeiten nicht mit Installationen verbrauchen. Alle Codeaufgaben verwenden Delphi-kompatibles Object Pascal, gebaut mit Lazarus.
+Zwei Pausen sind eingeplant. Vorab-Setup ist erforderlich, damit wir die Übungszeit nicht mit Installationen verbrauchen. Alle Codeaufgaben verwenden Delphi-kompatibles Object Pascal, gebaut mit Lazarus.
 -->
 
 ---
@@ -241,37 +243,52 @@ Leitplanke für den Tag: keine Secrets in Prompts, keine unbekannten Skripte bli
 -->
 
 ---
+title: Live-Demo · Vorschlag prüfen statt übernehmen
+layout: image-right
+background: copilot-change-completions-model-1.png
+---
+
+# Erst Verhalten, dann Vorschlag
+
+<v-clicks>
+
+- eine kleine Funktion im Pascal-Code vervollständigen lassen
+- Grenzfall und erwartetes Verhalten benennen
+- Vorschlag gegen Test und Diff prüfen
+
+</v-clicks>
+
+<!--
+Diese kurze Vorführung gehört in die vorhandene Demo-Zeit von Übung 1: ein Completion-Vorschlag ist eine Hypothese. Danach übernehmen die Teilnehmenden denselben Prüfschritt selbst im Workshop-Repository.
+-->
+
+---
 title: Foundry-Modelle in VS Code Chat
 layout: default
 ---
 
 # Foundry-Modelle in VS Code Chat
 
-<div class="grid grid-cols-3 gap-4 mt-5">
+<ol class="grid grid-cols-3 gap-7 mt-6 pl-6">
 
-<div class="rounded-xl border border-purple-300/60 bg-white/70 p-4">
-<div class="text-sm font-bold tracking-wide text-purple-700">01 · AUSWÄHLEN</div>
-<h2 class="mt-2">Model Catalog</h2>
+<li v-click>
+<strong>Model Catalog</strong>
 <p>Modell, Region, Deployment-Typ und Nutzungsbedingungen prüfen.</p>
-</div>
+</li>
 
-<div class="rounded-xl border border-purple-300/60 bg-white/70 p-4">
-<div class="text-sm font-bold tracking-wide text-purple-700">02 · BEREITSTELLEN</div>
-<h2 class="mt-2">Deployment</h2>
-<p>Modell deployen. Der Deployment-Name routet Requests über den Foundry-Endpunkt.</p>
-</div>
+<li v-click>
+<strong>Deployment</strong>
+<p>Modell bereitstellen. Der Deployment-Name routet Requests über den Foundry-Endpunkt.</p>
+</li>
 
-<div class="rounded-xl border border-purple-300/60 bg-white/70 p-4">
-<div class="text-sm font-bold tracking-wide text-purple-700">03 · VERBINDEN</div>
-<h2 class="mt-2">VS Code Chat</h2>
+<li v-click>
+<strong>VS Code Chat</strong>
 <p><code>Chat: Manage Language Models</code> → <code>Add Models</code> → <strong>Azure</strong>; Endpoint und Deployment-Name konfigurieren.</p>
-</div>
+</li>
 
-</div>
+</ol>
 
-<div v-click class="mt-4 rounded-lg bg-purple-50/80 px-4 py-3 text-sm">
-<strong>Agent Mode:</strong> BYOK aktivieren und ein Modell mit Tool Calling wählen. Code-Completions bleiben Copilot; Azure-Aufrufe werden separat abgerechnet. Für Foundry-Modelle ist alternativ das Foundry Toolkit als Provider-Extension verfügbar.
-</div>
+<p v-click class="mt-5 text-sm"><strong>Agent Mode:</strong> BYOK aktivieren und ein Modell mit Tool Calling wählen. Code-Completions bleiben Copilot; Azure-Aufrufe werden separat abgerechnet. Für Foundry-Modelle ist alternativ das Foundry Toolkit als Provider-Extension verfügbar.</p>
 
 <!--
 Kurzer Exkurs (2–3 Min.) innerhalb der bestehenden Zeit für Chat/Completions; Agenda und Gesamtzeit bleiben unverändert. Keine echten Schlüssel zeigen. In Copilot-Harness-Sessions muss `chat.agentHost.byokModels.enabled` aktiv sein; Agent-Modelle benötigen Tool Calling.
@@ -368,6 +385,37 @@ layout: default
 
 <!--
 Ein gutes Prompt-Beispiel live formulieren. Nicht die Länge zählt, sondern klare Erfolgskriterien und ein sicherer Umfang.
+-->
+
+---
+title: Live-Demo · Agent Mode mit Stopppunkt
+layout: image-right
+background: copilot-chat-3.png
+---
+
+# Plan lesen, Scope prüfen, dann bauen
+
+<div class="ekon30-flow ekon30-flow--four">
+  <div v-click class="ekon30-flow__step">
+    <strong>Auftrag geben</strong>
+    <p>Ziel, Kontext und Grenzen benennen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Plan prüfen</strong>
+    <p>Fragen und betroffene Dateien ansehen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Freigeben</strong>
+    <p>Umsetzung erst nach Scope-Check</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Nachweisen</strong>
+    <p>Tests und Diff gemeinsam prüfen</p>
+  </div>
+</div>
+
+<!--
+Diese Vorführung nutzt die bestehende Demo-Zeit und den Auftrag aus Übung 3. Bei breitem Scope stoppen, den Plan korrigieren und keine Änderungen ungeprüft übernehmen.
 -->
 
 ---
@@ -609,11 +657,9 @@ Die Featurematrix in der GitHub-Dokumentation ändert sich; konkrete UI-Schritte
 -->
 
 ---
-
 src: /special-slides/questions.md
 ---
 
 ---
-
 src: /special-slides/thank-you.md
 ---
