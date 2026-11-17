@@ -17,6 +17,7 @@ description: "Workshop für den Einstieg aus der Desktopentwicklung: moderne Bro
 publicDeckPath: ekon30-react19-mui6-workshop
 htmlAttrs:
   class: ekon30-deck
+  lang: de
 ###### slides start ######
 layout: cover
 coverImage: msWebUiReact-cover.png
@@ -57,7 +58,7 @@ hideInToc: true
 
 <v-clicks>
 
-- Windows + PowerShell (macOS: Terminal)
+- Windows: PowerShell; macOS: Terminal (Git-/npm-Befehle sind identisch)
 - Node.js 24+, npm und Git
 - VS Code sowie einen aktuellen Browser
 - Repository klonen und `npm install` ausführen

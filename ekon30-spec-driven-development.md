@@ -17,6 +17,7 @@ description: "Mit GitHub Copilot und der BMad Method vom PRD zu überprüfbarem,
 publicDeckPath: ekon30-spec-driven-development
 htmlAttrs:
   class: ekon30-deck
+  lang: de
 ###### slides start ######
 layout: cover
 coverImage: bmad-agent-fleet.png
@@ -26,7 +27,7 @@ hideInToc: true
 
 # Spec-Driven Development
 
-## Mit der BMad Method vom PRD zu überprüfbarem Code
+## BMad: Vom PRD zu überprüfbarem Code
 
 **EKON 30 · Düsseldorf, November 2026 · Harald Binkle & Thomas Tomow**
 
@@ -106,7 +107,7 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Phasen desselben Demo-Fadens: 3, 3 und 5 Minuten. Die Zeitboxen enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
+Die Phasen desselben Demo-Fadens enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
 -->
 
 ---
@@ -411,6 +412,36 @@ background: bmad-human-ai-copilot.png
 
 <!--
 Die Demo endet mit einem gebauten, geprüften Ergebnis im lokalen Workspace. BMADs Status built ist keine Produktionsfreigabe; die menschliche Abnahme bleibt Teil des roten Fadens.
+-->
+
+---
+title: Derselbe Ticket-Scope · Der Test macht den Unterschied sichtbar
+layout: default
+---
+
+# Die fachliche Regel wird zum überprüfbaren Ergebnis
+
+<div class="ekon30-flow ekon30-flow--four">
+  <div v-click class="ekon30-flow__step">
+    <strong>Ticket</strong>
+    <p>`KI` und `ki` sind getrennte Tracks</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Baseline</strong>
+    <p>Der gezielte Groß-/Kleinschreibungs-Check schlägt fehl</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Referenzlösung</strong>
+    <p>7 vorbereitete Checks bestanden</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Abnahme</strong>
+    <p>Diff auf `SessionCatalog.pas` prüfen; erst dann „done“</p>
+  </div>
+</div>
+
+<!--
+Die gezeigten Testergebnisse stammen aus der vorbereiteten Referenz mit isoliertem FPC 3.2.2, nicht aus einer live von BMAD erzeugten Änderung. Im Live-Pfad tatsächlichen Agent-Diff und Testlauf prüfen; die Referenz ist der zeitgebundene Fallback.
 -->
 
 ---

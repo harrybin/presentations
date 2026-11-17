@@ -78,7 +78,9 @@ if (action === 'prepare') {
     const committed = execute('git', [
       '-c', 'user.name=Demo Presenter',
       '-c', 'user.email=demo@example.invalid',
-      'commit', '--only', '-m', 'docs: add BMad demo ticket', '--', ticketRelative,
+      'commit', '--only', '-m', 'docs: add BMad demo ticket',
+      '--trailer', 'Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>',
+      '--', ticketRelative,
     ], baseline)
     if (committed !== 0) process.exit(committed)
   } else {

@@ -17,6 +17,7 @@ description: "Mit GitHub Copilot Instructions, Prompts, Skills, Tools und Custom
 publicDeckPath: ekon30-ai-context-setup
 htmlAttrs:
   class: ekon30-deck
+  lang: de
 ###### slides start ######
 layout: cover
 coverImage: bmad-context-satellite.png
@@ -101,14 +102,14 @@ hideInToc: true
 
 - Kontext als knappes Budget
 - Instructions, Prompts und Skills
-- Tools/MCP und Custom Agents
+- Tools/MCP, Agent Harness und Custom Agents
 - Live-Faden mit Demo Time: Regel → Task → Spezialist
 - Entscheidungsraster und Fragen
 
 </v-clicks>
 
 <!--
-Demostationen: 3½, 3½ und 4 Minuten. Die Zeitboxen enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests, Kontext-Trade-off und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · AI Context Setup` (`.run/baseline/.demo/context-setup-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
+Die Demo-Stationen enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests, Kontext-Trade-off und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · AI Context Setup` (`.run/baseline/.demo/context-setup-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
 -->
 
 ---
@@ -368,6 +369,39 @@ MCP ist keine Qualitätsgarantie und keine allgemeine Berechtigung. Least privil
 -->
 
 ---
+title: Agent Harness · Sitzung und Tool-Loop
+layout: default
+---
+
+# Ein Agent ist mehr als ein Prompt
+
+<div class="ekon30-flow ekon30-flow--four">
+  <div v-click class="ekon30-flow__step">
+    <strong>Prompt</strong>
+    <p>Auftrag und relevanter Kontext</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Modell</strong>
+    <p>Antwortet oder fordert einen Tool-Aufruf an</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Harness</strong>
+    <p>Hält die Sitzung, prüft Freigaben und steuert den Aufruf</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Umgebung</strong>
+    <p>Führt das Tool aus; das Ergebnis geht zurück an den nächsten Modell-Schritt</p>
+  </div>
+</div>
+
+<p class="text-lg mt-8"><strong>Abgrenzung:</strong> Ein Prompt beschreibt den Auftrag. Er startet für sich allein weder den Tool-Loop noch gewährt er Datei- oder Systemzugriff.</p>
+
+<!--
+OpenAI dokumentiert Harness und Umgebung als getrennte Teile: Der Harness betreibt Modell-/Tool-Loop und Sitzung; die Umgebung führt Befehle aus und hält Dateien. Das ist eine Architektur-Erklärung, keine Behauptung über GitHub Copilots interne Implementierung.
+Quelle: https://developers.openai.com/api/docs/guides/agents-api/architecture
+-->
+
+---
 title: Custom Agents · eigene Perspektive und Grenzen
 layout: image-left
 background: bmad-agents-specialized-experts.png
@@ -499,6 +533,7 @@ hideInToc: true
 - [EKON 30 · KI Praxis und Tools für Delphi](https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/)
 - [GitHub Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
 - [Copilot: Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
+- [OpenAI Agents API: Architecture](https://developers.openai.com/api/docs/guides/agents-api/architecture)
 - Demo & Ablauf: `demo-projects/ekon30-talk-demo/README.md`
 - Beispiele: `.github/copilot-instructions.md`, `.github/prompts/` und `.github/skills/` in diesem Repository
 

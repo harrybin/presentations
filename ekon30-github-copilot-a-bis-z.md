@@ -17,6 +17,7 @@ description: "Delphi-Workshop mit GitHub Copilot, Lazarus/Free Pascal und intera
 publicDeckPath: ekon30-github-copilot-a-bis-z
 htmlAttrs:
   class: ekon30-deck
+  lang: de
 ###### slides start ######
 layout: cover
 coverImage: gh-copilot-logo.png
@@ -57,8 +58,8 @@ hideInToc: true
 
 <v-clicks>
 
-- Windows + PowerShell (macOS: Terminal)
-- Lazarus + Free Pascal im `PATH`
+- Windows: PowerShell; macOS: Terminal (Git-/npm-Befehle sind identisch)
+- Lazarus mit `lazbuild` und Free Pascal mit `fpc` im `PATH`
 - VS Code, Git, Node.js 24+ und Copilot
 - Repo klonen, Tests und Guide starten
 
@@ -67,6 +68,8 @@ hideInToc: true
 ```powershell
 git clone https://github.com/harrybin/ekon30-github-copilot-workshop.git
 cd ekon30-github-copilot-workshop
+fpc -iV
+lazbuild --version
 npm test
 npm run guide
 ```
@@ -111,7 +114,7 @@ hideInToc: true
 
 <v-clicks>
 
-- acht Übungen mit klaren Zeitboxen
+- sieben Übungen mit klaren Zeitboxen
 - Copilot-Prompts bewusst kopieren
 - Hinweise bei Bedarf aufklappen
 - eigene Nachweise und Notizen exportieren
@@ -390,7 +393,7 @@ Ein gutes Prompt-Beispiel live formulieren. Nicht die Länge zählt, sondern kla
 ---
 title: Live-Demo · Agent Mode mit Stopppunkt
 layout: image-right
-background: copilot-chat-3.png
+background: bmad-human-ai-copilot.png
 ---
 
 # Plan lesen, Scope prüfen, dann bauen
@@ -421,7 +424,7 @@ Diese Vorführung nutzt die bestehende Demo-Zeit und den Auftrag aus Übung 3. B
 ---
 title: Übung 3 · Feature mit Agent Mode
 layout: image-right
-background: copilot-chat-3.png
+background: bmad-human-ai-copilot.png
 ---
 
 # Planen, umsetzen, reviewen
