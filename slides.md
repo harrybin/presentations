@@ -25,9 +25,28 @@ routeAlias: index
 ---
 
 # Presentation Overview
+<span class="presentation-overview-marker"></span>
 <!-- <a href="/webappLocalization/" target="_blank">WebApp-Localization - DWX (Juli 2025)</a> -->
 
+
+<a href="/ekon30-spec-driven-development/" target="_blank">Spec-Driven Development: Mit AI-Agent-Squads vom PRD zum autonomen Code [EKON30 Nov 26]</a>
+
+<a href="/ekon30-ai-context-setup/" target="_blank">AI Context Setup – Instructions, Prompts, Skills, Tools, Custom Agents, was ist für was? [EKON30 Nov 26]</a>
+
+<a href="/ekon30-github-copilot-a-bis-z/" target="_blank">Workshop: GitHub Copilot von A bis Z [EKON30 Nov 26]</a>
+
+<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript [EKON30 Nov 26]</a>
+
+
 <br/>
+
+
+
+<a href="/bmad-anforderungen-tests/" target="_blank">KI-gestützte Anforderungs- und Testfallentwicklung mit der BMad-Methode [ADC Mar 26]</a>
+
+<a href="/aiops-Mainteance-mit-KI/" target="_blank">AIOps: Maintenance von Softwaresystemen durch KI [INFINITE AI CONF Jul 26]</a>
+
+
 <br/>
 
 <details>
@@ -42,16 +61,9 @@ routeAlias: index
 <a href="/msWebUiReact/" target="_blank">Microsoft's Web UI Technology: Is It React? [DDC Nov 25]</a>
 </details>
 
-<a href="/bmad-anforderungen-tests/" target="_blank">KI-gestützte Anforderungs- und Testfallentwicklung mit der BMad-Methode [ADC Mar 26]</a>
-
-<a href="/aiops-Mainteance-mit-KI/" target="_blank">AIOps: Maintenance von Softwaresystemen durch KI [INFINITE AI CONF Jul 26]</a>
-
----
-
-<a href="/ekon30-spec-driven-development/" target="_blank">Spec-Driven Development: Mit AI-Agent-Squads vom PRD zum autonomen Code [EKON30 Nov 26]</a>
-
-<a href="/ekon30-github-copilot-a-bis-z/" target="_blank">Workshop: GitHub Copilot von A bis Z [EKON30 Nov 26]</a>
-
-<a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript [EKON30 Nov 26]</a>
-
-<a href="/ekon30-ai-context-setup/" target="_blank">AI Context Setup – Instructions, Prompts, Skills, Tools, Custom Agents, was ist für was? [EKON30 Nov 26]</a>
+<style>
+:global(.slidev-layout:has(.presentation-overview-marker)) {
+  height: 100%;
+  overflow-y: auto;
+}
+</style>
