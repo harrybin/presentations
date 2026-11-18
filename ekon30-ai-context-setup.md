@@ -13,7 +13,8 @@ overviewSnapshots: false
 glowEnabled: true
 author: "Harald Binkle & Thomas Tomow"
 showCopyright: false
-description: "Mit GitHub Copilot Instructions, Prompts, Skills, Tools und Custom Agents passend zur Aufgabe einsetzen."
+description: "Mit GitHub Copilot Instructions, Prompts, Skills, Tools und Custom
+  Agents passend zur Aufgabe einsetzen."
 publicDeckPath: ekon30-ai-context-setup
 htmlAttrs:
   class: ekon30-deck
@@ -35,13 +36,13 @@ hideInToc: true
 
 <!--
 Leitfrage: Wie geben wir einem Agenten genug Kontext für ein gutes Resultat, ohne bei jeder Aufgabe das ganze Projekt mitzuschicken?
+Themenrahmen des Vortrags: https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/
 -->
 
 ---
 title: Speaker
 layout: intro
 src: /special-slides/ekon30-speakers.md
-
 ---
 
 ---
@@ -65,6 +66,38 @@ hideInToc: true
 
 <!--
 Die These ist nicht „Tokens um jeden Preis sparen“, sondern irrelevanten Kontext vermeiden. Qualität und Sicherheit zählen ebenso.
+Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
+-->
+
+---
+title: Kontext ist ein Laufzeit-Zusammenbau
+layout: default
+---
+
+# Was sieht der Agent in diesem Schritt?
+
+```mermaid
+flowchart LR
+  U["Auftrag"] --> H["Harness / Sitzung"]
+  P["Projektregeln"] --> H
+  F["Dateien & Ausschnitte"] --> H
+  T["Tool-Ergebnisse"] --> H
+  H --> M["Modell"]
+  M -->|Antwort oder Tool-Aufruf| H
+```
+
+<v-clicks>
+
+- **Persistente Regeln** kommen aus unterstützten Dateien und Scopes
+- **Task-Kontext** kommt aus Prompt, Auswahl und Dateireferenzen
+- **Tool-Ergebnisse** entstehen erst während der Ausführung
+- Was geladen wird, hängt von Aufgabe, Produkt und Client ab
+
+</v-clicks>
+
+<!--
+Das Diagramm ist ein konzeptionelles Modell, keine Behauptung über interne Copilot-Implementierungen. Unterschiede zwischen IDE, Oberfläche und Feature-Unterstützung live prüfen.
+Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---
@@ -189,6 +222,89 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---
+title: AGENTS.md · Regeln entlang des Projektbaums
+layout: two-cols
+---
+
+# Erst den nächsten Geltungsbereich prüfen
+
+```text
+repo/
+├── AGENTS.md
+├── src/
+│   ├── AGENTS.md
+│   └── billing/
+│       └── AGENTS.md
+└── tests/
+    └── AGENTS.md
+```
+
+::right::
+
+<v-clicks>
+
+- Root: Regeln für das ganze Repository
+- Unterordner: zusätzliche Regeln für den Bereich
+- Nähe zum Zielpfad entscheidet über Relevanz
+- Doppelte oder widersprüchliche Regeln vermeiden
+
+</v-clicks>
+
+<!--
+AGENTS.md-Unterstützung und Vererbungsdetails sind clientabhängig. In diesem Repository ist AGENTS.md die bevorzugte Contributor-Guidance; `context/copilot-instructions.md` im Demo-Projekt bleibt absichtlich ein explizit angefügtes Lehr-Fixture.
+Quellen: https://docs.github.com/en/copilot/reference/customization-cheat-sheet ; AGENTS.md im Repository-Root
+-->
+
+---
+title: Pfadregeln · wenn nur ein Teilbereich betroffen ist
+layout: default
+---
+
+# Scoping mit `applyTo`
+
+````md magic-move
+```md
+---
+applyTo: "**"
+---
+
+# Projektregel
+
+Tests für Änderungen ergänzen.
+```
+
+```md
+---
+applyTo: "src/**/*.pas"
+---
+
+# Pascal-Regeln
+
+- Delphi-kompatiblen FPC-Modus beibehalten.
+- Tracknamen exakt und case-sensitiv vergleichen.
+```
+
+```md
+---
+applyTo: "src/**/*.pas"
+---
+
+# Pascal-Regeln
+
+- Delphi-kompatiblen FPC-Modus beibehalten.
+- Tracknamen exakt und case-sensitiv vergleichen.
+- Reihenfolge des ersten Auftretens erhalten.
+```
+````
+
+<p class="text-sm opacity-70">Beispiel für eine Datei unter `.github/instructions/*.instructions.md` — nicht als universell unterstützte Syntax missverstehen.</p>
+
+<!--
+Im Vortrag den Scope schrittweise entwickeln: global → Pascal-Dateien → konkrete fachliche Invarianten. Für das Demo-Projekt stehen dieselben fachlichen Regeln in einer explizit angefügten Datei.
+Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
+-->
+
+---
 title: Live-Demo · Eine Regel im Kontext
 layout: image-right
 background: settings-instruction-files-1.png
@@ -262,6 +378,40 @@ background: settings-instruction-files-2.png
 
 <!--
 Prompt Files unter `.github/prompts/*.prompt.md` sind eine manuell aufgerufene Vorlage. Beispiel aus der Repo-Praxis: strukturierte Prompts zur Erstellung einer Slidev-Präsentation.
+Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
+-->
+
+---
+title: Prompt File · Auftrag mit klaren Grenzen
+layout: two-cols
+---
+
+# Gekürzt aus der Demo: ein reproduzierbarer Review-Auftrag
+
+```md
+---
+description: Prüfe Tests gegen die Spec.
+---
+
+Vergleiche `spec.md` mit `CatalogTests.lpr`.
+Melde maximal zwei fehlende oder unzureichende Fälle.
+Keine Dateien ändern.
+```
+
+::right::
+
+<v-clicks>
+
+- **Eingabe:** die Dateien oder Auswahl des aktuellen Tasks
+- **Aktion:** bewusst aufrufen, nicht als Dauerregel laden
+- **Ausgabe:** begrenztes, prüfbares Ergebnis
+- **Grenze:** „keine Änderungen“ ist eine Anweisung, keine technische Zugriffssperre
+
+</v-clicks>
+
+<!--
+Der Auszug stammt aus `demo-projects/ekon30-talk-demo/context/test-review.prompt.md`. In dieser Demo bleibt das Prompt-Template außerhalb eines aktiven `.github/prompts`-Pfads und wird als Datei-Referenz gezeigt, nicht als automatisch verfügbares Prompt File.
+Quellen: demo-projects/ekon30-talk-demo/context/test-review.prompt.md ; https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---
@@ -283,6 +433,43 @@ background: bmad-context-hierarchy.png
 
 <!--
 Beispiel: Der Slidev-Skill im Repository enthält Konventionen, Referenzen und klare Grenzen. Er wird relevant, wenn Präsentationsarbeit ansteht — nicht bei jeder Codefrage.
+Quelle: https://docs.github.com/en/copilot/concepts/agents/about-agent-skills
+-->
+
+---
+title: Skill · Ablaufwissen in kleine Schritte zerlegen
+layout: two-cols
+---
+
+# Aus der Demo: `catalog-review/SKILL.md`
+
+```md
+---
+name: catalog-review
+description: Prüfe Änderungen an der Pascal-Track-Zählung
+  gegen Spec und Tests.
+---
+
+1. `spec.md` und den Pascal-Diff lesen.
+2. Exakten Trackvergleich, Reihenfolge und unveränderte Eingaben prüfen.
+3. Testaufruf und echte Ausgabe nachvollziehen; unbelegte Aussagen markieren.
+4. Befunde mit Datei, Ursache und beobachtbarem Effekt berichten.
+```
+
+::right::
+
+<v-clicks>
+
+- `name`: stabiler Skill-Bezeichner
+- `description`: wann dieses Wissen passt
+- `SKILL.md`: Ablauf, nicht nur eine Persona
+- zusätzliche Dateien: nur bei echtem Bedarf referenzieren
+
+</v-clicks>
+
+<!--
+Der Demo-Skill liegt absichtlich außerhalb eines aktiven Skill-Verzeichnisses und wird manuell gezeigt. Skill-Discovery, unterstützte Pfade und Ladeverhalten sind clientabhängig.
+Quellen: demo-projects/ekon30-talk-demo/context/catalog-review/SKILL.md ; https://docs.github.com/en/copilot/concepts/agents/about-agent-skills
 -->
 
 ---
@@ -366,6 +553,81 @@ background: bmad-governance-control-center.png
 
 <!--
 MCP ist keine Qualitätsgarantie und keine allgemeine Berechtigung. Least privilege, Quellen- und Toolprüfung bleiben wichtig. Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
+MCP-Tools werden im Protokoll beschrieben unter: https://modelcontextprotocol.io/specification/latest/server/tools
+-->
+
+---
+title: MCP · vom Tool-Katalog zum Ergebnis
+layout: default
+---
+
+# Das Modell plant — der Host vermittelt
+
+```mermaid {scale: 0.65}
+sequenceDiagram
+  participant U as Person
+  participant H as Copilot-Host
+  participant M as Modell
+  participant S as MCP-Server
+  U->>H: Aufgabe
+  H->>M: Kontext + Tool-Schema
+  M-->>H: tools/call + Argumente
+  H->>S: tools/call
+  S-->>H: Ergebnis / Fehler
+  H->>M: Ergebnis im Kontext
+  M-->>U: Antwort
+```
+
+<!--
+Das ist ein konzeptioneller Ablauf. MCP-Tools sind keine stillschweigende Erlaubnis für beliebige externe Aktionen; konkrete Client-Freigaben und Server-Berechtigungen gesondert prüfen.
+Quelle: https://modelcontextprotocol.io/specification/latest/server/tools
+-->
+
+---
+title: MCP · ein Aufruf ist strukturierte Daten
+layout: default
+---
+
+# Beispiel: Tool-Aufruf auf Protokollebene
+
+````md magic-move
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 7,
+  "method": "tools/list"
+}
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 7,
+  "method": "tools/call",
+  "params": {
+    "name": "search_sessions",
+    "arguments": { "track": "AI" }
+  }
+}
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 7,
+  "result": {
+    "content": [{ "type": "text", "text": "3 Sessions gefunden" }],
+    "isError": false
+  }
+}
+```
+````
+
+<p class="text-sm opacity-70">Protokollbeispiel, keine konkrete Copilot-Client-Konfiguration: Servername, Startkommando, Authentifizierung und Freigabe sind produktspezifisch.</p>
+
+<!--
+MCP definiert Discovery und Tool-Aufrufe; das Beispiel verwendet einen illustrativen Tool-Namen und synthetische Antwortdaten.
+Quelle: https://modelcontextprotocol.io/specification/latest/server/tools
 -->
 
 ---
@@ -402,6 +664,40 @@ Quelle: https://developers.openai.com/api/docs/guides/agents-api/architecture
 -->
 
 ---
+title: Agent Harness · Schritt für Schritt
+layout: default
+---
+
+# Derselbe Auftrag wird zum kontrollierten Loop
+
+```mermaid
+flowchart LR
+  A["Aufgabe + Kontext"] --> B["Modell"]
+  B -->|"Antwort"| G["Nächster Schritt / Ergebnis"]
+  B -->|"Tool-Call"| C{"Freigabe nötig?"}
+  C -->|"ja"| D["Mensch / Policy"]
+  C -->|"nein"| E["Tool-Ausführung"]
+  D -->|"erlaubt"| E
+  D -->|"abgelehnt"| B
+  E --> F["Tool-Ergebnis"]
+  F --> B
+```
+
+<v-clicks>
+
+- Das Modell schlägt eine Aktion vor
+- Der Harness prüft Routing und mögliche Bestätigung
+- Die Laufzeit führt den konkreten Tool-Aufruf aus
+- Ergebnis zurückgeben, erneut abwägen — oder stoppen
+
+</v-clicks>
+
+<!--
+Trenne Modell, Harness und Umgebung begrifflich. Der Ablauf erklärt den Agent-Harness allgemein; er beschreibt keine proprietäre GitHub-Copilot-Implementierung.
+Quelle: https://developers.openai.com/api/docs/guides/agents-api/architecture
+-->
+
+---
 title: Custom Agents · eigene Perspektive und Grenzen
 layout: image-left
 background: bmad-agents-specialized-experts.png
@@ -420,6 +716,41 @@ background: bmad-agents-specialized-experts.png
 
 <!--
 Beispiel: Reviewer-Agent, der prüft und berichtet, aber keine Dateien ändert. Copilot-Funktionen unterscheiden sich nach IDE und Oberfläche. Verfügbarkeit vor dem Einsatz anhand der aktuellen Matrix prüfen.
+Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
+-->
+
+---
+title: Custom Agent · Rolle und Auftrag lesbar machen
+layout: two-cols
+---
+
+# Aus der Demo: Reviewer-Rolle
+
+```md
+---
+description: Prüft die Track-Zählung gegen die Spec.
+---
+
+Du bist Reviewer für das Pascal-Beispiel.
+Lies Spec, Code und Tests.
+Melde konkrete Abweichungen mit Ursache und Effekt.
+Ändere keine Dateien und starte keine Befehle.
+```
+
+::right::
+
+<v-clicks>
+
+- **Rolle:** Reviewer, nicht Implementierer
+- **Arbeitsauftrag:** Spec, Code und Tests vergleichen
+- **Ergebnis:** Befund mit Referenz und Auswirkung
+- **Technik:** Prompttext ersetzt keine erzwungene Tool-Berechtigung
+
+</v-clicks>
+
+<!--
+Der Auszug stammt aus `demo-projects/ekon30-talk-demo/context/pascal-reviewer.agent.md`. In dieser Demo bleibt die Datei eine Rollenvorlage außerhalb aktiver Agent-Verzeichnisse; der Ask-Modus begrenzt die Vorführung, beweist aber keine technische Schreibsperre.
+Quelle: demo-projects/ekon30-talk-demo/context/pascal-reviewer.agent.md
 -->
 
 ---
@@ -501,6 +832,74 @@ Keine erfundenen Prozentwerte versprechen. Tokenverbrauch ist nur ein Messwert; 
 -->
 
 ---
+title: Kontextqualität · Wirkung am Verhalten messen
+layout: two-cols
+---
+
+# Ein Testfall macht eine Regel sichtbar
+
+```pascal
+// Baseline: fasst "KI" und "ki" als denselben Track auf
+if SameText(TrackA, TrackB) then
+  Found := J;
+```
+
+```pascal
+// Fachregel: Tracknamen sind case-sensitiv
+if TrackA = TrackB then
+  Found := J;
+```
+
+::right::
+
+<v-clicks>
+
+- **Fixture:** `KI` und `ki` müssen getrennt gezählt werden
+- **Signal:** `node demo.mjs test baseline` scheitert absichtlich
+- **Nachweis:** `node demo.mjs test solution` besteht
+- **Lernpunkt:** konkrete Invariante schlägt vage „schreibe guten Code“
+
+</v-clicks>
+
+<!--
+Die Lösung ist eine vorbereitete Referenzimplementierung, kein behauptetes Copilot-Ergebnis. Live-Tests und Fallbacks sind im Demo-README dokumentiert; Tests beweisen nicht alle möglichen Eingaben.
+Quelle: demo-projects/ekon30-talk-demo/README.md
+-->
+
+---
+title: Kontext pflegen wie Code
+layout: default
+---
+
+# Ein kleiner Wartungskreislauf
+
+<div class="ekon30-flow ekon30-flow--four">
+  <div v-click class="ekon30-flow__step">
+    <strong>Beobachten</strong>
+    <p>Wo rät der Agent wiederholt?</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Präzisieren</strong>
+    <p>Eine konkrete Regel oder Aufgabe ergänzen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Prüfen</strong>
+    <p>Mit identischem Input erneut testen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Entrümpeln</strong>
+    <p>Doppeltes und Wirkungsloses entfernen</p>
+  </div>
+</div>
+
+<p class="text-lg mt-8"><strong>Messpunkte:</strong> Rückfragen · Korrekturschleifen · Test- und Review-Befunde · Laufzeit und Kontextumfang</p>
+
+<!--
+Keinen pauschalen Qualitäts- oder Tokengewinn versprechen. Für den Vergleich Aufgabe und bereitgestellte Dateien konstant halten und die Beobachtung dokumentieren.
+Quellen: demo-projects/ekon30-talk-demo/context/beobachtung.md ; https://docs.github.com/en/copilot/reference/customization-cheat-sheet
+-->
+
+---
 title: Takeaways
 layout: statement
 ---
@@ -518,29 +917,6 @@ layout: statement
 
 <!--
 Abschlussfrage: Welches eine Artefakt in eurem Repository würde einem Agenten ab morgen am meisten helfen?
--->
-
----
-title: Quellen
-layout: default
-hideInToc: true
----
-
-# Quellen & Einordnung
-
-<v-clicks>
-
-- [EKON 30 · KI Praxis und Tools für Delphi](https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/)
-- [GitHub Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
-- [Copilot: Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
-- [OpenAI Agents API: Architecture](https://developers.openai.com/api/docs/guides/agents-api/architecture)
-- Demo & Ablauf: `demo-projects/ekon30-talk-demo/README.md`
-- Beispiele: `.github/copilot-instructions.md`, `.github/prompts/` und `.github/skills/` in diesem Repository
-
-</v-clicks>
-
-<!--
-GitHub aktualisiert Featurematrix und Unterstützung laufend. Vor einem Workshop oder einer produktiven Einführung Oberfläche, Lizenz und IDE-Version prüfen.
 -->
 
 ---
