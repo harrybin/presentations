@@ -62,7 +62,7 @@ hideInToc: true
 
 <!--
 Teaser-Slide: Emotionaler Einstieg. Pause nach jedem Punkt.
-Das ist kein Sci-Fi - das ist der Alltag von AIOps. In den nächsten 60 Minuten zeigen wir euch, wie KI nicht nur Code schreibt, sondern Systeme diagnostiziert, Technical Debt bekämpft und Legacy-Systeme modernisiert.
+Das ist kein Sci-Fi - das ist der Alltag von AIOps. In diesem Vortrag zeigen wir, wie KI nicht nur Code schreibt, sondern Systeme diagnostiziert, Technical Debt bekämpft und Legacy-Systeme modernisiert.
 -->
 
 ---

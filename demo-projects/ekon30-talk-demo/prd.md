@@ -1,10 +1,20 @@
-# PRD · Sessions je Track
+# Brief · Sessions je Track
 
-**Nutzerproblem:** Eine Konferenzorganisation möchte sehen, wie viele Sessions je Track geplant sind.
+## Problem
 
-**Ziel:** Aus einer Liste von Sessions eine kompakte Zählung pro Track erzeugen.
+Eine Konferenzorganisation möchte sehen, wie viele Sessions je Track geplant sind.
 
-**Offen:** Was gilt als gleicher Track? Was geschieht mit leeren Tracks und leeren Listen?
-Welche Reihenfolge erwartet die Oberfläche? Darf die Eingabeliste verändert werden?
+## Goal
 
-**Nicht-Ziele:** GUI, Datenbank, API, Lokalisierung, parallele Verarbeitung.
+GOAL-1: Aus einer Liste von Sessions eine kompakte Zählung pro Track erzeugen.
+
+## Open questions
+
+- Sind `KI` und `ki` derselbe Track?
+- Welche Reihenfolge haben die Ergebnisse?
+- Wie werden leere Track-Namen und leere Eingaben behandelt?
+- Darf die Eingabeliste verändert werden?
+
+## Boundaries
+
+RULE-1: Keine GUI, Datenbank, API, Lokalisierung oder parallele Verarbeitung.

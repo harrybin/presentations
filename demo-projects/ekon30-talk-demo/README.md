@@ -1,10 +1,11 @@
 # EKON 30 · Demo: Sessions je Track zählen
 
-Ein gemeinsamer, bewusst kleiner roter Faden für zwei eigenständige 60-Minuten-Vorträge:
+Ein gemeinsamer, bewusst kleiner roter Faden für zwei eigenständige Vorträge:
 Ein Konferenzkatalog soll Sessions pro Track zählen. `KI` und `ki` sind dabei unterschiedliche Tracks.
 Alle Daten sind synthetisch. Die Anwendung ist Delphi-kompatibles Object Pascal im FPC-Delphi-Modus.
 
 Dieses Verzeichnis ist ein **Vortragsdemo**, nicht das separate Workshop-Repository.
+Die Datei `context/copilot-instructions.md` ist absichtlich ein Demo-Fixture für explizit mitgegebenen Prompt-Kontext, keine Repository-Anweisung.
 
 ## Vorbereitung und Bedienung
 
@@ -23,8 +24,37 @@ Dieses Verzeichnis ist ein **Vortragsdemo**, nicht das separate Workshop-Reposit
 - Die Demo-Time-Terminalaktionen erwarten ein Terminal im Workspace `.run/baseline`. Nicht den Präsentations-Root als Copilot-Arbeitsbereich nutzen.
 - Folien und diesen Ablauf offline bereithalten. Copilot-Anmeldung und Antworten vorab überprüfen.
 
+Für den SDD-Akt wird BMad Method ausschließlich im isolierten `.run/baseline` installiert.
+Voraussetzungen sind Node.js, npm, Git, `uv` und ein VS-Code-Copilot-Client mit Skill-Unterstützung.
+Prüfe die Installationswarnungen und Berechtigungen; installiere die Skills nicht im Präsentations-Root.
+Nach `prepare` im `.run/baseline`-Ordner ausführen:
+
+```powershell
+npx skills add bmad-code-org/BMAD-METHOD --skill bmad --skill bmod-core-tools --skill bmod-method --skill bmad-agent-po --skill bmad-build
+```
+
+In VS Code im selben Ordner die `bmad`-Skill-Einrichtung und Version prüfen:
+
+```text
+Run bmad setup
+Run bmad status
+```
+
+`bmad-build` erwartet einen frischen Chat und einen sauberen Git-Arbeitsbaum. Nach der Einrichtung
+den vorbereiteten isolierten Workspace lokal initial committen:
+
+```powershell
+git add -A
+git -c user.name="Demo Presenter" -c user.email="demo@example.invalid" commit -m "chore: prepare isolated demo"
+```
+
+Im zweiten Schritt sichert `node demo.mjs prepare-bmad-ticket` das Ticket aus Sofias Ausgabe; falls es fehlt,
+legt der Befehl die vorbereitete Fallback-Spec an. Er committet ausschließlich diese eine Ticketdatei.
+Keiner dieser lokalen Commits wird gepusht. Für eine vollständige Wiederholung `.run` mit
+`prepare --reset` neu erstellen und die BMAD-Einrichtung im neuen `.run/baseline` erneut durchführen.
+
 Die `solution` ist eine **vorbereitete Referenzimplementierung**, kein behauptetes Copilot-Ergebnis.
-Die Demo-Time-Akte führen die Stationen und Zeitlimits; die vorbereitete `solution` ist nur Fallback
+Die Demo-Time-Akte führen die Stationen und Zeitlimits; Die vorbereitete `solution` ist nur Fallback
 und Referenz. Versionierte Vorlagen nie in einem Live-Agent-Lauf überschreiben lassen. Für einen
 vollständigen Neuaufbau gilt weiterhin ausdrücklich `prepare --reset`; der erste Akt-Schritt setzt
 nicht den gesamten Workspace, sondern nur die Baseline-Implementierung zurück.
@@ -44,54 +74,69 @@ Aktuelle Referenz: [Demo Time v3 Schema](https://demotime.show/demo-time.schema.
 
 ## Vortrag 1 · Spec-Driven Development
 
-**Gesamtzeit 60 Minuten:** 0:00–42:00 Vortrag, 42:00–53:00 Demos,
-53:00–60:00 Abschluss und Fragen. Die folgenden Zeiten gelten ab **Vortragsminute 42**.
-Die 11 Demo-Minuten enthalten Prompt-Wartezeit, Wechsel, Erläuterung, Test und gegebenenfalls
+Der SDD-Akt ist ein zusammenhängender Demo-Faden: dieselbe Story und dasselbe Ticket führen von der Klärung
+über den Build-Plan bis zur geprüften Änderung. Nur für die saubere Build-Sitzung wechselt der Chat;
+Ticket und fachlicher Scope bleiben erhalten. Die Zeitboxen gelten relativ zum Start des Akts und enthalten Prompt-Wartezeit,
+Wechsel, Erläuterung, Test und gegebenenfalls
 Fallback; keine Schritte werden zusätzlich eingeplant. Bei Zeitdruck spätestens zum
-Stationsende wechseln und den Live-Pfad abkürzen.
+Ende der jeweiligen Phase wechseln und den Live-Pfad abkürzen.
 
-| Demozeit / Vortragszeit | Live-Aktion | Abbruch / Fallback |
+| Demozeit | Live-Aktion | Abbruch / Fallback |
 |---|---|---|
-| 0:00–3:00 / 42:00–45:00 (3 Min.) | SDD-Akt: Prompt S1 senden. Eine Frage auswählen, dann getroffene Entscheidung und `spec.md` zeigen. | Nach spätestens 45 Sekunden ohne brauchbare Antwort: vorbereitete Fragen in `spec.md` zeigen. |
-| 3:00–6:00 / 45:00–48:00 (3 Min.) | Prompt S2 um einen Plan bitten. Taskgrenzen und Testfälle abgleichen. | Nach 45 Sekunden: vorbereiteten `plan.md` verwenden; keine zusätzliche Live-Generation. |
-| 6:00–11:00 / 48:00–53:00 (5 Min.) | Baseline-Test und Fehler zeigen; Prompt S3 im Agent Mode starten, **nur in `.run/baseline`**. Bei fertiger Antwort die Verifikationsszene ausführen. | Nach 60 Sekunden oder bei falschem Scope: Agent abbrechen und vorbereitete Lösung, Test und Diff zeigen. Keine Korrekturschleife live. |
+| 0:00–3:00 (3 Min.) | SDD-Akt: Sofia (`bmad-agent-po`) soll aus `prd.md` ein Standalone-Ticket für eine Story schreiben. Eine Frage beantworten, dann Ticket-Spec prüfen. | Nach spätestens 45 Sekunden ohne brauchbares Ticket: vorbereitete Ticket-Spec in `spec.md` zeigen. |
+| 3:00–6:00 (3 Min.) | Im frischen Chat `bmad-build` mit dem Ticket starten; Vorgehen und Scope prüfen. | Nach 45 Sekunden: den vorbereiteten Offline-Plan in `plan.md` zeigen; keine zusätzliche Live-Generation. |
+| 6:00–11:00 (5 Min.) | Build im selben Chat fortsetzen, nur `SessionCatalog.pas` ändern lassen und Ergebnis prüfen. | Nach 60 Sekunden oder bei falschem Scope: Agent abbrechen und vorbereitete Lösung, Test und Diff zeigen. Keine Korrekturschleife live. |
 
 Vor dem Live-Agent-Lauf `node demo.mjs test baseline` ausführen und den absichtlichen Fehler kurz erklären.
 Die Tests sind kein vollständiger Beweis für alle möglichen Eingaben; eine Freigabe bleibt beim Menschen.
-Die Plan- und Implementierungsartefakte sind vorbereitet; nicht behaupten, dass sie live vom Agenten erzeugt wurden.
+Die Dateien `spec.md` und `plan.md` sind Offline-Fallbacks; nicht behaupten, dass sie live von BMAD erzeugt wurden.
 Nach dem Agent-Lauf die echte Ausgabe und `git diff --no-index .run/solution/SessionCatalog.pas .run/baseline/SessionCatalog.pas` prüfen.
 Dieser `git diff --no-index` gibt bei Unterschieden Exit-Code 1 zurück; das ist kein Testlauf.
 
-### S1 · Fragen statt Raten
+### Schritt 1 · Sofia schreibt das Ticket
 
 ```text
-Lies prd.md. Stelle höchstens drei konkrete Fragen zu fachlichen
-Entscheidungen und Randfällen. Ändere keine Dateien. Triff keine
-Annahmen als Fakten und schreibe noch keine Implementierung.
+/bmad-agent-po Schreibe aus #file:prd.md ein Standalone-Ticket für genau
+eine Story und eine Build-Sitzung unter
+_bmad-output/backlog/ticket-sessions-je-track.md. Stelle Rückfragen zu
+offenen fachlichen Entscheidungen, statt Annahmen als Fakten einzutragen.
+Nicht implementieren.
 ```
 
-### S2 · Ein begrenzter Plan
+Wenn die Antwort brauchbar ist, Ticket-Spec und Entscheidung prüfen. Vor dem Build das erzeugte
+Ticket lokal committen, damit der neue Chat mit sauberem Arbeitsbaum beginnt.
+
+### Schritt 2 · Dasselbe Ticket wird geplant
 
 ```text
-Lies spec.md, SessionCatalog.pas und CatalogTests.lpr.
-Schlage höchstens drei Tasks mit Abhängigkeiten und prüfbaren
-Ergebnissen vor. Ändere keine Dateien und starte keine Befehle.
+/bmad-build Baue das Standalone-Ticket „Sessions je Track zählen“ aus
+_bmad-output/backlog. Untersuche das Repository, zeige offene Fragen und
+deinen Build-Plan und pausiere vor Quellcodeänderungen für meine Freigabe.
+Wenn ich den Offline-Fallback verwende, nimm #file:spec.md als Ticket-Spec.
 ```
 
-### S3 · Eine Änderung, echte Tests
+### Schritt 3 · Den freigegebenen Plan umsetzen und prüfen
 
 ```text
-Setze spec.md nur in SessionCatalog.pas um. Ändere keine Tests
-oder anderen Dateien. Bewahre Reihenfolge und Eingaben.
-Nutze Delphi-kompatibles Object Pascal. Führe selbst nichts aus;
-nenne Änderungen und offene Punkte. Warte auf meine Prüfung.
+Der Build-Plan für dasselbe Ticket ist freigegeben. Setze die Story nur in
+SessionCatalog.pas um; ändere keine Tests oder anderen Dateien.
+Bewahre Reihenfolge und Eingaben, führe die vorhandenen Pascal-Checks
+aus und reviewe den Diff. Nichts pushen; das Ergebnis bleibt bis zu
+meiner Prüfung im Status „built“.
 ```
+
+`prepare-bmad-ticket` prüft, dass vor dem Build keine fremden Änderungen im Arbeitsbaum liegen.
+`bmad-build` kann bei einem kleinen, risikoarmen Vorhaben einen Light-Path ohne ausführlichen Plan
+wählen. Die Demo hält trotzdem vor Änderungen für die sichtbare menschliche Entscheidung an.
+BMAD markiert den Build als `built`; erst die Person prüft das Ergebnis und markiert die Story `done`.
+Offizielle Referenzen: [Installation](https://docs.bmad-method.org/start/install-bmad/),
+[How BMad Works](https://docs.bmad-method.org/start/how-bmad-works/),
+[Build and Verify](https://docs.bmad-method.org/build/build-and-verify/).
 
 ## Vortrag 2 · AI Context Setup
 
-**Gesamtzeit 60 Minuten:** 0:00–42:00 Vortrag, 42:00–53:00 Demos,
-53:00–60:00 Abschluss und Fragen. Die folgenden Zeiten gelten ab **Vortragsminute 42**.
-Die 11 Demo-Minuten enthalten Prompt-Wartezeit, Wechsel, Erläuterung, Test und gegebenenfalls
+Die Demo-Zeitboxen gelten relativ zum Start des Akts. Die Stationen enthalten Prompt-Wartezeit,
+Wechsel, Erläuterung, Test und gegebenenfalls
 Fallback; keine Schritte werden zusätzlich eingeplant. Bei Zeitdruck spätestens zum
 Stationsende wechseln und den Live-Pfad abkürzen.
 
@@ -99,11 +144,11 @@ Derselbe Katalog, aber eine andere Frage: Welcher Kontext gehört wohin?
 Bei Bedarf `node demo.mjs prepare --reset` vor Beginn erneut ausführen.
 Die Beispiele unter `context/` sind nur Vorlagen; sie werden nicht automatisch durch Copilot geladen.
 
-| Demozeit / Vortragszeit | Live-Aktion | Abbruch / Fallback |
+| Demozeit | Live-Aktion | Abbruch / Fallback |
 |---|---|---|
-| 0:00–3:30 / 42:00–45:30 (3½ Min.) | Context-Akt: Prompt C1 erst mit `spec.md` und `SessionCatalog.pas`, dann identisch mit zusätzlicher `context/copilot-instructions.md` senden. Beobachtung vergleichen. | Je Antwort maximal 45 Sekunden. Danach `context/beobachtung.md` als vorbereitete Vergleichsfolie lesen. Keine automatische Anwendung oder Verbesserung behaupten. |
-| 3:30–7:00 / 45:30–49:00 (3½ Min.) | `context/test-review.prompt.md` (Auftrag) und `context/catalog-review/SKILL.md` (Ablaufwissen) öffnen. Copilot um eine knappe Zuordnung bitten; Tool-Unterstützung erklären. | Antwort höchstens 45 Sekunden abwarten, dann die vorbereiteten Dateien vergleichen. Die Vorlagen bleiben außerhalb der aktiven `.github`-Pfade. |
-| 7:00–11:00 / 49:00–53:00 (4 Min.) | `context/pascal-reviewer.agent.md` zeigen; Prompt C3 im Ask-Modus geben und den vorhandenen Baseline-Fehler testen. | Nach 45 Sekunden abbrechen; vorbereiteten Befund in `context/beobachtung.md` und Testausgabe zeigen. Kein MCP-Server und keine externe Schreibaktion nötig. |
+| 0:00–3:30 (3½ Min.) | Context-Akt: Prompt C1 erst mit `spec.md` und `SessionCatalog.pas`, dann identisch mit zusätzlicher `context/copilot-instructions.md` senden. Beobachtung vergleichen. | Je Antwort maximal 45 Sekunden. Danach `context/beobachtung.md` als vorbereitete Vergleichsfolie lesen. Keine automatische Anwendung oder Verbesserung behaupten. |
+| 3:30–7:00 (3½ Min.) | `context/test-review.prompt.md` (Auftrag) und `context/catalog-review/SKILL.md` (Ablaufwissen) öffnen. Copilot um eine knappe Zuordnung bitten; Tool-Unterstützung erklären. | Antwort höchstens 45 Sekunden abwarten, dann die vorbereiteten Dateien vergleichen. Die Vorlagen bleiben außerhalb der aktiven `.github`-Pfade. |
+| 7:00–11:00 (4 Min.) | `context/pascal-reviewer.agent.md` zeigen; Prompt C3 im Ask-Modus geben und den vorhandenen Baseline-Fehler testen. | Nach 45 Sekunden abbrechen; vorbereiteten Befund in `context/beobachtung.md` und Testausgabe zeigen. Kein MCP-Server und keine externe Schreibaktion nötig. |
 
 ### C1 · Derselbe Auftrag
 

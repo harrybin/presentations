@@ -2,6 +2,7 @@
 
 This repository contains public presentations created by me, [@harrybin](https://github.com/harrybin).
 The presentations are built using [Slidev](https://sli.dev/) and are available at: [https://presentations.harrybin.dev](https://presentations.harrybin.dev).
+The MIT license in [`LICENSE`](LICENSE) covers only original content authored by Harald Binkle; third-party works retain their own rights and terms.
 
 ## Structure
 
@@ -15,7 +16,7 @@ The presentations are built using [Slidev](https://sli.dev/) and are available a
   - special/extracted slides from presentations can be found in the `special-slides/<presentation-name>` folder.
 - **Assets**: All images and assets of **all** slides are located in the `public` folder. This is the default location for Slidev to look for assets.
 
-- **Demo Projects**: The `demo-projects` folder contains demo projects that are used in the presentations. These projects are not part of the Slidev framework but are included for demonstration purposes. (each demo project has its own folder name like the presentation name)
+- **Demo Projects**: The `demo-projects` folder contains self-contained examples used in presentations. They are part of this repository, not separate repositories or part of the Slidev build; each has its own README. If a demo is split into its own repository, give that repository its own README and an applicable license.
 
 ## Setup and validation
 
@@ -52,6 +53,6 @@ CLI image/PDF/PPTX export needs the optional `playwright-chromium` dependency, w
 
 Contributors update affected instructions, prompts, and skills when runtime/package-manager versions, Slidev/themes, architecture, build commands, or content paths change. The repository maintainer reviews persistent behavior changes, permissions/data destinations, and imported skill updates. A client, harness, or model change, or a recurring evidenced agent failure, is also a reason for a targeted review, not a new permanent rule for every incident.
 
-Keep repository-wide guidance in `.github/copilot-instructions.md`, reusable Slidev/image procedures in the existing skills, and task-specific authoring in the existing prompts. Prompts are manually invoked in supported VS Code Local sessions; discovery and support differ in other clients. A Markdown link or model choice does not guarantee inclusion or execution. Global/personal instructions, installed tools, and cloud permissions are outside this repository's configuration.
+Keep repository-wide guidance in the root `AGENTS.md`, reusable Slidev/image procedures in the existing skills, and task-specific authoring in the existing prompts. Do not duplicate the repository guide in a `copilot-instructions.md` file. Prompts are manually invoked in supported VS Code Local sessions; discovery and support differ in other clients. A Markdown link or model choice does not guarantee inclusion or execution. Global/personal instructions, installed tools, and cloud permissions are outside this repository's configuration.
 
 Review local link targets, skill names/required frontmatter, actual npm script names, runtime pins, and formatter scope with existing tools. Validate behavior in fresh, matched sessions using the [manual evaluation protocol](.github/evals/generate-slide-image/README.md), recording failures and unavailable measurements as such. Tool availability or skill metadata is not authorization. Do not self-edit the harness during unrelated tasks, add automated follow-up jobs, or claim a build/eval ran without evidence.

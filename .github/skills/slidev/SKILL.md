@@ -19,7 +19,7 @@ Web-based slides maker built on Vite, Vue, and Markdown.
 
 ## Working in this repository
 
-Read [the repository guide](../../copilot-instructions.md) and [setup documentation](../../../README.md) for local conventions. This is an existing npm multi-deck workspace, not a new Slidev scaffold. Do not create another project, change package managers, or assume a `dev` script. Not for demo-application-only edits or unrelated Markdown documentation.
+Read [the repository guide](../../../AGENTS.md) and [setup documentation](../../../README.md) for local conventions. This is an existing npm multi-deck workspace, not a new Slidev scaffold. Do not create another project, change package managers, or assume a `dev` script. Not for demo-application-only edits or unrelated Markdown documentation.
 
 After the documented dependency setup, use the locally installed CLI:
 

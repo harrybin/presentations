@@ -26,8 +26,8 @@ routeAlias: index
 
 # Presentation Overview
 <span class="presentation-overview-marker"></span>
-<!-- <a href="/webappLocalization/" target="_blank">WebApp-Localization - DWX (Juli 2025)</a> -->
 
+## EKON 30 · Vorträge und Workshops 2026
 
 <a href="/ekon30-spec-driven-development/" target="_blank">Spec-Driven Development: Mit AI-Agent-Squads vom PRD zum autonomen Code [EKON30 Nov 26]</a>
 
@@ -37,15 +37,11 @@ routeAlias: index
 
 <a href="/ekon30-react19-mui6-workshop/" target="_blank">Workshop: Moderne Web-Applikationen mit React und Material-UI in TypeScript [EKON30 Nov 26]</a>
 
-
 <br/>
-
-
 
 <a href="/bmad-anforderungen-tests/" target="_blank">KI-gestützte Anforderungs- und Testfallentwicklung mit der BMad-Methode [ADC Mar 26]</a>
 
 <a href="/aiops-Mainteance-mit-KI/" target="_blank">AIOps: Maintenance von Softwaresystemen durch KI [INFINITE AI CONF Jul 26]</a>
-
 
 <br/>
 

@@ -13,10 +13,11 @@ overviewSnapshots: false
 glowEnabled: true
 author: "Harald Binkle & Thomas Tomow"
 showCopyright: false
-description: "60-Minuten-Vortrag: Mit GitHub Copilot und Spec-Driven Development vom PRD zu überprüfbarem, agentisch erstelltem Code."
+description: "Mit GitHub Copilot und der BMad Method vom PRD zu überprüfbarem, agentisch erstelltem Code."
 publicDeckPath: ekon30-spec-driven-development
 htmlAttrs:
   class: ekon30-deck
+  lang: de
 ###### slides start ######
 layout: cover
 coverImage: bmad-agent-fleet.png
@@ -26,9 +27,9 @@ hideInToc: true
 
 # Spec-Driven Development
 
-## Mit AI-Agent-Squads vom PRD zum autonomen Code
+## BMad: Vom PRD zu überprüfbarem Code
 
-**EKON 30 · Düsseldorf, November 2026 · 60 Min. · Harald Binkle & Thomas Tomow**
+**EKON 30 · Düsseldorf, November 2026 · Harald Binkle & Thomas Tomow**
 
 <!--
 Einstieg: Ein Agent kann in Minuten viele Dateien ändern. Die entscheidende Frage ist nicht, wie schnell er Code schreibt, sondern ob das Team vorher klar genug beschrieben hat, was richtig bedeutet.
@@ -75,7 +76,7 @@ hideInToc: true
 
 <v-clicks>
 
-- **Format:** Impulsvortrag mit drei kurzen Live-Demos
+- **Format:** Impulsvortrag mit einem durchgehenden Live-Demo-Faden
 - **Zielgruppe:** Entwickler:innen, Tech Leads und Architekt:innen
 - **Vorkenntnisse:** Grundverständnis von Anforderungen und KI-Coding-Assistenten
 - **Ergebnis:** ein nachvollziehbarer Weg von der Produktidee zu getesteten Änderungen
@@ -93,20 +94,20 @@ background: compass-right.png
 hideInToc: true
 ---
 
-# In 60 Minuten
+# Vom PRD zur prüfbaren Lieferung
 
 <v-clicks>
 
-- 00–12′ Warum Prompt-zu-Code allein nicht skaliert
-- 12–25′ PRD, Spezifikation und Qualitätskriterien
-- 25–42′ Agent-Squad und Arbeitsfluss mit GitHub Copilot
-- 42–53′ Drei Demos: Specify → Plan → Implementieren
-- 53–60′ Qualität, Grenzen und Fragen
+- Warum Prompt-zu-Code allein nicht skaliert
+- PRD, Ticket-Spec und Qualitätskriterien
+- BMad Method: Klarheit, Planung und Rollenteilung
+- Ein Demo-Faden mit Demo Time: Clarify → Plan → Build & verify
+- Learn & adjust: Qualität, Grenzen und Fragen
 
 </v-clicks>
 
 <!--
-Die Zeiten ergeben 60 Minuten inklusive sieben Minuten Abschluss und Fragen. Demostationen: 42:00–45:00 (3 Min.), 45:00–48:00 (3 Min.), 48:00–53:00 (5 Min.). Die 11 Minuten enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code den Demo-Time-Akt `.run/baseline/.demo/sdd-talk.json` starten. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
+Die Phasen desselben Demo-Fadens enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
 -->
 
 ---
@@ -143,24 +144,24 @@ Das Publikum fragen: Wo wird bei euch „fertig“ heute festgelegt — im Ticke
 -->
 
 ---
-title: PRD ist Orientierung, Spezifikation ist Vertrag
+title: BMad macht das Ticket zur Spezifikation
 layout: image-left
 background: bmad-context-hierarchy.png
 ---
 
-# Vom „Warum“ zum testbaren „Was“
+# Das Ticket ist die belastbare Spec
 
 <v-clicks>
 
-- **PRD:** Nutzerproblem, Ziel, Nutzen und Erfolgssignale
-- **Spec:** Verhalten, Randfälle, Akzeptanzkriterien und Nicht-Ziele
-- **Plan:** Architektur, Datenfluss und technische Entscheidungen
-- **Tasks:** kleine, abhängige und überprüfbare Arbeitspakete
+- **PRD oder Brief:** Quelle, wenn mehrere Beteiligte sich abstimmen müssen
+- **Sofia (Product Owner):** überführt Quellen in Tickets mit stabilen Requirement-IDs
+- **Ticket = Spec:** Requirements, Constraints, Done when und Boundaries
+- **Build-Plan:** Vorgehen für eine Story; Umfang passt sich dem Risiko an
 
 </v-clicks>
 
 <!--
-Die Dokumente sind kein Selbstzweck. Jedes Artefakt reduziert eine andere Unsicherheit und wird zur Eingabe für den nächsten Schritt.
+Ein PRD ist optional: BMad ergänzt nur die Planung, die Größe und Risiko der Arbeit rechtfertigen. Für eine Story reicht oft das Ticket; der Build-Plan hält Vorgehen und Status fest.
 -->
 
 ---
@@ -186,7 +187,7 @@ layout: default
 </v-clicks>
 
 <!--
-Dieselbe Fragestellung wie in allen drei Demo-Stationen. Die Spec entscheidet: exakter Vergleich, Reihenfolge des ersten Auftretens, leerer Track als eigener Schlüssel, Eingabe unverändert. Gute Spec-Arbeit macht Annahmen explizit und lädt das Team zur Entscheidung ein.
+Dieselbe Story zieht sich durch den gesamten Demo-Faden: Sessions je Track zählen. Die Spec entscheidet über exakten Vergleich, Reihenfolge des ersten Auftretens, leeren Track als eigenen Schlüssel und unveränderte Eingaben. Gute Spec-Arbeit macht Annahmen explizit und lädt das Team zur Entscheidung ein.
 -->
 
 ---
@@ -194,37 +195,29 @@ title: Der Entwicklungsfluss
 layout: default
 ---
 
-# Artefakte statt Mega-Prompt
+# Vier Schritte, ein gemeinsamer Ticket-Faden
 
-<div class="ekon30-flow ekon30-flow--six">
-  <div v-click class="ekon30-flow__step">
-    <strong>PRD / Idee</strong>
-    <p>Ziel, Nutzen und Erfolgssignal</p>
-  </div>
-  <div v-click class="ekon30-flow__step">
-    <strong>Specify</strong>
-    <p>Verhalten und Akzeptanz klären</p>
-  </div>
+<div class="ekon30-flow ekon30-flow--four">
   <div v-click class="ekon30-flow__step">
     <strong>Clarify</strong>
-    <p>Offene Fragen sichtbar machen</p>
+    <p>Absicht, Grenzen und offene Fragen</p>
   </div>
   <div v-click class="ekon30-flow__step">
-    <strong>Plan + Tasks</strong>
-    <p>Arbeit klein und prüfbar schneiden</p>
+    <strong>Plan · Sofia</strong>
+    <p>Ticket-Spec und passende Arbeitseinheiten</p>
   </div>
   <div v-click class="ekon30-flow__step">
-    <strong>Implement</strong>
-    <p>Änderung samt Tests erstellen</p>
+    <strong>Build &amp; verify</strong>
+    <p>Eine Story bauen, prüfen und reviewen</p>
   </div>
   <div v-click class="ekon30-flow__step">
-    <strong>Converge</strong>
-    <p>Lücken zurück zu den Tasks</p>
+    <strong>Learn &amp; adjust</strong>
+    <p>Am Epic-Ende Bilanz ziehen, Plan anpassen</p>
   </div>
 </div>
 
 <!--
-Der aktuelle Spec Kit Kernprozess führt Specify, Plan, Tasks, Implement und Converge. Clarify ist ein sinnvoller Klärungsschritt, wenn Unsicherheit bleibt. Quelle: https://github.github.com/spec-kit/
+Die vier Stufen sind keine starre Pipeline: Kleine Änderungen starten direkt bei Build & verify; PRD, UX und Architektur kommen nur bei Bedarf hinzu. Learn & adjust schließt ein Epic ab, nicht jede einzelne Story.
 -->
 
 ---
@@ -237,78 +230,218 @@ background: bmad-agents-specialized-experts.png
 
 <v-clicks>
 
-- **Product/Requirements:** macht Ziele und offene Fragen sichtbar
-- **Architect:** schlägt Plan und Constraints vor
-- **Implementer:** arbeitet auf klar abgegrenzten Tasks
-- **Tester/Reviewer:** prüft Verhalten gegen Spec und Tests
-- **Mensch:** entscheidet, priorisiert und verantwortet den Merge
+- **Mary (Analyst):** klärt eine vage Idee; **John (PM):** schreibt bei Bedarf ein PRD
+- **Sofia (PO):** pflegt Anforderungen und schneidet Tickets
+- **Sally (UX) / Winston (Architekt):** ergänzen Spezialwissen, wenn es gebraucht wird
+- **Amelia (`bmad-build`):** plant, implementiert und reviewt eine Story
+- **Mensch:** entscheidet offene Fragen, prüft das Ergebnis und markiert es „done“
 
 </v-clicks>
 
 <!--
-Squad bezeichnet hier die Arbeitsteilung, nicht die Behauptung, dass jede Copilot-Oberfläche beliebig viele Agenten parallel ausführt. Copilot-Funktionen und Agenten-Unterstützung unterscheiden sich je nach Produktoberfläche.
+Die Rollen sind die BMad-Arbeitsteilung, keine Behauptung paralleler Ausführung. In der Demo arbeiten Sofia und Amelia nacheinander; die Person steuert Entscheidungen und Abnahme.
 -->
 
 ---
-title: Demo 1 · Aus Idee wird Spec
+title: Demo-Faden · Von der Idee zum Ticket
 layout: image-right
 background: bmad-context-hierarchy.png
 ---
 
-# Demo 1 · Fragen vor Formulierungen
+# Ein roter Faden · Die Story wird zur Spec
 
 <v-clicks>
 
-- **3 Min.** · `prd.md` in Copilot Chat bereitstellen
-- Randfälle und Nicht-Ziele klären lassen
-- Entscheidung: `KI` und `ki` sind verschieden
-- Ergebnis gegen vorbereitete `spec.md` prüfen
+- **Start · 3 Min.** · Sofia (`bmad-agent-po`) liest `prd.md`
+- Eine Story für genau einen Build-Scope schneiden
+- Groß-/Kleinschreibung und Randfälle explizit festhalten
+- Fallback: vorbereitete Ticket-Spec in `spec.md`
 
 </v-clicks>
 
 <!--
-Konkreter Ablauf und Prompt S1: demo-projects/ekon30-talk-demo/README.md. .run/baseline vorab als eigenen VS-Code-Ordner öffnen. Copilot nur Fragen stellen lassen. Nach 45 Sekunden ohne brauchbare Antwort abbrechen und die vorbereiteten Fragen sowie Entscheidungen in spec.md zeigen. Referenzartefakt nicht als live erzeugt ausgeben.
+Konkreter Ablauf: erster Schritt im durchgehenden Demo-Faden, siehe `demo-projects/ekon30-talk-demo/README.md`. BMad vorab ausschließlich in `.run/baseline` installieren. Nach 45 Sekunden ohne brauchbares Ticket die vorbereitete `spec.md` zeigen; sie ist ein Offline-Fallback und kein von Sofia erzeugtes Artefakt.
 -->
 
 ---
-title: Demo 2 · Plan und Tasks
+title: Ticket-Spec · Der Vertrag bleibt sichtbar
+layout: image-left
+background: bmad-context-hierarchy.png
+---
+
+# Entscheidungen werden prüfbare Anforderungen
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+**Fachlicher Vertrag**
+
+<v-clicks>
+
+- `KI` und `ki` sind verschiedene Tracks
+- Ergebnisse folgen dem ersten Auftreten
+- Leere Namen zählen; leere Eingabe ergibt nichts
+
+</v-clicks>
+
+</div>
+
+<div>
+
+**Arbeitsgrenzen**
+
+<v-clicks>
+
+- Eingabe und Einträge bleiben unverändert
+- nur `SessionCatalog.pas` ändern
+- vorhandene Tests liefern den Nachweis
+
+</v-clicks>
+
+</div>
+
+</div>
+
+<!--
+Das sind die konkreten Anforderungen und Grenzen der vorbereiteten Ticket-Spec. Im Live-Pfad prüfen wir Sofias tatsächliches Ticket; bei Timeout klar als Offline-Fallback kennzeichnen.
+-->
+
+---
+title: Demo-Faden · Ticket wird zum Build-Plan
 layout: image-left
 background: bmad-navigation-compass-ai.png
 ---
 
-# Demo 2 · Planung vor Delegation
+# Derselbe Ticket-Faden · Den Build planen
 
 <v-clicks>
 
-- **3 Min.** · Spec und Pascal-Code als Kontext
-- Plan mit höchstens drei überprüfbaren Tasks
-- Abhängigkeiten und Testfälle gegen die Spec prüfen
+- **Weiter · 3 Min.** · frischer Build-Chat mit `bmad-build`
+- Dasselbe Ticket und der Pascal-Code bleiben der Kontext
+- Vorgehen und offene Fragen prüfen, vor Codeänderungen pausieren
 
 </v-clicks>
 
 <!--
-Prompt S2 im Runbook: nur Plan, keine Änderungen. Nach 45 Sekunden ohne verwertbare Antwort den vorbereiteten plan.md zeigen. Aufgabenfolge Vertrag prüfen → implementieren → testen, inklusive Scope-Grenze.
+Der Chat wechselt wegen der sauberen Build-Sitzung, nicht die Story: BMad baut auf Sofias Ticket auf. Wenn die Antwort nach 45 Sekunden ausbleibt oder die geplante Änderung außerhalb des Scopes liegt, den Offline-Plan in `plan.md` zeigen; er ist keine BMAD-generierte Build-Plan-Datei.
 -->
 
 ---
-title: Demo 3 · Implementieren und konvergieren
+title: Der Build-Plan ist ein Entscheidungspunkt
+layout: default
+---
+
+# Vor dem ersten Edit ist der Scope sichtbar
+
+<div class="ekon30-flow ekon30-flow--four">
+  <div v-click class="ekon30-flow__step">
+    <strong>Ticket lesen</strong>
+    <p>Requirements und Grenzen übernehmen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Änderung planen</strong>
+    <p>Nur die betroffenen Dateien und Schritte</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Nachweis festlegen</strong>
+    <p>Vorhandene Checks ausführen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Freigabe abwarten</strong>
+    <p>Der Mensch entscheidet vor dem Build</p>
+  </div>
+</div>
+
+<!--
+Der Plan verbindet Ticket und Umsetzung. Die Pause vor Codeänderungen ist die sichtbare menschliche Kontrollstelle, auch wenn BMad für eine kleine Story einen verkürzten Light-Path wählt.
+-->
+
+---
+title: Demo-Faden · Build und Verifikation
 layout: image-right
 background: bmad-governance-control-center.png
 ---
 
-# Demo 3 · Code ist ein Zwischenstand
+# Derselbe Ticket-Faden · Bauen, prüfen, abnehmen
 
 <v-clicks>
 
-- **5 Min.** · Fehler: `SameText` fasst `KI` und `ki` zusammen
-- Copilot nur die Pascal-Unit ändern lassen
-- Test und Diff gegen die Spec prüfen
+- **Abschluss · 5 Min.** · den freigegebenen Plan im selben `bmad-build`-Chat umsetzen
+- Nur `SessionCatalog.pas` ändern, Tests ausführen und reviewen
+- Ergebnis und Status `built` prüfen; „done“ bleibt Menschensache
 - bei Timeout: vorbereitete Referenzlösung und Test zeigen
 
 </v-clicks>
 
 <!--
-Vorab im Demo-Verzeichnis `node demo.mjs prepare` und `node demo.mjs test baseline` ausführen: Der absichtliche Fehler muss scheitern. Im Vortrag den Demo-Time-Akt `.run/baseline/.demo/sdd-talk.json` nur im isolierten Workspace starten. Nach 60 Sekunden oder Scope-Verstoß Agent abbrechen; die Fallback-Szene zeigt `node demo.mjs test solution` und `node demo.mjs diff`. Solution ist eine vorbereitete Referenz, kein live erzeugtes Agent-Ergebnis. Keine ungeplante Korrekturschleife.
+Vorab im Demo-Verzeichnis `node demo.mjs prepare` und `node demo.mjs test baseline` ausführen: Der absichtliche Fehler muss scheitern. Im Vortrag in der Erweiterung **Demo Time** den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) nur im isolierten Workspace starten. Nach 60 Sekunden oder Scope-Verstoß Agent abbrechen; die Fallback-Szene zeigt `node demo.mjs test solution` und `node demo.mjs diff`. BMad Build kann lokal committen; im Demo-Workspace darf nichts gepusht werden. `solution` ist eine vorbereitete Referenz, kein live erzeugtes Agent-Ergebnis.
+-->
+
+---
+title: Built ist noch nicht Done
+layout: image-left
+background: bmad-human-ai-copilot.png
+---
+
+# Der Agent liefert — das Team nimmt ab
+
+<div class="grid grid-cols-2 gap-10 mt-7">
+
+<div>
+
+## Built
+
+- freigegebener Scope umgesetzt
+- vorhandene Checks gelaufen
+- tatsächlicher Diff nachvollziehbar
+
+</div>
+
+<div>
+
+## Done
+
+- Ergebnis gegen Ticket geprüft
+- Grenzen und Annahmen bestätigt
+- verantwortliche Person gibt frei
+
+</div>
+
+</div>
+
+<!--
+Die Demo endet mit einem gebauten, geprüften Ergebnis im lokalen Workspace. BMADs Status built ist keine Produktionsfreigabe; die menschliche Abnahme bleibt Teil des roten Fadens.
+-->
+
+---
+title: Derselbe Ticket-Scope · Der Test macht den Unterschied sichtbar
+layout: default
+---
+
+# Die fachliche Regel wird zum überprüfbaren Ergebnis
+
+<div class="ekon30-flow ekon30-flow--four">
+  <div v-click class="ekon30-flow__step">
+    <strong>Ticket</strong>
+    <p>`KI` und `ki` sind getrennte Tracks</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Baseline</strong>
+    <p>Der gezielte Groß-/Kleinschreibungs-Check schlägt fehl</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Referenzlösung</strong>
+    <p>7 vorbereitete Checks bestanden</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Abnahme</strong>
+    <p>Diff auf `SessionCatalog.pas` prüfen; erst dann „done“</p>
+  </div>
+</div>
+
+<!--
+Die gezeigten Testergebnisse stammen aus der vorbereiteten Referenz mit isoliertem FPC 3.2.2, nicht aus einer live von BMAD erzeugten Änderung. Im Live-Pfad tatsächlichen Agent-Diff und Testlauf prüfen; die Referenz ist der zeitgebundene Fallback.
 -->
 
 ---
@@ -321,10 +454,10 @@ background: bmad-governance-control-center.png
 
 <v-clicks>
 
-- Spec-Check: vollständig, testbar, widerspruchsfrei?
-- Task-Check: klein genug und zur Spec rückverfolgbar?
-- Code-Check: Tests, Lint, Security und Diff geprüft?
-- Merge-Check: verantwortliche Person entscheidet
+- Ticket-Check: Requirements, Quellen, Constraints und Grenzen stimmig?
+- Build-Check: Umfang und Vorgehen passen zu einer Story?
+- Ergebnis-Check: Tests, Review und Diff geprüft?
+- Abnahme: verantwortliche Person markiert die Story „done“
 
 </v-clicks>
 
@@ -341,9 +474,9 @@ layout: statement
 
 <v-clicks>
 
-- zuerst Absicht und Grenzen klären
-- Artefakte schrittweise verfeinern
-- Copilot auf kleine, überprüfbare Aufgaben ansetzen
+- BMad wählt die kleinste passende Route
+- Das Ticket hält Anforderungen und Grenzen stabil
+- `bmad-build` baut und prüft eine Story pro Sitzung
 - Qualität und Verantwortung beim Team lassen
 
 </v-clicks>
@@ -363,7 +496,10 @@ hideInToc: true
 <v-clicks>
 
 - [EKON 30 · KI Praxis und Tools für Delphi](https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/)
-- [GitHub Spec Kit: Prozess und Agentic SDD](https://github.github.com/spec-kit/)
+- [BMad Method: vier Stufen und Rollen](https://docs.bmad-method.org/start/how-bmad-works/)
+- [BMad Method: Initiative und Tickets planen](https://docs.bmad-method.org/plan/write-and-slice-the-initiative/)
+- [BMad Method: Build and verify](https://docs.bmad-method.org/build/build-and-verify/)
+- [BMad Method: Ticket Tree](https://docs.bmad-method.org/reference/ticket-tree/)
 - [Copilot: Customization Cheat Sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
 - Demo & Ablauf: `demo-projects/ekon30-talk-demo/README.md`
 - Bestehende Repository-Inhalte: BMad, Context Engineering und GitHub Copilot
@@ -375,11 +511,9 @@ Die EKON-Seite positioniert den Track praxisnah: vom Copilot-Alltag bis zu Agent
 -->
 
 ---
-
 src: /special-slides/questions.md
 ---
 
 ---
-
 src: /special-slides/thank-you.md
 ---

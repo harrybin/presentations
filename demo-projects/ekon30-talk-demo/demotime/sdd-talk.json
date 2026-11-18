@@ -1,7 +1,7 @@
 {
   "$schema": "https://demotime.show/demo-time.schema.json",
   "title": "EKON 30 · Spec-Driven Development",
-  "description": "11 Minuten: PRD → Spec → Plan → begrenzte Änderung. Erst die jeweilige Live-Szene zeigen; bei Timeout die folgende Fallback-Szene verwenden.",
+  "description": "Ein zusammenhängender Demo-Faden: PRD → BMAD-Ticket → Build-Plan → überprüfte Änderung. Ticket, Story und Scope bleiben über alle Phasen verbunden; bei Timeout die jeweilige Fallback-Szene verwenden.",
   "version": 3,
   "timer": 11,
   "loop": false,
@@ -9,7 +9,7 @@
     {
       "id": "sdd-reset",
       "title": "Start · Baseline zurücksetzen",
-      "description": "Setzt nur SessionCatalog.pas zurück und öffnet das PRD.",
+      "description": "Setzt nur SessionCatalog.pas zurück und öffnet das Briefing.",
       "moves": [
         {
           "action": "executeTerminalCommand",
@@ -26,8 +26,8 @@
     },
     {
       "id": "sdd-s1",
-      "title": "S1 · Fragen statt raten",
-      "description": "Maximal 45 Sekunden. Bei guter Antwort eine fachliche Frage auswählen und die Entscheidung in der Spec zeigen; bei Timeout die nächste Fallback-Szene nutzen.",
+      "title": "Demo-Faden · Sofia klärt und schreibt das Ticket",
+      "description": "Maximal 45 Sekunden. Eine offene Anforderung gemeinsam klären und das Standalone-Ticket prüfen; bei Timeout die nächste Fallback-Szene nutzen.",
       "autoAdvanceAfter": 45,
       "moves": [
         {
@@ -39,16 +39,19 @@
           "action": "newCopilotChat"
         },
         {
-          "action": "askCopilotChat",
-          "message": "Lies #file:prd.md. Stelle höchstens drei konkrete Fragen zu fachlichen Entscheidungen und Randfällen. Ändere keine Dateien. Triff keine Annahmen als Fakten und schreibe noch keine Implementierung."
+          "action": "agentCopilotChat",
+          "message": "/bmad-agent-po Schreibe aus #file:prd.md ein Standalone-Ticket für genau eine Story und eine Build-Sitzung unter _bmad-output/backlog/ticket-sessions-je-track.md. Stelle Rückfragen zu offenen fachlichen Entscheidungen, statt Annahmen als Fakten einzutragen. Nicht implementieren."
         }
       ]
     },
     {
       "id": "sdd-s1-fallback",
-      "title": "S1 · Fallback: vorbereitete Fragen",
-      "description": "Die Entscheidungen sind bereits in der Spec dokumentiert; die Live-Antwort muss sie nicht neu erzeugen.",
+      "title": "Ticket-Schritt · Fallback: vorbereitete Spec",
+      "description": "Die Entscheidungen sind in der Offline-Ticket-Spec dokumentiert; sie wurde nicht von Sofia live erzeugt.",
       "moves": [
+        {
+          "action": "cancelCopilotChat"
+        },
         {
           "action": "open",
           "path": "spec.md",
@@ -57,36 +60,40 @@
         {
           "action": "highlight",
           "path": "spec.md",
-          "startPlaceholder": "## Vorbereitete Klärungsfragen",
-          "endPlaceholder": "## Akzeptanzkriterien"
+          "startPlaceholder": "## Requirements",
+          "endPlaceholder": "## Boundaries"
         }
       ]
     },
     {
       "id": "sdd-s2",
-      "title": "S2 · Ein begrenzter Plan",
-      "description": "Maximal 45 Sekunden. Ergebnis mit vorbereiteten Taskgrenzen und Checks vergleichen; bei Timeout die nächste Fallback-Szene nutzen.",
+      "title": "Ticket-Faden · BMad Build plant",
+      "description": "Nur der Chat wechselt für den sauberen Build-Start; dasselbe Ticket bleibt die Spezifikation. Maximal 45 Sekunden auf den Build-Plan warten; bei Timeout die nächste Fallback-Szene nutzen.",
       "autoAdvanceAfter": 45,
       "moves": [
         {
-          "action": "open",
-          "path": "spec.md",
-          "focusTop": true
+          "action": "executeTerminalCommand",
+          "command": "node ..\\..\\demo.mjs prepare-bmad-ticket",
+          "terminalId": "DemoTime",
+          "waitTimeout": 60000
         },
         {
           "action": "newCopilotChat"
         },
         {
-          "action": "askCopilotChat",
-          "message": "Lies #file:spec.md, #file:SessionCatalog.pas und #file:CatalogTests.lpr. Schlage höchstens drei Tasks mit Abhängigkeiten und prüfbaren Ergebnissen vor. Ändere keine Dateien und starte keine Befehle."
+          "action": "agentCopilotChat",
+          "message": "/bmad-build _bmad-output/backlog/ticket-sessions-je-track.md Untersuche das Repository, zeige offene Fragen und deinen Build-Plan und pausiere vor Quellcodeänderungen für meine Freigabe. Halte den Scope auf SessionCatalog.pas und die vorhandenen Tests begrenzt."
         }
       ]
     },
     {
       "id": "sdd-s2-fallback",
-      "title": "S2 · Fallback: vorbereiteter Plan",
-      "description": "Task 2 hängt von Task 1 ab, Task 3 von Task 2. Der Plan ist eine Offline-Referenz und kein live erzeugtes Agent-Ergebnis.",
+      "title": "Plan-Schritt · Fallback: vorbereiteter Build-Plan",
+      "description": "Der Plan ist eine Offline-Referenz und keine von bmad-build erzeugte Plan-Datei.",
       "moves": [
+        {
+          "action": "cancelCopilotChat"
+        },
         {
           "action": "open",
           "path": "plan.md",
@@ -102,7 +109,7 @@
     },
     {
       "id": "sdd-s3",
-      "title": "S3 · Eine Änderung, echte Tests",
+      "title": "Ticket-Faden · Freigegebenen Plan umsetzen",
       "description": "Nur im isolierten .run/baseline-Workspace ausführen. Der Baseline-Test schlägt absichtlich fehl. Maximal 60 Sekunden Agent-Wartezeit; bei Timeout nächste Szene.",
       "autoAdvanceAfter": 60,
       "moves": [
@@ -124,17 +131,14 @@
           "endPlaceholder": "Break;"
         },
         {
-          "action": "newCopilotChat"
-        },
-        {
           "action": "agentCopilotChat",
-          "message": "Setze #file:spec.md nur in #file:SessionCatalog.pas um. Ändere keine Tests oder anderen Dateien. Bewahre Reihenfolge und Eingaben. Nutze Delphi-kompatibles Object Pascal. Führe selbst nichts aus; nenne Änderungen und offene Punkte. Warte auf meine Prüfung."
+          "message": "Der Build-Plan für dieses Ticket ist freigegeben. Setze die Story nur in #file:SessionCatalog.pas um; ändere keine Tests oder anderen Dateien. Bewahre Reihenfolge und Eingaben, führe die vorhandenen Pascal-Checks aus und reviewe den Diff. Nichts pushen; der Status bleibt bis zu meiner Prüfung „built“."
         }
       ]
     },
     {
       "id": "sdd-s3-fallback",
-      "title": "S3 · Fallback: vorbereitete Referenz",
+      "title": "Build-Schritt · Fallback: vorbereitete Referenz",
       "description": "Bei Timeout oder falschem Scope Copilot abbrechen. Die vorbereitete Lösung ist eine Referenz, kein live erzeugtes Ergebnis.",
       "moves": [
         {
@@ -154,14 +158,14 @@
         },
         {
           "action": "open",
-          "path": "context/beobachtung.md",
+          "path": "spec.md",
           "focusTop": true
         }
       ]
     },
     {
       "id": "sdd-s3-verify",
-      "title": "S3 · Live-Ergebnis prüfen",
+      "title": "Build-Schritt · Live-Ergebnis prüfen",
       "description": "Nur wenn die Agent-Antwort rechtzeitig und im richtigen Scope fertig ist: Baseline-Checks ausführen und tatsächlichen Diff prüfen.",
       "moves": [
         {

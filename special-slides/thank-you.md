@@ -1,9 +1,13 @@
 ---
-layout: cover-dark
-background: /thank_you.jpeg
+layout: cover
+background: thank_you.jpeg
+# `background` bleibt für ältere Themes; das 2026-Theme verwendet `coverImage`.
+coverImage: thank_you.jpeg
 backgroundPosition: 20% 100%
 title: Thank you
 hideInToc: true
+isDark: true
+showXebiaLogo: false
 ---
 
 <!-- issue in theme. See: https://github.com/xebia/presentation-templates/issues/12 -->
