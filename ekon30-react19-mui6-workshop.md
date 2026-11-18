@@ -438,6 +438,15 @@ layout: two-cols
 
 # Ein Narrowing-Schritt nach dem anderen
 
+````md magic-move
+```ts
+if (typeof value !== 'object' || value === null) return false
+```
+
+```ts
+const item = value as Record<string, unknown>
+```
+
 ```ts
 function isSession(value: unknown): value is Session {
   if (typeof value !== 'object' || value === null) return false
@@ -446,6 +455,7 @@ function isSession(value: unknown): value is Session {
     .every((key) => typeof item[key] === 'string')
 }
 ```
+````
 
 ::right::
 
@@ -1422,14 +1432,18 @@ layout: default
 
 # `fetch` wirft nicht automatisch bei 404
 
+````md magic-move
 ```ts
-const response = await fetch(url, {
-  signal: controller.signal,
-  headers: { Accept: 'application/json' },
-})
+const response = await fetch(url)
+const data = await response.json()
+```
+
+```ts
+const response = await fetch(url)
 if (!response.ok) throw new Error(`HTTP ${response.status}`)
 const data: unknown = await response.json()
 ```
+````
 
 <v-clicks>
 
