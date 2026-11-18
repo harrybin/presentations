@@ -1,6 +1,6 @@
 id: positive-trigger-002
 name: Requested chapter artwork batch
-description: Load the image skill; obtain required authorization before any external submission. Keep separate mappings for both chapter images, serialize clipboard copy/save, and verify identity, landscape dimensions, and references.
+description: Load the image skill; use the direct image-generation tool only for the explicit request. Keep separate mappings for both chapter images and verify their identity, saved paths, and references without overwriting existing assets.
 tags:
   - positive-trigger
 inputs:

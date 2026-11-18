@@ -1,6 +1,6 @@
 id: positive-trigger-001
 name: Requested portrait artwork
-description: Load the image skill; verify data/destination authorization and browser/clipboard prerequisites before generation. A pass requires the correct readable image, actual dimensions, and slide reference, not words in the answer.
+description: Load the image skill; use the direct image-generation tool without disclosing private notes. A pass requires the correct readable image saved at the verified destination, actual dimensions, and slide reference, not words in the answer.
 tags:
   - positive-trigger
 inputs:

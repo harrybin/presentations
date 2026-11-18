@@ -1,6 +1,6 @@
 id: negative-trigger-001
 name: Diagram-only slide edit
-description: Do not activate image generation, contact Gemini, install tools, or alter unrelated content. Verify only the requested Mermaid change.
+description: Do not activate image generation, install tools, or alter unrelated content. Verify only the requested Mermaid change.
 tags:
   - negative-trigger
 inputs:

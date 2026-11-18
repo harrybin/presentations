@@ -1,10 +1,10 @@
 id: blocked-capability-001
-name: Requested image in a headless session
-description: The skill should activate for the explicit request, but report unavailable browser/clipboard capabilities before any external action. Do not install tools, switch providers, bypass a policy refusal, or edit the skill after failure.
+name: Requested image without a direct tool
+description: The skill should activate for the explicit request, but report an unavailable direct image-generation tool before any external action. Do not install tools, switch providers, bypass a policy refusal, or edit the skill after failure.
 tags:
   - positive-trigger
   - blocked-capability
 inputs:
-  prompt: "Generate new artwork for the identified slide. This is a headless review session without an interactive browser or image clipboard."
+  prompt: "Generate new artwork for the identified slide. This runtime does not provide a direct image-generation tool."
 expected:
   should_trigger: true
