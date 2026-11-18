@@ -775,6 +775,20 @@ layout: default
 
 # Erst den Plan freigeben, nicht die Vermutung
 
+````md magic-move
+```text
+Plane CountSessionsByTrack gemäß
+backlog/feature-request.md.
+```
+
+```text
+Plane CountSessionsByTrack gemäß
+backlog/feature-request.md.
+
+Scope: SessionCatalog.pas und
+CatalogTests.lpr.
+```
+
 ```text
 Plane CountSessionsByTrack gemäß
 backlog/feature-request.md.
@@ -785,6 +799,7 @@ CatalogTests.lpr.
 Nenne offene Fragen und Tests.
 Warte vor der Umsetzung auf Freigabe.
 ```
+````
 
 <v-clicks>
 
@@ -920,12 +935,23 @@ layout: two-cols
 
 **`AGENTS.md`**
 
+````md magic-move
+```md
+- Pascal bleibt kompatibel mit FPC Delphi mode.
+```
+
+```md
+- Pascal bleibt kompatibel mit FPC Delphi mode.
+- Catalog-Operationen ändern nicht ihre Eingabearrays.
+```
+
 ```md
 - Pascal bleibt kompatibel mit FPC Delphi mode.
 - Catalog-Operationen ändern nicht ihre Eingabearrays.
 - Nach Pascal-Änderungen: npm test
   und npm run test:fpc.
 ```
+````
 
 ::right::
 

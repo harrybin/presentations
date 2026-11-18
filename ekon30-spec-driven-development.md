@@ -324,7 +324,7 @@ layout: default
     <p>Absicht, Grenzen und offene Fragen</p>
   </div>
   <div v-click class="ekon30-flow__step">
-    <strong>Plan · Sofia</strong>
+    <strong>Plan</strong>
     <p>Ticket-Spec und passende Arbeitseinheiten</p>
   </div>
   <div v-click class="ekon30-flow__step">
@@ -721,7 +721,17 @@ layout: default
 
 # Ein gezielter Check macht den Fehler reproduzierbar
 
+````md magic-move
 ```pascal
+SetLength(Sessions, 1);
+Sessions[0].Track := 'KI';
+
+Counts := CountSessionsByTrack(Sessions);
+Check(Length(Counts) = 1, 'Ein Track wird gezählt');
+```
+
+```pascal
+SetLength(Sessions, 2);
 Sessions[0].Track := 'KI';
 Sessions[1].Track := 'ki';
 
@@ -729,6 +739,7 @@ Counts := CountSessionsByTrack(Sessions);
 Check(Length(Counts) = 2,
   'KI und ki sind getrennte Tracks');
 ```
+````
 
 <v-clicks>
 

@@ -838,6 +838,7 @@ layout: two-cols
 
 # Ein Testfall macht eine Regel sichtbar
 
+````md magic-move
 ```pascal
 // Baseline: fasst "KI" und "ki" als denselben Track auf
 if SameText(TrackA, TrackB) then
@@ -849,6 +850,7 @@ if SameText(TrackA, TrackB) then
 if TrackA = TrackB then
   Found := J;
 ```
+````
 
 ::right::
 
