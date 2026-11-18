@@ -108,6 +108,37 @@ hideInToc: true
 
 <!--
 Die Phasen desselben Demo-Fadens enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
+Quelle zum Konferenzkontext: https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/
+-->
+
+---
+title: Spec-Driven Development
+layout: default
+---
+
+# Eine Spec ist ein überprüfbarer Vertrag
+
+```mermaid
+flowchart LR
+  I["Absicht"] --> S["Spec"]
+  S --> P["Plan"]
+  P --> B["Build"]
+  B --> V["Verify"]
+  V -->|Abweichung| S
+  V -->|Abnahme| D["Done"]
+```
+
+<v-clicks>
+
+- Jeder Schritt hinterlässt ein prüfbares Artefakt.
+- Die Spec verbindet Produktabsicht mit Tests und Änderungen.
+- Feedback darf die Spec ändern — aber nicht unbemerkt den Vertrag.
+
+</v-clicks>
+
+<!--
+Das ist ein Arbeitsmodell, keine Behauptung, dass jede Änderung alle Stationen durchlaufen muss. BMad nutzt je nach Umfang und Risiko passende Pfade.
+Quelle: https://docs.bmad-method.org/start/how-bmad-works/
 -->
 
 ---
@@ -191,6 +222,96 @@ Dieselbe Story zieht sich durch den gesamten Demo-Faden: Sessions je Track zähl
 -->
 
 ---
+title: Ein Beispiel wird erst mit Daten konkret
+layout: image-right
+background: bmad-collaboration-requirements.png
+---
+
+# Beispiel: Eingabe und erwartetes Ergebnis
+
+```text
+Sessions: KI · Delphi · KI · ki · ""
+```
+
+<v-click>
+
+```text
+Ergebnis: KI:2 · Delphi:1 · ki:1 · "":1
+```
+
+</v-click>
+
+<v-clicks>
+
+- `KI` und `ki` bleiben getrennte Schlüssel.
+- Die Reihenfolge folgt dem ersten Auftreten.
+- Der leere Name ist ein Wert, kein fehlender Datensatz.
+
+</v-clicks>
+
+<!--
+Diese Werte entsprechen dem Fixture in demo-projects/ekon30-talk-demo/fixtures/common/CatalogTests.lpr und der vorbereiteten Ticket-Spec unter demo-projects/ekon30-talk-demo/spec.md.
+-->
+
+---
+title: Requirements in Ebenen
+layout: default
+---
+
+# Vom Ziel zur umsetzbaren Story
+
+<div class="grid grid-cols-3 gap-5 mt-8">
+  <div v-click class="ekon30-flow__step">
+    <strong>GOAL-1</strong>
+    <p>Sessions pro Track zählen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>R1–R4</strong>
+    <p>Exakter Vergleich, Reihenfolge, leere Werte, unveränderte Eingabe</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>RULE-1</strong>
+    <p>Keine GUI, API, Datenbank oder Parallelisierung</p>
+  </div>
+</div>
+
+<v-click>
+
+**Warum IDs?** Eine Diskussion kann auf dieselbe Anforderung zeigen — vom PRD bis zum Test.
+
+</v-click>
+
+<!--
+Im Beispiel stammen GOAL-1 und RULE-1 aus dem Brief, R1 bis R4 aus der Story-Spec. Die BMad-Ticket-Struktur verknüpft Requirement-IDs über Initiative und Story.
+Quelle: https://docs.bmad-method.org/reference/ticket-tree/
+-->
+
+---
+title: Akzeptanzkriterien sind beobachtbar
+layout: default
+---
+
+# „Funktioniert“ wird zu einem prüfbaren Verhalten
+
+| Eingabe          | Erwartung                     | Abgedeckte Regel      |
+| ---------------- | ----------------------------- | --------------------- |
+| `KI, Delphi, KI` | `KI:2, Delphi:1`              | Exakte Zählung        |
+| `KI, ki`         | Zwei Ergebnisse               | Groß-/Kleinschreibung |
+| `Delphi, KI`     | Diese Reihenfolge             | Erstes Auftreten      |
+| `KI, ""`         | Leerer Track bleibt enthalten | Leerer Schlüssel      |
+| `nil`            | Keine Ergebnisse              | Leere Eingabe         |
+
+<v-click>
+
+**Gute Kriterien beschreiben Resultate, keine Implementierungsdetails.**
+
+</v-click>
+
+<!--
+Für die Diskussion: Welche Zeile wäre in eurem Code-Review sonst nur implizite Annahme? Nicht die Tabelle mit vollständiger Verifikation verwechseln; sie zeigt ausgewählte Vertragsfälle.
+-->
+
+---
 title: Der Entwicklungsfluss
 layout: default
 ---
@@ -218,6 +339,109 @@ layout: default
 
 <!--
 Die vier Stufen sind keine starre Pipeline: Kleine Änderungen starten direkt bei Build & verify; PRD, UX und Architektur kommen nur bei Bedarf hinzu. Learn & adjust schließt ein Epic ab, nicht jede einzelne Story.
+Quelle: https://docs.bmad-method.org/start/how-bmad-works/
+-->
+
+---
+title: Der Vertrag passt zur Datenstruktur
+layout: default
+---
+
+# Delphi-Typen machen die Grenze sichtbar
+
+```pascal
+type
+  TSession = record
+    Track: string;
+  end;
+  TSessions = array of TSession;
+  TTrackCount = record
+    Track: string;
+    Count: Integer;
+  end;
+
+function CountSessionsByTrack(
+  const Sessions: TSessions
+): TTrackCounts;
+```
+
+<v-clicks>
+
+- `const` signalisiert: die Eingabe wird nicht verändert.
+- Ergebnis und Eingabe sind getrennte Datentypen.
+- Der Vertrag sagt noch nicht, wie gezählt wird.
+
+</v-clicks>
+
+<!--
+Auszug aus demo-projects/ekon30-talk-demo/fixtures/common/SessionData.pas und SessionCatalog.pas. `const` ist hier die Schnittstellenabsicht; der Test prüft zusätzlich, dass die übergebenen Werte unverändert bleiben.
+-->
+
+---
+title: Ein Vergleich, eine fachliche Entscheidung
+layout: default
+---
+
+# Der kleinste Code-Edit ändert die Bedeutung
+
+````md magic-move
+```pascal
+if SameText(Result[J].Track, Sessions[I].Track) then
+  Found := J;
+```
+
+```pascal
+if Result[J].Track = Sessions[I].Track then
+  Found := J;
+```
+````
+
+<v-clicks>
+
+- `SameText` faltet Schreibweisen zusammen.
+- `=` bewahrt den vereinbarten exakten Vergleich.
+- Ein Test muss den Unterschied `KI` / `ki` sichtbar machen.
+
+</v-clicks>
+
+<!--
+Die erste Variante ist der absichtliche Fehler in fixtures/baseline/SessionCatalog.pas. Die zweite stammt aus fixtures/solution/SessionCatalog.pas. Magic Move entwickelt denselben Codeblock Schritt für Schritt; beide Zustände sind vorbereitete Fixtures, kein live erzeugtes Agent-Ergebnis.
+-->
+
+---
+title: Algorithmus und bewusste Grenzen
+layout: image-left
+background: bmad-risk-lock.png
+---
+
+# Korrektheit zuerst — Optimierung nach Bedarf
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+## Aktuelle Lösung
+
+- Für jeden Eintrag Ergebnis durchsuchen
+- Beim ersten Treffer Zähler erhöhen
+- Sonst Ergebnis in Reihenfolge erweitern
+
+</div>
+
+<div>
+
+## Konsequenz
+
+- Laufzeit: **O(n²)** im Worst Case
+- Zusätzlicher Speicher: **O(k)** für `k` Tracks
+- Für den Demo-Scope: einfach, deterministisch, testbar
+
+</div>
+
+</div>
+
+<!--
+Keine Performancebehauptung: Das Fixture enthält keine Lastanforderung und kein Benchmark. Bei großen Katalogen wären Hash-Lookup und explizite Ordnung eine eigene, durch Messung begründete Änderung — nicht stillschweigend Teil dieses Tickets.
 -->
 
 ---
@@ -240,6 +464,36 @@ background: bmad-agents-specialized-experts.png
 
 <!--
 Die Rollen sind die BMad-Arbeitsteilung, keine Behauptung paralleler Ausführung. In der Demo arbeiten Sofia und Amelia nacheinander; die Person steuert Entscheidungen und Abnahme.
+Quelle: https://docs.bmad-method.org/start/how-bmad-works/
+-->
+
+---
+title: Kontext nicht vermischen
+layout: image-right
+background: bmad-project-context-agent-brain.png
+---
+
+# Jede Quelle hat eine andere Aufgabe
+
+<v-clicks>
+
+- **Brief:** fachliches Ziel und offene Fragen
+- **Ticket:** entschiedene Regeln, Constraints und Done when
+- **Repository:** vorhandene Typen, Tests und Stil
+- **Prompt:** konkreter Auftrag für diesen Arbeitsschritt
+- **Build-Plan:** Reihenfolge, betroffene Dateien und Nachweise
+
+</v-clicks>
+
+<v-click>
+
+**Konflikt?** Nicht raten: Quelle und Entscheidung klären.
+
+</v-click>
+
+<!--
+In der Demo ist context/copilot-instructions.md ein absichtlich explizit angefügtes Fixture, keine automatisch geladene Projektregel. Copilot-Anpassung hängt von der aktiven Oberfläche und dem jeweiligen Kontext ab.
+Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---
@@ -261,6 +515,35 @@ background: bmad-context-hierarchy.png
 
 <!--
 Konkreter Ablauf: erster Schritt im durchgehenden Demo-Faden, siehe `demo-projects/ekon30-talk-demo/README.md`. BMad vorab ausschließlich in `.run/baseline` installieren. Nach 45 Sekunden ohne brauchbares Ticket die vorbereitete `spec.md` zeigen; sie ist ein Offline-Fallback und kein von Sofia erzeugtes Artefakt.
+-->
+
+---
+title: Ein Prompt macht den Auftrag begrenzt
+layout: default
+---
+
+# Sofia: genau ein Ticket — keine Implementierung
+
+```text
+/bmad-agent-po Schreibe aus #file:prd.md ein Standalone-Ticket
+für genau eine Story und eine Build-Sitzung unter
+_bmad-output/backlog/ticket-sessions-je-track.md.
+
+Stelle Rückfragen zu offenen fachlichen Entscheidungen,
+statt Annahmen als Fakten einzutragen. Nicht implementieren.
+```
+
+<v-clicks>
+
+- **Rolle** und **Quelle** sind explizit.
+- Zielpfad und Umfang sind begrenzt.
+- Rückfragen sind erwünschtes Verhalten, kein Fehler.
+
+</v-clicks>
+
+<!--
+Wörtlicher Auszug aus demo-projects/ekon30-talk-demo/README.md. Die konkrete Sofia-Ausgabe live prüfen; das Offline-Ticket ist nicht als live generiert ausgeben.
+Quelle zum Planen und Schneiden von Initiativen: https://docs.bmad-method.org/plan/write-and-slice-the-initiative/
 -->
 
 ---
@@ -308,6 +591,33 @@ Das sind die konkreten Anforderungen und Grenzen der vorbereiteten Ticket-Spec. 
 -->
 
 ---
+title: Done when schließt Interpretationslücken
+layout: default
+---
+
+# Die Definition of Done ist konkret
+
+```text
+KI, Delphi, KI, ki, ""
+→ KI:2, Delphi:1, ki:1, "":1
+
+nil → leeres Ergebnis
+Eingabeliste → unverändert
+```
+
+<v-clicks>
+
+- Ergebniswerte und Reihenfolge sind beobachtbar.
+- Eingabeintegrität wird separat geprüft.
+- „Tests bestanden“ bedeutet nicht automatisch „fachlich akzeptiert“.
+
+</v-clicks>
+
+<!--
+Auszug aus demo-projects/ekon30-talk-demo/spec.md. Die vorbereitete Referenz hat sieben Checks; sie sind Belege für diese Anforderungen, aber keine vollständige formale Verifikation.
+-->
+
+---
 title: Demo-Faden · Ticket wird zum Build-Plan
 layout: image-left
 background: bmad-navigation-compass-ai.png
@@ -325,6 +635,32 @@ background: bmad-navigation-compass-ai.png
 
 <!--
 Der Chat wechselt wegen der sauberen Build-Sitzung, nicht die Story: BMad baut auf Sofias Ticket auf. Wenn die Antwort nach 45 Sekunden ausbleibt oder die geplante Änderung außerhalb des Scopes liegt, den Offline-Plan in `plan.md` zeigen; er ist keine BMAD-generierte Build-Plan-Datei.
+-->
+
+---
+title: Ein kleiner Plan ist trotzdem überprüfbar
+layout: default
+---
+
+# Vor dem Edit die Arbeit sichtbar machen
+
+```text
+1. SessionData.pas, Ticket und Tests lesen
+2. Nur SessionCatalog.pas ändern
+3. Bestehende Pascal-Checks ausführen
+4. Diff gegen Anforderungen prüfen
+```
+
+<v-clicks>
+
+- Erst Repository und Tests untersuchen.
+- Plan auf den Story-Scope begrenzen.
+- Vor Änderungen für die Freigabe pausieren.
+
+</v-clicks>
+
+<!--
+Der Text ist eine Kurzfassung der vorbereiteten Offline-Planreferenz demo-projects/ekon30-talk-demo/plan.md, kein live erzeugter Build-Plan. Die BMad-Dokumentation beschreibt Build & Verify: https://docs.bmad-method.org/build/build-and-verify/
 -->
 
 ---
@@ -376,6 +712,34 @@ background: bmad-governance-control-center.png
 
 <!--
 Vorab im Demo-Verzeichnis `node demo.mjs prepare` und `node demo.mjs test baseline` ausführen: Der absichtliche Fehler muss scheitern. Im Vortrag in der Erweiterung **Demo Time** den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) nur im isolierten Workspace starten. Nach 60 Sekunden oder Scope-Verstoß Agent abbrechen; die Fallback-Szene zeigt `node demo.mjs test solution` und `node demo.mjs diff`. BMad Build kann lokal committen; im Demo-Workspace darf nichts gepusht werden. `solution` ist eine vorbereitete Referenz, kein live erzeugtes Agent-Ergebnis.
+-->
+
+---
+title: Der Test trifft genau die Mehrdeutigkeit
+layout: default
+---
+
+# Ein gezielter Check macht den Fehler reproduzierbar
+
+```pascal
+Sessions[0].Track := 'KI';
+Sessions[1].Track := 'ki';
+
+Counts := CountSessionsByTrack(Sessions);
+Check(Length(Counts) = 2,
+  'KI und ki sind getrennte Tracks');
+```
+
+<v-clicks>
+
+- Baseline: der case-insensitive Vergleich verletzt R1.
+- Referenz: beide Schreibweisen bleiben getrennt.
+- Der Test benennt Fachverhalten statt interne Schleifen.
+
+</v-clicks>
+
+<!--
+Auszug aus fixtures/common/CatalogTests.lpr. `node demo.mjs test baseline` soll fehlschlagen; `node demo.mjs test solution` führt alle sieben vorbereiteten Checks aus. Vortragsdemo: keine Erfolgsmeldung behaupten, ohne den konkreten Lauf zu zeigen.
 -->
 
 ---
@@ -483,31 +847,6 @@ layout: statement
 
 <!--
 Die zentrale Mitnahme: Nicht „mehr Prompt“, sondern weniger Mehrdeutigkeit an den Übergaben.
--->
-
----
-title: Quellen
-layout: default
-hideInToc: true
----
-
-# Quellen & Einordnung
-
-<v-clicks>
-
-- [EKON 30 · KI Praxis und Tools für Delphi](https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/)
-- [BMad Method: vier Stufen und Rollen](https://docs.bmad-method.org/start/how-bmad-works/)
-- [BMad Method: Initiative und Tickets planen](https://docs.bmad-method.org/plan/write-and-slice-the-initiative/)
-- [BMad Method: Build and verify](https://docs.bmad-method.org/build/build-and-verify/)
-- [BMad Method: Ticket Tree](https://docs.bmad-method.org/reference/ticket-tree/)
-- [Copilot: Customization Cheat Sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
-- Demo & Ablauf: `demo-projects/ekon30-talk-demo/README.md`
-- Bestehende Repository-Inhalte: BMad, Context Engineering und GitHub Copilot
-
-</v-clicks>
-
-<!--
-Die EKON-Seite positioniert den Track praxisnah: vom Copilot-Alltag bis zu Agent-Teams, die Spezifikationen in produktiven Code überführen.
 -->
 
 ---
