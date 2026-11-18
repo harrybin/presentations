@@ -264,7 +264,7 @@ Teaser: Wir versprechen nicht „Code per Knopfdruck“, sondern üben einen sic
 ---
 title: Sessionprofil
 layout: image-right
-background: copilot-chat-1.png
+background: ekon30-github-copilot-a-bis-z/copilot-chat-tools.png
 hideInToc: true
 ---
 
@@ -310,7 +310,7 @@ Zwei Pausen sind eingeplant. Vorab-Setup ist erforderlich, damit wir die Übungs
 
 ---
 layout: chapter
-background: copilot-change-completions-model-1.png
+background: ekon30-github-copilot-a-bis-z/copilot-completion.png
 isDark: true
 ---
 
@@ -344,7 +344,7 @@ Leitplanke für den Tag: keine Secrets in Prompts, keine unbekannten Skripte bli
 ---
 title: Live-Demo · Vorschlag prüfen statt übernehmen
 layout: image-right
-background: copilot-change-completions-model-1.png
+background: ekon30-github-copilot-a-bis-z/copilot-completion.png
 ---
 
 # Erst Verhalten, dann Vorschlag
@@ -396,7 +396,7 @@ Quellen: https://code.visualstudio.com/docs/agent-customization/language-models,
 
 ---
 layout: chapter
-background: copilot-change-completions-model-1.png
+background: ekon30-github-copilot-a-bis-z/copilot-completion.png
 isDark: true
 ---
 
@@ -473,7 +473,7 @@ Der Auszug stammt aus dem vorhandenen `tests/CatalogTests.lpr`-Harness. Der Zäh
 ---
 title: Übung 1 · Completion im eigenen Rhythmus
 layout: image-left
-background: copilot-change-completions-model-2.png
+background: ekon30-github-copilot-a-bis-z/copilot-completion.png
 ---
 
 # Kleine Funktion, echter Test
@@ -495,7 +495,7 @@ Geführte Übung: 5 Min Demo, 15 Min eigenes Arbeiten, 10 Min Checkpoint. In src
 
 ---
 layout: chapter
-background: copilot-chat-1.png
+background: ekon30-github-copilot-a-bis-z/copilot-chat-tools.png
 isDark: true
 ---
 
@@ -618,7 +618,7 @@ Die Aussagen links und die Grenzen rechts folgen dem Starter und Übung 2. Eine 
 ---
 title: Übung 2 · Chat mit Arbeitskontext
 layout: image-right
-background: copilot-chat-2.png
+background: ekon30-github-copilot-a-bis-z/copilot-chat-tools.png
 ---
 
 # Erst verstehen, dann ändern
@@ -871,7 +871,7 @@ Die Befehle und Reviewgrenzen entsprechen der Agent-Mode-Übung. Änderungen nic
 ---
 title: Instructions oder Prompt File?
 layout: image-left
-background: settings-instruction-files-1.png
+background: ekon30-github-copilot-a-bis-z/copilot-project-rules.png
 ---
 
 # Dauerhafte Regeln vs. wiederholbarer Auftrag
@@ -891,7 +891,7 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 
 ---
 layout: chapter
-background: settings-instruction-files-1.png
+background: ekon30-github-copilot-a-bis-z/copilot-project-rules.png
 isDark: true
 ---
 
@@ -1007,7 +1007,7 @@ Aus Übung 4 abgeleiteter Review-Auftrag. Ein Prompt File startet die Aufgabe be
 ---
 title: Übung 4 · Projektkontext anpassen
 layout: image-right
-background: settings-instruction-files-2.png
+background: ekon30-github-copilot-a-bis-z/copilot-project-rules.png
 ---
 
 # Regeln sichtbar machen
