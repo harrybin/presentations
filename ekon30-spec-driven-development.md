@@ -66,28 +66,6 @@ Teaser mit kurzen Pausen. Die Lücke zwischen Absicht und prüfbarem Verhalten i
 -->
 
 ---
-title: Sessionprofil
-layout: image-right
-background: bmad-context-satellite.png
-hideInToc: true
----
-
-# Vom Wunsch zur überprüfbaren Lieferung
-
-<v-clicks>
-
-- **Format:** Impulsvortrag mit einem durchgehenden Live-Demo-Faden
-- **Zielgruppe:** Entwickler:innen, Tech Leads und Architekt:innen
-- **Vorkenntnisse:** Grundverständnis von Anforderungen und KI-Coding-Assistenten
-- **Ergebnis:** ein nachvollziehbarer Weg von der Produktidee zu getesteten Änderungen
-
-</v-clicks>
-
-<!--
-In einem Satz: Wir zeigen keinen Autopiloten ohne Kontrolle, sondern einen überprüfbaren Entwicklungsprozess, in dem GitHub Copilot die Arbeit beschleunigt.
--->
-
----
 title: Agenda
 layout: image-right
 background: compass-right.png

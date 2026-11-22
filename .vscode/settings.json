@@ -7,7 +7,11 @@
         "githubCopilotDelphi.md",
         "msWebUiReact.md",
         "bmad-anforderungen-tests.md",
-        "aiops-Mainteance-mit-KI.md"
+        "aiops-Mainteance-mit-KI.md",
+        "ekon30-spec-driven-development.md",
+        "ekon30-react19-mui6-workshop.md",
+        "ekon30-github-copilot-a-bis-z.md",
+        "ekon30-ai-context-setup.md"
     ],
     "github.copilot.chat.commitMessageGeneration.instructions": [
         {
