@@ -2,6 +2,7 @@
 theme: "@xebia/slidev-theme-xebia-2026"
 transition: "fade"
 addons:
+  - "@/special-slides/ekon30-asset-base"
   - slidev-component-progress
   - "@xebia/slidev-addon-components-common"
   - slidev-addon-qrcode

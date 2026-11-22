@@ -9,7 +9,7 @@ hideInToc: true
 
 <div>
 
-<img :src="`/${$slidev.configs.publicDeckPath}/hbinkle.jpg`" alt="Harald Binkle" class="w-20 h-20 rounded-full object-cover mb-1" />
+<img :src="`${baseUrl}hbinkle.jpg`" alt="Harald Binkle" class="w-20 h-20 rounded-full object-cover mb-1" />
 
 ## Harald Binkle
 
@@ -21,7 +21,7 @@ Fullstack & DevOps · Consultant & Trainer · Xebia
 
 <div>
 
-<img :src="`/${$slidev.configs.publicDeckPath}/thomas-tomow-sessionize.png`" alt="Thomas Tomow" class="w-20 h-20 rounded-full object-cover mb-1" />
+<img :src="`${baseUrl}thomas-tomow-sessionize.png`" alt="Thomas Tomow" class="w-20 h-20 rounded-full object-cover mb-1" />
 
 ## Thomas Tomow
 
@@ -32,6 +32,10 @@ Cloud, AI & DevOps · CTO · Xebia Germany
 </div>
 
 </div>
+
+<script setup>
+const baseUrl = import.meta.env.BASE_URL
+</script>
 
 <!--
 Harald verbindet Fullstack- und DevOps-Praxis mit Trainings- und Konferenzerfahrung. Thomas verbindet CTO-Praxis bei Xebia Germany mit Cloud-, AI- und DevOps-Themen.
