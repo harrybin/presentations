@@ -210,7 +210,7 @@ background: bmad-context-hierarchy.png
 <v-clicks>
 
 - **PRD oder Brief:** Quelle, wenn mehrere Beteiligte sich abstimmen müssen
-- **Sofia (Product Owner):** überführt Quellen in Tickets mit stabilen Requirement-IDs
+- **Product Owner:** überführt Quellen in Tickets mit stabilen Requirement-IDs
 - **Ticket = Spec:** Requirements, Constraints, Done when und Boundaries
 - **Build-Plan:** Vorgehen für eine Story; Umfang passt sich dem Risiko an
 
