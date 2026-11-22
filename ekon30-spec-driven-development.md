@@ -107,7 +107,6 @@ hideInToc: true
 - Ein Demo-Faden mit Demo Time: Clarify → Plan → Build & verify
 - Learn & adjust: Qualität, Grenzen und Fragen
 
-**Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
 </v-clicks>
 
 
@@ -551,6 +550,8 @@ isDark: true
 ---
 
 # Demo · Clarify
+
+**Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
 
 ---
 title: Demo-Faden · Von der Idee zum Ticket
