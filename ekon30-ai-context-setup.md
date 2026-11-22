@@ -77,7 +77,7 @@ layout: default
 
 # Was sieht der Agent in diesem Schritt?
 
-```mermaid
+```mermaid {scale: 0.55}
 flowchart LR
   U["Auftrag"] --> H["Harness / Sitzung"]
   P["Projektregeln"] --> H
@@ -102,28 +102,6 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---
-title: Sessionprofil
-layout: image-right
-background: bmad-context-hierarchy.png
-hideInToc: true
----
-
-# Den passenden Context-Baustein auswählen
-
-<v-clicks>
-
-- **Zielgruppe:** Entwickler:innen und Teams mit GitHub Copilot
-- **Vorkenntnisse:** erste Erfahrung mit Copilot Chat oder Agent Mode
-- **Ergebnis:** ein Raster zur Wahl des passenden Context-Bausteins
-- **Live-Faden:** Regel → wiederholbarer Auftrag → spezialisierte Rolle
-
-</v-clicks>
-
-<!--
-Wir gehen nicht alle Dateien oder Features einer IDE durch. Fokus ist: welches Problem löst welches Artefakt?
--->
-
----
 title: Agenda
 layout: image-right
 background: compass-right.png
@@ -142,9 +120,9 @@ hideInToc: true
 
 </v-clicks>
 
-**Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
 
 <!--
+**Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
 Die Demo-Stationen enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests, Kontext-Trade-off und Fallback. Das separate Repository https://github.com/harrybin/ekon30-talk-demo klonen und gemäß https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md vorbereiten: im Repo-Root `node demo.mjs prepare` ausführen und ausschließlich `.run/baseline` als VS-Code-Ordner öffnen. In der Erweiterung **Demo Time** den Akt `EKON 30 · AI Context Setup` (`.run/baseline/.demo/context-setup-talk.json`, relativ zum Demo-Repo) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
 -->
 
@@ -205,7 +183,7 @@ Das ist das Entscheidungsmodell für den Rest des Vortrags.
 ---
 title: Instructions · Regeln, die automatisch gelten
 layout: image-left
-background: settings-instruction-files-1.png
+background: persistent-guidance.png
 ---
 
 # Dauerhafte Erwartungen an die Arbeit
@@ -309,7 +287,7 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 
 ---
 layout: chapter
-background: settings-instruction-files-1.png
+background: instructions-live-demo.png
 isDark: true
 ---
 
@@ -318,7 +296,7 @@ isDark: true
 ---
 title: Live-Demo · Eine Regel im Kontext
 layout: image-right
-background: settings-instruction-files-1.png
+background: instruction-guided-comparison.png
 ---
 
 # Gleicher Auftrag — eine Regel mehr
@@ -373,7 +351,7 @@ Die Vortragsdemo nutzt explizite Dateireferenzen, damit klar bleibt, was im Chat
 ---
 title: Prompt Files · ein Auftrag auf Abruf
 layout: image-right
-background: settings-instruction-files-2.png
+background: prompt-workflow-launch.png
 ---
 
 # Wiederholbarer Task, bewusst gestartet
