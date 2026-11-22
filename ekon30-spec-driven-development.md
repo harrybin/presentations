@@ -221,6 +221,41 @@ Ein PRD ist optional: BMad ergänzt nur die Planung, die Größe und Risiko der 
 -->
 
 ---
+title: Das Demo-Projekt
+layout: default
+---
+
+# Die Demo: Ein Konferenzkatalog
+
+Eine Konferenzorganisation möchte wissen, **wie viele Sessions je Track geplant sind**.
+
+<div class="ekon30-flow grid-cols-3">
+  <div v-click class="ekon30-flow__step">
+    <strong>Session-Liste</strong>
+    <p>KI · Delphi · KI</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Pascal-Funktion</strong>
+    <p>Sessions nach Track zählen</p>
+  </div>
+  <div v-click class="ekon30-flow__step">
+    <strong>Track-Zählung</strong>
+    <p>KI: 2 · Delphi: 1</p>
+  </div>
+</div>
+
+<v-click>
+
+**Vortragsdemo:** synthetische Daten · Delphi-kompatibles Object Pascal · keine GUI, API oder Datenbank
+
+</v-click>
+
+<!--
+Der kleine Katalog ist der gemeinsame rote Faden: Ein Brief beschreibt das Ziel, vorhandene Pascal-Typen und Tests bilden den Ausgangspunkt. Die Baseline enthält absichtlich einen Fehler beim Vergleich von KI und ki. Im SDD-Akt wird daraus ein Ticket geklärt, dessen Umsetzung geplant und die Änderung geprüft; die vorbereitete Lösung ist ein Fallback, kein behauptetes Live-Ergebnis. Das Beispiel auf der Folie zeigt nur den Datenfluss, keine grafische Anwendung.
+Quelle: https://github.com/harrybin/ekon30-talk-demo
+-->
+
+---
 title: Eine gute Spezifikation macht Lücken sichtbar
 layout: default
 ---
