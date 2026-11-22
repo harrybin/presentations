@@ -246,7 +246,7 @@ Eine Konferenzorganisation möchte wissen, **wie viele Sessions je Track geplant
 
 <v-click>
 
-**Vortragsdemo:** synthetische Daten · Delphi-kompatibles Object Pascal · keine GUI, API oder Datenbank
+**Demo:** synthetische Daten · Delphi-kompatibles Object Pascal · keine GUI, API oder Datenbank
 
 </v-click>
 
@@ -669,8 +669,9 @@ background: bmad-context-hierarchy.png
 <v-clicks>
 
 - Eingabe und Einträge bleiben unverändert
-- nur `SessionCatalog.pas` ändern
-- vorhandene Tests liefern den Nachweis
+- später
+  - nur `SessionCatalog.pas` ändern
+  - vorhandene Tests liefern den Nachweis
 
 </v-clicks>
 
@@ -716,26 +717,6 @@ isDark: true
 ---
 
 # Demo · Plan
-
----
-title: Demo-Faden · Ticket wird zum Build-Plan
-layout: image-left
-background: bmad-navigation-compass-ai.png
----
-
-# Derselbe Ticket-Faden · Den Build planen
-
-<v-clicks>
-
-- **Weiter · 3 Min.** · frischer Build-Chat mit `bmad-build`
-- Dasselbe Ticket und der Pascal-Code bleiben der Kontext
-- Vorgehen und offene Fragen prüfen, vor Codeänderungen pausieren
-
-</v-clicks>
-
-<!--
-Der Chat wechselt wegen der sauberen Build-Sitzung, nicht die Story: BMad baut auf Sofias Ticket auf. Wenn die Antwort nach 45 Sekunden ausbleibt oder die geplante Änderung außerhalb des Scopes liegt, den Offline-Plan in `plan.md` zeigen; er ist keine BMAD-generierte Build-Plan-Datei.
--->
 
 ---
 title: Ein kleiner Plan ist trotzdem überprüfbar
