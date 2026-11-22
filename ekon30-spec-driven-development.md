@@ -2,6 +2,7 @@
 theme: "@xebia/slidev-theme-xebia-2026"
 transition: "fade"
 addons:
+  - "@/special-slides/ekon30-asset-base"
   - slidev-component-progress
   - "@xebia/slidev-addon-components-common"
   - slidev-addon-qrcode
@@ -85,7 +86,7 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Die Phasen desselben Demo-Fadens enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
+Die Phasen desselben Demo-Fadens enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung und Bedienung: https://github.com/harrybin/presentations/blob/main/demo-projects/ekon30-talk-demo/README.md (lokal `demo-projects/ekon30-talk-demo/README.md`); in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
 Quelle zum Konferenzkontext: https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/
 -->
 

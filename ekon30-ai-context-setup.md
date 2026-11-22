@@ -2,6 +2,7 @@
 theme: "@xebia/slidev-theme-xebia-2026"
 transition: "fade"
 addons:
+  - "@/special-slides/ekon30-asset-base"
   - slidev-component-progress
   - "@xebia/slidev-addon-components-common"
   - slidev-addon-qrcode
@@ -142,7 +143,7 @@ hideInToc: true
 </v-clicks>
 
 <!--
-Die Demo-Stationen enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests, Kontext-Trade-off und Fallback. Vorbereitung und Bedienung: demo-projects/ekon30-talk-demo/README.md; in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · AI Context Setup` (`.run/baseline/.demo/context-setup-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
+Die Demo-Stationen enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests, Kontext-Trade-off und Fallback. Vorbereitung und Bedienung: https://github.com/harrybin/presentations/blob/main/demo-projects/ekon30-talk-demo/README.md (lokal `demo-projects/ekon30-talk-demo/README.md`); in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · AI Context Setup` (`.run/baseline/.demo/context-setup-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
 -->
 
 ---
