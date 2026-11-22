@@ -67,6 +67,30 @@ Teaser mit kurzen Pausen. Die Lücke zwischen Absicht und prüfbarem Verhalten i
 -->
 
 ---
+title: Was ist Spec-Driven Development?
+layout: default
+---
+
+# Was ist Spec-Driven Development?
+
+**Spec-Driven Development** heißt: Eine **explizite, überprüfbare Spec** übersetzt die Produktabsicht in einen verbindlichen Rahmen, an dem sich **Menschen und Agenten** orientieren – von der **Planung** bis zur **Verifikation**.
+
+```mermaid
+flowchart LR
+  I["Produktabsicht"] --> S["Explizite,<br/>überprüfbare Spec"]
+  R["Randbedingungen"] --> S
+  A["Abnahmekriterien"] --> S
+  S --> P["Planung"]
+  S --> B["Umsetzung"]
+  S --> V["Verifikation"]
+```
+
+<!--
+Hinweis auf Pflichtenhefte der Vergangenheit.
+-->
+
+
+---
 title: Agenda
 layout: image-right
 background: compass-right.png
@@ -83,9 +107,9 @@ hideInToc: true
 - Ein Demo-Faden mit Demo Time: Clarify → Plan → Build & verify
 - Learn & adjust: Qualität, Grenzen und Fragen
 
+**Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
 </v-clicks>
 
-**Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
 
 <!--
 Die Phasen desselben Demo-Fadens enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Das separate Repository https://github.com/harrybin/ekon30-talk-demo klonen und gemäß https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md vorbereiten: im Repo-Root `node demo.mjs prepare` ausführen, BMad in `.run/baseline` einrichten und ausschließlich diesen Ordner als VS-Code-Workspace öffnen. In **Demo Time** den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`, relativ zum Demo-Repo) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
