@@ -147,6 +147,27 @@ Quelle: https://docs.bmad-method.org/start/how-bmad-works/
 -->
 
 ---
+title: Specification-as-Code
+layout: default
+---
+
+# Specification-as-Code: die Spec als versioniertes Arbeitsartefakt
+
+<v-clicks>
+
+- Requirements, Constraints und „Done when“ im Ticket festhalten
+- Änderungen wie Code versionieren, reviewen und auf Anforderungen zurückführen
+- ausgewählte Akzeptanzkriterien als Tests ausführbar machen
+- Tests belegen nur die abgedeckten Fälle — nicht die Vollständigkeit der Spec
+
+</v-clicks>
+
+<!--
+„Specification-as-Code“ meint hier: überprüfbare Spezifikationsartefakte werden versioniert und mit Änderungen reviewed; ausgewählte Kriterien werden in Tests ausführbar. BMad führt Anforderungen im Ticket mit stabilen IDs und Done when. Das ist kein Versprechen automatischer Synchronisierung zwischen Spec und Code.
+Quelle: https://docs.bmad-method.org/start/how-bmad-works/
+-->
+
+---
 layout: chapter
 background: bmad-dev-ideas-to-tests.png
 isDark: true
@@ -464,12 +485,34 @@ background: bmad-agents-specialized-experts.png
 - **Sally (UX) / Winston (Architekt):** ergänzen Spezialwissen, wenn es gebraucht wird
 - **Amelia (`bmad-build`):** plant, implementiert und reviewt eine Story
 - **Mensch:** entscheidet offene Fragen, prüft das Ergebnis und markiert es „done“
+- **Separat:** gem-team kann Architect/Coder/Reviewer orchestrieren; das ist nicht Teil dieser BMad-Demo
 
 </v-clicks>
 
 <!--
-Die Rollen sind die BMad-Arbeitsteilung, keine Behauptung paralleler Ausführung. In der Demo arbeiten Sofia und Amelia nacheinander; die Person steuert Entscheidungen und Abnahme.
-Quelle: https://docs.bmad-method.org/start/how-bmad-works/
+Die Rollen sind die BMad-Arbeitsteilung, keine Behauptung paralleler Ausführung. In der Demo arbeiten Sofia und Amelia nacheinander; die Person steuert Entscheidungen und Abnahme. gem-team ist hier nur als separates Orchestrierungsmodell erwähnt, nicht als Teil oder Live-Schritt der BMad-Demo.
+Quellen: https://docs.bmad-method.org/start/how-bmad-works/ ; https://docs.github.com/en/copilot/concepts/customizations/custom-agents
+-->
+
+---
+title: Strategische Systemarchitektur
+layout: image-right
+background: bmad-project-context-agent-brain.png
+---
+
+# Vom Detailentwurf zum strategischen Systemarchitekten
+
+<v-clicks>
+
+- Systemgrenzen, Qualitätsziele und technische Constraints explizit machen
+- Trade-offs und Auswirkungen über einzelne Stories hinaus entscheiden
+- Specs, Architekturentscheidungen und Agent-Ergebnisse auf Konsistenz prüfen
+- Umsetzung delegieren, Verantwortung für das System behalten
+
+</v-clicks>
+
+<!--
+Das ist eine mögliche Rollenverschiebung, keine universelle Prognose: Agenten können begrenzte Umsetzungs- und Prüfaufgaben übernehmen; Systemverantwortung, Trade-offs und Freigabe bleiben bei Menschen. Im Vortrag wird dieser Wandel diskutiert, nicht als Ergebnis der Demo behauptet.
 -->
 
 ---
@@ -500,6 +543,14 @@ background: bmad-project-context-agent-brain.png
 In der Demo ist context/copilot-instructions.md ein absichtlich explizit angefügtes Fixture, keine automatisch geladene Projektregel. Copilot-Anpassung hängt von der aktiven Oberfläche und dem jeweiligen Kontext ab.
 Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
+
+---
+layout: chapter
+background: bmad-collaboration-requirements.png
+isDark: true
+---
+
+# Demo · Clarify
 
 ---
 title: Demo-Faden · Von der Idee zum Ticket
@@ -623,6 +674,14 @@ Auszug aus https://github.com/harrybin/ekon30-talk-demo/blob/main/spec.md. Die v
 -->
 
 ---
+layout: chapter
+background: bmad-navigation-compass-ai.png
+isDark: true
+---
+
+# Demo · Plan
+
+---
 title: Demo-Faden · Ticket wird zum Build-Plan
 layout: image-left
 background: bmad-navigation-compass-ai.png
@@ -697,6 +756,14 @@ layout: default
 <!--
 Der Plan verbindet Ticket und Umsetzung. Die Pause vor Codeänderungen ist die sichtbare menschliche Kontrollstelle, auch wenn BMad für eine kleine Story einen verkürzten Light-Path wählt.
 -->
+
+---
+layout: chapter
+background: bmad-governance-control-center.png
+isDark: true
+---
+
+# Demo · Build &amp; verify
 
 ---
 title: Demo-Faden · Build und Verifikation
@@ -843,6 +910,32 @@ background: bmad-governance-control-center.png
 
 <!--
 Betonen: „autonomer Code“ heißt hier agentisch erzeugte Änderungen innerhalb expliziter Grenzen. Kein Versprechen unbeaufsichtigter Produktionsfreigabe.
+-->
+
+---
+title: Potenzial von Spec-Driven Development
+layout: two-cols
+---
+
+# Velocity und weniger Routinefehler: Hypothesen messen
+
+## Mögliches Potenzial
+
+- Klarere Tickets können Rückfragen und Nacharbeit verringern
+- Wiederholbare Tests prüfen bekannte Fälle ohne manuelle Wiederholung
+- Nachvollziehbare Diffs lenken Reviews auf fachliche Entscheidungen
+
+::right::
+
+## Im Team beobachten
+
+- Durchlaufzeit vergleichbarer Stories
+- Rückfragen, Nacharbeit und Review-Schleifen
+- manueller Prüfaufwand und gefundene Fehler
+- Fehler, die trotz Checks später auffallen
+
+<!--
+Das sind erwartbare Wirkpfade, keine gemessenen Resultate dieses Vortrags und keine Garantie für Velocity-Steigerung oder Fehlerfreiheit. Mit vergleichbaren Aufgaben und einer Baseline messen; Tests finden nur Fehler in den abgedeckten Fällen. Siehe auch BMad Build & Verify: https://docs.bmad-method.org/build/build-and-verify/
 -->
 
 ---
