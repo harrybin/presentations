@@ -85,8 +85,10 @@ hideInToc: true
 
 </v-clicks>
 
+**Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
+
 <!--
-Die Phasen desselben Demo-Fadens enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Vorbereitung und Bedienung: https://github.com/harrybin/presentations/blob/main/demo-projects/ekon30-talk-demo/README.md (lokal `demo-projects/ekon30-talk-demo/README.md`); in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
+Die Phasen desselben Demo-Fadens enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests und Fallback. Das separate Repository https://github.com/harrybin/ekon30-talk-demo klonen und gemäß https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md vorbereiten: im Repo-Root `node demo.mjs prepare` ausführen, BMad in `.run/baseline` einrichten und ausschließlich diesen Ordner als VS-Code-Workspace öffnen. In **Demo Time** den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`, relativ zum Demo-Repo) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Ende der aktuellen Phase weitergehen.
 Quelle zum Konferenzkontext: https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/
 -->
 
@@ -229,7 +231,7 @@ Ergebnis: KI:2 · Delphi:1 · ki:1 · "":1
 </v-clicks>
 
 <!--
-Diese Werte entsprechen dem Fixture in demo-projects/ekon30-talk-demo/fixtures/common/CatalogTests.lpr und der vorbereiteten Ticket-Spec unter demo-projects/ekon30-talk-demo/spec.md.
+Diese Werte entsprechen dem Fixture in https://github.com/harrybin/ekon30-talk-demo/blob/main/fixtures/common/CatalogTests.lpr und der vorbereiteten Ticket-Spec unter https://github.com/harrybin/ekon30-talk-demo/blob/main/spec.md.
 -->
 
 ---
@@ -353,7 +355,7 @@ function CountSessionsByTrack(
 </v-clicks>
 
 <!--
-Auszug aus demo-projects/ekon30-talk-demo/fixtures/common/SessionData.pas und SessionCatalog.pas. `const` ist hier die Schnittstellenabsicht; der Test prüft zusätzlich, dass die übergebenen Werte unverändert bleiben.
+Auszug aus https://github.com/harrybin/ekon30-talk-demo/blob/main/fixtures/common/SessionData.pas und https://github.com/harrybin/ekon30-talk-demo/blob/main/fixtures/baseline/SessionCatalog.pas. `const` ist hier die Schnittstellenabsicht; der Test prüft zusätzlich, dass die übergebenen Werte unverändert bleiben.
 -->
 
 ---
@@ -493,7 +495,7 @@ background: bmad-context-hierarchy.png
 </v-clicks>
 
 <!--
-Konkreter Ablauf: erster Schritt im durchgehenden Demo-Faden, siehe `demo-projects/ekon30-talk-demo/README.md`. BMad vorab ausschließlich in `.run/baseline` installieren. Nach 45 Sekunden ohne brauchbares Ticket die vorbereitete `spec.md` zeigen; sie ist ein Offline-Fallback und kein von Sofia erzeugtes Artefakt.
+Konkreter Ablauf: erster Schritt im durchgehenden Demo-Faden, siehe https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md. BMad vorab ausschließlich in `.run/baseline` installieren. Nach 45 Sekunden ohne brauchbares Ticket die vorbereitete `spec.md` zeigen; sie ist ein Offline-Fallback und kein von Sofia erzeugtes Artefakt.
 -->
 
 ---
@@ -521,7 +523,7 @@ statt Annahmen als Fakten einzutragen. Nicht implementieren.
 </v-clicks>
 
 <!--
-Wörtlicher Auszug aus demo-projects/ekon30-talk-demo/README.md. Die konkrete Sofia-Ausgabe live prüfen; das Offline-Ticket ist nicht als live generiert ausgeben.
+Wörtlicher Auszug aus https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md. Die konkrete Sofia-Ausgabe live prüfen; das Offline-Ticket ist nicht als live generiert ausgeben.
 Quelle zum Planen und Schneiden von Initiativen: https://docs.bmad-method.org/plan/write-and-slice-the-initiative/
 -->
 
@@ -593,7 +595,7 @@ Eingabeliste → unverändert
 </v-clicks>
 
 <!--
-Auszug aus demo-projects/ekon30-talk-demo/spec.md. Die vorbereitete Referenz hat sieben Checks; sie sind Belege für diese Anforderungen, aber keine vollständige formale Verifikation.
+Auszug aus https://github.com/harrybin/ekon30-talk-demo/blob/main/spec.md. Die vorbereitete Referenz hat sieben Checks; sie sind Belege für diese Anforderungen, aber keine vollständige formale Verifikation.
 -->
 
 ---
@@ -639,7 +641,7 @@ layout: default
 </v-clicks>
 
 <!--
-Der Text ist eine Kurzfassung der vorbereiteten Offline-Planreferenz demo-projects/ekon30-talk-demo/plan.md, kein live erzeugter Build-Plan. Die BMad-Dokumentation beschreibt Build & Verify: https://docs.bmad-method.org/build/build-and-verify/
+Der Text ist eine Kurzfassung der vorbereiteten Offline-Planreferenz https://github.com/harrybin/ekon30-talk-demo/blob/main/plan.md, kein live erzeugter Build-Plan. Die BMad-Dokumentation beschreibt Build & Verify: https://docs.bmad-method.org/build/build-and-verify/
 -->
 
 ---
@@ -690,7 +692,7 @@ background: bmad-governance-control-center.png
 </v-clicks>
 
 <!--
-Vorab im Demo-Verzeichnis `node demo.mjs prepare` und `node demo.mjs test baseline` ausführen: Der absichtliche Fehler muss scheitern. Im Vortrag in der Erweiterung **Demo Time** den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`) nur im isolierten Workspace starten. Nach 60 Sekunden oder Scope-Verstoß Agent abbrechen; die Fallback-Szene zeigt `node demo.mjs test solution` und `node demo.mjs diff`. BMad Build kann lokal committen; im Demo-Workspace darf nichts gepusht werden. `solution` ist eine vorbereitete Referenz, kein live erzeugtes Agent-Ergebnis.
+Vorab im Demo-Repo-Root `node demo.mjs prepare` und `node demo.mjs test baseline` ausführen: Der absichtliche Fehler muss scheitern. Im Vortrag in der Erweiterung **Demo Time** den Akt `EKON 30 · Spec-Driven Development` (`.run/baseline/.demo/sdd-talk.json`, relativ zum Demo-Repo) nur im isolierten Workspace starten. Dort laufen die Fallback-Befehle über `node ../../demo.mjs test solution` und `node ../../demo.mjs diff`. Nach 60 Sekunden oder Scope-Verstoß Agent abbrechen. BMad Build kann lokal committen; im Demo-Workspace darf nichts gepusht werden. `solution` ist eine vorbereitete Referenz, kein live erzeugtes Agent-Ergebnis.
 -->
 
 ---
@@ -729,7 +731,7 @@ Check(Length(Counts) = 2,
 </v-clicks>
 
 <!--
-Auszug aus fixtures/common/CatalogTests.lpr. `node demo.mjs test baseline` soll fehlschlagen; `node demo.mjs test solution` führt alle sieben vorbereiteten Checks aus. Vortragsdemo: keine Erfolgsmeldung behaupten, ohne den konkreten Lauf zu zeigen.
+Auszug aus fixtures/common/CatalogTests.lpr im Demo-Repo. `node demo.mjs test baseline` soll im Repo-Root fehlschlagen; `node demo.mjs test solution` führt alle sieben vorbereiteten Checks aus. Aus `.run/baseline` stattdessen `node ../../demo.mjs` verwenden. Vortragsdemo: keine Erfolgsmeldung behaupten, ohne den konkreten Lauf zu zeigen.
 -->
 
 ---

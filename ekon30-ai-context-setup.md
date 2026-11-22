@@ -142,8 +142,10 @@ hideInToc: true
 
 </v-clicks>
 
+**Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
+
 <!--
-Die Demo-Stationen enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests, Kontext-Trade-off und Fallback. Vorbereitung und Bedienung: https://github.com/harrybin/presentations/blob/main/demo-projects/ekon30-talk-demo/README.md (lokal `demo-projects/ekon30-talk-demo/README.md`); in VS Code die Erweiterung **Demo Time** öffnen und den Akt `EKON 30 · AI Context Setup` (`.run/baseline/.demo/context-setup-talk.json`) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
+Die Demo-Stationen enthalten Prompt-Warten, Wechsel, Erläuterungen, Tests, Kontext-Trade-off und Fallback. Das separate Repository https://github.com/harrybin/ekon30-talk-demo klonen und gemäß https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md vorbereiten: im Repo-Root `node demo.mjs prepare` ausführen und ausschließlich `.run/baseline` als VS-Code-Ordner öffnen. In der Erweiterung **Demo Time** den Akt `EKON 30 · AI Context Setup` (`.run/baseline/.demo/context-setup-talk.json`, relativ zum Demo-Repo) auswählen. Bei Zeitdruck Live-Pfad abkürzen und spätestens zum Stationsende weitergehen.
 -->
 
 ---
@@ -252,8 +254,8 @@ repo/
 </v-clicks>
 
 <!--
-AGENTS.md-Unterstützung und Vererbungsdetails sind clientabhängig. In diesem Repository ist AGENTS.md die bevorzugte Contributor-Guidance; `context/copilot-instructions.md` im Demo-Projekt bleibt absichtlich ein explizit angefügtes Lehr-Fixture.
-Quellen: https://docs.github.com/en/copilot/reference/customization-cheat-sheet ; AGENTS.md im Repository-Root
+AGENTS.md-Unterstützung und Vererbungsdetails sind clientabhängig. Das Demo-Repo kopiert seine `AGENTS.md` in den isolierten Workspace; sie kann dort je nach Client gelten. `context/copilot-instructions.md` bleibt ein explizit angefügtes Lehr-Fixture.
+Quellen: https://docs.github.com/en/copilot/reference/customization-cheat-sheet ; https://github.com/harrybin/ekon30-talk-demo/blob/main/AGENTS.md
 -->
 
 ---
@@ -322,7 +324,7 @@ background: settings-instruction-files-1.png
 </v-clicks>
 
 <!--
-Demo Time führt C1 an dieser Stelle des Vortrags aus. Die Vorlage wird explizit mitgegeben und nicht als automatisch geladene Instruction ausgegeben. Details und Fallback: demo-projects/ekon30-talk-demo/README.md.
+Demo Time führt C1 im isolierten Workspace aus. Die Vorlage wird explizit mitgegeben und nicht als automatisch geladene Instruction ausgegeben. Details und Fallback: https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md.
 -->
 
 ---
@@ -411,8 +413,8 @@ Keine Dateien ändern.
 </v-clicks>
 
 <!--
-Der Auszug stammt aus `demo-projects/ekon30-talk-demo/context/test-review.prompt.md`. In dieser Demo bleibt das Prompt-Template außerhalb eines aktiven `.github/prompts`-Pfads und wird als Datei-Referenz gezeigt, nicht als automatisch verfügbares Prompt File.
-Quellen: demo-projects/ekon30-talk-demo/context/test-review.prompt.md ; https://docs.github.com/en/copilot/reference/customization-cheat-sheet
+Der Auszug stammt aus `context/test-review.prompt.md` im Demo-Repo. In dieser Demo bleibt das Prompt-Template außerhalb eines aktiven `.github/prompts`-Pfads und wird als Datei-Referenz gezeigt, nicht als automatisch verfügbares Prompt File.
+Quellen: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/test-review.prompt.md ; https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---
@@ -470,7 +472,7 @@ description: Prüfe Änderungen an der Pascal-Track-Zählung
 
 <!--
 Der Demo-Skill liegt absichtlich außerhalb eines aktiven Skill-Verzeichnisses und wird manuell gezeigt. Skill-Discovery, unterstützte Pfade und Ladeverhalten sind clientabhängig.
-Quellen: demo-projects/ekon30-talk-demo/context/catalog-review/SKILL.md ; https://docs.github.com/en/copilot/concepts/agents/about-agent-skills
+Quellen: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/catalog-review/SKILL.md ; https://docs.github.com/en/copilot/concepts/agents/about-agent-skills
 -->
 
 ---
@@ -750,8 +752,8 @@ Melde konkrete Abweichungen mit Ursache und Effekt.
 </v-clicks>
 
 <!--
-Der Auszug stammt aus `demo-projects/ekon30-talk-demo/context/pascal-reviewer.agent.md`. In dieser Demo bleibt die Datei eine Rollenvorlage außerhalb aktiver Agent-Verzeichnisse; der Ask-Modus begrenzt die Vorführung, beweist aber keine technische Schreibsperre.
-Quelle: demo-projects/ekon30-talk-demo/context/pascal-reviewer.agent.md
+Der Auszug stammt aus `context/pascal-reviewer.agent.md` im Demo-Repo. In dieser Demo bleibt die Datei eine Rollenvorlage außerhalb aktiver Agent-Verzeichnisse; der Ask-Modus begrenzt die Vorführung, beweist aber keine technische Schreibsperre.
+Quelle: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/pascal-reviewer.agent.md
 -->
 
 ---
@@ -865,8 +867,8 @@ if TrackA = TrackB then
 </v-clicks>
 
 <!--
-Die Lösung ist eine vorbereitete Referenzimplementierung, kein behauptetes Copilot-Ergebnis. Live-Tests und Fallbacks sind im Demo-README dokumentiert; Tests beweisen nicht alle möglichen Eingaben.
-Quelle: demo-projects/ekon30-talk-demo/README.md
+Die Befehle gelten im Demo-Repo-Root; aus `.run/baseline` lautet der relative Runner-Pfad `node ../../demo.mjs`. Die Lösung ist eine vorbereitete Referenzimplementierung, kein behauptetes Copilot-Ergebnis. Tests beweisen nicht alle möglichen Eingaben.
+Quelle: https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md
 -->
 
 ---
@@ -899,7 +901,7 @@ layout: default
 
 <!--
 Keinen pauschalen Qualitäts- oder Tokengewinn versprechen. Für den Vergleich Aufgabe und bereitgestellte Dateien konstant halten und die Beobachtung dokumentieren.
-Quellen: demo-projects/ekon30-talk-demo/context/beobachtung.md ; https://docs.github.com/en/copilot/reference/customization-cheat-sheet
+Quellen: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/beobachtung.md ; https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---

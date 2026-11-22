@@ -17,6 +17,7 @@ The MIT license in [`LICENSE`](LICENSE) covers only original content authored by
 - **Assets**: All images and assets of **all** slides are located in the `public` folder. This is the default location for Slidev to look for assets.
 
 - **Demo Projects**: The `demo-projects` folder contains self-contained examples used in presentations. They are part of this repository, not separate repositories or part of the Slidev build; each has its own README. If a demo is split into its own repository, give that repository its own README and an applicable license.
+  The EKON AI Context Setup and Spec-Driven Development talks use the separate [EKON talk demo](https://github.com/harrybin/ekon30-talk-demo); follow its README to prepare the isolated live workspace.
 
 ## Setup and validation
 
