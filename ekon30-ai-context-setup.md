@@ -308,6 +308,14 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---
+layout: chapter
+background: settings-instruction-files-1.png
+isDark: true
+---
+
+# Live-Demo · Instructions
+
+---
 title: Live-Demo · Eine Regel im Kontext
 layout: image-right
 background: settings-instruction-files-1.png
@@ -474,6 +482,14 @@ description: Prüfe Änderungen an der Pascal-Track-Zählung
 Der Demo-Skill liegt absichtlich außerhalb eines aktiven Skill-Verzeichnisses und wird manuell gezeigt. Skill-Discovery, unterstützte Pfade und Ladeverhalten sind clientabhängig.
 Quellen: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/catalog-review/SKILL.md ; https://docs.github.com/en/copilot/concepts/agents/about-agent-skills
 -->
+
+---
+layout: chapter
+background: bmad-context-hierarchy.png
+isDark: true
+---
+
+# Live-Demo · Prompt oder Skill?
 
 ---
 title: Live-Demo · Prompt oder Skill?
@@ -755,6 +771,14 @@ Melde konkrete Abweichungen mit Ursache und Effekt.
 Der Auszug stammt aus `context/pascal-reviewer.agent.md` im Demo-Repo. In dieser Demo bleibt die Datei eine Rollenvorlage außerhalb aktiver Agent-Verzeichnisse; der Ask-Modus begrenzt die Vorführung, beweist aber keine technische Schreibsperre.
 Quelle: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/pascal-reviewer.agent.md
 -->
+
+---
+layout: chapter
+background: bmad-agents-specialized-experts.png
+isDark: true
+---
+
+# Live-Demo · Reviewer-Rolle
 
 ---
 title: Live-Demo · Die Reviewer-Rolle im Ask-Modus
