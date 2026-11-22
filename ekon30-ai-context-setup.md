@@ -207,7 +207,35 @@ title: AGENTS.md · Regeln entlang des Projektbaums
 layout: two-cols
 ---
 
-# Erst den nächsten Geltungsbereich prüfen
+# Instruction Files
+
+<br/>
+<br/>
+
+Erst den nächsten Geltungsbereich prüfen
+
+
+<v-clicks>
+
+- Root: Regeln für das ganze Repository
+- Unterordner: zusätzliche Regeln für den Bereich
+- Nähe zum Zielpfad entscheidet über Relevanz
+- Doppelte oder widersprüchliche Regeln vermeiden
+
+<br/>
+<br/>
+
+## ⚠️ Achtung: nicht alle IDE-Integrationen und Harnesses unterstützen AGENTS.md in Unterordnern
+
+</v-clicks>
+
+::right::
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ```text
 repo/
@@ -219,17 +247,6 @@ repo/
 └── tests/
     └── AGENTS.md
 ```
-
-::right::
-
-<v-clicks>
-
-- Root: Regeln für das ganze Repository
-- Unterordner: zusätzliche Regeln für den Bereich
-- Nähe zum Zielpfad entscheidet über Relevanz
-- Doppelte oder widersprüchliche Regeln vermeiden
-
-</v-clicks>
 
 <!--
 AGENTS.md-Unterstützung und Vererbungsdetails sind clientabhängig. Das Demo-Repo kopiert seine `AGENTS.md` in den isolierten Workspace; sie kann dort je nach Client gelten. `context/copilot-instructions.md` bleibt ein explizit angefügtes Lehr-Fixture.
@@ -294,26 +311,6 @@ isDark: true
 # Live-Demo · Instructions
 
 ---
-title: Live-Demo · Eine Regel im Kontext
-layout: image-right
-background: instruction-guided-comparison.png
----
-
-# Gleicher Auftrag — eine Regel mehr
-
-<v-clicks>
-
-- erst Fachkontext und Pascal-Datei bereitstellen
-- denselben Auftrag mit expliziter Instruction wiederholen
-- Antworten vergleichen, ohne Wirkung zu versprechen
-
-</v-clicks>
-
-<!--
-Demo Time führt C1 im isolierten Workspace aus. Die Vorlage wird explizit mitgegeben und nicht als automatisch geladene Instruction ausgegeben. Details und Fallback: https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md.
--->
-
----
 title: Kontext wirkt nur, wenn er verfügbar ist
 layout: default
 ---
@@ -354,7 +351,8 @@ layout: image-right
 background: prompt-workflow-launch.png
 ---
 
-# Wiederholbarer Task, bewusst gestartet
+# Prompt Files · ein Auftrag auf Abruf
+## Wiederholbarer Task, bewusst gestartet
 
 <v-clicks>
 
@@ -409,7 +407,8 @@ layout: image-left
 background: bmad-context-hierarchy.png
 ---
 
-# Ein gebündelter Workflow statt Dauer-Kontext
+# Skills · Wissen bei Bedarf laden
+## Ein gebündelter Workflow statt Dauer-Kontext
 
 <v-clicks>
 
@@ -424,6 +423,14 @@ background: bmad-context-hierarchy.png
 Beispiel: Der Slidev-Skill im Repository enthält Konventionen, Referenzen und klare Grenzen. Er wird relevant, wenn Präsentationsarbeit ansteht — nicht bei jeder Codefrage.
 Quelle: https://docs.github.com/en/copilot/concepts/agents/about-agent-skills
 -->
+
+---
+layout: chapter
+background: bmad-context-hierarchy.png
+isDark: true
+---
+
+# Live-Demo · Prompt oder Skill?
 
 ---
 title: Skill · Ablaufwissen in kleine Schritte zerlegen
@@ -462,26 +469,33 @@ Quellen: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/catalog-
 -->
 
 ---
-layout: chapter
-background: bmad-context-hierarchy.png
-isDark: true
----
-
-# Live-Demo · Prompt oder Skill?
-
----
 title: Live-Demo · Prompt oder Skill?
 layout: image-left
 background: bmad-context-hierarchy.png
 ---
 
-# Ein Auftrag ist nicht dasselbe wie Ablaufwissen
+# Prompt File vs Skill
 
 <v-clicks>
 
-- Prompt File: konkreter, bewusst gestarteter Review-Auftrag
-- Skill: wiederverwendbare Schritte und nötige Referenzen
-- beide Vorlagen auf denselben Katalog beziehen
+- Prompt File: 
+  - konkreter
+  - bewusst gestarteter Review-Auftrag
+- Skill: 
+  - wiederverwendbare Schritte und nötige Referenzen
+  - implizit genutzt, wenn passend
+
+## ABER:
+
+- Prompt file sind deprecated, verschwinden ab Feb 2027
+- Copilot Harness kann schon keine Prompt Files mehr ausführen
+
+## Lösung: Migration zu Skills 
+
+```md
+disable-model-invocation: true # nur manuell vom Benutzer aufrufbar
+user-invocable: false          # nur vom Agent automatisch aufrufbar
+```
 
 </v-clicks>
 
@@ -632,7 +646,7 @@ title: Agent Harness · Sitzung und Tool-Loop
 layout: default
 ---
 
-# Ein Agent ist mehr als ein Prompt
+# Agent: mehr als ein Prompt
 
 <div class="ekon30-flow ekon30-flow--four">
   <div v-click class="ekon30-flow__step">
@@ -717,6 +731,14 @@ Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
 
 ---
+layout: chapter
+background: bmad-agents-specialized-experts.png
+isDark: true
+---
+
+# Live-Demo · Reviewer-Rolle
+
+---
 title: Custom Agent · Rolle und Auftrag lesbar machen
 layout: two-cols
 ---
@@ -749,14 +771,6 @@ Melde konkrete Abweichungen mit Ursache und Effekt.
 Der Auszug stammt aus `context/pascal-reviewer.agent.md` im Demo-Repo. In dieser Demo bleibt die Datei eine Rollenvorlage außerhalb aktiver Agent-Verzeichnisse; der Ask-Modus begrenzt die Vorführung, beweist aber keine technische Schreibsperre.
 Quelle: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/pascal-reviewer.agent.md
 -->
-
----
-layout: chapter
-background: bmad-agents-specialized-experts.png
-isDark: true
----
-
-# Live-Demo · Reviewer-Rolle
 
 ---
 title: Live-Demo · Die Reviewer-Rolle im Ask-Modus
@@ -878,7 +892,12 @@ title: Kontext pflegen wie Code
 layout: default
 ---
 
-# Ein kleiner Wartungskreislauf
+# Kontext pflegen wie Code
+
+<br/>
+<br/>
+
+## Ein kleiner Wartungskreislauf
 
 <div class="ekon30-flow ekon30-flow--four">
   <div v-click class="ekon30-flow__step">
@@ -899,6 +918,9 @@ layout: default
   </div>
 </div>
 
+<br/>
+
+
 <p class="text-lg mt-8"><strong>Messpunkte:</strong> Rückfragen · Korrekturschleifen · Test- und Review-Befunde · Laufzeit und Kontextumfang</p>
 
 <!--
@@ -911,7 +933,9 @@ title: Takeaways
 layout: statement
 ---
 
-# Der beste Kontext ist auf die Aufgabe zugeschnitten.
+# Takeaways
+
+## Der beste Kontext ist auf die Aufgabe zugeschnitten.
 
 <v-clicks>
 
@@ -919,11 +943,16 @@ layout: statement
 - Workflows als Skills, externe Fähigkeiten als Tools
 - Rollen mit Custom Agents trennen
 - klein anfangen, Wirkung beobachten, unnötige Komplexität entfernen
+- Harness pflegen
 
 </v-clicks>
 
 <!--
-Abschlussfrage: Welches eine Artefakt in eurem Repository würde einem Agenten ab morgen am meisten helfen?
+
+Hinweis: https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-chat-customizations-evaluations
+
+Abschlussfrage: Wenn Ihr vergleicht, wann der letzte Code geändert wurde mit, wann die letzte Harness-Änderung stattfand, welches Artefakt ist für den Agenten relevanter?
+
 -->
 
 ---
