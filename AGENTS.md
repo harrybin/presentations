@@ -5,7 +5,7 @@
 - Keep repository-wide contributor instructions in this root `AGENTS.md`. Prefer it over `copilot-instructions.md`; do not maintain a second copy of the same guidance.
 - Every repository and self-contained demo project must have a `README.md`. Every repository must also have a license file when its license and the rights to the covered work are established. Never invent or assume a license; ask the maintainer when either is unclear.
 - Files under `demo-projects/` are included examples, not separate Git repositories unless they have their own repository metadata. Keep a README in each project. Preserve third-party code and assets under their applicable terms.
-- `demo-projects/ekon30-talk-demo/context/copilot-instructions.md` is an intentional teaching fixture used as explicit prompt context, not repository guidance. Do not move or rename it.
+- The two EKON talk demos live in the separate [ekon30-talk-demo repository](https://github.com/harrybin/ekon30-talk-demo); follow its README and keep live agent work in its isolated workspace.
 
 ## Repo shape
 
