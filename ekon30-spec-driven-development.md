@@ -792,7 +792,6 @@ background: bmad-governance-control-center.png
 
 <v-clicks>
 
-- **Abschluss · 5 Min.** · den freigegebenen Plan im selben `bmad-build`-Chat umsetzen
 - Nur `SessionCatalog.pas` ändern, Tests ausführen und reviewen
 - Ergebnis und Status `built` prüfen; „done“ bleibt Menschensache
 - bei Timeout: vorbereitete Referenzlösung und Test zeigen
@@ -934,7 +933,9 @@ title: Potenzial von Spec-Driven Development
 layout: two-cols
 ---
 
-# Velocity und weniger Routinefehler: Hypothesen messen
+# Velocity, weniger Routinefehler: 
+
+<br/>
 
 ## Mögliches Potenzial
 
@@ -943,6 +944,10 @@ layout: two-cols
 - Nachvollziehbare Diffs lenken Reviews auf fachliche Entscheidungen
 
 ::right::
+ 
+# Hypothesen messen
+
+<br/>
 
 ## Im Team beobachten
 
