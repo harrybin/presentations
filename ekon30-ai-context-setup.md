@@ -198,6 +198,7 @@ background: persistent-guidance.png
 </v-clicks>
 
 <!--
+## THOMAS
 Beispiele: `.github/copilot-instructions.md`, `.github/instructions/*.instructions.md` und unterstützte weitere Instruktionsdateien. Welche Formate greifen, hängt von Copilot-Produkt und IDE ab.
 Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
@@ -364,6 +365,7 @@ background: prompt-workflow-launch.png
 </v-clicks>
 
 <!--
+## Harry
 Prompt Files unter `.github/prompts/*.prompt.md` sind eine manuell aufgerufene Vorlage. Beispiel aus der Repo-Praxis: strukturierte Prompts zur Erstellung einer Slidev-Präsentation.
 Quelle: https://docs.github.com/en/copilot/reference/customization-cheat-sheet
 -->
@@ -373,7 +375,7 @@ title: Prompt File · Auftrag mit klaren Grenzen
 layout: two-cols
 ---
 
-# Gekürzt aus der Demo: ein reproduzierbarer Review-Auftrag
+# ein reproduzierbarer Review-Auftrag
 
 ```md
 ---
@@ -542,6 +544,7 @@ isDark: true
 # 02 · Fähigkeiten und Rollen
 
 <!--
+## THOMAS
 Skills sagen, wie eine Aufgabe ausgeführt wird; Custom Agents definieren eine Rolle samt Regeln und möglichen Werkzeugen.
 -->
 
@@ -772,25 +775,6 @@ Der Auszug stammt aus `context/pascal-reviewer.agent.md` im Demo-Repo. In dieser
 Quelle: https://github.com/harrybin/ekon30-talk-demo/blob/main/context/pascal-reviewer.agent.md
 -->
 
----
-title: Live-Demo · Die Reviewer-Rolle im Ask-Modus
-layout: image-right
-background: bmad-governance-control-center.png
----
-
-# Befund statt Änderung
-
-<v-clicks>
-
-- Rolle und Grenzen explizit zeigen
-- denselben Katalog read-only untersuchen lassen
-- Baseline-Test macht den Fehler konkret
-
-</v-clicks>
-
-<!--
-Demo Time führt C3 an dieser Stelle des Vortrags aus. `pascal-reviewer.agent.md` ist eine Rollen-Vorlage, keine technisch garantierte Sperre. Nur Ask-Modus, keine Copilot-Dateiänderungen; bei Timeout vorbereiteten Befund und fehlgeschlagenen Test zeigen.
--->
 
 ---
 title: Auswahlraster
@@ -826,6 +810,7 @@ layout: default
 </div>
 
 <!--
+## THOMAS
 Die Kategorien schließen sich nicht aus. Kombinieren nur, wenn der konkrete Workflow es verlangt; sonst entsteht Konfigurationsballast.
 -->
 
@@ -852,10 +837,9 @@ Keine erfundenen Prozentwerte versprechen. Tokenverbrauch ist nur ein Messwert; 
 
 ---
 title: Kontextqualität · Wirkung am Verhalten messen
-layout: two-cols
 ---
 
-# Ein Testfall macht eine Regel sichtbar
+# Frage: in welche Art Customization würde man dies hinterlegen:
 
 ````md magic-move
 ```pascal
@@ -871,20 +855,14 @@ if TrackA = TrackB then
 ```
 ````
 
-::right::
 
-<v-clicks>
 
-- **Fixture:** `KI` und `ki` müssen getrennt gezählt werden
-- **Signal:** `node demo.mjs test baseline` scheitert absichtlich
-- **Nachweis:** `node demo.mjs test solution` besteht
-- **Lernpunkt:** konkrete Invariante schlägt vage „schreibe guten Code“
+- **Fixture:** `KI` und `ki` müssen getrennt gezählt werden (Case-Sensitivity)
 
-</v-clicks>
+
 
 <!--
-Die Befehle gelten im Demo-Repo-Root; aus `.run/baseline` lautet der relative Runner-Pfad `node ../../demo.mjs`. Die Lösung ist eine vorbereitete Referenzimplementierung, kein behauptetes Copilot-Ergebnis. Tests beweisen nicht alle möglichen Eingaben.
-Quelle: https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md
+Diskussion
 -->
 
 ---
