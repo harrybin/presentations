@@ -58,7 +58,7 @@ hideInToc: true
 
 - Der PRD sagt: „Benutzer können Termine verwalten.“
 - Der Agent liefert Code.
-- Niemand weiß, ob Zeitzonen, Konflikte und Berechtigungen gemeint waren.
+- Wir bekommen aber eine Terrine statt Termine.
 
 </v-clicks>
 
@@ -191,6 +191,7 @@ background: bmad-context-hierarchy.png
 </v-clicks>
 
 <!--
+## Harry
 Ein PRD ist optional: BMad ergänzt nur die Planung, die Größe und Risiko der Arbeit rechtfertigen. Für eine Story reicht oft das Ticket; der Build-Plan hält Vorgehen und Status fest.
 -->
 
@@ -225,6 +226,7 @@ Eine Konferenzorganisation möchte wissen, **wie viele Sessions je Track geplant
 </v-click>
 
 <!--
+## Harry
 Der kleine Katalog ist der gemeinsame rote Faden: Ein Brief beschreibt das Ziel, vorhandene Pascal-Typen und Tests bilden den Ausgangspunkt. Die Baseline enthält absichtlich einen Fehler beim Vergleich von KI und ki. Im SDD-Akt wird daraus ein Ticket geklärt, dessen Umsetzung geplant und die Änderung geprüft; die vorbereitete Lösung ist ein Fallback, kein behauptetes Live-Ergebnis. Das Beispiel auf der Folie zeigt nur den Datenfluss, keine grafische Anwendung.
 Quelle: https://github.com/harrybin/ekon30-talk-demo
 -->
@@ -372,43 +374,9 @@ layout: default
 </div>
 
 <!--
+## Thomas
 Die vier Stufen sind keine starre Pipeline: Kleine Änderungen starten direkt bei Build & verify; PRD, UX und Architektur kommen nur bei Bedarf hinzu. Learn & adjust schließt ein Epic ab, nicht jede einzelne Story.
 Quelle: https://docs.bmad-method.org/start/how-bmad-works/
--->
-
----
-title: Der Vertrag passt zur Datenstruktur
-layout: default
----
-
-# Delphi-Typen machen die Grenze sichtbar
-
-```pascal
-type
-  TSession = record
-    Track: string;
-  end;
-  TSessions = array of TSession;
-  TTrackCount = record
-    Track: string;
-    Count: Integer;
-  end;
-
-function CountSessionsByTrack(
-  const Sessions: TSessions
-): TTrackCounts;
-```
-
-<v-clicks>
-
-- `const` signalisiert: die Eingabe wird nicht verändert.
-- Ergebnis und Eingabe sind getrennte Datentypen.
-- Der Vertrag sagt noch nicht, wie gezählt wird.
-
-</v-clicks>
-
-<!--
-Auszug aus https://github.com/harrybin/ekon30-talk-demo/blob/main/fixtures/common/SessionData.pas und https://github.com/harrybin/ekon30-talk-demo/blob/main/fixtures/baseline/SessionCatalog.pas. `const` ist hier die Schnittstellenabsicht; der Test prüft zusätzlich, dass die übergebenen Werte unverändert bleiben.
 -->
 
 ---
@@ -448,31 +416,23 @@ layout: image-left
 background: bmad-risk-lock.png
 ---
 
-# Korrektheit zuerst — Optimierung nach Bedarf
+# Genauigkeit der Spec
 
-<div class="grid grid-cols-2 gap-10 mt-6">
+<v-clicks>
 
-<div>
+- Wurden technische Auswirkungen und Randbedingungen in der Spec berücksichtigt?
+- Wurde in der Spec die gewünschte Genauigkeit definiert?
 
-## Aktuelle Lösung
+## Randbetrachtungen
 
-- Für jeden Eintrag Ergebnis durchsuchen
-- Beim ersten Treffer Zähler erhöhen
-- Sonst Ergebnis in Reihenfolge erweitern
+z.B.:
+- Laufzeitverhalten 
+- Speicherverbrauch
+- Korrektheit/Genauigkeit der Ergebnisse
+- Testbarkeit
+- Pre-Conditions & Post-Conditions
 
-</div>
-
-<div>
-
-## Konsequenz
-
-- Laufzeit: **O(n²)** im Worst Case
-- Zusätzlicher Speicher: **O(k)** für `k` Tracks
-- Für den Demo-Scope: einfach, deterministisch, testbar
-
-</div>
-
-</div>
+</v-clicks>
 
 <!--
 Keine Performancebehauptung: Das Fixture enthält keine Lastanforderung und kein Benchmark. Bei großen Katalogen wären Hash-Lookup und explizite Ordnung eine eigene, durch Messung begründete Änderung — nicht stillschweigend Teil dieses Tickets.
@@ -498,6 +458,8 @@ background: bmad-agents-specialized-experts.png
 </v-clicks>
 
 <!--
+## Harry
+
 Die Rollen sind die BMad-Arbeitsteilung, keine Behauptung paralleler Ausführung. In der Demo arbeiten Sofia und Amelia nacheinander; die Person steuert Entscheidungen und Abnahme. gem-team ist hier nur als separates Orchestrierungsmodell erwähnt, nicht als Teil oder Live-Schritt der BMad-Demo.
 Quellen: https://docs.bmad-method.org/start/how-bmad-works/ ; https://docs.github.com/en/copilot/concepts/customizations/custom-agents
 -->
@@ -562,26 +524,6 @@ isDark: true
 
 **Demo:** [github.com/harrybin/ekon30-talk-demo](https://github.com/harrybin/ekon30-talk-demo)
 
----
-title: Demo-Faden · Von der Idee zum Ticket
-layout: image-right
-background: bmad-context-hierarchy.png
----
-
-# Ein roter Faden · Die Story wird zur Spec
-
-<v-clicks>
-
-- **Start · 3 Min.** · Sofia (`bmad-agent-po`) liest `prd.md`
-- Eine Story für genau einen Build-Scope schneiden
-- Groß-/Kleinschreibung und Randfälle explizit festhalten
-- Fallback: vorbereitete Ticket-Spec in `spec.md`
-
-</v-clicks>
-
-<!--
-Konkreter Ablauf: erster Schritt im durchgehenden Demo-Faden, siehe https://github.com/harrybin/ekon30-talk-demo/blob/main/README.md. BMad vorab ausschließlich in `.run/baseline` installieren. Nach 45 Sekunden ohne brauchbares Ticket die vorbereitete `spec.md` zeigen; sie ist ein Offline-Fallback und kein von Sofia erzeugtes Artefakt.
--->
 
 ---
 title: Ein Prompt macht den Auftrag begrenzt
@@ -654,6 +596,7 @@ background: bmad-context-hierarchy.png
 </div>
 
 <!--
+## THOMAS
 Das sind die konkreten Anforderungen und Grenzen der vorbereiteten Ticket-Spec. Im Live-Pfad prüfen wir Sofias tatsächliches Ticket; bei Timeout klar als Offline-Fallback kennzeichnen.
 -->
 
@@ -777,45 +720,6 @@ Vorab im Demo-Repo-Root `node demo.mjs prepare` und `node demo.mjs test baseline
 -->
 
 ---
-title: Der Test trifft genau die Mehrdeutigkeit
-layout: default
----
-
-# Ein gezielter Check macht den Fehler reproduzierbar
-
-````md magic-move
-```pascal
-SetLength(Sessions, 1);
-Sessions[0].Track := 'KI';
-
-Counts := CountSessionsByTrack(Sessions);
-Check(Length(Counts) = 1, 'Ein Track wird gezählt');
-```
-
-```pascal
-SetLength(Sessions, 2);
-Sessions[0].Track := 'KI';
-Sessions[1].Track := 'ki';
-
-Counts := CountSessionsByTrack(Sessions);
-Check(Length(Counts) = 2,
-  'KI und ki sind getrennte Tracks');
-```
-````
-
-<v-clicks>
-
-- Baseline: der case-insensitive Vergleich verletzt R1.
-- Referenz: beide Schreibweisen bleiben getrennt.
-- Der Test benennt Fachverhalten statt interne Schleifen.
-
-</v-clicks>
-
-<!--
-Auszug aus fixtures/common/CatalogTests.lpr im Demo-Repo. `node demo.mjs test baseline` soll im Repo-Root fehlschlagen; `node demo.mjs test solution` führt alle sieben vorbereiteten Checks aus. Aus `.run/baseline` stattdessen `node ../../demo.mjs` verwenden. Vortragsdemo: keine Erfolgsmeldung behaupten, ohne den konkreten Lauf zu zeigen.
--->
-
----
 title: Built ist noch nicht Done
 layout: image-left
 background: bmad-human-ai-copilot.png
@@ -848,6 +752,7 @@ background: bmad-human-ai-copilot.png
 </div>
 
 <!--
+## THOMAS
 Die Demo endet mit einem gebauten, geprüften Ergebnis im lokalen Workspace. BMADs Status built ist keine Produktionsfreigabe; die menschliche Abnahme bleibt Teil des roten Fadens.
 -->
 
@@ -882,6 +787,14 @@ Die gezeigten Testergebnisse stammen aus der vorbereiteten Referenz mit isoliert
 -->
 
 ---
+layout: chapter
+background: bmad-governance-control-center.png
+isDark: true
+---
+
+# Empfehlungen
+
+---
 title: Qualitätsgates halten Autonomie überprüfbar
 layout: image-right
 background: bmad-governance-control-center.png
@@ -907,28 +820,28 @@ title: Potenzial von Spec-Driven Development
 layout: two-cols
 ---
 
-# Velocity, weniger Routinefehler: 
+# Leitplanken für weniger Routinefehler: 
 
 <br/>
 
-## Mögliches Potenzial
 
-- Klarere Tickets können Rückfragen und Nacharbeit verringern
-- Wiederholbare Tests prüfen bekannte Fälle ohne manuelle Wiederholung
-- Nachvollziehbare Diffs lenken Reviews auf fachliche Entscheidungen
+- Velocity nicht als Ziel nutzen
+- Durchlaufzeit messen: Ticket → Lieferung
+- Qualität messen: Fehler, Hotfixes und Nacharbeit
+
 
 ::right::
- 
-# Hypothesen messen
 
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-## Im Team beobachten
 
-- Durchlaufzeit vergleichbarer Stories
-- Rückfragen, Nacharbeit und Review-Schleifen
-- manueller Prüfaufwand und gefundene Fehler
-- Fehler, die trotz Checks später auffallen
+- KI-Erfolg am Ergebnis messen, nicht an Tool-Zahlen
+- Metriken sparsam einsetzen und regelmäßig hinterfragen
+- Ausreißer prüfen: „Warum brauchte diese Story 14 Tage?“
 
 <!--
 Das sind erwartbare Wirkpfade, keine gemessenen Resultate dieses Vortrags und keine Garantie für Velocity-Steigerung oder Fehlerfreiheit. Mit vergleichbaren Aufgaben und einer Baseline messen; Tests finden nur Fehler in den abgedeckten Fällen. Siehe auch BMad Build & Verify: https://docs.bmad-method.org/build/build-and-verify/
