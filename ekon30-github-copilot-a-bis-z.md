@@ -45,17 +45,15 @@ src: /special-slides/ekon30-speakers.md
 
 ---
 title: Vorbereitung
-layout: default
+layout: two-cols
 hideInToc: true
 ---
 
 # Vorbereitung: Delphi-Werkbank
 
-<div class="grid grid-cols-2 gap-10 items-center mt-6">
+::left::
 
-<div>
-
-**Bitte mitbringen**
+<br/>
 
 <v-clicks>
 
@@ -66,6 +64,8 @@ hideInToc: true
 
 </v-clicks>
 
+<v-click>
+
 ```powershell
 git clone https://github.com/harrybin/ekon30-github-copilot-workshop.git
 cd ekon30-github-copilot-workshop
@@ -75,11 +75,21 @@ npm test
 npm run guide
 ```
 
+</v-click>
+
+::right::
+
+<br/>
+
 **Repo:** [github.com/harrybin/ekon30-github-copilot-workshop](https://github.com/harrybin/ekon30-github-copilot-workshop)
 
-</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<div class="text-center">
+<div style="margin-left: 100px">
 
 <QRCode
   type="svg"
@@ -90,11 +100,10 @@ npm run guide
   :height="220"
 />
 
-<p>Repo → README → Setup → Guide</p>
-
 </div>
 
-</div>
+
+
 
 <!--
 Vorbereitung: README im Übungsrepo lesen, Repository klonen und als eigenen VS-Code-Ordner öffnen. fpc -iV und lazbuild --version prüfen. npm test baut mit lazbuild und startet die Pascal-Checks. Node.js dient nur dem Guide und den Build-Aufrufen, nicht den Codeübungen. Workshop-Abstract: https://entwickler-konferenz.de/ki-praxis-und-tools-fuer-delphi/workshop-github-copilot-von-a-bis-z. Decksammlung: https://github.com/harrybin/presentations.
@@ -109,6 +118,8 @@ layout: two-cols
 
 ::left::
 
+<br/>
+
 **Windows · PowerShell**
 
 ```powershell
@@ -119,6 +130,19 @@ npm test
 ```
 
 ::right::
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 
 **macOS · Terminal**
 
@@ -148,9 +172,9 @@ hideInToc: true
 
 <v-clicks>
 
-- sieben Übungen mit klaren Zeitboxen
-- Copilot-Prompts bewusst kopieren
-- Hinweise bei Bedarf aufklappen
+- sieben Übungen (timeboxed)
+- Copilot-Prompts (zur Not kopieren)
+- Hinweise bei Bedarf
 - eigene Nachweise und Notizen exportieren
 
 </v-clicks>
@@ -213,7 +237,7 @@ layout: image-right
 background: bmad-human-ai-copilot.png
 ---
 
-# Demo Time führt — ihr entscheidet
+# Demo Time kann führen — ihr entscheidet
 
 <v-clicks>
 
@@ -263,30 +287,9 @@ Teaser: Wir versprechen nicht „Code per Knopfdruck“, sondern üben einen sic
 -->
 
 ---
-title: Sessionprofil
+title: Agenda
 layout: image-right
 background: ekon30-github-copilot-a-bis-z/copilot-chat-tools.png
-hideInToc: true
----
-
-# Am Ende habt ihr ein gebautes Feature
-
-<v-clicks>
-
-- **Zielgruppe:** Delphi-Entwickler:innen mit und ohne Copilot-Erfahrung
-- **Toolchain:** VS Code + Lazarus/Free Pascal, kein RAD Studio nötig
-- **Ergebnis:** Feature mit Tests plus projektspezifische Copilot-Anpassung
-- **Arbeitsmodus:** kurze Inputs, angeleitete Übungen, gemeinsamer Capstone
-
-</v-clicks>
-
-<!--
-Vorabhinweis: Lazarus inklusive Free Pascal und PATH vorbereiten. Sprachunterstützung in VS Code ist hilfreich, aber keine kostenpflichtige Delphi-Erweiterung ist Voraussetzung. Inline-Completions werden in VS Code geübt; Chat und Agent-Aufgaben können auch in der Copilot App erfolgen.
--->
-
----
-title: Agenda
-layout: default
 hideInToc: true
 ---
 
@@ -319,6 +322,39 @@ isDark: true
 
 <!--
 Wir beginnen mit der kleinsten Delegation: Copilot schlägt vor, der Mensch entscheidet.
+-->
+
+---
+title: Foundry-Modelle in VS Code Chat
+layout: default
+---
+
+# Foundry-Modelle in VS Code Chat
+
+<ol class="grid grid-cols-3 gap-7 mt-6 pl-6">
+
+<li v-click>
+<strong>Model Catalog</strong>
+<p>Modell, Region, Deployment-Typ und Nutzungsbedingungen prüfen.</p>
+</li>
+
+<li v-click>
+<strong>Deployment</strong>
+<p>Modell bereitstellen. Der Deployment-Name routet Requests über den Foundry-Endpunkt.</p>
+</li>
+
+<li v-click>
+<strong>VS Code Chat</strong>
+<p><code>Chat: Manage Language Models</code> → <code>Add Models</code> → <strong>Azure</strong>; Endpoint und Deployment-Name konfigurieren.</p>
+</li>
+
+</ol>
+
+<p v-click class="mt-5 text-sm"><strong>Agent Mode:</strong> BYOK aktivieren und ein Modell mit Tool Calling wählen. Code-Completions bleiben Copilot; Azure-Aufrufe werden separat abgerechnet. Für Foundry-Modelle ist alternativ das Foundry Toolkit als Provider-Extension verfügbar.</p>
+
+<!--
+Kurzer Exkurs (2–3 Min.) innerhalb der bestehenden Zeit für Chat/Completions; Agenda und Gesamtzeit bleiben unverändert. Keine echten Schlüssel zeigen. In Copilot-Harness-Sessions muss `chat.agentHost.byokModels.enabled` aktiv sein; Agent-Modelle benötigen Tool Calling.
+Quellen: https://code.visualstudio.com/docs/agent-customization/language-models, https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/endpoints, https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available/.
 -->
 
 ---
@@ -360,39 +396,6 @@ background: ekon30-github-copilot-a-bis-z/copilot-completion.png
 
 <!--
 Diese kurze Vorführung gehört in die vorhandene Demo-Zeit von Übung 1: ein Completion-Vorschlag ist eine Hypothese. Danach übernehmen die Teilnehmenden denselben Prüfschritt selbst im Workshop-Repository.
--->
-
----
-title: Foundry-Modelle in VS Code Chat
-layout: default
----
-
-# Foundry-Modelle in VS Code Chat
-
-<ol class="grid grid-cols-3 gap-7 mt-6 pl-6">
-
-<li v-click>
-<strong>Model Catalog</strong>
-<p>Modell, Region, Deployment-Typ und Nutzungsbedingungen prüfen.</p>
-</li>
-
-<li v-click>
-<strong>Deployment</strong>
-<p>Modell bereitstellen. Der Deployment-Name routet Requests über den Foundry-Endpunkt.</p>
-</li>
-
-<li v-click>
-<strong>VS Code Chat</strong>
-<p><code>Chat: Manage Language Models</code> → <code>Add Models</code> → <strong>Azure</strong>; Endpoint und Deployment-Name konfigurieren.</p>
-</li>
-
-</ol>
-
-<p v-click class="mt-5 text-sm"><strong>Agent Mode:</strong> BYOK aktivieren und ein Modell mit Tool Calling wählen. Code-Completions bleiben Copilot; Azure-Aufrufe werden separat abgerechnet. Für Foundry-Modelle ist alternativ das Foundry Toolkit als Provider-Extension verfügbar.</p>
-
-<!--
-Kurzer Exkurs (2–3 Min.) innerhalb der bestehenden Zeit für Chat/Completions; Agenda und Gesamtzeit bleiben unverändert. Keine echten Schlüssel zeigen. In Copilot-Harness-Sessions muss `chat.agentHost.byokModels.enabled` aktiv sein; Agent-Modelle benötigen Tool Calling.
-Quellen: https://code.visualstudio.com/docs/agent-customization/language-models, https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/endpoints, https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available/.
 -->
 
 ---
