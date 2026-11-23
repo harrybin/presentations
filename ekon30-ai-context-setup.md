@@ -77,7 +77,7 @@ layout: default
 
 # Was sieht der Agent in diesem Schritt?
 
-```mermaid {scale: 0.55}
+```mermaid {scale: 0.4}
 flowchart LR
   U["Auftrag"] --> H["Harness / Sitzung"]
   P["Projektregeln"] --> H
@@ -110,13 +110,16 @@ hideInToc: true
 
 # Fünf Bausteine, klare Entscheidung
 
+<br/>
+<br/>
+<br/>
+
 <v-clicks>
 
-- Kontext als knappes Budget
-- Instructions, Prompts und Skills
-- Tools/MCP, Agent Harness und Custom Agents
-- Live-Faden mit Demo Time: Regel → Task → Spezialist
-- Entscheidungsraster und Fragen
+- Was ist Kontext?!
+- Kontext geben
+- Was ist Harness?
+- Wir l(i|e)ben Demo!
 
 </v-clicks>
 
@@ -134,6 +137,12 @@ isDark: true
 
 # 01 · Der Kontext-Engpass
 
+<v-click>
+
+ ## Was ist Kontext?
+
+</v-click>
+
 <!--
 Ein Agent arbeitet nicht mit unserem unausgesprochenen Wissen. Was nicht im Kontext steht oder erreichbar ist, bleibt Annahme.
 -->
@@ -146,9 +155,11 @@ background: bmad-context-satellite.png
 
 # Kontext steuert Qualität und Aufwand
 
+<br/>
+
 <v-clicks>
 
-- fachliche Absicht und Nutzer
+- Fachlichkeit und Technik definieren
 - passende Projektdateien und Konventionen
 - relevante Werkzeuge und Datenquellen
 - nur so viel Kontext, wie die Aufgabe benötigt
@@ -164,15 +175,15 @@ title: Die fünf Fragen vor der Konfiguration
 layout: default
 ---
 
-# Welches Problem soll der Baustein lösen?
+# Was ist der Rahmen des Kontext?
 
 <v-clicks>
 
-- gilt die Regel **immer** oder nur für einzelne Pfade?
+- gilt die Regel **immer** oder nur für einzelne Fälle?
 - ist es ein **wiederholbarer Auftrag** mit wechselnden Inputs?
 - braucht es **Wissen/Abläufe**, die nur manchmal relevant sind?
-- fehlt eine **externe Aktion oder Datenquelle**?
-- braucht die Aufgabe eine **eigene Rolle oder Tool-Grenze**?
+- wird eine **externe Aktion oder Datenquelle** benötigt?
+- passt die Aufgabe auf eine **bestimmte Rolle/Persona**?
 
 </v-clicks>
 
@@ -223,12 +234,16 @@ Erst den nächsten Geltungsbereich prüfen
 - Nähe zum Zielpfad entscheidet über Relevanz
 - Doppelte oder widersprüchliche Regeln vermeiden
 
+</v-clicks>
+
+<v-click>
+
 <br/>
 <br/>
 
 ## ⚠️ Achtung: nicht alle IDE-Integrationen und Harnesses unterstützen AGENTS.md in Unterordnern
 
-</v-clicks>
+</v-click>
 
 ::right::
 
@@ -489,7 +504,7 @@ background: bmad-context-hierarchy.png
 
 ## ABER:
 
-- Prompt file sind deprecated, verschwinden ab Feb 2027
+- Prompt files sind deprecated, verschwinden ab Feb 2027
 - Copilot Harness kann schon keine Prompt Files mehr ausführen
 
 ## Lösung: Migration zu Skills 
@@ -554,7 +569,7 @@ layout: image-right
 background: bmad-governance-control-center.png
 ---
 
-# Ein Modell kann nicht alles aus eigener Antwort
+# Ein Modell kann nicht alles wissen oder tun
 
 <v-clicks>
 
@@ -579,8 +594,8 @@ layout: default
 
 ```mermaid {scale: 0.65}
 sequenceDiagram
-  participant U as Person
-  participant H as Copilot-Host
+  participant U as User
+  participant H as Copilot-Host (z.B. IDE)
   participant M as Modell
   participant S as MCP-Server
   U->>H: Aufgabe
@@ -810,7 +825,7 @@ layout: default
 </div>
 
 <!--
-## THOMAS
+## Harry
 Die Kategorien schließen sich nicht aus. Kombinieren nur, wenn der konkrete Workflow es verlangt; sonst entsteht Konfigurationsballast.
 -->
 

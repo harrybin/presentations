@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1100" fill="none">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#18182D"/>
+      <stop offset="1" stop-color="#101522"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#46D6E8"/>
+      <stop offset="1" stop-color="#A981FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="18" width="924" height="1064" rx="32" fill="#0B0B18" stroke="#39345B" stroke-width="2"/>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <g>
+      <rect x="42" y="42" width="876" height="316" rx="22" fill="url(#panel)" stroke="#46436D" stroke-width="2"/>
+      <circle cx="74" cy="78" r="8" fill="#F36D75"/>
+      <circle cx="100" cy="78" r="8" fill="#F5C45E"/>
+      <circle cx="126" cy="78" r="8" fill="#5BCB88"/>
+      <text x="164" y="86" fill="#77E4EF" font-size="29" font-weight="700">VS CODE</text>
+      <text x="300" y="86" fill="#B8B8D0" font-size="22">Chat neben dem Editor</text>
+      <rect x="64" y="112" width="832" height="220" rx="12" fill="#0D111B" stroke="#30364A"/>
+      <rect x="64" y="112" width="52" height="220" rx="12" fill="#171B29"/>
+      <circle cx="90" cy="144" r="10" fill="#51C9D7"/>
+      <rect x="82" y="176" width="16" height="16" rx="3" fill="#70758D"/>
+      <rect x="82" y="208" width="16" height="16" rx="3" fill="#70758D"/>
+      <rect x="82" y="240" width="16" height="16" rx="3" fill="#70758D"/>
+      <rect x="132" y="128" width="358" height="188" rx="8" fill="#111725"/>
+      <text x="152" y="158" fill="#AEB8D2" font-size="17">SessionCatalog.pas</text>
+      <path d="M154 184h156M154 208h230M154 232h194M154 256h248M154 280h180" stroke="#697999" stroke-width="7" stroke-linecap="round"/>
+      <path d="M174 208h90M174 256h110" stroke="#66D6E4" stroke-width="7" stroke-linecap="round"/>
+      <rect x="510" y="128" width="370" height="188" rx="8" fill="#171727"/>
+      <text x="532" y="158" fill="#E5E4F1" font-size="18" font-weight="600">Copilot Chat</text>
+      <rect x="532" y="176" width="300" height="40" rx="10" fill="#292541"/>
+      <text x="550" y="202" fill="#D5D0EB" font-size="16">Explain this method</text>
+      <rect x="532" y="230" width="324" height="38" rx="10" fill="#1C3441"/>
+      <text x="550" y="255" fill="#BFEAF0" font-size="16">Answer + code context</text>
+      <rect x="532" y="279" width="324" height="24" rx="8" fill="#212538"/>
+      <text x="550" y="297" fill="#8FDCE5" font-size="14">Ask  ·  Edit  ·  Agent</text>
+    </g>
+
+    <g>
+      <rect x="42" y="392" width="876" height="316" rx="22" fill="url(#panel)" stroke="#46436D" stroke-width="2"/>
+      <circle cx="74" cy="428" r="8" fill="#F36D75"/>
+      <circle cx="100" cy="428" r="8" fill="#F5C45E"/>
+      <circle cx="126" cy="428" r="8" fill="#5BCB88"/>
+      <text x="164" y="436" fill="#C5A3FF" font-size="29" font-weight="700">AGENTS WINDOW</text>
+      <text x="480" y="436" fill="#B8B8D0" font-size="22">Sessions über Projekte</text>
+      <rect x="64" y="462" width="832" height="220" rx="12" fill="#0D111B" stroke="#30364A"/>
+      <rect x="64" y="462" width="188" height="220" rx="12" fill="#171B29"/>
+      <text x="84" y="492" fill="#CAC9DC" font-size="16" font-weight="600">SESSIONS</text>
+      <rect x="78" y="508" width="158" height="48" rx="8" fill="#33304F"/>
+      <circle cx="96" cy="532" r="7" fill="#AB8AFF"/>
+      <text x="112" y="538" fill="#E3DFFF" font-size="14">Tests ergänzen</text>
+      <circle cx="96" cy="584" r="7" fill="#51C9D7"/>
+      <text x="112" y="590" fill="#C4C7D8" font-size="14">Refactor planen</text>
+      <circle cx="96" cy="626" r="7" fill="#6A7188"/>
+      <text x="112" y="632" fill="#C4C7D8" font-size="14">README prüfen</text>
+      <rect x="268" y="478" width="378" height="188" rx="8" fill="#141826"/>
+      <text x="290" y="510" fill="#E5E4F1" font-size="18" font-weight="600">Aktive Agent-Session</text>
+      <rect x="290" y="528" width="326" height="42" rx="9" fill="#292541"/>
+      <text x="308" y="554" fill="#D5D0EB" font-size="15">Implementiere die Tests im Scope</text>
+      <rect x="290" y="586" width="326" height="54" rx="9" fill="#1C3441"/>
+      <text x="308" y="610" fill="#BFEAF0" font-size="14">Plan, Fortschritt und Fragen</text>
+      <text x="308" y="630" fill="#8FC7D0" font-size="13">Task A  ·  Task B  ·  Task C</text>
+      <rect x="662" y="478" width="216" height="188" rx="8" fill="#171727"/>
+      <text x="682" y="510" fill="#E5E4F1" font-size="17" font-weight="600">Changes</text>
+      <path d="M684 535h150M684 563h116M684 591h144M684 619h90" stroke="#67728D" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="846" cy="535" r="8" fill="#54D49A"/>
+      <circle cx="846" cy="563" r="8" fill="#54D49A"/>
+      <circle cx="846" cy="591" r="8" fill="#C57DFF"/>
+    </g>
+
+    <g>
+      <rect x="42" y="742" width="876" height="316" rx="22" fill="url(#panel)" stroke="#46436D" stroke-width="2"/>
+      <circle cx="74" cy="778" r="8" fill="#F36D75"/>
+      <circle cx="100" cy="778" r="8" fill="#F5C45E"/>
+      <circle cx="126" cy="778" r="8" fill="#5BCB88"/>
+      <text x="164" y="786" fill="#80B9FF" font-size="29" font-weight="700">GITHUB COPILOT APP</text>
+      <text x="546" y="786" fill="#B8B8D0" font-size="22">Cloud-Session</text>
+      <rect x="64" y="812" width="832" height="220" rx="12" fill="#0D111B" stroke="#30364A"/>
+      <rect x="64" y="812" width="832" height="42" rx="12" fill="#171B29"/>
+      <circle cx="91" cy="833" r="10" fill="url(#accent)"/>
+      <text x="112" y="839" fill="#D9D8E9" font-size="16" font-weight="600">GitHub Copilot</text>
+      <text x="720" y="839" fill="#A9ADC3" font-size="14">Cloud environment</text>
+      <text x="92" y="884" fill="#8FA2C4" font-size="14">REPOSITORY  /  BRANCH</text>
+      <text x="92" y="912" fill="#E3E4F1" font-size="21" font-weight="600">delphi-workshop  /  main</text>
+      <rect x="92" y="932" width="480" height="58" rx="12" fill="#24203E" stroke="#534279"/>
+      <text x="114" y="958" fill="#E2DCF5" font-size="16">Add boundary tests for session filtering</text>
+      <text x="114" y="979" fill="#B3A4DC" font-size="13">Ask  →  Plan  →  Delegate</text>
+      <rect x="600" y="894" width="264" height="96" rx="12" fill="#142D35" stroke="#29616A"/>
+      <circle cx="626" cy="922" r="9" fill="#58D4A4"/>
+      <text x="648" y="928" fill="#C4F1E1" font-size="16" font-weight="600">Session running</text>
+      <path d="M622 954h204" stroke="#315B65" stroke-width="2"/>
+      <text x="622" y="978" fill="#A8D8DA" font-size="14">Continue in a supported client</text>
+    </g>
+  </g>
+</svg>

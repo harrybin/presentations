@@ -325,6 +325,31 @@ Wir beginnen mit der kleinsten Delegation: Copilot schlägt vor, der Mensch ents
 -->
 
 ---
+title: Copilot-Oberflächen · Wo arbeitet der Agent?
+layout: image-right
+background: ekon30-github-copilot-a-bis-z/copilot-ui-surfaces.svg
+---
+
+# Drei Oberflächen, ein Copilot
+
+<v-clicks>
+
+- **VS Code · im Editor:** Chat und Agent neben dem Code; Änderungen direkt im Diff prüfen.
+- **Agents Window:** Sitzungen über Projekte verwalten, parallele Aufgaben beobachten und Änderungen reviewen.
+- **GitHub Copilot App · Cloud:** Cloud-Sitzungen starten oder fortsetzen und Aufgaben clientübergreifend steuern.
+
+</v-clicks>
+
+<div class="mt-4 p-3 rounded-lg bg-purple-900/20">
+Vor dem Start klären: **Repository · Ausführungsort · Rechte · Prüfschritt**
+</div>
+
+<!--
+Die VS-Code-Chatansicht arbeitet am geöffneten Workspace; das Agents Window bietet eine agentenzentrierte Übersicht über Sitzungen und Projekte. GitHub Copilot auf GitHub.com und in der Copilot App unterstützt Cloud-Sitzungen, die je nach Umgebung über unterstützte Clients fortgesetzt werden können.
+Quellen: https://code.visualstudio.com/docs/agents/run/agents-window, https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github
+-->
+
+---
 title: Foundry-Modelle in VS Code Chat
 layout: default
 ---
