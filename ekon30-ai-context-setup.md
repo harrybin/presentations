@@ -77,7 +77,7 @@ layout: default
 
 # Was sieht der Agent in diesem Schritt?
 
-```mermaid {scale: 0.4}
+```mermaid {scale: 0.55}
 flowchart LR
   U["Auftrag"] --> H["Harness / Sitzung"]
   P["Projektregeln"] --> H
@@ -108,7 +108,7 @@ background: compass-right.png
 hideInToc: true
 ---
 
-# Fünf Bausteine, klare Entscheidung
+# Was haben wir vor?
 
 <br/>
 <br/>
